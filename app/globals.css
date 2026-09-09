@@ -2433,3 +2433,491 @@ footer {
     gap: 10px;
   }
 }
+
+/* Readable difficulty labels, separate from collectible stars. */
+.difficulty {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+.difficulty-1 {
+  color: #9be5cd;
+}
+.difficulty-2 {
+  color: #ffe098;
+}
+.difficulty-3 {
+  color: #ffc1d7;
+}
+.difficulty-bars {
+  display: inline-flex;
+  align-items: end;
+  gap: 3px;
+  height: 15px;
+}
+.difficulty-bars i {
+  display: block;
+  width: 5px;
+  height: 7px;
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  opacity: 0.35;
+}
+.difficulty-bars i:nth-child(2) {
+  height: 11px;
+}
+.difficulty-bars i:nth-child(3) {
+  height: 15px;
+}
+.difficulty-bars i.filled {
+  background: currentColor;
+  opacity: 1;
+}
+.card-difficulty {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin: 0 22px;
+  padding: 10px 0 0;
+}
+.card-difficulty > span:last-child {
+  font-size: 12px;
+  color: #c0afcf;
+}
+.game-level-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: #baaccd;
+  font-size: 13px;
+  margin: 12px 0;
+}
+.uncle-note {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #ffffff05;
+  border: 1px solid #bda3f322;
+  border-radius: 20px;
+  padding: 20px 24px;
+  margin: 32px 0 0;
+}
+.uncle-note > span {
+  font-size: 28px;
+}
+.uncle-note > div {
+  flex: 1;
+}
+.uncle-note strong {
+  font-size: 16px;
+}
+.uncle-note p {
+  font-size: 14px;
+  color: #c0afcf;
+  margin: 4px 0 0;
+}
+.preview-trail,
+.preview-market,
+.preview-robot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.preview-trail > span,
+.preview-market > span,
+.preview-robot > span {
+  font-size: 65px;
+}
+.preview-trail b,
+.preview-market b,
+.preview-robot b {
+  font-size: 25px;
+  letter-spacing: 5px;
+}
+.adventure-board {
+  max-width: 660px;
+  margin-inline: auto;
+}
+.adventure-hint {
+  display: block;
+  text-align: center;
+  color: #d0c3e3;
+  font-size: 14px;
+  line-height: 1.5;
+  min-height: 32px;
+  margin: 16px auto;
+}
+.trail-mission {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+  margin: 22px 0 16px;
+  font-size: 20px;
+  font-weight: 800;
+}
+.trail-mission .found {
+  color: #97e6c7;
+}
+.trail-map {
+  display: grid;
+  gap: 7px;
+  max-width: 370px;
+  margin: auto;
+  padding: 10px;
+  background: #100d2066;
+  border: 1px solid #7ec9a53b;
+  border-radius: 20px;
+}
+.trail-cell {
+  aspect-ratio: 1;
+  min-width: 0;
+  min-height: 44px;
+  display: grid;
+  place-items: center;
+  background: #3d3550;
+  border: 2px solid transparent;
+  border-radius: 13px;
+  font-size: clamp(26px, 7vw, 36px);
+  color: #8d829a;
+  touch-action: manipulation;
+}
+.trail-cell.nearby {
+  background: #4c7563;
+  border-color: #a8e9c9;
+  color: #ccf5df;
+  box-shadow: 0 0 12px #a8e9c911;
+}
+.trail-cell.rock {
+  background: #252133;
+}
+.trail-cell.johnny {
+  background: #ffd28a30;
+  border-color: #ffd28a;
+  opacity: 1;
+}
+.trail-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+.trail-controls button {
+  width: 52px;
+  min-width: 44px;
+  height: 48px;
+  padding: 8px;
+}
+.trail-controls button:disabled {
+  opacity: 0.35;
+}
+.shopping-note {
+  background: #ffc68013;
+  border: 1px dashed #ffc68066;
+  border-radius: 18px;
+  padding: 15px;
+  margin-top: 22px;
+}
+.shopping-note h2,
+.robot-blueprint h2,
+.robot-build h3,
+.basket-title {
+  font-size: 17px;
+  font-weight: 800;
+  margin: 0 0 12px;
+  text-align: center;
+}
+.shopping-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.shopping-list li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.shopping-list li > span {
+  font-size: 25px;
+  letter-spacing: 3px;
+}
+.shopping-list b {
+  font-size: 14px;
+}
+.basket-title {
+  margin: 23px 0 12px;
+}
+.market-shelves {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.market-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 14px 8px;
+  gap: 6px;
+  border: 2px solid #ffffff10;
+  background: #ffffff06;
+  border-radius: 18px;
+}
+.food-emoji {
+  font-size: 36px;
+}
+.food-name {
+  font-size: 14px;
+  color: #ddcbe7;
+}
+.quantity-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 3px;
+}
+.quantity-control button {
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #ffffff0d;
+  width: 44px;
+  height: 44px;
+}
+.quantity-control button:disabled {
+  opacity: 0.35;
+}
+.quantity-control output {
+  min-width: 25px;
+  text-align: center;
+  font-size: 23px;
+  font-weight: 900;
+}
+.needs-check {
+  border: 2px dashed #ffc680 !important;
+  box-shadow: 0 0 0 3px #ffc68022;
+}
+.check-basket,
+.check-robot {
+  margin: 0 auto;
+}
+.robot-workshop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  margin: 24px 0 20px;
+}
+.robot-blueprint {
+  padding: 12px;
+  border-radius: 18px;
+  border: 1px dashed #bca7f5;
+  background: #a4bcff10;
+}
+.robot-blueprint h2 {
+  font-size: 14px;
+}
+.robot-shape {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr 1fr;
+  grid-template-rows: 1fr 1.1fr 0.7fr;
+  gap: 5px;
+  width: 230px;
+  height: 220px;
+}
+.robot-part {
+  position: relative;
+  display: grid;
+  place-items: center;
+  background: var(--paint);
+  color: #251f3f;
+  border: 2px solid #ffffff30;
+  box-shadow: inset 0 -5px 0 #00000012;
+  font-size: 24px;
+  font-weight: 900;
+  border-radius: 16px;
+  min-width: 44px;
+  min-height: 44px;
+}
+.part-head {
+  grid-column: 2;
+  grid-row: 1;
+  padding-top: 13px;
+}
+.part-body {
+  grid-column: 2;
+  grid-row: 2;
+}
+.part-left {
+  grid-column: 1;
+  grid-row: 2;
+  border-radius: 22px 12px 12px 22px;
+}
+.part-right {
+  grid-column: 3;
+  grid-row: 2;
+  border-radius: 12px 22px 22px 12px;
+}
+.part-feet {
+  grid-column: 2;
+  grid-row: 3;
+  border-radius: 10px 10px 17px 17px;
+}
+.robot-eyes {
+  position: absolute;
+  top: 0;
+  inset-inline: 0;
+  letter-spacing: 9px;
+  font-style: normal;
+  text-align: center;
+  padding-left: 9px;
+  font-size: 25px;
+}
+.mini-robot {
+  width: 130px;
+  height: 130px;
+  gap: 3px;
+}
+.mini-robot .robot-part {
+  min-width: 0;
+  min-height: 0;
+  border-width: 1px;
+  border-radius: 8px;
+  font-size: 15px;
+}
+.mini-robot .robot-eyes {
+  font-size: 16px;
+  letter-spacing: 5px;
+  padding-left: 5px;
+}
+.robot-palette {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.robot-palette button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px;
+  min-width: 56px;
+  border: 2px solid transparent;
+  border-radius: 14px;
+  background: #ffffff08;
+}
+.robot-palette button.selected {
+  border-color: var(--paint);
+  background: #ffffff12;
+}
+.robot-palette button > span {
+  background: var(--paint);
+  color: #251f3f;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 21px;
+}
+.robot-palette small {
+  font-size: 12px;
+}
+.robot-happy .part-head {
+  outline: 3px solid #fff29b;
+  outline-offset: 3px;
+}
+@media (max-width: 600px) {
+  .card-difficulty {
+    margin-inline: 18px;
+  }
+  .adventure-board {
+    padding: 18px 12px;
+  }
+  .robot-workshop {
+    gap: 12px;
+    flex-direction: column;
+  }
+  .robot-blueprint {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 16px;
+  }
+  .robot-blueprint h2 {
+    max-width: 85px;
+    margin: 0;
+  }
+  .mini-robot {
+    width: 95px;
+    height: 95px;
+  }
+  .mini-robot .robot-part {
+    font-size: 12px;
+  }
+  .mini-robot .part-head {
+    padding-top: 10px;
+  }
+  .robot-build h3 {
+    margin-bottom: 8px;
+  }
+  .robot-shape.big-robot {
+    width: 230px;
+    height: 185px;
+  }
+  .uncle-note {
+    padding: 16px;
+    gap: 12px;
+  }
+  .uncle-note > span {
+    display: none;
+  }
+}
+@media (max-width: 360px) {
+  .trail-map {
+    gap: 4px;
+    padding: 5px;
+  }
+  .trail-cell {
+    border-radius: 8px;
+  }
+  .market-shelves {
+    gap: 8px;
+  }
+  .market-item {
+    padding-inline: 2px;
+  }
+  .quantity-control {
+    gap: 2px;
+  }
+  .quantity-control output {
+    min-width: 20px;
+  }
+  .robot-palette {
+    gap: 6px;
+  }
+  .robot-palette button {
+    min-width: 50px;
+    padding-inline: 5px;
+  }
+}
+
+.star-games button > .difficulty {
+  font-size: 13px;
+  margin: 2px 0 10px;
+}
+.star-games button {
+  min-width: 0;
+}

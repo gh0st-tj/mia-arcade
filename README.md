@@ -1,6 +1,6 @@
 # Mia’s Babylon Arcade
 
-Nine learning games made for Mia, with her baby brother Dean, dog Johnny, Mum Lee and Dad Gal: six gentle games for ages 4–6 and three trickier ones for ages 6–7. English and Hebrew, touch and keyboard controls, three difficulty levels per game, spoken instructions, and 27 collectible stars saved in the browser.
+Twelve learning games built with love by Uncle Tom for Mia, with baby brother Dean, dog Johnny, Mum Lee and Dad Gal: six gentle games for ages 4–6, three adventures for ages 5–6, and three trickier games for ages 6–7. English and Hebrew, touch and keyboard controls, three difficulty levels per game, spoken instructions, and 36 collectible stars saved in the browser.
 
 - **Star Catcher:** count stars, with spoken counting on each tap.
 - **Mia’s Color Studio:** match colors, with closer shades on later levels.
@@ -8,9 +8,14 @@ Nine learning games made for Mia, with her baby brother Dean, dog Johnny, Mum Le
 - **Dean’s Toy Box:** match shapes, then try rotated shapes and similar alternatives.
 - **Picnic Patterns:** complete AB, AAB, ABB and ABC patterns.
 - **Bubble Pop:** count to ten; the final level is a rocket countdown.
+- **Johnny’s Treasure Trail (5–6):** guide Johnny around rocks, collect his bone, and find home. Maps grow from 4×4 to 5×5; every map has a safe route.
+- **Mia’s Mini Market (5–6):** follow a visible shopping list, add and remove food, and pack exact quantities for a picnic. Two or three foods, with quantities no higher than three.
+- **Uncle Tom’s Robot Lab (5–6):** choose a paint and color five robot parts to match a little model. Colors also have symbols. Three or four paint choices; mistakes can be repainted freely.
 - **Rocket Sums (6–7):** adding within 10, then taking away, then sums up to 20 without star pictures.
 - **Space Spelling (6–7):** find the missing letter of a picture word in English or Hebrew; the top level mixes in look-alike letters.
 - **Galaxy Sequence (6–7):** watch planets light up and repeat the order, from three planets up to seven.
+
+Every card and game screen shows its current difficulty—Easy, Medium, or Tricky—with a three-bar indicator and a separate level number. Labels update as stars unlock later levels. The three new adventures stay Medium throughout. Uncle Tom has a visible, playable dedication and appears in the intro and fresh voice lines.
 
 No timers or lives. Every completed game earns one star, up to three per game, and each star unlocks a harder level of that game. Getting every answer right on the first try earns a special cheer. Progress, language and sound preferences stay in the current browser.
 
@@ -44,11 +49,11 @@ npx playwright install chromium webkit
 npm run test:mobile
 ```
 
-The mobile suite needs Python 3 for its local static file server. It tests Chromium and WebKit with touch-enabled Android/iPhone emulation: 320–430px phones, tablets, landscape, English and Hebrew, 44px touch targets, all nine complete games, later levels, saved stars, voice playback, video, mute and reduced motion. These are automated browser tests, not physical-device certification. To run against a deployment, set `ARCADE_TEST_URL` to its origin.
+The mobile suite needs Python 3 for its local static file server. It tests Chromium and WebKit with touch-enabled Android/iPhone emulation: 320–430px phones, tablets, landscape, English and Hebrew, 44px touch targets, all twelve complete games, later levels, saved stars, voice playback, video, mute and reduced motion. These are automated browser tests, not physical-device certification. To run against a deployment, set `ARCADE_TEST_URL` to its origin.
 
 ## Optional media-generation keys
 
-The game includes 178 ElevenLabs MP3s in English and Hebrew, a fal.ai welcome animation, and a new ten-second family intro movie. Every spoken event has at least two recordings. Victory celebrations have ten different lines per language; instructions have three. A shuffle bag plays every variation before repeating and prevents immediate repeats. Playing uses no generation credits. API keys are needed only to regenerate media.
+The game includes 236 ElevenLabs MP3s in English and Hebrew, a fal.ai welcome animation, and a new ten-second family intro movie. Every spoken event has at least two recordings. Victory celebrations have fourteen different lines per language; instructions have three. A shuffle bag plays every variation before repeating and prevents immediate repeats. Playing uses no generation credits. API keys are needed only to regenerate media.
 
 The intro appears on the first visit and can be skipped immediately. “Watch my intro” reopens it anytime. Narration and motion start only after tapping play, with captions, language and mute controls. The existing arcade greeting also varies on each replay.
 

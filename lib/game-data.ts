@@ -8,7 +8,10 @@ export type GameId =
   | 'bubbles'
   | 'sums'
   | 'letters'
-  | 'sequence';
+  | 'sequence'
+  | 'trail'
+  | 'market'
+  | 'robot';
 type Words = Record<Lang, string>;
 export const games: {
   id: GameId;
@@ -19,9 +22,11 @@ export const games: {
   ages: Words;
   color: string;
   emoji: string;
+  difficulty: readonly [1 | 2 | 3, 1 | 2 | 3, 1 | 2 | 3];
 }[] = [
   {
     id: 'count',
+    difficulty: [1, 1, 2],
     title: { en: 'Star Catcher', he: 'אוספת הכוכבים' },
     description: {
       en: 'A little counting. A lot of sparkle.',
@@ -38,6 +43,7 @@ export const games: {
   },
   {
     id: 'colors',
+    difficulty: [1, 2, 2],
     title: { en: 'Mia’s Color Studio', he: 'הצבעים של מיה' },
     description: {
       en: 'Find the color. Make some magic.',
@@ -54,6 +60,7 @@ export const games: {
   },
   {
     id: 'memory',
+    difficulty: [1, 2, 3],
     title: { en: 'Johnny & Friends', he: 'ג׳וני וחברים' },
     description: {
       en: 'Little friends, lovely matches.',
@@ -70,6 +77,7 @@ export const games: {
   },
   {
     id: 'shapes',
+    difficulty: [1, 2, 2],
     title: { en: 'Dean’s Toy Box', he: 'הצעצועים של דין' },
     description: {
       en: 'A shape adventure for baby Dean.',
@@ -86,6 +94,7 @@ export const games: {
   },
   {
     id: 'patterns',
+    difficulty: [1, 2, 3],
     title: { en: 'Picnic Patterns', he: 'פיקניק משפחתי' },
     description: {
       en: 'What comes next at our picnic?',
@@ -102,6 +111,7 @@ export const games: {
   },
   {
     id: 'bubbles',
+    difficulty: [1, 1, 2],
     title: { en: 'Bubble Pop!', he: 'פופ! בועות' },
     description: {
       en: 'Pop, pop, pop your way to ten.',
@@ -117,7 +127,59 @@ export const games: {
     emoji: '🫧',
   },
   {
+    id: 'trail',
+    difficulty: [2, 2, 2],
+    title: { en: 'Johnny’s Treasure Trail', he: 'מסלול האוצר של ג׳וני' },
+    description: {
+      en: 'A snack, a winding path, a happy pup.',
+      he: 'חטיף, שביל מתפתל וכלבלב שמח.',
+    },
+    instruction: {
+      en: 'Guide Johnny one square at a time. Collect the bone, then reach his home!',
+      he: 'הובילי את ג׳וני משבצת אחת בכל פעם. אספי את העצם ואז הגיעי לבית שלו!',
+    },
+    skill: { en: 'Planning', he: 'תכנון' },
+    ages: { en: 'Ages 5–6', he: 'גילאי 5–6' },
+    color: '#83dfc7',
+    emoji: '🦴',
+  },
+  {
+    id: 'market',
+    difficulty: [2, 2, 2],
+    title: { en: 'Mia’s Mini Market', he: 'המכולת של מיה' },
+    description: {
+      en: 'Pack just the right picnic for everyone.',
+      he: 'אורזים בדיוק את הפיקניק שכולם צריכים.',
+    },
+    instruction: {
+      en: 'Look at the picnic list. Add the right food to your basket, then check it!',
+      he: 'הסתכלי ברשימת הפיקניק. הוסיפי לסל את האוכל המתאים ואז בדקי אותו!',
+    },
+    skill: { en: 'Counting & planning', he: 'ספירה ותכנון' },
+    ages: { en: 'Ages 5–6', he: 'גילאי 5–6' },
+    color: '#ffc680',
+    emoji: '🧺',
+  },
+  {
+    id: 'robot',
+    difficulty: [2, 2, 2],
+    title: { en: 'Uncle Tom’s Robot Lab', he: 'הרובוטים של דוד טום' },
+    description: {
+      en: 'Pick a paint. Build a friendly little bot.',
+      he: 'בוחרים צבע ובונים רובוט קטן וחברותי.',
+    },
+    instruction: {
+      en: 'Help Uncle Tom build a robot! Choose a paint, then tap a part to match the little model.',
+      he: 'עזרי לדוד טום לבנות רובוט! בחרי צבע ואז לחצי על חלק כדי להתאים לדגם הקטן.',
+    },
+    skill: { en: 'Building', he: 'בנייה' },
+    ages: { en: 'Ages 5–6', he: 'גילאי 5–6' },
+    color: '#a4bcff',
+    emoji: '🤖',
+  },
+  {
     id: 'sums',
+    difficulty: [3, 3, 3],
     title: { en: 'Rocket Sums', he: 'חשבון רקטות' },
     description: {
       en: 'Add it up, take it away, blast off!',
@@ -134,6 +196,7 @@ export const games: {
   },
   {
     id: 'letters',
+    difficulty: [3, 3, 3],
     title: { en: 'Space Spelling', he: 'איות בחלל' },
     description: {
       en: 'One letter is lost in space. Find it!',
@@ -150,6 +213,7 @@ export const games: {
   },
   {
     id: 'sequence',
+    difficulty: [3, 3, 3],
     title: { en: 'Galaxy Sequence', he: 'רצף גלקטי' },
     description: {
       en: 'Watch the planets. Repeat the order.',

@@ -100,8 +100,8 @@ export default function IntroWelcome({
           </DialogTitle>
           <DialogDescription>
             {t(
-              'With Dean, Johnny, Mum Lee & Dad Gal. And a whole galaxy of possibilities.',
-              'עם דין, ג׳וני, אמא לי ואבא גל. וגלקסיה שלמה של אפשרויות.',
+              'Built with love by Uncle Tom. With Dean, Johnny, Mum Lee & Dad Gal.',
+              'נבנה באהבה על ידי דוד טום. עם דין, ג׳וני, אמא לי ואבא גל.',
             )}
           </DialogDescription>
           {caption && (

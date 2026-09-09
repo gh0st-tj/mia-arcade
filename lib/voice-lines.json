@@ -14,6 +14,16 @@
       "id": "welcome-3",
       "en": "Mia, your little arcade is ready! Bring your curiosity and let’s have fun.",
       "he": "מיה, הארקייד הקטן שלך מוכן! בואי לגלות וליהנות."
+    },
+    {
+      "id": "welcome-4",
+      "en": "Mia, Uncle Tom built this little arcade just for you. Let’s find your next adventure!",
+      "he": "מיה, דוד טום בנה את הארקייד הקטן הזה במיוחד בשבילך. בואי נמצא את ההרפתקה הבאה!"
+    },
+    {
+      "id": "welcome-5",
+      "en": "Welcome back, Mia! Johnny, Dean and Uncle Tom have more little adventures waiting for you.",
+      "he": "ברוכה השבה, מיה! ג׳וני, דין ודוד טום מחכים לך עם עוד הרפתקאות קטנות."
     }
   ],
   "intro": [
@@ -23,14 +33,19 @@
       "he": "ברוכה הבאה לבבילון, מיה! הארקייד הקסום הזה כולו שלך. דין הקטן וג׳וני מוכנים להרפתקה, ואמא לי ואבא גל מעודדים אותך. ספרי כוכבים, פתרי חידות ונסי משהו חדש. מוכנה, כוכבת? בואי נשחק!"
     },
     {
-      "id": "intro-2",
-      "en": "Hello, Captain Mia! Our family spaceship has landed at Babylon. Johnny is wagging his tail, baby Dean is smiling, and Lee and Gal are here to cheer. Nine games are waiting for you. Take your time, have a go, and enjoy your adventure!",
-      "he": "שלום קפטנית מיה! החללית המשפחתית שלנו נחתה בבבילון. ג׳וני מכשכש בזנב, דין הקטן מחייך, ולי וגל כאן לעודד. תשעה משחקים מחכים לך. קחי את הזמן, נסי ותיהני מההרפתקה!"
+      "id": "intro-tom",
+      "en": "Hello, Captain Mia! Uncle Tom built this Babylon arcade especially for you. Johnny is wagging his tail, baby Dean is smiling, and Mum Lee and Dad Gal are here to cheer. Try a little adventure, take your time, and have fun!",
+      "he": "שלום קפטנית מיה! דוד טום בנה את הארקייד הזה במיוחד בשבילך. ג׳וני מכשכש בזנב, דין הקטן מחייך, ואמא לי ואבא גל כאן לעודד. נסי הרפתקה קטנה, קחי את הזמן ותיהני!"
     },
     {
       "id": "intro-3",
       "en": "Mia, look at all those stars! Each one is the start of an adventure. Dean, Johnny, Mum Lee and Dad Gal are on your team. Some puzzles are a little tricky, and that’s okay. You can always try again. Your Babylon adventure starts now!",
       "he": "מיה, תראי את כל הכוכבים! כל אחד הוא התחלה של הרפתקה. דין, ג׳וני, אמא לי ואבא גל בקבוצה שלך. חלק מהחידות קצת קשות, וזה בסדר. תמיד אפשר לנסות שוב. ההרפתקה שלך בבבילון מתחילה עכשיו!"
+    },
+    {
+      "id": "intro-4",
+      "en": "Mia, Uncle Tom has been busy building a world for your imagination! There are picnics to pack, paths to explore, and friendly robots to create. Dean, Johnny, Lee and Gal are on your team. Shall we begin?",
+      "he": "מיה, דוד טום בונה עולם לדמיון שלך! יש פיקניקים לארוז, שבילים לגלות ורובוטים חברותיים ליצור. דין, ג׳וני, לי וגל בקבוצה שלך. נתחיל?"
     }
   ],
   "count": [
@@ -253,6 +268,26 @@
       "id": "win-10",
       "en": "Yes, Mia! You solved it. Let’s give a happy cheer for all your effort!",
       "he": "יש, מיה! פתרת את זה. בואי נחגוג בשמחה את כל המאמץ שלך!"
+    },
+    {
+      "id": "win-11",
+      "en": "Uncle Tom sends you a giant high five, Mia! What a lovely adventure you finished.",
+      "he": "דוד טום שולח לך כיף ענקי, מיה! איזו הרפתקה נהדרת סיימת."
+    },
+    {
+      "id": "win-12",
+      "en": "Mia, you made it! Uncle Tom built the game, and you brought the adventure to life.",
+      "he": "מיה, הצלחת! דוד טום בנה את המשחק, ואת הפכת אותו להרפתקה."
+    },
+    {
+      "id": "win-13",
+      "en": "Three cheers for Mia! Your careful thinking helped you find the way.",
+      "he": "שלוש קריאות הידד למיה! החשיבה שלך עזרה לך למצוא את הדרך."
+    },
+    {
+      "id": "win-14",
+      "en": "Another happy star, Mia! There’s always something new to discover together.",
+      "he": "עוד כוכב שמח, מיה! תמיד יש משהו חדש לגלות ביחד."
     }
   ],
   "correct": [
@@ -285,6 +320,16 @@
       "id": "correct-6",
       "en": "You solved that one!",
       "he": "פתרת את החידה הזאת!"
+    },
+    {
+      "id": "correct-7",
+      "en": "That was thoughtful, Mia!",
+      "he": "חשבת יפה, מיה!"
+    },
+    {
+      "id": "correct-8",
+      "en": "One little step closer!",
+      "he": "עוד צעד קטן קדימה!"
     }
   ],
   "retry": [
@@ -312,6 +357,16 @@
       "id": "retry-5",
       "en": "Keep going, Mia. There’s no rush.",
       "he": "המשיכי, מיה. אין מה למהר."
+    },
+    {
+      "id": "retry-6",
+      "en": "Trying helps us learn, Mia. Take another little look.",
+      "he": "כשמנסים לומדים, מיה. הסתכלי עוד קצת."
+    },
+    {
+      "id": "retry-7",
+      "en": "Uncle Tom made room for trying again. You can take your time!",
+      "he": "דוד טום השאיר מקום לנסות שוב. את יכולה לקחת את הזמן!"
     }
   ],
   "match": [
@@ -500,6 +555,108 @@
       "id": "number-10-2",
       "en": "Ten!",
       "he": "עשר!"
+    }
+  ],
+  "trail": [
+    {
+      "id": "trail",
+      "en": "Guide Johnny one square at a time. Collect the bone, then reach his home!",
+      "he": "הובילי את ג׳וני משבצת אחת בכל פעם. אספי את העצם ואז הגיעי לבית שלו!"
+    },
+    {
+      "id": "trail-2",
+      "en": "Johnny is ready to explore! Tap a nearby path square and help him find his bone before going home.",
+      "he": "ג׳וני מוכן לגלות! לחצי על משבצת שביל קרובה ועזרי לו למצוא את העצם לפני שחוזרים הביתה."
+    },
+    {
+      "id": "trail-3",
+      "en": "Mia, plan a little adventure for Johnny. Find the bone, walk around the rocks, and lead him home!",
+      "he": "מיה, תכנני לג׳וני הרפתקה קטנה. מצאי את העצם, עקפי את האבנים והובילי אותו הביתה!"
+    }
+  ],
+  "market": [
+    {
+      "id": "market",
+      "en": "Look at the picnic list. Add the right food to your basket, then check it!",
+      "he": "הסתכלי ברשימת הפיקניק. הוסיפי לסל את האוכל המתאים ואז בדקי אותו!"
+    },
+    {
+      "id": "market-2",
+      "en": "Mia’s mini market is open! Count the food on the list and pack just that much.",
+      "he": "המכולת של מיה פתוחה! ספרי את האוכל ברשימה וארזי בדיוק את הכמות הזאת."
+    },
+    {
+      "id": "market-3",
+      "en": "Let’s pack a family picnic, Mia! Use plus to add food and minus to take some out.",
+      "he": "בואי נארוז פיקניק משפחתי, מיה! לחצי על פלוס כדי להוסיף אוכל ועל מינוס כדי להוציא."
+    }
+  ],
+  "robot": [
+    {
+      "id": "robot",
+      "en": "Help Uncle Tom build a robot! Choose a paint, then tap a part to match the little model.",
+      "he": "עזרי לדוד טום לבנות רובוט! בחרי צבע ואז לחצי על חלק כדי להתאים לדגם הקטן."
+    },
+    {
+      "id": "robot-2",
+      "en": "Welcome to Uncle Tom’s workshop, Mia! Look at the little robot and paint your big robot the same way.",
+      "he": "ברוכה הבאה לסדנה של דוד טום, מיה! הסתכלי ברובוט הקטן וצבעי את הרובוט הגדול באותה הדרך."
+    },
+    {
+      "id": "robot-3",
+      "en": "A new robot friend needs your help! Pick a color, then paint each part to match the plan.",
+      "he": "חבר רובוט חדש צריך את עזרתך! בחרי צבע וצבעי כל חלק לפי הדגם."
+    }
+  ],
+  "dedication": [
+    {
+      "id": "dedication",
+      "en": "Made with love for Mia, by Uncle Tom. I hope this little arcade brings you big smiles and happy adventures!",
+      "he": "נבנה באהבה למיה, על ידי דוד טום. הארקייד הקטן הזה מלא בחיוכים גדולים ובהרפתקאות שמחות!"
+    },
+    {
+      "id": "dedication-2",
+      "en": "Uncle Tom is building this arcade especially for you, Mia. Your curiosity makes every game an adventure.",
+      "he": "דוד טום בונה את הארקייד הזה במיוחד בשבילך, מיה. הסקרנות שלך הופכת כל משחק להרפתקה."
+    },
+    {
+      "id": "dedication-3",
+      "en": "A little gift from Uncle Tom to Mia: a whole world to play, imagine, and discover. Have fun, superstar!",
+      "he": "מתנה קטנה מדוד טום למיה: עולם שלם לשחק, לדמיין ולגלות. תיהני, כוכבת!"
+    }
+  ],
+  "market-retry": [
+    {
+      "id": "market-retry",
+      "en": "Let’s check the list, Mia. Add what’s missing and take out any extras.",
+      "he": "בואי נבדוק את הרשימה, מיה. הוסיפי מה שחסר והוציאי מה שמיותר."
+    },
+    {
+      "id": "market-retry-2",
+      "en": "Almost packed! Match each basket number to the picnic list.",
+      "he": "כמעט ארזנו! התאימי כל מספר בסל למספר ברשימה."
+    },
+    {
+      "id": "market-retry-3",
+      "en": "Look at the highlighted food. Does your basket have just the right amount?",
+      "he": "הסתכלי על האוכל המסומן. האם בסל שלך יש בדיוק את הכמות המתאימה?"
+    }
+  ],
+  "trail-blocked": [
+    {
+      "id": "trail-blocked",
+      "en": "One little step at a time, Johnny! Try a nearby path square.",
+      "he": "צעד קטן בכל פעם, ג׳וני! נסי משבצת שביל קרובה."
+    },
+    {
+      "id": "trail-blocked-2",
+      "en": "Let’s walk around the rocks. Follow the glowing path squares!",
+      "he": "בואי נעקוף את האבנים. עקבי אחרי משבצות השביל המוארות!"
+    },
+    {
+      "id": "trail-blocked-3",
+      "en": "Look beside Johnny, Mia. Which path can he step onto next?",
+      "he": "הסתכלי ליד ג׳וני, מיה. על איזו משבצת שביל הוא יכול לצעוד עכשיו?"
     }
   ]
 }

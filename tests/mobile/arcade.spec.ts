@@ -10,6 +10,9 @@ const ids = [
   'sums',
   'letters',
   'sequence',
+  'trail',
+  'market',
+  'robot',
 ];
 // Safari may request the same MP3 in multiple byte ranges. Count play calls,
 // not network requests, when checking which narration was selected.
@@ -43,6 +46,7 @@ async function prepare(page: Page, lang = 'en', level = 0, sound = false) {
   await page.evaluate(() => localStorage.setItem('mia-intro-seen-v1', '1'));
   await page.reload();
   await expect(page.locator('.game-card')).toHaveCount(ids.length);
+  await expect(page.locator('.game-card .difficulty')).toHaveCount(ids.length);
 }
 async function checkLayout(page: Page) {
   const result = await page.evaluate(() => ({
@@ -88,7 +92,10 @@ for (const lang of ['en', 'he']) {
     }
     await page.getByRole('tab').nth(1).tap();
     await expect(page.locator('.star-games button')).toHaveCount(ids.length);
-    await checkLayout(page);
+    for (const width of [320, 390, 768, 844]) {
+      await page.setViewportSize({ width, height: 844 });
+      await checkLayout(page);
+    }
   });
 }
 async function correctChoice(page: Page, id: string) {
@@ -234,6 +241,115 @@ async function solveSequence(page: Page, lang: string) {
     await page.locator('.next-button').tap();
   }
 }
+function pathThrough(
+  size: number,
+  rocks: number[],
+  start: number,
+  goal: number,
+): number[] {
+  const queue = [[start]],
+    seen = new Set([start]);
+  while (queue.length) {
+    const path = queue.shift()!,
+      cell = path.at(-1)!;
+    if (cell === goal) return path.slice(1);
+    for (let next = 0; next < size * size; next++)
+      if (
+        !seen.has(next) &&
+        !rocks.includes(next) &&
+        Math.abs(Math.floor(cell / size) - Math.floor(next / size)) +
+          Math.abs((cell % size) - (next % size)) ===
+          1
+      ) {
+        seen.add(next);
+        queue.push([...path, next]);
+      }
+  }
+  throw Error('No walkable route to the destination');
+}
+async function solveAdventure(page: Page, id: string) {
+  for (let round = 0; round < 3; round++) {
+    await checkLayout(page);
+    if (id === 'trail') {
+      const cells = page.locator('.trail-cell');
+      const size = Math.sqrt(await cells.count());
+      const rocks = await page
+        .locator('.trail-cell[data-rock="true"]')
+        .evaluateAll((nodes) =>
+          nodes.map((n) => Number((n as HTMLElement).dataset.cell)),
+        );
+      const bone = Number(
+        await page
+          .locator('.trail-cell[data-bone="true"]')
+          .getAttribute('data-cell'),
+      );
+      const home = Number(
+        await page
+          .locator('.trail-cell[data-home="true"]')
+          .getAttribute('data-cell'),
+      );
+      let from = Number(
+        await page
+          .locator('.trail-cell[data-dog="true"]')
+          .getAttribute('data-cell'),
+      );
+      for (const target of [bone, home]) {
+        for (const step of pathThrough(size, rocks, from, target))
+          await page.locator(`.trail-cell[data-cell="${step}"]`).tap();
+        from = target;
+      }
+    } else if (id === 'market') {
+      if (round === 0) {
+        await page.locator('.check-basket').tap();
+        await expect(page.locator('.market-item.needs-check')).not.toHaveCount(
+          0,
+        );
+        await expect(page.locator('.next-button')).toHaveCount(0);
+      }
+      const list = await page
+        .locator('.shopping-list li')
+        .evaluateAll((nodes) =>
+          nodes.map((n) => ({
+            item: (n as HTMLElement).dataset.item!,
+            qty: Number((n as HTMLElement).dataset.quantity),
+          })),
+        );
+      for (const { item, qty } of list)
+        for (let i = 0; i < qty; i++)
+          await page
+            .locator(`.market-item[data-item="${item}"] button`)
+            .last()
+            .tap();
+      // Add and remove an extra item to exercise reversible basket editing.
+      await page.locator('.market-item button').last().tap();
+      await page.locator('.market-item').last().locator('button').first().tap();
+      await page.locator('.check-basket').tap();
+    } else {
+      if (round === 0) {
+        await page.locator('.check-robot').tap();
+        await expect(page.locator('.big-robot .needs-check')).toHaveCount(5);
+        await expect(page.locator('.next-button')).toHaveCount(0);
+      }
+      const parts = await page
+        .locator('.mini-robot .robot-part')
+        .evaluateAll((nodes) =>
+          nodes.map((n) => ({
+            part: (n as HTMLElement).dataset.part!,
+            paint: (n as HTMLElement).dataset.paint!,
+          })),
+        );
+      for (const { part, paint } of parts) {
+        await page
+          .locator(`.robot-palette button[data-paint="${paint}"]`)
+          .tap();
+        await page.locator(`.big-robot button[data-part="${part}"]`).tap();
+      }
+      await page.locator('.check-robot').tap();
+    }
+    await expect(page.locator('.game-feedback.good')).toBeVisible();
+    await page.locator('.next-button').tap();
+  }
+}
 for (const { lang, level } of [
   { lang: 'en', level: 0 },
   { lang: 'he', level: 2 },
@@ -249,6 +365,8 @@ for (const { lang, level } of [
       await page.locator(`.card-${id}`).tap();
       if (id === 'memory') await solveMemory(page);
       else if (id === 'sequence') await solveSequence(page, lang);
+      else if (['trail', 'market', 'robot'].includes(id))
+        await solveAdventure(page, id);
       else if (id === 'bubbles') {
         const order = Array.from({ length: 10 }, (_, i) =>
           level === 2 ? 10 - i : i + 1,
@@ -430,3 +548,51 @@ test('ten victories play ten different Mia cheers before any repeats', async ({
   }
   expect(new Set(await cheers()).size).toBe(10);
 });
+
+for (const lang of ['en', 'he'])
+  test(`${lang}: difficulty follows levels and Uncle Tom gets a dedication`, async ({
+    page,
+  }) => {
+    await recordVoicePlayback(page);
+    await prepare(page, lang, 0, true);
+    await expect(page.locator('.card-count .difficulty')).toHaveText(
+      lang === 'en' ? 'Easy' : 'קל',
+    );
+    await expect(page.locator('.card-robot .difficulty')).toHaveText(
+      lang === 'en' ? 'Medium' : 'בינוני',
+    );
+    await expect(page.locator('.card-sums .difficulty')).toHaveText(
+      lang === 'en' ? 'Tricky' : 'מאתגר',
+    );
+    await expect(page.locator('.uncle-note')).toContainText(
+      lang === 'en' ? 'Uncle Tom' : 'דוד טום',
+    );
+    await page.locator('.uncle-note button').tap();
+    await expect
+      .poll(async () =>
+        (await playedVoices(page)).some((url) => url.includes('/dedication')),
+      )
+      .toBeTruthy();
+    await page.locator('.card-trail').tap();
+    await expect(page.locator('.game-level-info .difficulty')).toHaveText(
+      lang === 'en' ? 'Medium' : 'בינוני',
+    );
+    await expect
+      .poll(async () =>
+        (await playedVoices(page)).some((url) => url.includes('/trail')),
+      )
+      .toBeTruthy();
+    await page.evaluate(() => {
+      const saved = JSON.parse(localStorage.getItem('mia-arcade-v1')!);
+      saved.stars.count = 2;
+      saved.stars.memory = 2;
+      localStorage.setItem('mia-arcade-v1', JSON.stringify(saved));
+    });
+    await page.reload();
+    await expect(page.locator('.card-count .difficulty')).toHaveText(
+      lang === 'en' ? 'Medium' : 'בינוני',
+    );
+    await expect(page.locator('.card-memory .difficulty')).toHaveText(
+      lang === 'en' ? 'Tricky' : 'מאתגר',
+    );
+  });

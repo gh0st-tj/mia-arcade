@@ -5,7 +5,7 @@ import { createVoicePicker } from '../lib/voice-picker.ts';
 const catalog = JSON.parse(
   readFileSync(new URL('../lib/voice-lines.json', import.meta.url)),
 );
-test('every spoken event has variations and Mia has ten different celebrations', () => {
+test('every spoken event has variations and Mia has fourteen different celebrations', () => {
   const ids = [];
   for (const lines of Object.values(catalog)) {
     assert.ok(lines.length >= 2);
@@ -16,9 +16,9 @@ test('every spoken event has variations and Mia has ten different celebrations',
     }
   }
   assert.equal(new Set(ids).size, ids.length);
-  assert.equal(catalog.win.length, 10);
-  assert.equal(new Set(catalog.win.map((l) => l.en)).size, 10);
-  assert.equal(new Set(catalog.win.map((l) => l.he)).size, 10);
+  assert.equal(catalog.win.length, 14);
+  assert.equal(new Set(catalog.win.map((l) => l.en)).size, 14);
+  assert.equal(new Set(catalog.win.map((l) => l.he)).size, 14);
 });
 test('shuffle bags play all variations and never immediately repeat, even across cycles', () => {
   for (const random of [Math.random, () => 0, () => 0.999]) {

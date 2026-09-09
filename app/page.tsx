@@ -25,6 +25,9 @@ import {
 } from '@/lib/game-data';
 import { levelFor } from '@/lib/game-engine';
 import Game from './game';
+import AdventureGame from './adventure-game';
+import Difficulty from './difficulty';
+import type { AdventureId } from '@/lib/adventure-engine';
 import SequenceGame from './sequence-game';
 import WelcomeScene from './welcome-scene';
 import IntroWelcome from './intro-welcome';
@@ -204,7 +207,7 @@ export default function Arcade() {
     register({
       name: 'start_arcade_game',
       description:
-        'Open one of the nine games for Mia to play. Does not answer questions or award stars.',
+        'Open one of the twelve games for Mia to play. Does not answer questions or award stars.',
       inputSchema: {
         type: 'object',
         properties: { game: { type: 'string', enum: games.map((g) => g.id) } },
@@ -331,17 +334,22 @@ export default function Arcade() {
                 </p>
                 <h1>{t('You did it, Mia!', 'הצלחת, מיה!')}</h1>
                 <p>
-                  {perfect && active === 'memory'
-                    ? t('What a sharp memory! Wow!', 'איזה זיכרון חד! וואו!')
-                    : perfect
-                      ? t(
-                          'Every answer right on the first try. Wow!',
-                          'כל התשובות נכונות בפעם הראשונה. וואו!',
-                        )
-                      : t(
-                          'A new star for our superstar.',
-                          'כוכב חדש לכוכבת שלנו.',
-                        )}
+                  {perfect && ['trail', 'market', 'robot'].includes(active)
+                    ? t(
+                        'A whole adventure completed. Wonderful exploring!',
+                        'הרפתקה שלמה הסתיימה. איזה גילוי נפלא!',
+                      )
+                    : perfect && active === 'memory'
+                      ? t('What a sharp memory! Wow!', 'איזה זיכרון חד! וואו!')
+                      : perfect
+                        ? t(
+                            'Every answer right on the first try. Wow!',
+                            'כל התשובות נכונות בפעם הראשונה. וואו!',
+                          )
+                        : t(
+                            'A new star for our superstar.',
+                            'כוכב חדש לכוכבת שלנו.',
+                          )}
                 </p>
                 {(stars[active] || 0) < 3 && (
                   <p className="level-up-note">
@@ -353,8 +361,8 @@ export default function Arcade() {
                 )}
                 <p className="family-cheer">
                   {t(
-                    'Mum Lee, Dad Gal, Dean & Johnny are cheering for you!',
-                    'אמא לי, אבא גל, דין וג׳וני שמחים איתך!',
+                    'Mum Lee, Dad Gal, Dean, Johnny & Uncle Tom are cheering for you!',
+                    'אמא לי, אבא גל, דין, ג׳וני ודוד טום שמחים איתך!',
                   )}{' '}
                   💜
                 </p>
@@ -379,6 +387,18 @@ export default function Arcade() {
                     {t('LET’S PLAY TOGETHER', 'בואי נשחק יחד')}
                   </span>
                   <h1>{selected.title[lang]}</h1>
+                  <div className="game-level-info">
+                    <Difficulty
+                      value={selected.difficulty[levelFor(stars[active])]}
+                      lang={lang}
+                    />
+                    <span>
+                      {t(
+                        `Level ${levelFor(stars[active]) + 1} of 3`,
+                        `שלב ${levelFor(stars[active]) + 1} מתוך 3`,
+                      )}
+                    </span>
+                  </div>
                   <button
                     className="instruction"
                     onClick={() =>
@@ -392,7 +412,16 @@ export default function Arcade() {
                     {instructionFor(active, levelFor(stars[active]), lang)}
                   </button>
                 </div>
-                {active === 'sequence' ? (
+                {['trail', 'market', 'robot'].includes(active) ? (
+                  <AdventureGame
+                    key={`${active}-${run}-${lang}`}
+                    id={active as AdventureId}
+                    lang={lang}
+                    level={levelFor(stars[active])}
+                    onWin={win}
+                    speak={speak}
+                  />
+                ) : active === 'sequence' ? (
                   <SequenceGame
                     key={`${active}-${run}-${lang}`}
                     lang={lang}
@@ -511,7 +540,9 @@ export default function Arcade() {
                       aria-label={`${t('Play', 'שחקי')} ${g.title[lang]}`}
                     >
                       <div className="card-art">
-                        <span className="game-number">0{i + 1}</span>
+                        <span className="game-number">
+                          {String(i + 1).padStart(2, '0')}
+                        </span>
                         <span className="skill-badge">{g.skill[lang]}</span>
                         <div
                           className={`preview preview-${g.id}`}
@@ -550,6 +581,17 @@ export default function Arcade() {
                               <span>🍋</span>
                               <span>🍓</span>
                               <b>?</b>
+                            </>
+                          ) : ['trail', 'market', 'robot'].includes(g.id) ? (
+                            <>
+                              <span>{g.emoji}</span>
+                              <b>
+                                {g.id === 'trail'
+                                  ? '🐶'
+                                  : g.id === 'market'
+                                    ? '🍎 🥕'
+                                    : '♥ ★ ●'}
+                              </b>
                             </>
                           ) : g.id === 'sums' ? (
                             <>
@@ -598,6 +640,18 @@ export default function Arcade() {
                         </div>
                         <span className="card-play">
                           <Play size={20} fill="currentColor" />
+                        </span>
+                      </div>
+                      <div className="card-difficulty">
+                        <Difficulty
+                          value={g.difficulty[levelFor(stars[g.id])]}
+                          lang={lang}
+                        />
+                        <span>
+                          {t(
+                            `Level ${levelFor(stars[g.id]) + 1}`,
+                            `שלב ${levelFor(stars[g.id]) + 1}`,
+                          )}
                         </span>
                       </div>
                       <div className="card-bottom">
@@ -651,6 +705,10 @@ export default function Arcade() {
                       <button key={g.id} onClick={() => enter(g.id)}>
                         <span>{g.emoji}</span>
                         <h3>{g.title[lang]}</h3>
+                        <Difficulty
+                          value={g.difficulty[levelFor(stars[g.id])]}
+                          lang={lang}
+                        />
                         <div>
                           {[0, 1, 2].map((n) => (
                             <Star
@@ -668,6 +726,33 @@ export default function Arcade() {
                 </section>
               </TabsContent>
             </Tabs>
+            <div className="uncle-note">
+              <span>🛠️</span>
+              <div>
+                <strong>
+                  {t(
+                    'Built with love by Uncle Tom',
+                    'נבנה באהבה על ידי דוד טום',
+                  )}
+                </strong>
+                <p>
+                  {t(
+                    'A little world for Mia’s big imagination.',
+                    'עולם קטן לדמיון הגדול של מיה.',
+                  )}
+                </p>
+              </div>
+              <button
+                className="icon-button"
+                aria-label={t(
+                  'Hear Uncle Tom’s dedication',
+                  'השמעת ההקדשה של דוד טום',
+                )}
+                onClick={() => speak('dedication', '')}
+              >
+                <Volume2 size={21} />
+              </button>
+            </div>
             <div className="family-note">
               <Heart size={18} />
               <span>
