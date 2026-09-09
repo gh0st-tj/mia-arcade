@@ -38,3 +38,8 @@ next-env.d.ts
 /work/
 
 !.env.example
+
+/test-results/
+/playwright-report/
+/.playwright-mcp/
+*.tsbuildinfo

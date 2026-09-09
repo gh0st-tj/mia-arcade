@@ -17,6 +17,7 @@ import {
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Progress } from '@/components/ui/progress';
 import { games, type Lang, type GameId } from '@/lib/game-data';
+import { levelFor } from '@/lib/game-engine';
 import Game from './game';
 import WelcomeScene from './welcome-scene';
 import audioManifest from '@/lib/audio-manifest.json';
@@ -29,6 +30,7 @@ export default function Arcade() {
   const [ready, setReady] = useState(false);
   const [run, setRun] = useState(0);
   const [won, setWon] = useState(false);
+  const [perfect, setPerfect] = useState(false);
   const [tab, setTab] = useState('play');
   const [welcomeReplay, setWelcomeReplay] = useState(0);
   const audio = useRef<HTMLAudioElement | null>(null);
@@ -105,6 +107,7 @@ export default function Arcade() {
     stopAudio();
     setActive(id);
     setWon(false);
+    setPerfect(false);
     setRun((x) => x + 1);
     speak(id, games.find((g) => g.id === id)!.instruction[lang]);
   };
@@ -113,8 +116,9 @@ export default function Arcade() {
     setActive(null);
     setWon(false);
   };
-  const win = () => {
+  const win = (flawless: boolean) => {
     setWon(true);
+    setPerfect(flawless);
     setStars((s) => ({ ...s, [active!]: Math.min(3, (s[active!] || 0) + 1) }));
     speak(
       'win',
@@ -267,8 +271,26 @@ export default function Arcade() {
                 </p>
                 <h1>{t('You did it, Mia!', 'הצלחת, מיה!')}</h1>
                 <p>
-                  {t('A new star for our superstar.', 'כוכב חדש לכוכבת שלנו.')}
+                  {perfect && active === 'memory'
+                    ? t('What a sharp memory! Wow!', 'איזה זיכרון חד! וואו!')
+                    : perfect
+                      ? t(
+                          'Every answer right on the first try. Wow!',
+                          'כל התשובות נכונות בפעם הראשונה. וואו!',
+                        )
+                      : t(
+                          'A new star for our superstar.',
+                          'כוכב חדש לכוכבת שלנו.',
+                        )}
                 </p>
+                {(stars[active] || 0) < 3 && (
+                  <p className="level-up-note">
+                    {t(
+                      'Play again for a trickier level and your next star!',
+                      'שחקי שוב לשלב קשה יותר ולכוכב הבא!',
+                    )}
+                  </p>
+                )}
                 <p className="family-cheer">
                   {t(
                     'Mum Lee, Dad Gal, Dean & Johnny are cheering for you!',
@@ -309,6 +331,7 @@ export default function Arcade() {
                   key={`${active}-${run}-${lang}`}
                   id={active}
                   lang={lang}
+                  level={levelFor(stars[active])}
                   onWin={win}
                   speak={speak}
                   sound={sound}
@@ -329,11 +352,13 @@ export default function Arcade() {
                   {t('Let’s play.', 'בואי נשחק.')}
                 </h1>
                 <p>
-                  {t(
-                    'Big adventures for our little superstar.',
-                    'הרפתקאות גדולות לכוכבת הקטנה שלנו.',
-                  )}
-                  <br />
+                  <span className="welcome-extra">
+                    {t(
+                      'Big adventures for our little superstar.',
+                      'הרפתקאות גדולות לכוכבת הקטנה שלנו.',
+                    )}
+                    <br />
+                  </span>
                   {t(
                     'Pick a game. Play your way. Shine bright.',
                     'בחרי משחק, שחקי בכיף ואספי כוכבים.',

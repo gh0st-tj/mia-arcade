@@ -1,0 +1,14 @@
+.env
+.env.*
+!.env.example
+.git
+.claude
+work
+.wrangler
+.vinext
+.playwright-mcp
+node_modules
+dist
+*.tsbuildinfo
+test-results
+playwright-report

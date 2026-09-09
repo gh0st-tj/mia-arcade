@@ -1781,3 +1781,267 @@ footer {
     display: none;
   }
 }
+
+/* Difficulty levels, first-try feedback and the trickier rounds. */
+.level-badge {
+  display: inline-flex;
+  gap: 1px;
+  color: #ffdb7c;
+  flex-shrink: 0;
+}
+.answer-options {
+  flex-wrap: wrap;
+}
+.answer-tile.missed:not(.answer-correct) {
+  opacity: 0.55;
+  border-style: dashed;
+}
+.color-options.choices-6 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 420px;
+  margin-inline: auto;
+}
+.color-options.choices-6 .answer-tile {
+  min-width: 0;
+}
+.counting-stars button {
+  transition: transform 0.2s ease-out;
+}
+.shape-target {
+  transition:
+    transform 0.25s ease-out,
+    color 0.25s ease-out;
+}
+.memory-grid.pairs-8 {
+  max-width: 560px;
+}
+.memory-grid.pairs-8 .memory-tile {
+  min-height: 104px;
+}
+.bubble-hint {
+  margin: -14px 0 18px;
+  font-size: 14px;
+  color: #cbb5d9;
+}
+.bubbles-grid.drifting .bubble:not(.popped) {
+  animation:
+    bob 2.2s infinite ease-in-out,
+    arrive 0.35s ease-out;
+}
+.bubbles-grid.drifting .bubble:nth-child(3n) {
+  animation-delay: -0.7s, 0s;
+}
+.rocket {
+  display: inline-block;
+  vertical-align: middle;
+  margin-inline-start: 8px;
+  color: #ffdb7c;
+  animation: launch 1.4s ease-in forwards;
+}
+@keyframes launch {
+  0% {
+    transform: translate(0, 0) rotate(-45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(60px, -90px) rotate(-45deg) scale(0.6);
+    opacity: 0;
+  }
+}
+.level-up-note {
+  font-size: 15px;
+  color: #d8c2ea;
+  margin-top: -6px;
+}
+@media (max-width: 680px) {
+  .answer-options.choices-4:not(.color-options) {
+    gap: 8px;
+  }
+  .answer-options.choices-4:not(.color-options) .answer-tile {
+    min-width: 64px;
+    flex: 1 1 0;
+    padding: 10px 6px;
+    font-size: 33px;
+  }
+  .memory-grid.pairs-8 .memory-tile {
+    min-height: 82px;
+  }
+  .memory-grid.pairs-8 .memory-tile > span,
+  .memory-grid.pairs-6 .memory-tile > span {
+    font-size: 40px;
+  }
+  .memory-grid.pairs-8 .memory-tile small,
+  .memory-grid.pairs-6 .memory-tile small {
+    font-size: 11px;
+  }
+  .color-options.choices-6 {
+    gap: 8px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bubbles-grid.drifting .bubble:not(.popped),
+  .rocket {
+    animation: none;
+  }
+}
+
+/* Comfortable touch targets and complete family framing on small screens. */
+.brand,
+.icon-button,
+.language-button,
+.welcome-audio,
+.scene-control,
+.quiet-button {
+  min-height: 44px;
+}
+.icon-button,
+.language-button,
+.scene-control {
+  min-width: 44px;
+}
+.lobby-tabs[data-slot='tabs-list'] {
+  height: 56px !important;
+}
+.lobby-tabs [data-slot='tabs-trigger'] {
+  min-height: 44px;
+}
+@media (max-width: 680px) {
+  .welcome {
+    margin-right: 0;
+    min-height: 250px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  }
+  .welcome-copy {
+    min-width: 0;
+    padding: 25px 0;
+  }
+  .welcome h1 {
+    font-size: clamp(30px, 8.7vw, 40px);
+  }
+  .welcome-extra {
+    display: none;
+  }
+  .welcome-art {
+    margin-left: 0;
+    height: 226px;
+    overflow: visible;
+  }
+  .welcome-scene {
+    width: 125%;
+    margin-left: -25%;
+  }
+  .welcome-art img,
+  .welcome-art video {
+    object-fit: contain;
+    object-position: center;
+  }
+  .art-label {
+    font-size: 10px;
+    bottom: 29px;
+    left: 46%;
+  }
+  .scene-control {
+    top: 0;
+    inset-inline-end: 0;
+  }
+  .welcome-audio {
+    font-size: 12px;
+    text-align: start;
+    line-height: 1.4;
+  }
+  .welcome-audio > svg {
+    display: none;
+  }
+  .welcome-label {
+    font-size: 9px;
+    letter-spacing: 0.5px;
+  }
+  .topbar {
+    padding-inline: max(14px, env(safe-area-inset-left));
+  }
+  .top-controls {
+    flex-shrink: 0;
+  }
+  footer {
+    gap: 12px;
+    padding-bottom: max(20px, env(safe-area-inset-bottom));
+  }
+  footer p {
+    text-align: end;
+  }
+  .game-board {
+    padding-bottom: 24px;
+  }
+  [dir='rtl'] .welcome-scene {
+    direction: ltr;
+  }
+  [dir='rtl'] .quiet-button > svg,
+  [dir='rtl'] .next-button > svg {
+    transform: rotate(180deg);
+  }
+}
+@media (max-width: 480px) {
+  .bubbles-grid {
+    grid-template-columns: repeat(4, minmax(44px, 1fr));
+    max-width: 330px;
+  }
+  .bubble {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+@media (max-width: 380px) {
+  .brand-sub {
+    display: none;
+  }
+  .brand {
+    font-size: 15px;
+    gap: 7px;
+  }
+  .welcome-art {
+    height: 220px;
+  }
+  .art-label {
+    font-size: 9px;
+    padding: 5px 7px;
+  }
+  footer {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+/* Long patterns stay in reading order and wrap instead of widening a phone. */
+.pattern-row {
+  max-width: 100%;
+  flex-wrap: wrap;
+  row-gap: 8px;
+}
+@media (max-width: 380px) {
+  .answer-options.choices-4:not(.color-options) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 680px) {
+  .pattern-row.long {
+    gap: 2px;
+  }
+  .pattern-row.long > span {
+    font-size: 25px;
+  }
+  .pattern-row.long .missing-pattern {
+    font-size: 24px;
+    width: 34px;
+    height: 42px;
+  }
+}
+.brand {
+  padding: 0;
+}
+@media (max-width: 380px) {
+  .brand {
+    font-size: 14px;
+    gap: 5px;
+  }
+}

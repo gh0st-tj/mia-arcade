@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
-import { ArrowRight, Check, Star } from 'lucide-react';
+import { ArrowRight, Check, Rocket, Star } from 'lucide-react';
 import { Progress } from '@/components/ui/progress';
 import {
   colors,
@@ -10,31 +10,38 @@ import {
   fruitNames,
   makeQuestion,
   makeMemoryDeck,
+  bubbleOrder,
   shuffle,
+  ROUNDS,
+  type Level,
 } from '@/lib/game-engine';
 import type { Lang, GameId } from '@/lib/game-data';
 type Props = {
   id: GameId;
   lang: Lang;
-  onWin: () => void;
+  level: Level;
+  /** `perfect` is true when every answer was right on the first try. */
+  onWin: (perfect: boolean) => void;
   speak: (key: string, text: string) => void;
   sound: boolean;
 };
 
-export default function Game({ id, lang, onWin, speak, sound }: Props) {
+export default function Game({ id, lang, level, onWin, speak, sound }: Props) {
   const t = (en: string, he: string) => (lang === 'en' ? en : he);
   const [round, setRound] = useState(0);
-  const [question, setQuestion] = useState(() => makeQuestion(id, 0));
+  const [question, setQuestion] = useState(() => makeQuestion(id, 0, level));
   const [feedback, setFeedback] = useState<'correct' | 'retry' | null>(null);
   const [wrong, setWrong] = useState<number | null>(null);
+  const [missed, setMissed] = useState<number[]>([]);
+  const [misses, setMisses] = useState(0);
+  const [perfectRounds, setPerfectRounds] = useState(0);
   const [counted, setCounted] = useState<number[]>([]);
-  const [deck] = useState(makeMemoryDeck);
+  const [deck] = useState(() => makeMemoryDeck(level));
   const [open, setOpen] = useState<number[]>([]);
   const [matched, setMatched] = useState<number[]>([]);
-  const [bubbles] = useState(() =>
-    shuffle(Array.from({ length: 10 }, (_, i) => i + 1)),
-  );
-  const [nextBubble, setNextBubble] = useState(1);
+  const order = bubbleOrder(level);
+  const [bubbles, setBubbles] = useState(() => shuffle(order));
+  const [popped, setPopped] = useState<number[]>([]);
   const [done, setDone] = useState(false);
   const lock = useRef(false);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -75,12 +82,15 @@ export default function Game({ id, lang, onWin, speak, sound }: Props) {
   };
   const retry = (value: number) => {
     setWrong(value);
+    setMissed((m) => (m.includes(value) ? m : [...m, value]));
+    setMisses((m) => m + 1);
     setFeedback('retry');
     speak(
       'retry',
       t('Let’s try another one. You can do it!', 'בואי ננסה שוב. את יכולה!'),
     );
   };
+  const firstTry = missed.length === 0;
   const answer = (value: number) => {
     if (lock.current) return;
     if (value !== question.answer) {
@@ -88,23 +98,26 @@ export default function Game({ id, lang, onWin, speak, sound }: Props) {
       return;
     }
     lock.current = true;
+    if (missed.length === 0) setPerfectRounds((p) => p + 1);
     setFeedback('correct');
     setWrong(null);
     chime();
   };
   const next = () => {
-    if (round === 4) {
-      onWin();
+    if (round === ROUNDS - 1) {
+      onWin(perfectRounds === ROUNDS);
       return;
     }
     const r = round + 1;
     setRound(r);
-    setQuestion(makeQuestion(id, r));
+    setQuestion(makeQuestion(id, r, level, Math.random, question.answer));
     setFeedback(null);
     setWrong(null);
+    setMissed([]);
     setCounted([]);
     lock.current = false;
   };
+  const pairs = deck.length / 2;
   const flip = (index: number) => {
     if (lock.current || open.includes(index) || matched.includes(index)) return;
     setFeedback(null);
@@ -114,16 +127,17 @@ export default function Game({ id, lang, onWin, speak, sound }: Props) {
       lock.current = true;
       if (deck[turned[0]] === deck[index]) {
         chime();
-        const pairs = [...matched, ...turned];
-        setMatched(pairs);
+        const found = [...matched, ...turned];
+        setMatched(found);
         setFeedback('correct');
         timer.current = setTimeout(() => {
           setOpen([]);
           lock.current = false;
           setFeedback(null);
-          if (pairs.length === 8) setDone(true);
+          if (found.length === deck.length) setDone(true);
         }, 600);
       } else {
+        setMisses((m) => m + 1);
         setFeedback('retry');
         timer.current = setTimeout(() => {
           setOpen([]);
@@ -133,8 +147,9 @@ export default function Game({ id, lang, onWin, speak, sound }: Props) {
       }
     }
   };
+  const nextBubble = order[popped.length];
   const pop = (n: number) => {
-    if (lock.current || n < nextBubble) return;
+    if (lock.current || popped.includes(n)) return;
     if (n !== nextBubble) {
       retry(n);
       return;
@@ -142,48 +157,69 @@ export default function Game({ id, lang, onWin, speak, sound }: Props) {
     setWrong(null);
     setFeedback(null);
     speak(`number-${n}`, String(n));
-    setNextBubble(n + 1);
-    if (n === 10) {
+    const nowPopped = [...popped, n];
+    setPopped(nowPopped);
+    // From the second star on, the bubbles drift to new spots after each pop.
+    if (level > 0 && nowPopped.length < order.length)
+      setBubbles(shuffle(order));
+    if (nowPopped.length === order.length) {
       lock.current = true;
+      chime();
       setDone(true);
     }
   };
+  const countdown = id === 'bubbles' && level === 2;
   const progress =
     id === 'memory'
-      ? (matched.length / 8) * 100
+      ? (matched.length / deck.length) * 100
       : id === 'bubbles'
-        ? (nextBubble - 1) * 10
-        : ((round + (feedback === 'correct' ? 1 : 0)) / 5) * 100;
-  const successText = t('That’s it, Mia!', 'בדיוק, מיה!');
+        ? (popped.length / order.length) * 100
+        : ((round + (feedback === 'correct' ? 1 : 0)) / ROUNDS) * 100;
+  const successText =
+    feedback === 'correct' && firstTry && id !== 'memory'
+      ? t('First try! Superstar!', 'בפעם הראשונה! כוכבת!')
+      : t('That’s it, Mia!', 'בדיוק, מיה!');
   const retryText =
     id === 'memory'
       ? t('Two new friends! Try another pair.', 'שני חברים חדשים! נסי זוג אחר.')
       : t('Nearly! Take another look.', 'כמעט! הסתכלי שוב.');
+  const levelLabel = t(`Level ${level + 1}`, `שלב ${level + 1}`);
   return (
-    <div className={`game-board board-${id}`}>
+    <div className={`game-board board-${id} level-${level}`}>
       <div className="round-progress">
         <span>
           {id === 'memory'
             ? t(
-                `${matched.length / 2} of 4 pairs`,
-                `${matched.length / 2} מתוך 4 זוגות`,
+                `${matched.length / 2} of ${pairs} pairs`,
+                `${matched.length / 2} מתוך ${pairs} זוגות`,
               )
             : id === 'bubbles'
               ? t(
-                  `${nextBubble - 1} of 10 bubbles`,
-                  `${nextBubble - 1} מתוך 10 בועות`,
+                  `${popped.length} of ${order.length} bubbles`,
+                  `${popped.length} מתוך ${order.length} בועות`,
                 )
-              : t(`Adventure ${round + 1} of 5`, `הרפתקה ${round + 1} מתוך 5`)}
+              : t(
+                  `Adventure ${round + 1} of ${ROUNDS}`,
+                  `הרפתקה ${round + 1} מתוך ${ROUNDS}`,
+                )}
         </span>
         <Progress
           value={progress}
           aria-label={t('Game progress', 'התקדמות במשחק')}
         />
-        <Star size={18} />
+        <span
+          className="level-badge"
+          aria-label={levelLabel}
+          title={levelLabel}
+        >
+          {Array.from({ length: level + 1 }, (_, i) => (
+            <Star key={i} size={13} fill="currentColor" />
+          ))}
+        </span>
       </div>
       {id === 'memory' ? (
         <>
-          <div className="memory-grid">
+          <div className={`memory-grid pairs-${pairs}`}>
             {deck.map((f, i) => {
               const shown = open.includes(i) || matched.includes(i);
               return (
@@ -214,14 +250,31 @@ export default function Game({ id, lang, onWin, speak, sound }: Props) {
         <>
           <h2 className="bubble-instruction">
             {done ? (
-              t('All popped!', 'כולן התפוצצו!')
+              countdown ? (
+                <>
+                  {t('Blast off!', 'המראה!')} <Rocket className="rocket" />
+                </>
+              ) : (
+                t('All popped!', 'כולן התפוצצו!')
+              )
             ) : (
               <>
-                {t('Find number', 'מצאי את המספר')} <b>{nextBubble}</b>
+                {countdown
+                  ? t('Countdown! Find number', 'ספירה לאחור! מצאי את המספר')
+                  : t('Find number', 'מצאי את המספר')}{' '}
+                <b>{nextBubble}</b>
               </>
             )}
           </h2>
-          <div className="bubbles-grid">
+          {countdown && !done && (
+            <p className="bubble-hint">
+              {t(
+                'Pop from ten down to one to launch the rocket.',
+                'פוצצי מעשר עד אחת כדי לשגר את הרקטה.',
+              )}
+            </p>
+          )}
+          <div className={`bubbles-grid ${level > 0 ? 'drifting' : ''}`}>
             {bubbles.map((n, i) => (
               <button
                 key={n}
@@ -236,12 +289,12 @@ export default function Game({ id, lang, onWin, speak, sound }: Props) {
                     ][i % 5],
                   } as React.CSSProperties
                 }
-                className={`bubble ${n < nextBubble ? 'popped' : ''} ${wrong === n ? 'try-again' : ''}`}
-                disabled={n < nextBubble}
+                className={`bubble ${popped.includes(n) ? 'popped' : ''} ${wrong === n ? 'try-again' : ''}`}
+                disabled={popped.includes(n)}
                 onClick={() => pop(n)}
                 aria-label={t(`Pop ${n}`, `פוצצי ${n}`)}
               >
-                {n < nextBubble ? <Check size={26} /> : n}
+                {popped.includes(n) ? <Check size={26} /> : n}
               </button>
             ))}
           </div>
@@ -252,29 +305,35 @@ export default function Game({ id, lang, onWin, speak, sound }: Props) {
             {id === 'count' ? (
               <>
                 <div className="counting-stars">
-                  {Array.from({ length: question.count! }, (_, i) => (
-                    <button
-                      className={counted.includes(i) ? 'counted' : ''}
-                      key={i}
-                      onClick={() => {
-                        if (counted.includes(i)) return;
-                        setCounted((c) => [...c, i]);
-                        speak(
-                          `number-${counted.length + 1}`,
-                          String(counted.length + 1),
-                        );
-                      }}
-                      aria-label={t(
-                        `Count star ${i + 1}`,
-                        `ספרי כוכב ${i + 1}`,
-                      )}
-                    >
-                      ⭐
-                      {counted.includes(i) && (
-                        <small>{counted.indexOf(i) + 1}</small>
-                      )}
-                    </button>
-                  ))}
+                  {Array.from({ length: question.count! }, (_, i) => {
+                    const [dx, dy, rot] = question.scatter?.[i] ?? [0, 0, 0];
+                    return (
+                      <button
+                        className={counted.includes(i) ? 'counted' : ''}
+                        key={i}
+                        style={{
+                          transform: `translate(${dx}px, ${dy}px) rotate(${rot}deg)`,
+                        }}
+                        onClick={() => {
+                          if (counted.includes(i)) return;
+                          setCounted((c) => [...c, i]);
+                          speak(
+                            `number-${counted.length + 1}`,
+                            String(counted.length + 1),
+                          );
+                        }}
+                        aria-label={t(
+                          `Count star ${i + 1}`,
+                          `ספרי כוכב ${i + 1}`,
+                        )}
+                      >
+                        ⭐
+                        {counted.includes(i) && (
+                          <small>{counted.indexOf(i) + 1}</small>
+                        )}
+                      </button>
+                    );
+                  })}
                 </div>
                 <p>{t('How many stars can you see?', 'כמה כוכבים את רואה?')}</p>
                 <span className="count-hint">
@@ -291,20 +350,39 @@ export default function Game({ id, lang, onWin, speak, sound }: Props) {
                   style={{ background: colors[question.color!].value }}
                 />
                 <p>{t('Find the same color', 'מצאי את אותו הצבע')}</p>
+                {level > 0 && (
+                  <span className="count-hint">
+                    {t(
+                      'Careful, some colors are close cousins!',
+                      'שימי לב, יש צבעים שדומים מאוד!',
+                    )}
+                  </span>
+                )}
               </>
             ) : id === 'shapes' ? (
               <>
                 <span className="dean-hint">
                   👶 {t('Let’s find a toy for Dean', 'בואי נמצא צעצוע לדין')}
                 </span>
-                <div className="shape-target">
+                <div
+                  className="shape-target"
+                  style={{
+                    transform: `rotate(${question.shapeStyle?.rotate ?? 0}deg)`,
+                    color:
+                      question.shapeStyle && question.shapeStyle.color >= 0
+                        ? colors[question.shapeStyle.color].value
+                        : undefined,
+                  }}
+                >
                   {shapes[question.shape!].value}
                 </div>
                 <p>{t('Which shape is the same?', 'איזו צורה זהה?')}</p>
               </>
             ) : (
               <>
-                <div className="pattern-row">
+                <div
+                  className={`pattern-row ${question.sequence!.length > 6 ? 'long' : ''}`}
+                >
                   {question.sequence!.map((f, i) => (
                     <span key={i}>{f}</span>
                   ))}
@@ -315,12 +393,12 @@ export default function Game({ id, lang, onWin, speak, sound }: Props) {
             )}
           </div>
           <div
-            className={`answer-options ${id === 'colors' ? 'color-options' : ''}`}
+            className={`answer-options ${id === 'colors' ? 'color-options' : ''} choices-${question.choices.length}`}
           >
             {question.choices.map((value) => (
               <button
                 key={value}
-                className={`answer-tile ${feedback === 'correct' && value === question.answer ? 'answer-correct' : ''} ${wrong === value ? 'try-again' : ''}`}
+                className={`answer-tile ${feedback === 'correct' && value === question.answer ? 'answer-correct' : ''} ${wrong === value ? 'try-again' : ''} ${missed.includes(value) ? 'missed' : ''}`}
                 onClick={() => answer(value)}
                 disabled={feedback === 'correct'}
                 aria-label={
@@ -345,7 +423,9 @@ export default function Game({ id, lang, onWin, speak, sound }: Props) {
                   <>
                     <span
                       className="shape-option"
-                      style={{ color: colors[(value + 2) % 6].value }}
+                      style={{
+                        color: colors[(value + 2) % colors.length].value,
+                      }}
                     >
                       {shapes[value].value}
                     </span>
@@ -381,14 +461,17 @@ export default function Game({ id, lang, onWin, speak, sound }: Props) {
       </div>
       {id !== 'memory' && id !== 'bubbles' && feedback === 'correct' && (
         <button className="primary-button next-button" onClick={next}>
-          {round === 4
+          {round === ROUNDS - 1
             ? t('Collect my star', 'לאסוף את הכוכב שלי')
             : t('Next one!', 'הבא!')}
           <ArrowRight size={19} />
         </button>
       )}
       {done && (
-        <button className="primary-button next-button" onClick={onWin}>
+        <button
+          className="primary-button next-button"
+          onClick={() => onWin(id === 'memory' ? misses < pairs : misses === 0)}
+        >
           <Star size={20} />
           {t('Collect my star', 'לאסוף את הכוכב שלי')}
         </button>

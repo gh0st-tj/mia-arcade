@@ -1,0 +1,12 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "npm run build:vercel",
+  "installCommand": "npm ci",
+  "outputDirectory": "dist/client",
+  "headers": [
+    { "source": "/audio/(.*)", "headers": [{"key":"Cache-Control","value":"public, max-age=86400"}] },
+    { "source": "/video/(.*)", "headers": [{"key":"Cache-Control","value":"public, max-age=86400"}] },
+    { "source": "/(.*)", "headers": [{"key":"X-Content-Type-Options","value":"nosniff"},{"key":"Referrer-Policy","value":"strict-origin-when-cross-origin"}] }
+  ]
+}

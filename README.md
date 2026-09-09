@@ -1,75 +1,74 @@
 # Mia’s Babylon Arcade
 
-A personal Babylon-inspired space arcade for Mia, ages 4–6, with her baby brother Dean, dog Johnny, Mum Lee and Dad Gal. English and Hebrew, touch and keyboard controls, optional spoken instructions, six games, no time pressure, and 18 collectible stars saved on the current device.
+Six gentle learning games made for Mia, ages 4–6, with her baby brother Dean, dog Johnny, Mum Lee and Dad Gal. English and Hebrew, touch and keyboard controls, three difficulty levels, spoken instructions, and 18 collectible stars saved in the browser.
 
-- **Star Catcher:** count 2–6 stars; tap stars to count aloud.
-- **Mia’s Color Studio:** visually match colors without needing to read.
-- **Johnny & Friends:** find four pairs, including Johnny and Dean.
-- **Dean’s Toy Box:** match five familiar shapes.
-- **Picnic Patterns:** complete AB and AAB fruit patterns.
-- **Bubble Pop:** find and pop numbers from 1 to 10.
+- **Star Catcher:** count stars, with spoken counting on each tap.
+- **Mia’s Color Studio:** match colors, with closer shades on later levels.
+- **Johnny & Friends:** find 4, 6 or 8 pairs.
+- **Dean’s Toy Box:** match shapes, then try rotated shapes and similar alternatives.
+- **Picnic Patterns:** complete AB, AAB, ABB and ABC patterns.
+- **Bubble Pop:** count to ten; the final level is a rocket countdown.
 
-Each completed game earns one star, up to three per game. Games remain replayable. Wrong answers invite another attempt. Progress is stored in this browser only; clearing site data removes it. Sound and language preferences are also stored locally.
+No timers or lives. Every completed game earns one star, up to three per game. Progress, language and sound preferences stay in the current browser.
 
-## Run locally
+## Local development
 
-Requires Node 22.13 or later.
+Node 22.13+ is required.
 
 ```sh
-npm install --prefix site
-npm run dev
+npm ci
+npm run dev:web
 ```
 
-Open the local address printed by the server. The app lives in `site/`; the top-level package forwards the common commands.
+Open the URL printed by the server. `dev:web` runs without Sites services. The original Sites development and Worker build remain available as `npm run dev` and `npm run build`.
+
+## Vercel deployment
+
+```sh
+npm run build:vercel
+vercel --prod
+```
+
+`vercel.json` configures the static export in `dist/client`. The arcade and its media run entirely in the browser; deployment does not require API keys or a backend. The Git repository can be connected with `vercel git connect https://github.com/gh0st-tj/mia-arcade.git` for automatic deployments from `main`.
+
+## Tests
 
 ```sh
 npm test
-npm run build
+npx tsc --noEmit
+npm run build:vercel
+npx playwright install chromium webkit
+npm run test:mobile
 ```
 
-## API keys
+The mobile suite needs Python 3 for its local static file server. It tests Chromium and WebKit with touch-enabled Android/iPhone emulation: 320–430px phones, tablets, landscape, English and Hebrew, 44px touch targets, all six complete games, later levels, saved stars, voice playback, video, mute and reduced motion. These are automated browser tests, not physical-device certification. To run against a deployment, set `ARCADE_TEST_URL` to its origin.
 
-Keep keys in the existing **`/Users/tom/Desktop/scripts/mia-arcade/.env`**. Its existing contents have been preserved. `.env.example` lists the supported names:
+## Optional media-generation keys
+
+The game includes 38 ElevenLabs MP3s and a fal.ai welcome video. Playing uses no generation credits. API keys are needed only to regenerate media.
+
+Copy `.env.example` to `.env` at the repository root. For the original workspace where this repository is inside a `site/` folder, generators also support the existing parent `.env`.
 
 ```dotenv
 ELEVENLABS_API_KEY=your_key
 ELEVENLABS_VOICE_ID=your_voice_id
 ELEVENLABS_MODEL=eleven_turbo_v2_5
 ELEVENLABS_HEBREW_MODEL=eleven_v3
-FAL_KEY=
+FAL_KEY=your_key
 ```
 
-The app works without API keys. No secret is sent to the browser or included in the hosted site. Do not prefix secrets with `NEXT_PUBLIC_` or `VITE_`.
-
-### ElevenLabs voice clips
+The existing `fal_api_key` spelling is also accepted. Keys remain local and are excluded from Git and Vercel uploads. Never use `NEXT_PUBLIC_` or `VITE_` prefixes for secrets.
 
 ```sh
 npm run generate:voices
-npm run build
-```
-
-The generator reads the parent `.env`, or `site/.env` when the site is used on its own. It generates 38 short MP3s (instructions, encouragement, numbers and welcome in both languages) into `site/public/audio/`, and updates the audio manifest. Already generated clips are skipped; to regenerate intentionally use `npm run generate:voices --prefix site -- --force`. Generation uses ElevenLabs credits. The selected Hebrew model must support Hebrew; the default is `eleven_v3`.
-
-**Current status:** all 38 English and Hebrew ElevenLabs clips have been generated. The game uses these saved clips without live API calls during play. Browser speech remains a fallback if a clip cannot load; its voices depend on the device. The sound button mutes speech and game sounds. No microphone is used. Rebuild and redeploy after generating new clips to update the hosted copy.
-
-### fal.ai welcome video
-
-The welcome portrait is animated using **fal.ai / Kling 2.5 Turbo Standard**, with a five-second silent clip featuring Mia waving, Dean smiling, and Johnny tilting his head. The ElevenLabs greeting plays when “A little hello for Mia” is pressed. The animation plays once on arrival and can be paused or replayed; reduced-motion users initially see the still portrait.
-
-```sh
 npm run generate:video
 ```
 
-The generator accepts `FAL_KEY` or your existing `fal_api_key` entry in the root `.env`. It uses the generated illustration as the input, not the original photographs. A submitted job is saved in `site/work/fal-welcome.json`; rerunning resumes that job instead of paying for another generation. An existing video is reused. The finished video is saved to `site/public/video/mia-welcome.mp4` and served as part of the game; playing it does not spend credits.
+Voice generation saves MP3s in `public/audio/` and updates `lib/audio-manifest.json`. It skips existing files. Use `npm run generate:voices -- --force` only to intentionally regenerate paid clips.
 
-The original family illustration used the built-in image tool and needs no OpenAI API key. The original family photographs are not included in the site.
+The five-second video uses **fal.ai / Kling 2.5 Turbo Standard** to animate the generated family portrait. Its request is saved in ignored `work/fal-welcome.json`, so reruns resume that job without another charge. The final clip is `public/video/mia-welcome.mp4`. The delivered video is optimized to 960×640 H.264 and about 0.5 MB. Reduced-motion users see the still portrait until they choose to play it. Press “A little hello for Mia” to replay the video with the ElevenLabs greeting.
 
-## Validation
-
-- Production build and TypeScript check.
-- Randomized question invariants across 2,000 generated rounds; sequence correctness; complete memory pairs; bubble shuffle invariants.
-- HTTP checks for the local page and image.
-- Browser interaction/visual testing was not performed. Optional WebMCP tools are feature-detected; a supported WebMCP validation context was not available, so those tools are unverified.
+Rebuild and redeploy after generating new media. Browser speech is a fallback when an audio file cannot load; available fallback voices depend on the device. The original family photographs are not distributed with the app. Artwork provenance is in [ARTWORK.md](ARTWORK.md).
 
 ## Inspiration
 
