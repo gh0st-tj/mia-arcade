@@ -27,6 +27,9 @@ import { levelFor } from '@/lib/game-engine';
 import Game from './game';
 import SequenceGame from './sequence-game';
 import WelcomeScene from './welcome-scene';
+import IntroWelcome from './intro-welcome';
+import voiceLines from '@/lib/voice-lines.json';
+import { createVoicePicker } from '@/lib/voice-picker';
 import audioManifest from '@/lib/audio-manifest.json';
 
 export default function Arcade() {
@@ -40,8 +43,13 @@ export default function Arcade() {
   const [perfect, setPerfect] = useState(false);
   const [tab, setTab] = useState('play');
   const [welcomeReplay, setWelcomeReplay] = useState(0);
+  const [introOpen, setIntroOpen] = useState(false);
+  const [introCaption, setIntroCaption] = useState('');
+  const voicePicker = useRef(createVoicePicker());
   const audio = useRef<HTMLAudioElement | null>(null);
   const t = (en: string, he: string) => (lang === 'en' ? en : he);
+  // Preferences are browser-only; restore after hydration so server markup stays stable.
+  /* eslint-disable react/react-compiler */
   useEffect(() => {
     try {
       const saved = JSON.parse(localStorage.getItem('mia-arcade-v1') || '{}');
@@ -64,8 +72,14 @@ export default function Arcade() {
       setLang(saved.lang === 'he' ? 'he' : 'en');
       setSound(saved.sound !== false);
     } catch {}
+    try {
+      setIntroOpen(localStorage.getItem('mia-intro-seen-v1') !== '1');
+    } catch {
+      setIntroOpen(true);
+    }
     setReady(true);
   }, []);
+  /* eslint-enable react/react-compiler */
   useEffect(() => {
     if (ready)
       try {
@@ -86,6 +100,17 @@ export default function Arcade() {
   };
   const speak = (key: string, text: string) => {
     stopAudio();
+    const lines = (
+      voiceLines as Record<string, { id: string; en: string; he: string }[]>
+    )[key];
+    const id = voicePicker.current(
+      `${lang}/${key}`,
+      lines?.map((line) => line.id) ?? [],
+    );
+    const line = lines?.find((line) => line.id === id);
+    text = line?.[lang] ?? text;
+    key = line?.id ?? key;
+    if (key === 'intro' || key.startsWith('intro-')) setIntroCaption(text);
     if (!sound) return;
     let fallbackStarted = false;
     const fallback = () => {
@@ -137,7 +162,9 @@ export default function Arcade() {
     );
   };
   const actionsRef = useRef({ enter, back, active, stars });
-  actionsRef.current = { enter, back, active, stars };
+  useEffect(() => {
+    actionsRef.current = { enter, back, active, stars };
+  });
   useEffect(() => {
     const context = (
       document as unknown as {
@@ -177,7 +204,7 @@ export default function Arcade() {
     register({
       name: 'start_arcade_game',
       description:
-        'Open one of the six games for Mia to play. Does not answer questions or award stars.',
+        'Open one of the nine games for Mia to play. Does not answer questions or award stars.',
       inputSchema: {
         type: 'object',
         properties: { game: { type: 'string', enum: games.map((g) => g.id) } },
@@ -198,10 +225,35 @@ export default function Arcade() {
     });
     return () => lifecycle.abort();
   }, []);
+  const closeIntro = () => {
+    stopAudio();
+    setIntroOpen(false);
+    try {
+      localStorage.setItem('mia-intro-seen-v1', '1');
+    } catch {}
+  };
   const total = Object.values(stars).reduce((a, b) => a + b, 0);
   const selected = games.find((g) => g.id === active);
   return (
     <div className="arcade-shell" dir={lang === 'he' ? 'rtl' : 'ltr'}>
+      {ready && introOpen && (
+        <IntroWelcome
+          lang={lang}
+          sound={sound}
+          caption={introCaption}
+          onPlay={() => speak('intro', '')}
+          onClose={closeIntro}
+          onStop={stopAudio}
+          onLanguage={() => {
+            setIntroCaption('');
+            setLang(lang === 'en' ? 'he' : 'en');
+          }}
+          onSound={() => {
+            stopAudio();
+            setSound(!sound);
+          }}
+        />
+      )}
       <header className="topbar">
         <button
           className="brand"
@@ -406,6 +458,17 @@ export default function Arcade() {
                   </span>
                   {t('A little hello for Mia', 'ברכה קטנה למיה')}
                   <Play size={13} fill="currentColor" />
+                </button>
+                <button
+                  className="intro-launch quiet-button"
+                  onClick={() => {
+                    stopAudio();
+                    setIntroCaption('');
+                    setIntroOpen(true);
+                  }}
+                >
+                  <Play size={17} />
+                  {t('Watch my intro', 'הפתיח שלי')}
                 </button>
               </div>
               <div className="welcome-art">

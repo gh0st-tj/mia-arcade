@@ -25,6 +25,7 @@ async function prepare(page: Page, lang = 'en', level = 0, sound = false) {
       ),
     { lang, level, sound, ids },
   );
+  await page.evaluate(() => localStorage.setItem('mia-intro-seen-v1', '1'));
   await page.reload();
   await expect(page.locator('.game-card')).toHaveCount(ids.length);
 }
@@ -301,7 +302,7 @@ test('voice, video, mute and reduced motion work on mobile', async ({
   await prepare(page, 'en', 0, true);
   await expect(page.locator('video')).toHaveJSProperty('paused', true);
   const audioResponse = page.waitForResponse((r) =>
-    r.url().endsWith('/audio/en/welcome.mp3'),
+    /\/audio\/en\/welcome(?:-\d+)?\.mp3$/.test(r.url()),
   );
   await page.locator('.welcome-audio').tap();
   expect((await audioResponse).ok()).toBeTruthy();
@@ -333,8 +334,89 @@ test('voice, video, mute and reduced motion work on mobile', async ({
   await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
   await page.getByRole('button', { name: 'הפעלת צלילים', exact: true }).tap();
   const hebrew = page.waitForResponse((r) =>
-    r.url().endsWith('/audio/he/welcome.mp3'),
+    /\/audio\/he\/welcome(?:-\d+)?\.mp3$/.test(r.url()),
   );
   await page.locator('.welcome-audio').tap();
   expect((await hebrew).ok()).toBeTruthy();
+});
+
+for (const lang of ['en', 'he'])
+  test(`${lang}: personal intro plays, varies and can be skipped`, async ({
+    page,
+  }) => {
+    await page.addInitScript((lang) => {
+      if (!localStorage.getItem('mia-arcade-v1'))
+        localStorage.setItem(
+          'mia-arcade-v1',
+          JSON.stringify({ lang, sound: true, stars: {} }),
+        );
+    }, lang);
+    await page.setViewportSize({ width: 320, height: 740 });
+    await page.goto('/');
+    await expect(page.getByRole('dialog')).toBeVisible();
+    await checkLayout(page);
+    const urls: string[] = [];
+    page.on('request', (request) => {
+      if (/\/audio\/(en|he)\/intro(?:-\d+)?\.mp3$/.test(request.url()))
+        urls.push(request.url());
+    });
+    await page.locator('.intro-play').tap();
+    await expect.poll(() => urls.length).toBe(1);
+    await expect(page.locator('.intro-caption')).not.toBeEmpty();
+    await expect
+      .poll(() =>
+        page
+          .locator('.intro-movie video')
+          .evaluate((v) => (v as HTMLVideoElement).currentTime),
+      )
+      .toBeGreaterThan(0);
+    await page.locator('.intro-enter').tap();
+    await expect(page.getByRole('dialog')).toHaveCount(0);
+    await page.reload();
+    await expect(page.getByRole('dialog')).toHaveCount(0);
+    await page.locator('.intro-launch').tap();
+    await page.locator('.intro-play').tap();
+    await expect(page.locator('.intro-caption')).not.toBeEmpty();
+    await page.setViewportSize({ width: 844, height: 390 });
+    await checkLayout(page);
+    await page.locator('.intro-enter').tap();
+    await page.setViewportSize({ width: 320, height: 740 });
+    await page.locator('.intro-launch').tap();
+    // Repeat within this visit: the next recording must differ.
+    const response = page.waitForRequest((r) =>
+      /\/audio\/(en|he)\/intro(?:-\d+)?\.mp3$/.test(r.url()),
+    );
+    await page.locator('.intro-play').tap();
+    await response;
+    expect(urls.at(-1)).not.toBe(urls.at(-2));
+    await page.locator('.intro-enter').tap();
+    await page.locator('.card-sums').tap();
+    await expect(page.locator('.board-sums')).toBeVisible();
+  });
+
+test('ten victories play ten different Mia cheers before any repeats', async ({
+  page,
+}) => {
+  await prepare(page, 'en', 0, true);
+  const cheers: string[] = [];
+  page.on('request', (request) => {
+    if (/\/audio\/en\/win(?:-\d+)?\.mp3$/.test(request.url()))
+      cheers.push(request.url());
+  });
+  await page.locator('.card-bubbles').tap();
+  for (let game = 0; game < 10; game++) {
+    for (let i = 0; i < 10; i++) {
+      const number = game >= 2 ? 10 - i : i + 1;
+      await page
+        .locator('.bubble:not(.popped)')
+        .filter({ hasText: new RegExp(`^${number}$`) })
+        .tap();
+    }
+    await page.locator('.next-button').tap();
+    await expect(page.locator('.celebration')).toBeVisible();
+    await expect.poll(() => cheers.length).toBe(game + 1);
+    if (game < 9)
+      await page.getByRole('button', { name: 'Play again', exact: true }).tap();
+  }
+  expect(new Set(cheers).size).toBe(10);
 });

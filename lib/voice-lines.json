@@ -1,0 +1,505 @@
+{
+  "welcome": [
+    {
+      "id": "welcome",
+      "en": "Welcome to your Babylon arcade, Mia! Choose a game and let’s play!",
+      "he": "ברוכה הבאה לבבילון שלך, מיה! בחרי משחק ובואי נשחק!"
+    },
+    {
+      "id": "welcome-2",
+      "en": "Hello, Mia! Your next adventure is waiting. Which game shall we play?",
+      "he": "שלום מיה! ההרפתקה הבאה שלך מחכה. באיזה משחק נשחק?"
+    },
+    {
+      "id": "welcome-3",
+      "en": "Mia, your little arcade is ready! Bring your curiosity and let’s have fun.",
+      "he": "מיה, הארקייד הקטן שלך מוכן! בואי לגלות וליהנות."
+    }
+  ],
+  "intro": [
+    {
+      "id": "intro",
+      "en": "Welcome to Babylon, Mia! This magical arcade is all yours. Baby Dean and Johnny are ready for an adventure, and Mum Lee and Dad Gal are cheering you on. Count stars, solve puzzles, and try something new. Ready, superstar? Let’s play!",
+      "he": "ברוכה הבאה לבבילון, מיה! הארקייד הקסום הזה כולו שלך. דין הקטן וג׳וני מוכנים להרפתקה, ואמא לי ואבא גל מעודדים אותך. ספרי כוכבים, פתרי חידות ונסי משהו חדש. מוכנה, כוכבת? בואי נשחק!"
+    },
+    {
+      "id": "intro-2",
+      "en": "Hello, Captain Mia! Our family spaceship has landed at Babylon. Johnny is wagging his tail, baby Dean is smiling, and Lee and Gal are here to cheer. Nine games are waiting for you. Take your time, have a go, and enjoy your adventure!",
+      "he": "שלום קפטנית מיה! החללית המשפחתית שלנו נחתה בבבילון. ג׳וני מכשכש בזנב, דין הקטן מחייך, ולי וגל כאן לעודד. תשעה משחקים מחכים לך. קחי את הזמן, נסי ותיהני מההרפתקה!"
+    },
+    {
+      "id": "intro-3",
+      "en": "Mia, look at all those stars! Each one is the start of an adventure. Dean, Johnny, Mum Lee and Dad Gal are on your team. Some puzzles are a little tricky, and that’s okay. You can always try again. Your Babylon adventure starts now!",
+      "he": "מיה, תראי את כל הכוכבים! כל אחד הוא התחלה של הרפתקה. דין, ג׳וני, אמא לי ואבא גל בקבוצה שלך. חלק מהחידות קצת קשות, וזה בסדר. תמיד אפשר לנסות שוב. ההרפתקה שלך בבבילון מתחילה עכשיו!"
+    }
+  ],
+  "count": [
+    {
+      "id": "count",
+      "en": "Count the stars, then tap the number.",
+      "he": "ספרי את הכוכבים ולחצי על המספר."
+    },
+    {
+      "id": "count-2",
+      "en": "Mia, how many stars can you find? Count them and choose the number.",
+      "he": "מיה, כמה כוכבים מצאת? ספרי ובחרי את המספר."
+    },
+    {
+      "id": "count-3",
+      "en": "Let’s count together! Touch the stars, then pick how many there are.",
+      "he": "בואי נספור יחד! געי בכוכבים ובחרי כמה יש."
+    }
+  ],
+  "colors": [
+    {
+      "id": "colors",
+      "en": "Find the paint that matches the big color.",
+      "he": "מצאי את הצבע שמתאים לדוגמה הגדולה."
+    },
+    {
+      "id": "colors-2",
+      "en": "Time to paint, Mia! Which little color matches the big one?",
+      "he": "זמן לצייר, מיה! איזה צבע קטן מתאים לצבע הגדול?"
+    },
+    {
+      "id": "colors-3",
+      "en": "Look closely at the paint. Can you find the very same color?",
+      "he": "הסתכלי היטב בצבע. תוכלי למצוא בדיוק את אותו הצבע?"
+    }
+  ],
+  "memory": [
+    {
+      "id": "memory",
+      "en": "Turn over two cards. Find all the matching friends!",
+      "he": "הפכי שני קלפים ומצאי את כל הזוגות!"
+    },
+    {
+      "id": "memory-2",
+      "en": "Where is Johnny hiding? Turn two cards and look for matching friends.",
+      "he": "איפה ג׳וני מתחבא? הפכי שני קלפים וחפשי חברים תואמים."
+    },
+    {
+      "id": "memory-3",
+      "en": "Let’s play a remembering game! Find two friends that look the same.",
+      "he": "בואי נשחק במשחק זיכרון! מצאי שני חברים שנראים אותו דבר."
+    }
+  ],
+  "shapes": [
+    {
+      "id": "shapes",
+      "en": "Help baby Dean! Tap the shape that matches.",
+      "he": "עזרי לתינוק דין! לחצי על הצורה המתאימה."
+    },
+    {
+      "id": "shapes-2",
+      "en": "Dean needs a shape detective! Mia, find the matching shape.",
+      "he": "דין צריך בלשית צורות! מיה, מצאי את הצורה המתאימה."
+    },
+    {
+      "id": "shapes-3",
+      "en": "Look at Dean’s shape. Which one has the same outline?",
+      "he": "הסתכלי על הצורה של דין. לאיזו צורה יש אותו קו מתאר?"
+    }
+  ],
+  "patterns": [
+    {
+      "id": "patterns",
+      "en": "Look at the pattern. What comes next?",
+      "he": "הסתכלי על הסדר. מה מגיע עכשיו?"
+    },
+    {
+      "id": "patterns-2",
+      "en": "Mia, spot the repeating pattern! Which picture belongs at the end?",
+      "he": "מיה, מצאי את הדגם שחוזר! איזו תמונה מתאימה בסוף?"
+    },
+    {
+      "id": "patterns-3",
+      "en": "Say the pictures in order. What should we put in the empty space?",
+      "he": "אמרי את התמונות לפי הסדר. מה נשים במקום הריק?"
+    }
+  ],
+  "bubbles": [
+    {
+      "id": "bubbles",
+      "en": "Pop the bubbles in order. Start with one!",
+      "he": "פוצצי את הבועות לפי הסדר. התחילי באחת!"
+    },
+    {
+      "id": "bubbles-2",
+      "en": "Ready for bubbles, Mia? Find one, then keep counting up!",
+      "he": "מוכנה לבועות, מיה? מצאי אחת והמשיכי לספור קדימה!"
+    },
+    {
+      "id": "bubbles-3",
+      "en": "One, two, three! Tap the bubbles from the smallest number to the biggest.",
+      "he": "אחת, שתיים, שלוש! לחצי על הבועות מהמספר הקטן לגדול."
+    }
+  ],
+  "countdown": [
+    {
+      "id": "countdown",
+      "en": "Let’s count backwards! Pop ten first, then nine, all the way to one.",
+      "he": "בואי נספור לאחור! פוצצי קודם עשר, אחר כך תשע, עד אחת."
+    },
+    {
+      "id": "countdown-2",
+      "en": "Rocket countdown, Mia! Start at ten and count down to one.",
+      "he": "ספירה לאחור, מיה! התחילי בעשר וספרי לאחור עד אחת."
+    },
+    {
+      "id": "countdown-3",
+      "en": "Find the biggest number first. Pop each bubble as you count backwards!",
+      "he": "מצאי קודם את המספר הכי גדול. פוצצי כל בועה כשאת סופרת לאחור!"
+    }
+  ],
+  "sums": [
+    {
+      "id": "sums",
+      "en": "Work out the sum, then tap the answer.",
+      "he": "פתרי את התרגיל ולחצי על התשובה."
+    },
+    {
+      "id": "sums-2",
+      "en": "Ready, rocket mathematician? Add or take away, then choose the answer.",
+      "he": "מוכנה, מתמטיקאית החלל? חברי או חסרי ובחרי את התשובה."
+    },
+    {
+      "id": "sums-3",
+      "en": "Mia, help our rocket launch! Look at the numbers and solve the puzzle.",
+      "he": "מיה, עזרי לרקטה להמריא! הסתכלי במספרים ופתרי את החידה."
+    }
+  ],
+  "letters": [
+    {
+      "id": "letters",
+      "en": "Look at the picture. Which letter is missing from the word?",
+      "he": "הסתכלי על התמונה. איזו אות חסרה במילה?"
+    },
+    {
+      "id": "letters-2",
+      "en": "Mia, be a word detective! Find the letter that fills the empty space.",
+      "he": "מיה, היי בלשית מילים! מצאי את האות שמתאימה למקום הריק."
+    },
+    {
+      "id": "letters-3",
+      "en": "Say the picture’s name. Which letter do we need to finish the word?",
+      "he": "אמרי את שם התמונה. איזו אות צריך כדי להשלים את המילה?"
+    }
+  ],
+  "sequence": [
+    {
+      "id": "sequence",
+      "en": "Watch the planets light up, then tap them in the same order.",
+      "he": "צפי בכוכבי הלכת נדלקים, ואז לחצי עליהם באותו הסדר."
+    },
+    {
+      "id": "sequence-2",
+      "en": "Mia, remember our space path! Watch the lights, then copy their order.",
+      "he": "מיה, זכרי את המסלול בחלל! צפי באורות וחזרי על הסדר שלהם."
+    },
+    {
+      "id": "sequence-3",
+      "en": "Watch carefully, space explorer. When the lights finish, it’s your turn!",
+      "he": "הסתכלי היטב, חוקרת החלל. כשהאורות מסיימים, תורך!"
+    }
+  ],
+  "win": [
+    {
+      "id": "win",
+      "en": "Amazing, Mia! You earned a star! Lee, Gal, Dean and Johnny are cheering for you!",
+      "he": "כל הכבוד מיה! זכית בכוכב! לי, גל, דין וג׳וני שמחים איתך!"
+    },
+    {
+      "id": "win-2",
+      "en": "You did it, Mia! Another adventure, another sparkling star.",
+      "he": "הצלחת, מיה! עוד הרפתקה ועוד כוכב נוצץ."
+    },
+    {
+      "id": "win-3",
+      "en": "Wow, Mia! Give yourself a big high five. You earned this star!",
+      "he": "וואו, מיה! תני לעצמך כיף גדול. הרווחת את הכוכב הזה!"
+    },
+    {
+      "id": "win-4",
+      "en": "Hooray for Mia! Johnny is doing his happy tail wag for you!",
+      "he": "הידד למיה! ג׳וני מכשכש בזנב בשמחה בשבילך!"
+    },
+    {
+      "id": "win-5",
+      "en": "Wonderful exploring, Mia! Baby Dean sends you a big little smile.",
+      "he": "איזו חוקרת נהדרת, מיה! דין הקטן שולח לך חיוך גדול."
+    },
+    {
+      "id": "win-6",
+      "en": "Look at you go, Mia! Mum Lee and Dad Gal are cheering for your hard work.",
+      "he": "תראי איך התקדמת, מיה! אמא לי ואבא גל מעודדים אותך על המאמץ."
+    },
+    {
+      "id": "win-7",
+      "en": "A star for our superstar! Mia, you kept going and finished the adventure.",
+      "he": "כוכב לכוכבת שלנו! מיה, המשכת וסיימת את ההרפתקה."
+    },
+    {
+      "id": "win-8",
+      "en": "Brilliant, Mia! Your curious mind took us on a wonderful adventure.",
+      "he": "נהדר, מיה! הסקרנות שלך לקחה אותנו להרפתקה נפלאה."
+    },
+    {
+      "id": "win-9",
+      "en": "Mission complete, Captain Mia! Your new star is ready to shine.",
+      "he": "המשימה הושלמה, קפטנית מיה! הכוכב החדש שלך מוכן לזהור."
+    },
+    {
+      "id": "win-10",
+      "en": "Yes, Mia! You solved it. Let’s give a happy cheer for all your effort!",
+      "he": "יש, מיה! פתרת את זה. בואי נחגוג בשמחה את כל המאמץ שלך!"
+    }
+  ],
+  "correct": [
+    {
+      "id": "correct",
+      "en": "That’s it, Mia!",
+      "he": "בדיוק, מיה!"
+    },
+    {
+      "id": "correct-2",
+      "en": "You found it!",
+      "he": "מצאת!"
+    },
+    {
+      "id": "correct-3",
+      "en": "Lovely thinking!",
+      "he": "איזו חשיבה יפה!"
+    },
+    {
+      "id": "correct-4",
+      "en": "Yes! Keep exploring.",
+      "he": "כן! המשיכי לגלות."
+    },
+    {
+      "id": "correct-5",
+      "en": "Nicely done, Mia!",
+      "he": "עשית את זה יפה, מיה!"
+    },
+    {
+      "id": "correct-6",
+      "en": "You solved that one!",
+      "he": "פתרת את החידה הזאת!"
+    }
+  ],
+  "retry": [
+    {
+      "id": "retry",
+      "en": "Let’s try another one. You can do it!",
+      "he": "בואי ננסה שוב. את יכולה!"
+    },
+    {
+      "id": "retry-2",
+      "en": "Take your time, Mia. Have another look.",
+      "he": "קחי את הזמן, מיה. הסתכלי עוד פעם."
+    },
+    {
+      "id": "retry-3",
+      "en": "We’re still learning! Let’s try a different answer.",
+      "he": "אנחנו עדיין לומדים! בואי ננסה תשובה אחרת."
+    },
+    {
+      "id": "retry-4",
+      "en": "A little puzzle! Look carefully and try again.",
+      "he": "חידה קטנה! הסתכלי היטב ונסי שוב."
+    },
+    {
+      "id": "retry-5",
+      "en": "Keep going, Mia. There’s no rush.",
+      "he": "המשיכי, מיה. אין מה למהר."
+    }
+  ],
+  "match": [
+    {
+      "id": "match",
+      "en": "A matching pair! Well spotted, Mia.",
+      "he": "זוג תואם! מצאת יפה, מיה."
+    },
+    {
+      "id": "match-2",
+      "en": "Two happy friends together!",
+      "he": "שני חברים שמחים ביחד!"
+    },
+    {
+      "id": "match-3",
+      "en": "You remembered where they were!",
+      "he": "זכרת איפה הם היו!"
+    }
+  ],
+  "memory-retry": [
+    {
+      "id": "memory-retry",
+      "en": "Two different friends. Remember where they are!",
+      "he": "שני חברים שונים. זכרי איפה הם נמצאים!"
+    },
+    {
+      "id": "memory-retry-2",
+      "en": "Let’s look for another pair, Mia.",
+      "he": "בואי נחפש זוג אחר, מיה."
+    },
+    {
+      "id": "memory-retry-3",
+      "en": "Have another peek. Their matches are hiding nearby!",
+      "he": "הציצי שוב. בני הזוג שלהם מתחבאים קרוב!"
+    }
+  ],
+  "sequence-turn": [
+    {
+      "id": "sequence-turn",
+      "en": "Your turn, Mia!",
+      "he": "תורך, מיה!"
+    },
+    {
+      "id": "sequence-turn-2",
+      "en": "Now copy the lights!",
+      "he": "עכשיו חזרי על האורות!"
+    },
+    {
+      "id": "sequence-turn-3",
+      "en": "Ready? Follow the same path.",
+      "he": "מוכנה? חזרי על אותו מסלול."
+    }
+  ],
+  "sequence-retry": [
+    {
+      "id": "sequence-retry",
+      "en": "Let’s watch those lights again, Mia.",
+      "he": "בואי נצפה באורות שוב, מיה."
+    },
+    {
+      "id": "sequence-retry-2",
+      "en": "Take another look. Then try the same order.",
+      "he": "הסתכלי שוב. ואז נסי את אותו הסדר."
+    },
+    {
+      "id": "sequence-retry-3",
+      "en": "No rush! Our planets will show you once more.",
+      "he": "בלי למהר! כוכבי הלכת יראו לך שוב."
+    }
+  ],
+  "number-1": [
+    {
+      "id": "number-1",
+      "en": "One",
+      "he": "אחת"
+    },
+    {
+      "id": "number-1-2",
+      "en": "One!",
+      "he": "אחת!"
+    }
+  ],
+  "number-2": [
+    {
+      "id": "number-2",
+      "en": "Two",
+      "he": "שתיים"
+    },
+    {
+      "id": "number-2-2",
+      "en": "Two!",
+      "he": "שתיים!"
+    }
+  ],
+  "number-3": [
+    {
+      "id": "number-3",
+      "en": "Three",
+      "he": "שלוש"
+    },
+    {
+      "id": "number-3-2",
+      "en": "Three!",
+      "he": "שלוש!"
+    }
+  ],
+  "number-4": [
+    {
+      "id": "number-4",
+      "en": "Four",
+      "he": "ארבע"
+    },
+    {
+      "id": "number-4-2",
+      "en": "Four!",
+      "he": "ארבע!"
+    }
+  ],
+  "number-5": [
+    {
+      "id": "number-5",
+      "en": "Five",
+      "he": "חמש"
+    },
+    {
+      "id": "number-5-2",
+      "en": "Five!",
+      "he": "חמש!"
+    }
+  ],
+  "number-6": [
+    {
+      "id": "number-6",
+      "en": "Six",
+      "he": "שש"
+    },
+    {
+      "id": "number-6-2",
+      "en": "Six!",
+      "he": "שש!"
+    }
+  ],
+  "number-7": [
+    {
+      "id": "number-7",
+      "en": "Seven",
+      "he": "שבע"
+    },
+    {
+      "id": "number-7-2",
+      "en": "Seven!",
+      "he": "שבע!"
+    }
+  ],
+  "number-8": [
+    {
+      "id": "number-8",
+      "en": "Eight",
+      "he": "שמונה"
+    },
+    {
+      "id": "number-8-2",
+      "en": "Eight!",
+      "he": "שמונה!"
+    }
+  ],
+  "number-9": [
+    {
+      "id": "number-9",
+      "en": "Nine",
+      "he": "תשע"
+    },
+    {
+      "id": "number-9-2",
+      "en": "Nine!",
+      "he": "תשע!"
+    }
+  ],
+  "number-10": [
+    {
+      "id": "number-10",
+      "en": "Ten",
+      "he": "עשר"
+    },
+    {
+      "id": "number-10-2",
+      "en": "Ten!",
+      "he": "עשר!"
+    }
+  ]
+}

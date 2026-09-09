@@ -12,7 +12,7 @@
     "lint": "oxlint",
     "format": "oxfmt",
     "generate:voices": "node scripts/generate-voices.mjs",
-    "test": "node --experimental-strip-types --test tests/game-engine.test.mjs",
+    "test": "node --experimental-strip-types --test tests/*.test.mjs",
     "generate:video": "node scripts/generate-video.mjs",
     "build:vercel": "ARCADE_STATIC_EXPORT=1 vinext build",
     "test:mobile": "playwright test",

@@ -48,7 +48,9 @@ The mobile suite needs Python 3 for its local static file server. It tests Chrom
 
 ## Optional media-generation keys
 
-The game includes 38 ElevenLabs MP3s and a fal.ai welcome video; the rocket-countdown line and the three newer games use browser speech until `npm run generate:voices` is rerun (46 clips in total). Playing uses no generation credits. API keys are needed only to regenerate media.
+The game includes 178 ElevenLabs MP3s in English and Hebrew, a fal.ai welcome animation, and a new ten-second family intro movie. Every spoken event has at least two recordings. Victory celebrations have ten different lines per language; instructions have three. A shuffle bag plays every variation before repeating and prevents immediate repeats. Playing uses no generation credits. API keys are needed only to regenerate media.
+
+The intro appears on the first visit and can be skipped immediately. “Watch my intro” reopens it anytime. Narration and motion start only after tapping play, with captions, language and mute controls. The existing arcade greeting also varies on each replay.
 
 Copy `.env.example` to `.env` at the repository root. For the original workspace where this repository is inside a `site/` folder, generators also support the existing parent `.env`.
 
@@ -65,11 +67,14 @@ The existing `fal_api_key` spelling is also accepted. Keys remain local and are 
 ```sh
 npm run generate:voices
 npm run generate:video
+npm run generate:video -- --intro
 ```
 
-Voice generation saves MP3s in `public/audio/` and updates `lib/audio-manifest.json`. It skips existing files. Use `npm run generate:voices -- --force` only to intentionally regenerate paid clips.
+Edit the bilingual event catalogue in `lib/voice-lines.json` to add or change lines. Give a changed line a new ID, or intentionally regenerate its recording so text and audio stay in sync. Voice generation saves MP3s in `public/audio/` and updates `lib/audio-manifest.json`. It skips existing files. Use `npm run generate:voices -- --force` only to intentionally regenerate paid clips.
 
 The five-second video uses **fal.ai / Kling 2.5 Turbo Standard** to animate the generated family portrait. Its request is saved in ignored `work/fal-welcome.json`, so reruns resume that job without another charge. The final clip is `public/video/mia-welcome.mp4`. The delivered video is optimized to 960×640 H.264 and about 0.5 MB. Reduced-motion users see the still portrait until they choose to play it. Press “A little hello for Mia” to replay the video with the ElevenLabs greeting.
+
+The ten-second opening movie uses the same fal.ai model and illustrated family, with a slow pullback into the stars. Its separate resumable job is stored in `work/fal-intro.json`; its optimized output is `public/video/mia-intro.mp4`.
 
 Rebuild and redeploy after generating new media. Browser speech is a fallback when an audio file cannot load; available fallback voices depend on the device. The original family photographs are not distributed with the app. Artwork provenance is in [ARTWORK.md](ARTWORK.md).
 

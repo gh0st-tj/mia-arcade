@@ -7,3 +7,7 @@ Prompt brief: A polished 3D clay-toy space portrait of Mia with light brown hair
 ## Welcome animation
 
 `public/video/mia-welcome.mp4` — generated through fal.ai with `fal-ai/kling-video/v2.5-turbo/standard/image-to-video`, using the illustrated family portrait above. Five seconds, silent. Prompt: Mia gently waves and smiles, baby Dean smiles and blinks, and Johnny makes a small happy head tilt. Subtle breathing and star twinkles; seated on the lavender moon. Preserve character identities, composition and toy style. Locked camera, no cuts, text or new characters. The complete generation prompt and reproducible request are in `scripts/generate-video.mjs`.
+
+## Personal opening movie
+
+`public/video/mia-intro.mp4` — a new ten-second silent movie generated through fal.ai with the same Kling 2.5 Turbo Standard model and family illustration. Mia waves, Dean smiles and Johnny tilts his head as the camera gently pulls back into the stars. Generated with `npm run generate:video -- --intro` and optimized to 960×640 H.264. Narration is provided separately by the bilingual ElevenLabs intro variations in `lib/voice-lines.json`.

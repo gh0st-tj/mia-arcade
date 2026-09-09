@@ -111,6 +111,7 @@ export default function Game({ id, lang, level, onWin, speak, sound }: Props) {
     setFeedback('correct');
     setWrong(null);
     chime();
+    speak('correct', t('That’s it, Mia!', 'בדיוק, מיה!'));
   };
   const next = () => {
     if (round === ROUNDS - 1) {
@@ -145,6 +146,7 @@ export default function Game({ id, lang, level, onWin, speak, sound }: Props) {
       lock.current = true;
       if (deck[turned[0]] === deck[index]) {
         chime();
+        speak('match', t('A matching pair!', 'זוג תואם!'));
         const found = [...matched, ...turned];
         setMatched(found);
         setFeedback('correct');
@@ -157,6 +159,10 @@ export default function Game({ id, lang, level, onWin, speak, sound }: Props) {
       } else {
         setMisses((m) => m + 1);
         setFeedback('retry');
+        speak(
+          'memory-retry',
+          t('Let’s look for another pair.', 'בואי נחפש זוג אחר.'),
+        );
         timer.current = setTimeout(() => {
           setOpen([]);
           lock.current = false;
@@ -521,9 +527,8 @@ export default function Game({ id, lang, level, onWin, speak, sound }: Props) {
           </div>
         </>
       )}
-      <div
+      <output
         className={`game-feedback ${feedback === 'correct' ? 'good' : ''}`}
-        role="status"
         aria-live="polite"
       >
         {feedback === 'correct' ? (
@@ -538,7 +543,7 @@ export default function Game({ id, lang, level, onWin, speak, sound }: Props) {
             {t('Take your time. You’ve got this.', 'בקצב שלך. את יכולה.')}
           </span>
         )}
-      </div>
+      </output>
       {id !== 'memory' && id !== 'bubbles' && feedback === 'correct' && (
         <button className="primary-button next-button" onClick={next}>
           {round === ROUNDS - 1

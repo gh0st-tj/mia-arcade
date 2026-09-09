@@ -74,6 +74,10 @@ export default function SequenceGame({
   const tapTimers = useRef<ReturnType<typeof setTimeout>[]>([]);
   const audioContext = useRef<AudioContext | null>(null);
   const soundOn = useRef(sound);
+  const speakRef = useRef(speak);
+  useEffect(() => {
+    speakRef.current = speak;
+  }, [speak]);
   const tiles = sequenceTiles(level);
   useEffect(() => {
     soundOn.current = sound;
@@ -89,6 +93,8 @@ export default function SequenceGame({
   // is cancelled if the round changes or the game unmounts mid-show.
   useEffect(() => {
     const timers: ReturnType<typeof setTimeout>[] = [];
+    // Leave room for the opening instruction before showing the first path.
+    const lead = round === 0 && showing === 0 ? 4800 : LEAD_MS;
     const at = (ms: number, fn: () => void) => timers.push(setTimeout(fn, ms));
     at(0, () => {
       setPhase('watch');
@@ -97,16 +103,22 @@ export default function SequenceGame({
       setWrong(null);
     });
     steps.forEach((tile, i) => {
-      const start = LEAD_MS + i * (SHOW_MS + GAP_MS);
+      const start = lead + i * (SHOW_MS + GAP_MS);
       at(start, () => {
         setLit(tile);
         if (soundOn.current) playTone(audioContext, planets[tile].tone, 0.28);
       });
       at(start + SHOW_MS, () => setLit(null));
     });
-    at(LEAD_MS + steps.length * (SHOW_MS + GAP_MS), () => setPhase('play'));
+    at(lead + steps.length * (SHOW_MS + GAP_MS), () => {
+      setPhase('play');
+      speakRef.current(
+        'sequence-turn',
+        lang === 'en' ? 'Your turn, Mia!' : 'תורך, מיה!',
+      );
+    });
     return () => timers.forEach(clearTimeout);
-  }, [steps, showing]);
+  }, [steps, showing, round, lang]);
   const later = (fn: () => void, ms: number) =>
     tapTimers.current.push(setTimeout(fn, ms));
   const tone = (frequency: number, duration: number) => {
@@ -123,7 +135,7 @@ export default function SequenceGame({
       setRoundMissed(true);
       setPhase('watch');
       speak(
-        'retry',
+        'sequence-retry',
         t('Let’s watch it again. You can do it!', 'בואי נראה שוב. את יכולה!'),
       );
       later(() => {
@@ -136,6 +148,7 @@ export default function SequenceGame({
     setProgress(done);
     if (done === steps.length) {
       setPhase('correct');
+      speak('correct', t('That’s it, Mia!', 'בדיוק, מיה!'));
       if (!roundMissed) setPerfectRounds((p) => p + 1);
       [523.25, 659.25, 783.99].forEach((f, i) =>
         later(() => tone(f, 0.25), 250 + i * 90),
@@ -207,9 +220,8 @@ export default function SequenceGame({
           </button>
         ))}
       </div>
-      <div
+      <output
         className={`game-feedback ${phase === 'correct' ? 'good' : ''}`}
-        role="status"
         aria-live="polite"
       >
         {phase === 'correct' ? (
@@ -229,7 +241,7 @@ export default function SequenceGame({
             )}
           </span>
         )}
-      </div>
+      </output>
       {phase === 'play' && (
         <button
           className="secondary-button replay-button"

@@ -2327,3 +2327,109 @@ footer {
     transform: none;
   }
 }
+
+/* A personal opening movie that stays optional, even on a small phone. */
+.intro-dialog {
+  width: min(640px, calc(100% - 24px));
+  max-width: 640px;
+  max-height: calc(100dvh - 24px);
+  overflow-y: auto;
+  padding: 20px;
+  gap: 16px;
+  border: 1px solid #aa89ef55;
+  border-radius: 28px;
+  background: #20163b;
+  color: #fff;
+  box-shadow: 0 30px 100px #080415aa;
+}
+.intro-top,
+.intro-top > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.intro-top .eyebrow {
+  font-size: 10px;
+  line-height: 1.6;
+}
+.intro-movie {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #30204d;
+}
+.intro-movie video {
+  display: block;
+  width: 100%;
+  max-height: 35dvh;
+  object-fit: cover;
+  aspect-ratio: 3 / 2;
+}
+.intro-movie-label {
+  position: absolute;
+  bottom: 14px;
+  inset-inline: 0;
+  text-align: center;
+  font-weight: 900;
+  letter-spacing: 0.3em;
+  color: #ffe6a0;
+  text-shadow: 0 2px 12px #271244;
+}
+.intro-copy {
+  text-align: center;
+}
+.intro-copy [data-slot='dialog-title'] {
+  font-size: clamp(23px, 5vw, 32px);
+  line-height: 1.15;
+  font-weight: 800;
+}
+.intro-copy [data-slot='dialog-description'] {
+  margin-top: 10px;
+  color: #c3b4dc;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.intro-caption {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 14px;
+  background: #ffffff09;
+  color: #ede3ff;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.intro-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.intro-actions button {
+  flex: 1;
+  min-height: 50px;
+  white-space: normal;
+}
+.intro-launch {
+  margin-top: 12px;
+  color: #c3b4dc;
+  font-size: 13px;
+}
+@media (max-width: 380px) {
+  .intro-dialog {
+    padding: 14px;
+    gap: 12px;
+  }
+  .intro-actions button {
+    font-size: 13px;
+    padding-inline: 10px;
+  }
+}
+@media (max-height: 500px) {
+  .intro-movie video {
+    max-height: 26dvh;
+  }
+  .intro-dialog {
+    gap: 10px;
+  }
+}
