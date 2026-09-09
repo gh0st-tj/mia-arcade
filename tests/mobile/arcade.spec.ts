@@ -11,6 +11,21 @@ const ids = [
   'letters',
   'sequence',
 ];
+// Safari may request the same MP3 in multiple byte ranges. Count play calls,
+// not network requests, when checking which narration was selected.
+async function recordVoicePlayback(page: Page) {
+  await page.addInitScript(() => {
+    (window as any).__voicePlays = [];
+    const original = HTMLMediaElement.prototype.play;
+    HTMLMediaElement.prototype.play = function () {
+      if (this.tagName === 'AUDIO') (window as any).__voicePlays.push(this.src);
+      return original.call(this);
+    };
+  });
+}
+async function playedVoices(page: Page): Promise<string[]> {
+  return page.evaluate(() => (window as any).__voicePlays);
+}
 async function prepare(page: Page, lang = 'en', level = 0, sound = false) {
   await page.goto('/');
   await page.evaluate(
@@ -344,6 +359,7 @@ for (const lang of ['en', 'he'])
   test(`${lang}: personal intro plays, varies and can be skipped`, async ({
     page,
   }) => {
+    await recordVoicePlayback(page);
     await page.addInitScript((lang) => {
       if (!localStorage.getItem('mia-arcade-v1'))
         localStorage.setItem(
@@ -355,13 +371,8 @@ for (const lang of ['en', 'he'])
     await page.goto('/');
     await expect(page.getByRole('dialog')).toBeVisible();
     await checkLayout(page);
-    const urls: string[] = [];
-    page.on('request', (request) => {
-      if (/\/audio\/(en|he)\/intro(?:-\d+)?\.mp3$/.test(request.url()))
-        urls.push(request.url());
-    });
     await page.locator('.intro-play').tap();
-    await expect.poll(() => urls.length).toBe(1);
+    await expect.poll(async () => (await playedVoices(page)).length).toBe(1);
     await expect(page.locator('.intro-caption')).not.toBeEmpty();
     await expect
       .poll(() =>
@@ -377,18 +388,17 @@ for (const lang of ['en', 'he'])
     await page.locator('.intro-launch').tap();
     await page.locator('.intro-play').tap();
     await expect(page.locator('.intro-caption')).not.toBeEmpty();
+    await expect.poll(async () => (await playedVoices(page)).length).toBe(1);
     await page.setViewportSize({ width: 844, height: 390 });
     await checkLayout(page);
     await page.locator('.intro-enter').tap();
     await page.setViewportSize({ width: 320, height: 740 });
     await page.locator('.intro-launch').tap();
     // Repeat within this visit: the next recording must differ.
-    const response = page.waitForRequest((r) =>
-      /\/audio\/(en|he)\/intro(?:-\d+)?\.mp3$/.test(r.url()),
-    );
     await page.locator('.intro-play').tap();
-    await response;
-    expect(urls.at(-1)).not.toBe(urls.at(-2));
+    await expect.poll(async () => (await playedVoices(page)).length).toBe(2);
+    const voices = await playedVoices(page);
+    expect(voices[1]).not.toBe(voices[0]);
     await page.locator('.intro-enter').tap();
     await page.locator('.card-sums').tap();
     await expect(page.locator('.board-sums')).toBeVisible();
@@ -397,12 +407,12 @@ for (const lang of ['en', 'he'])
 test('ten victories play ten different Mia cheers before any repeats', async ({
   page,
 }) => {
+  await recordVoicePlayback(page);
   await prepare(page, 'en', 0, true);
-  const cheers: string[] = [];
-  page.on('request', (request) => {
-    if (/\/audio\/en\/win(?:-\d+)?\.mp3$/.test(request.url()))
-      cheers.push(request.url());
-  });
+  const cheers = async () =>
+    (await playedVoices(page)).filter((url) =>
+      /\/audio\/en\/win(?:-\d+)?\.mp3$/.test(url),
+    );
   await page.locator('.card-bubbles').tap();
   for (let game = 0; game < 10; game++) {
     for (let i = 0; i < 10; i++) {
@@ -414,9 +424,9 @@ test('ten victories play ten different Mia cheers before any repeats', async ({
     }
     await page.locator('.next-button').tap();
     await expect(page.locator('.celebration')).toBeVisible();
-    await expect.poll(() => cheers.length).toBe(game + 1);
+    await expect.poll(async () => (await cheers()).length).toBe(game + 1);
     if (game < 9)
       await page.getByRole('button', { name: 'Play again', exact: true }).tap();
   }
-  expect(new Set(cheers).size).toBe(10);
+  expect(new Set(await cheers()).size).toBe(10);
 });
