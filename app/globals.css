@@ -248,7 +248,8 @@ main {
   height: 340px;
   position: relative;
 }
-.welcome-art img {
+.welcome-art img,
+.welcome-art video {
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -955,7 +956,8 @@ footer p {
     height: 270px;
     margin-left: -26px;
   }
-  .welcome-art img {
+  .welcome-art img,
+  .welcome-art video {
     object-fit: cover;
     object-position: 62% center;
     mask-image: linear-gradient(90deg, transparent, #000 22%);
@@ -1456,7 +1458,8 @@ footer p {
   animation: nudge 0.3s ease-in-out !important;
   border-color: #ffbbdd;
 }
-.welcome-art img {
+.welcome-art img,
+.welcome-art video {
   object-fit: cover;
   object-position: 65% 50%;
 }
@@ -1469,7 +1472,8 @@ footer p {
     transparent
   );
 }
-.welcome-art img {
+.welcome-art img,
+.welcome-art video {
   mask-image: linear-gradient(
     90deg,
     transparent,
@@ -1616,7 +1620,8 @@ footer {
   .game-feedback {
     font-size: 15px;
   }
-  .welcome-art img {
+  .welcome-art img,
+  .welcome-art video {
     object-position: 63% center;
   }
   .card-body p {
@@ -1733,5 +1738,46 @@ footer {
   }
   .bubble {
     font-size: 24px;
+  }
+}
+
+.welcome-scene {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.welcome-scene video {
+  width: 100%;
+  height: 100%;
+}
+.scene-control {
+  position: absolute;
+  inset-inline-end: 18px;
+  top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 44px;
+  padding: 9px 13px;
+  border-radius: 30px;
+  background: #30213cdd;
+  border: 1px solid #745681;
+  color: #f0ddff;
+  font-size: 13px;
+  font-weight: 800;
+  z-index: 2;
+}
+.scene-control:hover {
+  background: #503363;
+}
+@media (max-width: 680px) {
+  .scene-control {
+    inset-inline-end: 13px;
+    top: 5px;
+    padding: 9px 11px;
+  }
+  .scene-control span {
+    display: none;
   }
 }

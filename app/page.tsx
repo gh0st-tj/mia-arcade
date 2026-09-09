@@ -18,6 +18,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Progress } from '@/components/ui/progress';
 import { games, type Lang, type GameId } from '@/lib/game-data';
 import Game from './game';
+import WelcomeScene from './welcome-scene';
 import audioManifest from '@/lib/audio-manifest.json';
 
 export default function Arcade() {
@@ -29,6 +30,7 @@ export default function Arcade() {
   const [run, setRun] = useState(0);
   const [won, setWon] = useState(false);
   const [tab, setTab] = useState('play');
+  const [welcomeReplay, setWelcomeReplay] = useState(0);
   const audio = useRef<HTMLAudioElement | null>(null);
   const t = (en: string, he: string) => (lang === 'en' ? en : he);
   useEffect(() => {
@@ -339,15 +341,16 @@ export default function Arcade() {
                 </p>
                 <button
                   className="welcome-audio"
-                  onClick={() =>
+                  onClick={() => {
+                    setWelcomeReplay((value) => value + 1);
                     speak(
                       'welcome',
                       t(
                         'Welcome to your Babylon arcade, Mia! Choose a game and let’s play!',
                         'ברוכה הבאה לבבילון שלך, מיה! בחרי משחק ובואי נשחק!',
                       ),
-                    )
-                  }
+                    );
+                  }}
                 >
                   <span>
                     <Volume2 size={18} />
@@ -357,13 +360,7 @@ export default function Arcade() {
                 </button>
               </div>
               <div className="welcome-art">
-                <img
-                  src="/images/mia-space.png"
-                  alt={t(
-                    'Mia, baby Dean and Johnny exploring space together',
-                    'מיה, התינוק דין וג׳וני מגלים את החלל יחד',
-                  )}
-                />
+                <WelcomeScene lang={lang} replay={welcomeReplay} />
                 <div className="art-label">
                   <Sparkles size={15} />
                   {t('Made just for you', 'נוצר במיוחד בשבילך')}
