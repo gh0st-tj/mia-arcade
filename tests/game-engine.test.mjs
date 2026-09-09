@@ -135,3 +135,80 @@ test('shuffling keeps every number exactly once and leaves input unchanged', () 
     Array.from({ length: 10 }, (_, i) => i + 1),
   );
 });
+import {
+  words,
+  sumLimit,
+  wordLength,
+  makeSequence,
+  sequenceLengths,
+  sequenceTiles,
+} from '../lib/game-engine.ts';
+test('rocket sums stay within the level limit and always list the right answer', () => {
+  for (const level of LEVELS)
+    for (let run = 0; run < 300; run++) {
+      const round = run % ROUNDS;
+      const q = makeQuestion('sums', round, level);
+      const { a, b, op } = q.sum;
+      assert.equal(q.answer, op === '+' ? a + b : a - b);
+      assert.ok(a >= 1 && b >= 1);
+      assert.ok(q.answer >= 1 && q.answer <= sumLimit[level]);
+      if (op === '+') assert.ok(a + b <= sumLimit[level]);
+      else assert.ok(a <= sumLimit[level]);
+      if (level === 0) assert.equal(op, '+');
+      assert.equal(q.choices.length, level === 0 ? 3 : 4);
+      assert.equal(q.choices.filter((c) => c === q.answer).length, 1);
+      assert.equal(new Set(q.choices).size, q.choices.length);
+      for (const c of q.choices) assert.ok(c >= 0);
+    }
+  const both = new Set(
+    Array.from({ length: 100 }, () => makeQuestion('sums', 2, 2).sum.op),
+  );
+  assert.deepEqual([...both].sort(), ['+', '-']);
+});
+test('space spelling hides one letter of a real word and offers it once', () => {
+  for (const lang of ['en', 'he'])
+    for (const level of LEVELS)
+      for (let run = 0; run < 300; run++) {
+        const q = makeQuestion(
+          'letters',
+          run % ROUNDS,
+          level,
+          Math.random,
+          undefined,
+          lang,
+        );
+        const { text, missing, letters, emoji } = q.word;
+        const entry = words.find((w) => w.emoji === emoji);
+        assert.equal(entry[lang], text);
+        assert.ok([...text].length <= wordLength[level]);
+        if (level === 0) assert.equal(missing, 0);
+        assert.equal(letters[q.answer], [...text][missing]);
+        assert.equal(letters.length, level === 0 ? 3 : 4);
+        assert.equal(new Set(letters).size, letters.length);
+        assert.deepEqual(
+          q.choices,
+          letters.map((_, i) => i),
+        );
+      }
+  for (let run = 0; run < 200; run++) {
+    const used = [];
+    for (let round = 0; round < ROUNDS; round++) {
+      const q = makeQuestion('letters', round, 1, Math.random, used);
+      const index = words.findIndex((w) => w.emoji === q.word.emoji);
+      assert.ok(!used.includes(index), 'no word repeats within a game');
+      used.push(index);
+    }
+  }
+});
+test('galaxy sequences grow by level and never repeat a planet back to back', () => {
+  for (const level of LEVELS)
+    for (let round = 0; round < ROUNDS; round++)
+      for (let run = 0; run < 50; run++) {
+        const steps = makeSequence(level, round);
+        assert.equal(steps.length, sequenceLengths[level][round]);
+        for (const s of steps) assert.ok(s >= 0 && s < sequenceTiles(level));
+        for (let i = 1; i < steps.length; i++)
+          assert.notEqual(steps[i], steps[i - 1]);
+      }
+  assert.ok(sequenceLengths[2][4] > sequenceLengths[0][4]);
+});

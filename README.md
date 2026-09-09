@@ -1,6 +1,6 @@
 # Mia’s Babylon Arcade
 
-Six gentle learning games made for Mia, ages 4–6, with her baby brother Dean, dog Johnny, Mum Lee and Dad Gal. English and Hebrew, touch and keyboard controls, three difficulty levels, spoken instructions, and 18 collectible stars saved in the browser.
+Nine learning games made for Mia, with her baby brother Dean, dog Johnny, Mum Lee and Dad Gal: six gentle games for ages 4–6 and three trickier ones for ages 6–7. English and Hebrew, touch and keyboard controls, three difficulty levels per game, spoken instructions, and 27 collectible stars saved in the browser.
 
 - **Star Catcher:** count stars, with spoken counting on each tap.
 - **Mia’s Color Studio:** match colors, with closer shades on later levels.
@@ -8,8 +8,11 @@ Six gentle learning games made for Mia, ages 4–6, with her baby brother Dean, 
 - **Dean’s Toy Box:** match shapes, then try rotated shapes and similar alternatives.
 - **Picnic Patterns:** complete AB, AAB, ABB and ABC patterns.
 - **Bubble Pop:** count to ten; the final level is a rocket countdown.
+- **Rocket Sums (6–7):** adding within 10, then taking away, then sums up to 20 without star pictures.
+- **Space Spelling (6–7):** find the missing letter of a picture word in English or Hebrew; the top level mixes in look-alike letters.
+- **Galaxy Sequence (6–7):** watch planets light up and repeat the order, from three planets up to seven.
 
-No timers or lives. Every completed game earns one star, up to three per game. Progress, language and sound preferences stay in the current browser.
+No timers or lives. Every completed game earns one star, up to three per game, and each star unlocks a harder level of that game. Getting every answer right on the first try earns a special cheer. Progress, language and sound preferences stay in the current browser.
 
 ## Local development
 
@@ -41,11 +44,11 @@ npx playwright install chromium webkit
 npm run test:mobile
 ```
 
-The mobile suite needs Python 3 for its local static file server. It tests Chromium and WebKit with touch-enabled Android/iPhone emulation: 320–430px phones, tablets, landscape, English and Hebrew, 44px touch targets, all six complete games, later levels, saved stars, voice playback, video, mute and reduced motion. These are automated browser tests, not physical-device certification. To run against a deployment, set `ARCADE_TEST_URL` to its origin.
+The mobile suite needs Python 3 for its local static file server. It tests Chromium and WebKit with touch-enabled Android/iPhone emulation: 320–430px phones, tablets, landscape, English and Hebrew, 44px touch targets, all nine complete games, later levels, saved stars, voice playback, video, mute and reduced motion. These are automated browser tests, not physical-device certification. To run against a deployment, set `ARCADE_TEST_URL` to its origin.
 
 ## Optional media-generation keys
 
-The game includes 38 ElevenLabs MP3s and a fal.ai welcome video. Playing uses no generation credits. API keys are needed only to regenerate media.
+The game includes 38 ElevenLabs MP3s and a fal.ai welcome video; the rocket-countdown line and the three newer games use browser speech until `npm run generate:voices` is rerun (46 clips in total). Playing uses no generation credits. API keys are needed only to regenerate media.
 
 Copy `.env.example` to `.env` at the repository root. For the original workspace where this repository is inside a `site/` folder, generators also support the existing parent `.env`.
 

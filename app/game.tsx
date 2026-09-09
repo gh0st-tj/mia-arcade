@@ -11,9 +11,11 @@ import {
   makeQuestion,
   makeMemoryDeck,
   bubbleOrder,
+  words,
   shuffle,
   ROUNDS,
   type Level,
+  type Question,
 } from '@/lib/game-engine';
 import type { Lang, GameId } from '@/lib/game-data';
 type Props = {
@@ -26,10 +28,17 @@ type Props = {
   sound: boolean;
 };
 
+const wordIndex = (q: Question) =>
+  words.findIndex((w) => w.emoji === q.word?.emoji);
+
 export default function Game({ id, lang, level, onWin, speak, sound }: Props) {
   const t = (en: string, he: string) => (lang === 'en' ? en : he);
   const [round, setRound] = useState(0);
-  const [question, setQuestion] = useState(() => makeQuestion(id, 0, level));
+  const [question, setQuestion] = useState(() =>
+    makeQuestion(id, 0, level, Math.random, undefined, lang),
+  );
+  /** Word indices already shown in this Space Spelling game. */
+  const [usedWords, setUsedWords] = useState(() => [wordIndex(question)]);
   const [feedback, setFeedback] = useState<'correct' | 'retry' | null>(null);
   const [wrong, setWrong] = useState<number | null>(null);
   const [missed, setMissed] = useState<number[]>([]);
@@ -110,7 +119,16 @@ export default function Game({ id, lang, level, onWin, speak, sound }: Props) {
     }
     const r = round + 1;
     setRound(r);
-    setQuestion(makeQuestion(id, r, level, Math.random, question.answer));
+    const q = makeQuestion(
+      id,
+      r,
+      level,
+      Math.random,
+      id === 'letters' ? usedWords : question.answer,
+      lang,
+    );
+    setQuestion(q);
+    setUsedWords([...usedWords, wordIndex(q)]);
     setFeedback(null);
     setWrong(null);
     setMissed([]);
@@ -378,6 +396,62 @@ export default function Game({ id, lang, level, onWin, speak, sound }: Props) {
                 </div>
                 <p>{t('Which shape is the same?', 'איזו צורה זהה?')}</p>
               </>
+            ) : id === 'sums' ? (
+              <>
+                <div className="sum-row" dir="ltr">
+                  <b>{question.sum!.a}</b>
+                  <span>{question.sum!.op === '+' ? '+' : '−'}</span>
+                  <b>{question.sum!.b}</b>
+                  <span>=</span>
+                  <span className="missing-pattern">?</span>
+                </div>
+                {level < 2 && (
+                  <div className="sum-stars" dir="ltr" aria-hidden="true">
+                    {question.sum!.op === '+' ? (
+                      <>
+                        <span>{'⭐'.repeat(question.sum!.a)}</span>
+                        <i>+</i>
+                        <span>{'⭐'.repeat(question.sum!.b)}</span>
+                      </>
+                    ) : (
+                      <span>
+                        {'⭐'.repeat(question.sum!.a - question.sum!.b)}
+                        <s>{'⭐'.repeat(question.sum!.b)}</s>
+                      </span>
+                    )}
+                  </div>
+                )}
+                <p>
+                  {question.sum!.op === '+'
+                    ? t('How many altogether?', 'כמה יש ביחד?')
+                    : t('How many are left?', 'כמה נשארו?')}
+                </p>
+              </>
+            ) : id === 'letters' ? (
+              <>
+                <div className="word-picture" aria-hidden="true">
+                  {question.word!.emoji}
+                </div>
+                <div
+                  className="word-row"
+                  aria-label={t(
+                    `The word with a missing letter ${question.word!.missing + 1}`,
+                    `המילה עם אות חסרה ${question.word!.missing + 1}`,
+                  )}
+                >
+                  {question.word!.text.split('').map((ch, i) => (
+                    <span
+                      key={i}
+                      className={
+                        i === question.word!.missing ? 'letter-blank' : 'letter'
+                      }
+                    >
+                      {i === question.word!.missing ? '?' : ch}
+                    </span>
+                  ))}
+                </div>
+                <p>{t('Which letter is missing?', 'איזו אות חסרה?')}</p>
+              </>
             ) : (
               <>
                 <div
@@ -408,7 +482,9 @@ export default function Game({ id, lang, level, onWin, speak, sound }: Props) {
                       ? shapes[value][lang]
                       : id === 'patterns'
                         ? fruitNames[lang][value]
-                        : String(value)
+                        : id === 'letters'
+                          ? question.word!.letters[value]
+                          : String(value)
                 }
               >
                 {id === 'colors' ? (
@@ -433,6 +509,10 @@ export default function Game({ id, lang, level, onWin, speak, sound }: Props) {
                   </>
                 ) : id === 'patterns' ? (
                   <span className="fruit-option">{fruit[value]}</span>
+                ) : id === 'letters' ? (
+                  <span className="letter-option">
+                    {question.word!.letters[value]}
+                  </span>
                 ) : (
                   value
                 )}

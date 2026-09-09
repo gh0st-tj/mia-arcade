@@ -64,6 +64,11 @@ export type Question = {
   /** Rotation in degrees and a color index for the shape target. */
   shapeStyle?: { rotate: number; color: number };
   color?: number;
+  /** Rocket Sums: the equation to solve. */
+  sum?: { a: number; b: number; op: '+' | '-' };
+  /** Space Spelling: the picture, its word, which index is hidden and the
+   *  letter options that `choices` index into. */
+  word?: { emoji: string; text: string; missing: number; letters: string[] };
 };
 /** Inclusive star-count range for each level, easing up over the rounds. */
 export const countRange: Record<Level, [number, number]> = {
@@ -73,15 +78,21 @@ export const countRange: Record<Level, [number, number]> = {
 };
 /**
  * Builds one round. `avoid` is the previous round's answer (a count, color or
- * shape index) so the same target never appears twice in a row.
+ * shape index) so the same target never appears twice in a row; Space
+ * Spelling passes every word index already used in this game.
  */
 export function makeQuestion(
   id: GameId,
   round: number,
   level: Level = 0,
   random: Random = Math.random,
-  avoid?: number,
+  avoid?: number | number[],
+  lang: Lang = 'en',
 ): Question {
+  if (id === 'letters')
+    return makeWord(round, level, random, [avoid ?? []].flat(), lang);
+  if (Array.isArray(avoid)) avoid = avoid[avoid.length - 1];
+  if (id === 'sums') return makeSum(round, level, random, avoid);
   if (id === 'count') {
     const [lo, hi] = countRange[level];
     const focus = lo + Math.round(((hi - lo) * round) / (ROUNDS - 1));
@@ -213,3 +224,204 @@ export const bubbleOrder = (level: Level) =>
   level === 2
     ? Array.from({ length: BUBBLES }, (_, i) => BUBBLES - i)
     : Array.from({ length: BUBBLES }, (_, i) => i + 1);
+
+/** Inclusive largest total for Rocket Sums at each level. */
+export const sumLimit: Record<Level, number> = { 0: 10, 1: 10, 2: 20 };
+const nearby = (
+  answer: number,
+  extras: number[],
+  n: number,
+  random: Random,
+) => {
+  const pool = [
+    ...new Set([answer - 1, answer + 1, answer - 2, answer + 2, ...extras]),
+  ].filter((v) => v >= 0 && v !== answer);
+  const close = shuffle(pool.slice(0, 2), random);
+  const far = shuffle(pool.slice(2), random);
+  return [...close, ...far].slice(0, n);
+};
+function makeSum(
+  round: number,
+  level: Level,
+  random: Random,
+  avoid?: number,
+): Question {
+  const limit = sumLimit[level];
+  // Level 0 is addition only; later levels mix in taking away.
+  const op: '+' | '-' = level === 0 || random() < 0.5 ? '+' : '-';
+  for (let attempt = 0; attempt < 40; attempt++) {
+    let a: number, b: number, answer: number;
+    if (op === '+') {
+      // Totals creep upward through the rounds.
+      const top = Math.min(limit, Math.ceil(limit * (0.5 + round / 8)));
+      a = randInt(1, top - 1, random);
+      b = randInt(1, top - a, random);
+      answer = a + b;
+    } else {
+      a = randInt(2, limit, random);
+      b = randInt(1, a - 1, random);
+      answer = a - b;
+    }
+    if (answer === avoid && attempt < 39) continue;
+    const trap = op === '+' ? Math.abs(a - b) : a + b;
+    const distractors = nearby(answer, [trap], level === 0 ? 2 : 3, random);
+    return {
+      answer,
+      sum: { a, b, op },
+      choices: shuffle([answer, ...distractors], random),
+    };
+  }
+  return { answer: 2, sum: { a: 1, b: 1, op: '+' }, choices: [1, 2, 3] };
+}
+/** Picture words for Space Spelling, in both languages. */
+export const words = [
+  { emoji: '⭐', en: 'STAR', he: 'כוכב' },
+  { emoji: '🌙', en: 'MOON', he: 'ירח' },
+  { emoji: '☀️', en: 'SUN', he: 'שמש' },
+  { emoji: '🐶', en: 'DOG', he: 'כלב' },
+  { emoji: '🐱', en: 'CAT', he: 'חתול' },
+  { emoji: '🐟', en: 'FISH', he: 'דג' },
+  { emoji: '🏠', en: 'HOUSE', he: 'בית' },
+  { emoji: '🍎', en: 'APPLE', he: 'תפוח' },
+  { emoji: '🌸', en: 'FLOWER', he: 'פרח' },
+  { emoji: '👶', en: 'BABY', he: 'תינוק' },
+  { emoji: '🎈', en: 'BALLOON', he: 'בלון' },
+  { emoji: '🐸', en: 'FROG', he: 'צפרדע' },
+  { emoji: '🚀', en: 'ROCKET', he: 'טיל' },
+  { emoji: '🍌', en: 'BANANA', he: 'בננה' },
+  { emoji: '🌈', en: 'RAINBOW', he: 'קשת' },
+  { emoji: '🐘', en: 'ELEPHANT', he: 'פיל' },
+];
+const alphabets: Record<Lang, string[]> = {
+  en: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''),
+  he: 'אבגדהוזחטיכלמנסעפצקרשת'.split(''),
+};
+const hebrewFinals = 'ךםןףץ'.split('');
+/** Letters that young readers mix up; used as distractors on the top level. */
+const confusable: Record<Lang, Record<string, string>> = {
+  en: {
+    B: 'DPR',
+    D: 'BPQ',
+    P: 'BDQ',
+    Q: 'PDG',
+    M: 'NW',
+    N: 'MH',
+    W: 'MV',
+    O: 'QC',
+    C: 'OG',
+    G: 'CQ',
+    E: 'FB',
+    F: 'EP',
+    I: 'LT',
+    L: 'IT',
+    T: 'LI',
+    U: 'VN',
+    V: 'UW',
+    S: 'Z',
+    Z: 'S',
+    H: 'NM',
+    A: 'R',
+    R: 'AB',
+    K: 'X',
+    X: 'KY',
+    Y: 'VX',
+    J: 'IL',
+  },
+  he: {
+    ב: 'כנ',
+    כ: 'בנ',
+    נ: 'גכ',
+    ג: 'נז',
+    ר: 'דך',
+    ד: 'רך',
+    ו: 'זי',
+    ז: 'וי',
+    י: 'וז',
+    ח: 'תה',
+    ת: 'חה',
+    ה: 'חת',
+    ט: 'םמ',
+    מ: 'םט',
+    ס: 'םפ',
+    פ: 'סף',
+    ע: 'צא',
+    צ: 'עא',
+    א: 'עצ',
+    ל: 'ך',
+    ק: 'ף',
+    ש: 'טע',
+    ך: 'ר',
+    ם: 'סמ',
+    ן: 'ו',
+    ף: 'ק',
+    ץ: 'צ',
+  },
+};
+/** Longest word allowed at each level. */
+export const wordLength: Record<Level, number> = { 0: 4, 1: 5, 2: 99 };
+function makeWord(
+  round: number,
+  level: Level,
+  random: Random,
+  avoid: number[],
+  lang: Lang,
+): Question {
+  const eligible = words
+    .map((w, i) => i)
+    .filter(
+      (i) => words[i][lang].length <= wordLength[level] && !avoid.includes(i),
+    );
+  const index = pick(eligible.length ? eligible : [0], random);
+  const text = words[index][lang];
+  const chars = text.split('');
+  // Beginners fill in the first letter; later the gap can be anywhere.
+  const missing = level === 0 ? 0 : randInt(0, chars.length - 1, random);
+  const target = chars[missing];
+  const isFinal = hebrewFinals.includes(target);
+  const pool = isFinal ? hebrewFinals : alphabets[lang];
+  const wanted = level === 0 ? 3 : 4;
+  const tricky =
+    level === 2
+      ? shuffle(
+          [
+            ...(confusable[lang][target] ?? '').split(''),
+            ...chars.filter((c, i) => i !== missing),
+          ],
+          random,
+        )
+      : [];
+  const options = [target];
+  for (const c of [...tricky, ...shuffle(pool, random)]) {
+    if (options.length >= wanted) break;
+    if (!options.includes(c) && pool.concat(hebrewFinals).includes(c))
+      options.push(c);
+  }
+  const letters = shuffle(options, random);
+  return {
+    answer: letters.indexOf(target),
+    choices: letters.map((_, i) => i),
+    word: { emoji: words[index].emoji, text, missing, letters },
+  };
+}
+/** Galaxy Sequence: how many planets light up in each round of a level. */
+export const sequenceLengths: Record<Level, number[]> = {
+  0: [3, 3, 4, 4, 5],
+  1: [4, 4, 5, 5, 6],
+  2: [5, 5, 6, 6, 7],
+};
+export const sequenceTiles = (level: Level) => (level === 0 ? 4 : 6);
+export const makeSequence = (
+  level: Level,
+  round: number,
+  random: Random = Math.random,
+): number[] => {
+  const tiles = sequenceTiles(level);
+  const steps: number[] = [];
+  const length = sequenceLengths[level][Math.min(round, ROUNDS - 1)];
+  while (steps.length < length) {
+    const next = randInt(0, tiles - 1, random);
+    // No planet lights up twice in a row, so each step is easy to see.
+    if (next !== steps[steps.length - 1]) steps.push(next);
+  }
+  return steps;
+};

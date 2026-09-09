@@ -1,5 +1,16 @@
 import { test, expect, type Page } from '@playwright/test';
-const ids = ['count', 'colors', 'memory', 'shapes', 'patterns', 'bubbles'];
+import { words } from '../../lib/game-engine';
+const ids = [
+  'count',
+  'colors',
+  'memory',
+  'shapes',
+  'patterns',
+  'bubbles',
+  'sums',
+  'letters',
+  'sequence',
+];
 async function prepare(page: Page, lang = 'en', level = 0, sound = false) {
   await page.goto('/');
   await page.evaluate(
@@ -15,7 +26,7 @@ async function prepare(page: Page, lang = 'en', level = 0, sound = false) {
     { lang, level, sound, ids },
   );
   await page.reload();
-  await expect(page.locator('.game-card')).toHaveCount(6);
+  await expect(page.locator('.game-card')).toHaveCount(ids.length);
 }
 async function checkLayout(page: Page) {
   const result = await page.evaluate(() => ({
@@ -60,7 +71,7 @@ for (const lang of ['en', 'he']) {
       }
     }
     await page.getByRole('tab').nth(1).tap();
-    await expect(page.locator('.star-games button')).toHaveCount(6);
+    await expect(page.locator('.star-games button')).toHaveCount(ids.length);
     await checkLayout(page);
   });
 }
@@ -92,6 +103,33 @@ async function correctChoice(page: Page, id: string) {
         (nodes, shape) =>
           nodes.findIndex((e) => e.textContent?.trim() === shape),
         shape,
+      );
+    return page.locator('.answer-tile').nth(index);
+  }
+  if (id === 'sums') {
+    const [a, b] = await page.locator('.sum-row b').allTextContents();
+    const op = (await page.locator('.sum-row > span').first().textContent())!;
+    const answer = op.trim() === '+' ? +a + +b : +a - +b;
+    return page
+      .locator('.answer-tile')
+      .filter({ hasText: new RegExp(`^${answer}$`) });
+  }
+  if (id === 'letters') {
+    const emoji = (await page.locator('.word-picture').textContent())!.trim();
+    const lang = await page.evaluate(() => document.documentElement.lang);
+    const word = words.find((w) => w.emoji === emoji)![lang as 'en' | 'he'];
+    const missing = await page
+      .locator('.word-row > span')
+      .evaluateAll((nodes) =>
+        nodes.findIndex((n) => n.classList.contains('letter-blank')),
+      );
+    const letter = word.split('')[missing];
+    const index = await page
+      .locator('.letter-option')
+      .evaluateAll(
+        (nodes, letter) =>
+          nodes.findIndex((e) => e.textContent?.trim() === letter),
+        letter,
       );
     return page.locator('.answer-tile').nth(index);
   }
@@ -152,6 +190,34 @@ async function solveMemory(page: Page) {
   }
   throw Error('Memory game did not finish.');
 }
+async function solveSequence(page: Page, lang: string) {
+  for (let round = 0; round < 5; round++) {
+    await expect(page.locator('.sequence-grid')).toHaveClass(/play/, {
+      timeout: 15000,
+    });
+    await checkLayout(page);
+    const steps = (await page
+      .locator('.sequence-grid')
+      .getAttribute('data-steps'))!
+      .split(',')
+      .map(Number);
+    const planets = page.locator('.planet-tile');
+    if (round === 0) {
+      // A wrong planet replays the sequence instead of ending the game.
+      const wrong = steps[0] === 0 ? 1 : 0;
+      await planets.nth(wrong).tap();
+      await expect(page.locator('.game-feedback')).toContainText(
+        lang === 'en' ? 'Nearly' : 'כמעט',
+      );
+      await expect(page.locator('.sequence-grid')).toHaveClass(/play/, {
+        timeout: 15000,
+      });
+    }
+    for (const step of steps) await planets.nth(step).tap();
+    await expect(page.locator('.game-feedback')).toHaveClass(/good/);
+    await page.locator('.next-button').tap();
+  }
+}
 for (const { lang, level } of [
   { lang: 'en', level: 0 },
   { lang: 'he', level: 2 },
@@ -166,6 +232,7 @@ for (const { lang, level } of [
       await page.setViewportSize({ width: 360, height: 800 });
       await page.locator(`.card-${id}`).tap();
       if (id === 'memory') await solveMemory(page);
+      else if (id === 'sequence') await solveSequence(page, lang);
       else if (id === 'bubbles') {
         const order = Array.from({ length: 10 }, (_, i) =>
           level === 2 ? 10 - i : i + 1,

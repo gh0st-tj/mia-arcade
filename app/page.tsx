@@ -16,9 +16,16 @@ import {
 } from 'lucide-react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Progress } from '@/components/ui/progress';
-import { games, type Lang, type GameId } from '@/lib/game-data';
+import {
+  games,
+  instructionFor,
+  instructionKey,
+  type Lang,
+  type GameId,
+} from '@/lib/game-data';
 import { levelFor } from '@/lib/game-engine';
 import Game from './game';
+import SequenceGame from './sequence-game';
 import WelcomeScene from './welcome-scene';
 import audioManifest from '@/lib/audio-manifest.json';
 
@@ -109,7 +116,8 @@ export default function Arcade() {
     setWon(false);
     setPerfect(false);
     setRun((x) => x + 1);
-    speak(id, games.find((g) => g.id === id)!.instruction[lang]);
+    const level = levelFor(stars[id]);
+    speak(instructionKey(id, level), instructionFor(id, level, lang));
   };
   const back = () => {
     stopAudio();
@@ -321,21 +329,37 @@ export default function Arcade() {
                   <h1>{selected.title[lang]}</h1>
                   <button
                     className="instruction"
-                    onClick={() => speak(active, selected.instruction[lang])}
+                    onClick={() =>
+                      speak(
+                        instructionKey(active, levelFor(stars[active])),
+                        instructionFor(active, levelFor(stars[active]), lang),
+                      )
+                    }
                   >
                     <Volume2 size={20} />
-                    {selected.instruction[lang]}
+                    {instructionFor(active, levelFor(stars[active]), lang)}
                   </button>
                 </div>
-                <Game
-                  key={`${active}-${run}-${lang}`}
-                  id={active}
-                  lang={lang}
-                  level={levelFor(stars[active])}
-                  onWin={win}
-                  speak={speak}
-                  sound={sound}
-                />
+                {active === 'sequence' ? (
+                  <SequenceGame
+                    key={`${active}-${run}-${lang}`}
+                    lang={lang}
+                    level={levelFor(stars[active])}
+                    onWin={win}
+                    speak={speak}
+                    sound={sound}
+                  />
+                ) : (
+                  <Game
+                    key={`${active}-${run}-${lang}`}
+                    id={active}
+                    lang={lang}
+                    level={levelFor(stars[active])}
+                    onWin={win}
+                    speak={speak}
+                    sound={sound}
+                  />
+                )}
               </>
             )}
           </section>
@@ -464,6 +488,34 @@ export default function Arcade() {
                               <span>🍓</span>
                               <b>?</b>
                             </>
+                          ) : g.id === 'sums' ? (
+                            <>
+                              <span>3</span>
+                              <i>+</i>
+                              <span>4</span>
+                              <b>🚀</b>
+                            </>
+                          ) : g.id === 'letters' ? (
+                            <>
+                              <b>{lang === 'en' ? '⭐' : '⭐'}</b>
+                              {(lang === 'en' ? 'ST?R' : 'כו?ב')
+                                .split('')
+                                .map((ch, i) => (
+                                  <span
+                                    key={i}
+                                    className={ch === '?' ? 'gap' : ''}
+                                  >
+                                    {ch}
+                                  </span>
+                                ))}
+                            </>
+                          ) : g.id === 'sequence' ? (
+                            <>
+                              <span>🪐</span>
+                              <span>🌍</span>
+                              <span>🌕</span>
+                              <span>☀️</span>
+                            </>
                           ) : (
                             <>
                               <span>1</span>
@@ -486,7 +538,7 @@ export default function Arcade() {
                         </span>
                       </div>
                       <div className="card-bottom">
-                        <span>{t('Ages 4–6', 'גילאי 4–6')}</span>
+                        <span>{g.ages[lang]}</span>
                         <span
                           className="mini-stars"
                           aria-label={`${stars[g.id] || 0} / 3`}
@@ -521,13 +573,15 @@ export default function Arcade() {
                       )}
                     </p>
                     <Progress
-                      value={(total / 18) * 100}
+                      value={(total / (games.length * 3)) * 100}
                       aria-label={t(
                         'Star collection progress',
                         'התקדמות אוסף הכוכבים',
                       )}
                     />
-                    <b>{total} / 18 ⭐</b>
+                    <b>
+                      {total} / {games.length * 3} ⭐
+                    </b>
                   </div>
                   <div className="star-games">
                     {games.map((g) => (
