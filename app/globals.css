@@ -2,6 +2,242 @@
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
 @custom-variant dark (&:is(.dark *));
+
+/* The English adventure extends the arcade's mint and starlight palette. */
+.preview-english {
+  flex-direction: column;
+  gap: 10px;
+}
+.preview-english > span {
+  font-size: 64px;
+}
+.preview-english > b {
+  font-size: 22px;
+  color: #b3f6e2;
+  transform: rotate(-4deg);
+}
+.speaking-heading > p {
+  color: #cfc3df;
+  font-size: 1rem;
+}
+.speaking-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 290px;
+  gap: 24px;
+  align-items: start;
+  max-width: 1020px;
+  margin: 24px auto 0;
+}
+.speaking-board {
+  min-width: 0;
+  border: 1px solid #83dfc755;
+  border-radius: 28px;
+  background:
+    radial-gradient(ellipse at 50% 35%, #29514335, transparent 65%), #21192f;
+  padding: 28px;
+  text-align: center;
+}
+.speaking-level-heading {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.875rem;
+  color: #b2eddb;
+  font-weight: 800;
+}
+.speaking-board > h2 {
+  margin: 12px 0 20px;
+  font-size: 1.35rem;
+  text-align: start;
+}
+.speaking-board [data-slot='progress-indicator'],
+.speaking-journey [data-slot='progress-indicator'] {
+  background: #83dfc7;
+}
+.speaking-prompt {
+  padding: 24px 0 20px;
+}
+.speaking-picture {
+  display: block;
+  font-size: clamp(64px, 9vw, 92px);
+  line-height: 1.3;
+  margin: 8px 0 14px;
+}
+.speaking-say-label {
+  color: #b9abc9;
+  font-size: 0.875rem;
+}
+.speaking-prompt h3 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  line-height: 1.3;
+  font-weight: 900;
+  margin: 10px 0;
+  overflow-wrap: anywhere;
+}
+.speaking-translation {
+  font-size: 1.125rem;
+  color: #d1c3df;
+  margin: 6px 0;
+}
+.speaking-prompt.is-correct h3 {
+  color: #a4f3d4;
+}
+.speaking-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+.speaking-actions > button {
+  min-height: 56px;
+  font-size: 1rem;
+}
+.speaking-actions .speaking-mic {
+  background: #83dfc7;
+  color: #102c25;
+}
+.speaking-mic.is-listening {
+  background: #ffd780;
+  box-shadow: 0 0 0 5px #ffd78022;
+}
+.speaking-feedback {
+  min-height: 90px;
+  margin-top: 20px;
+  color: #cfc3df;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.speaking-feedback p {
+  margin: 8px 0 0;
+  font-size: 0.875rem;
+  overflow-wrap: anywhere;
+}
+.speaking-feedback.correct {
+  color: #a4f3d4;
+  font-weight: 800;
+}
+.speaking-feedback.retry,
+.speaking-feedback.error {
+  color: #ffda94;
+}
+.speaking-support {
+  border: 1px solid #ffd78055;
+  border-radius: 14px;
+  padding: 16px;
+  color: #ffdfac;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+.speaking-journey {
+  background: #241c34;
+  border: 1px solid #433552;
+  border-radius: 24px;
+  padding: 22px;
+}
+.speaking-journey-title {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: #ffda78;
+}
+.speaking-journey-title h2 {
+  font-size: 1.125rem;
+  margin: 0;
+}
+.speaking-journey > p {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #cfc3df;
+}
+.speaking-stage {
+  margin-top: 22px;
+}
+.speaking-stage h3 {
+  font-size: 1rem;
+  margin: 0 0 10px;
+}
+.speaking-levels {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(44px, 1fr));
+  gap: 8px;
+}
+.speaking-levels button {
+  position: relative;
+  min-height: 48px;
+  border: 1px solid #58456c;
+  border-radius: 12px;
+  background: #332740;
+  color: #ece3fa;
+  font-size: 1rem;
+  font-weight: 800;
+}
+.speaking-levels button svg {
+  position: absolute;
+  bottom: 3px;
+  inset-inline-end: 3px;
+}
+.speaking-levels button.completed {
+  background: #24483c;
+  border-color: #83dfc766;
+  color: #b0f6dd;
+}
+.speaking-levels button[aria-current='step'] {
+  outline: 2px solid #ffda78;
+  outline-offset: 2px;
+}
+.speaking-levels button:disabled {
+  opacity: 0.6;
+}
+.speaking-hint {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #c4b6d4;
+}
+.speaking-parent-note {
+  max-width: 1020px;
+  margin: 24px auto;
+  color: #b9abc9;
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+.speaking-parent-note summary {
+  cursor: pointer;
+  min-height: 44px;
+  padding: 10px 0;
+}
+.speaking-parent-note p {
+  font-size: 1rem;
+}
+.speaking-complete {
+  padding: 22px 0;
+}
+.speaking-complete h3 {
+  font-size: 1.8rem;
+  margin: 10px 0;
+}
+.speaking-complete p {
+  color: #cfc3df;
+  line-height: 1.6;
+}
+.speaking-complete button {
+  margin: 14px auto 0;
+  display: flex;
+}
+@media (max-width: 800px) {
+  .speaking-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .speaking-board {
+    padding: 20px 16px;
+  }
+  .speaking-levels {
+    grid-template-columns: repeat(auto-fit, minmax(44px, 1fr));
+  }
+  .speaking-heading h1 {
+    overflow-wrap: anywhere;
+  }
+}
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

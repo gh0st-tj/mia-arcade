@@ -45,8 +45,10 @@ async function prepare(page: Page, lang = 'en', level = 0, sound = false) {
   );
   await page.evaluate(() => localStorage.setItem('mia-intro-seen-v1', '1'));
   await page.reload();
-  await expect(page.locator('.game-card')).toHaveCount(ids.length);
-  await expect(page.locator('.game-card .difficulty')).toHaveCount(ids.length);
+  await expect(page.locator('.game-card')).toHaveCount(ids.length + 1);
+  await expect(page.locator('.game-card .difficulty')).toHaveCount(
+    ids.length + 1,
+  );
 }
 async function checkLayout(page: Page) {
   const result = await page.evaluate(() => ({
@@ -83,15 +85,19 @@ for (const lang of ['en', 'he']) {
     ]) {
       await page.setViewportSize({ width, height });
       await checkLayout(page);
-      for (const id of ids) {
+      for (const id of ['english', ...ids]) {
         await page.locator(`.card-${id}`).tap();
-        await expect(page.locator('.game-board')).toBeVisible();
+        await expect(
+          page.locator(id === 'english' ? '.speaking-board' : '.game-board'),
+        ).toBeVisible();
         await checkLayout(page);
         await page.locator('.quiet-button').tap();
       }
     }
     await page.getByRole('tab').nth(1).tap();
-    await expect(page.locator('.star-games button')).toHaveCount(ids.length);
+    await expect(page.locator('.star-games button')).toHaveCount(
+      ids.length + 1,
+    );
     for (const width of [320, 390, 768, 844]) {
       await page.setViewportSize({ width, height: 844 });
       await checkLayout(page);

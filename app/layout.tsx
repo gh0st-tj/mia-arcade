@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   icons: { icon: '/favicon.svg' },
   title: 'Mia’s Babylon Arcade ✦ Play, learn & shine',
   description:
-    'Twelve playful learning adventures built with love by Uncle Tom for Mia, with Dean, Johnny, Mum Lee and Dad Gal.',
+    'Thirteen playful learning adventures, including 30 English speaking levels, built with love by Uncle Tom for Mia and her family.',
 };
 export default function RootLayout({
   children,

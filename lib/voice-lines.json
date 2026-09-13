@@ -3,7 +3,7 @@
     {
       "id": "welcome",
       "en": "Welcome to your Babylon arcade, Mia! Choose a game and let’s play!",
-      "he": "ברוכה הבאה לבבילון שלך, מיה! בחרי משחק ובואי נשחק!"
+      "he": "ברוכה הבאה לבבילון, מיה! בחרי משחק, ובואי נשחק!"
     },
     {
       "id": "welcome-2",
@@ -13,12 +13,12 @@
     {
       "id": "welcome-3",
       "en": "Mia, your little arcade is ready! Bring your curiosity and let’s have fun.",
-      "he": "מיה, הארקייד הקטן שלך מוכן! בואי לגלות וליהנות."
+      "he": "מיה, עולם המשחקים שלך מוכן! בואי לגלות וליהנות."
     },
     {
       "id": "welcome-4",
       "en": "Mia, Uncle Tom built this little arcade just for you. Let’s find your next adventure!",
-      "he": "מיה, דוד טום בנה את הארקייד הקטן הזה במיוחד בשבילך. בואי נמצא את ההרפתקה הבאה!"
+      "he": "מיה, דוד טום בנה את עולם המשחקים הזה במיוחד בשבילך. בואי נצא להרפתקה!"
     },
     {
       "id": "welcome-5",
@@ -30,12 +30,12 @@
     {
       "id": "intro",
       "en": "Welcome to Babylon, Mia! This magical arcade is all yours. Baby Dean and Johnny are ready for an adventure, and Mum Lee and Dad Gal are cheering you on. Count stars, solve puzzles, and try something new. Ready, superstar? Let’s play!",
-      "he": "ברוכה הבאה לבבילון, מיה! הארקייד הקסום הזה כולו שלך. דין הקטן וג׳וני מוכנים להרפתקה, ואמא לי ואבא גל מעודדים אותך. ספרי כוכבים, פתרי חידות ונסי משהו חדש. מוכנה, כוכבת? בואי נשחק!"
+      "he": "ברוכה הבאה לבבילון, מיה! עולם המשחקים הקסום הזה כולו שלך. דין הקטן וג׳וני מוכנים להרפתקה, ואמא לי ואבא גל מעודדים אותך. ספרי כוכבים, פתרי חידות ונסי משהו חדש. מוכנה, כוכבת? בואי נשחק!"
     },
     {
       "id": "intro-tom",
       "en": "Hello, Captain Mia! Uncle Tom built this Babylon arcade especially for you. Johnny is wagging his tail, baby Dean is smiling, and Mum Lee and Dad Gal are here to cheer. Try a little adventure, take your time, and have fun!",
-      "he": "שלום קפטנית מיה! דוד טום בנה את הארקייד הזה במיוחד בשבילך. ג׳וני מכשכש בזנב, דין הקטן מחייך, ואמא לי ואבא גל כאן לעודד. נסי הרפתקה קטנה, קחי את הזמן ותיהני!"
+      "he": "שלום, מיה, קפטנית החלל! דוד טום בנה את עולם המשחקים הזה במיוחד בשבילך. ג׳וני מכשכש בזנב, דין הקטן מחייך, ואמא לי ואבא גל כאן לעודד אותך. בואי נצא להרפתקה קטנה. קחי את הזמן ותיהני!"
     },
     {
       "id": "intro-3",
@@ -45,7 +45,7 @@
     {
       "id": "intro-4",
       "en": "Mia, Uncle Tom has been busy building a world for your imagination! There are picnics to pack, paths to explore, and friendly robots to create. Dean, Johnny, Lee and Gal are on your team. Shall we begin?",
-      "he": "מיה, דוד טום בונה עולם לדמיון שלך! יש פיקניקים לארוז, שבילים לגלות ורובוטים חברותיים ליצור. דין, ג׳וני, לי וגל בקבוצה שלך. נתחיל?"
+      "he": "מיה, דוד טום בנה עולם מלא בדמיון בשבילך! נכין סל לפיקניק, נגלה שבילים ונבנה רובוטים חמודים. דין, ג׳וני, לי וגל בקבוצה שלך. נתחיל?"
     }
   ],
   "count": [
@@ -57,12 +57,12 @@
     {
       "id": "count-2",
       "en": "Mia, how many stars can you find? Count them and choose the number.",
-      "he": "מיה, כמה כוכבים מצאת? ספרי ובחרי את המספר."
+      "he": "מיה, כמה כוכבים יש כאן? ספרי אותם ובחרי את המספר המתאים."
     },
     {
       "id": "count-3",
       "en": "Let’s count together! Touch the stars, then pick how many there are.",
-      "he": "בואי נספור יחד! געי בכוכבים ובחרי כמה יש."
+      "he": "בואי נספור יחד! לחצי על כל כוכב, ואז בחרי כמה כוכבים ספרת."
     }
   ],
   "colors": [
@@ -74,12 +74,12 @@
     {
       "id": "colors-2",
       "en": "Time to paint, Mia! Which little color matches the big one?",
-      "he": "זמן לצייר, מיה! איזה צבע קטן מתאים לצבע הגדול?"
+      "he": "זמן לצייר, מיה! איזה צבע מתאים לדוגמה הגדולה?"
     },
     {
       "id": "colors-3",
       "en": "Look closely at the paint. Can you find the very same color?",
-      "he": "הסתכלי היטב בצבע. תוכלי למצוא בדיוק את אותו הצבע?"
+      "he": "הסתכלי היטב על הדוגמה. תוכלי למצוא בדיוק את אותו הצבע?"
     }
   ],
   "memory": [
@@ -91,7 +91,7 @@
     {
       "id": "memory-2",
       "en": "Where is Johnny hiding? Turn two cards and look for matching friends.",
-      "he": "איפה ג׳וני מתחבא? הפכי שני קלפים וחפשי חברים תואמים."
+      "he": "איפה ג׳וני מתחבא? הפכי שני קלפים וחפשי זוג תמונות זהות."
     },
     {
       "id": "memory-3",
@@ -103,7 +103,7 @@
     {
       "id": "shapes",
       "en": "Help baby Dean! Tap the shape that matches.",
-      "he": "עזרי לתינוק דין! לחצי על הצורה המתאימה."
+      "he": "עזרי לדין הקטן! לחצי על הצורה המתאימה."
     },
     {
       "id": "shapes-2",
@@ -113,24 +113,24 @@
     {
       "id": "shapes-3",
       "en": "Look at Dean’s shape. Which one has the same outline?",
-      "he": "הסתכלי על הצורה של דין. לאיזו צורה יש אותו קו מתאר?"
+      "he": "הסתכלי על הצורה של דין. איזו צורה נראית בדיוק כמוה?"
     }
   ],
   "patterns": [
     {
       "id": "patterns",
       "en": "Look at the pattern. What comes next?",
-      "he": "הסתכלי על הסדר. מה מגיע עכשיו?"
+      "he": "הסתכלי על התמונות לפי הסדר. איזו תמונה תבוא אחר כך?"
     },
     {
       "id": "patterns-2",
       "en": "Mia, spot the repeating pattern! Which picture belongs at the end?",
-      "he": "מיה, מצאי את הדגם שחוזר! איזו תמונה מתאימה בסוף?"
+      "he": "מיה, שימי לב לתמונות שחוזרות על עצמן. איזו תמונה מתאימה בסוף?"
     },
     {
       "id": "patterns-3",
       "en": "Say the pictures in order. What should we put in the empty space?",
-      "he": "אמרי את התמונות לפי הסדר. מה נשים במקום הריק?"
+      "he": "אמרי מה רואים בכל תמונה, לפי הסדר. מה נשים במקום הריק?"
     }
   ],
   "bubbles": [
@@ -142,7 +142,7 @@
     {
       "id": "bubbles-2",
       "en": "Ready for bubbles, Mia? Find one, then keep counting up!",
-      "he": "מוכנה לבועות, מיה? מצאי אחת והמשיכי לספור קדימה!"
+      "he": "מוכנה לבועות, מיה? מצאי את המספר אחת, ואז המשיכי לספור!"
     },
     {
       "id": "bubbles-3",
@@ -154,7 +154,7 @@
     {
       "id": "countdown",
       "en": "Let’s count backwards! Pop ten first, then nine, all the way to one.",
-      "he": "בואי נספור לאחור! פוצצי קודם עשר, אחר כך תשע, עד אחת."
+      "he": "בואי נספור לאחור! לחצי קודם על עשר, אחר כך על תשע, והמשיכי עד אחת."
     },
     {
       "id": "countdown-2",
@@ -176,12 +176,12 @@
     {
       "id": "sums-2",
       "en": "Ready, rocket mathematician? Add or take away, then choose the answer.",
-      "he": "מוכנה, מתמטיקאית החלל? חברי או חסרי ובחרי את התשובה."
+      "he": "מוכנה להרפתקת חשבון בחלל? פתרי את התרגיל ובחרי את התשובה."
     },
     {
       "id": "sums-3",
       "en": "Mia, help our rocket launch! Look at the numbers and solve the puzzle.",
-      "he": "מיה, עזרי לרקטה להמריא! הסתכלי במספרים ופתרי את החידה."
+      "he": "מיה, עזרי לטיל להמריא! הסתכלי על המספרים ופתרי את התרגיל."
     }
   ],
   "letters": [
@@ -198,24 +198,24 @@
     {
       "id": "letters-3",
       "en": "Say the picture’s name. Which letter do we need to finish the word?",
-      "he": "אמרי את שם התמונה. איזו אות צריך כדי להשלים את המילה?"
+      "he": "מה רואים בתמונה? אמרי את המילה. איזו אות חסרה בה?"
     }
   ],
   "sequence": [
     {
       "id": "sequence",
       "en": "Watch the planets light up, then tap them in the same order.",
-      "he": "צפי בכוכבי הלכת נדלקים, ואז לחצי עליהם באותו הסדר."
+      "he": "הסתכלי איך כוכבי הלכת נדלקים. אחר כך לחצי עליהם באותו הסדר."
     },
     {
       "id": "sequence-2",
       "en": "Mia, remember our space path! Watch the lights, then copy their order.",
-      "he": "מיה, זכרי את המסלול בחלל! צפי באורות וחזרי על הסדר שלהם."
+      "he": "מיה, זכרי את המסלול בחלל! הסתכלי על האורות, ואז לחצי באותו הסדר."
     },
     {
       "id": "sequence-3",
       "en": "Watch carefully, space explorer. When the lights finish, it’s your turn!",
-      "he": "הסתכלי היטב, חוקרת החלל. כשהאורות מסיימים, תורך!"
+      "he": "הסתכלי היטב, חוקרת החלל. כשהאורות יכבו, יגיע תורך!"
     }
   ],
   "win": [
@@ -247,7 +247,7 @@
     {
       "id": "win-6",
       "en": "Look at you go, Mia! Mum Lee and Dad Gal are cheering for your hard work.",
-      "he": "תראי איך התקדמת, מיה! אמא לי ואבא גל מעודדים אותך על המאמץ."
+      "he": "תראי כמה התקדמת, מיה! אמא לי ואבא גל שמחים לראות איך את מתאמצת."
     },
     {
       "id": "win-7",
@@ -262,12 +262,12 @@
     {
       "id": "win-9",
       "en": "Mission complete, Captain Mia! Your new star is ready to shine.",
-      "he": "המשימה הושלמה, קפטנית מיה! הכוכב החדש שלך מוכן לזהור."
+      "he": "המשימה הושלמה, מיה, קפטנית החלל! הכוכב החדש שלך מוכן לזהור."
     },
     {
       "id": "win-10",
       "en": "Yes, Mia! You solved it. Let’s give a happy cheer for all your effort!",
-      "he": "יש, מיה! פתרת את זה. בואי נחגוג בשמחה את כל המאמץ שלך!"
+      "he": "יש, מיה! הצלחת לפתור את זה. כל הכבוד על המאמץ!"
     },
     {
       "id": "win-11",
@@ -282,7 +282,7 @@
     {
       "id": "win-13",
       "en": "Three cheers for Mia! Your careful thinking helped you find the way.",
-      "he": "שלוש קריאות הידד למיה! החשיבה שלך עזרה לך למצוא את הדרך."
+      "he": "הידד למיה! חשבת, ניסית ומצאת את הדרך."
     },
     {
       "id": "win-14",
@@ -304,7 +304,7 @@
     {
       "id": "correct-3",
       "en": "Lovely thinking!",
-      "he": "איזו חשיבה יפה!"
+      "he": "יופי של מחשבה!"
     },
     {
       "id": "correct-4",
@@ -314,7 +314,7 @@
     {
       "id": "correct-5",
       "en": "Nicely done, Mia!",
-      "he": "עשית את זה יפה, מיה!"
+      "he": "יופי, מיה! הצלחת!"
     },
     {
       "id": "correct-6",
@@ -324,7 +324,7 @@
     {
       "id": "correct-7",
       "en": "That was thoughtful, Mia!",
-      "he": "חשבת יפה, מיה!"
+      "he": "כל הכבוד על החשיבה, מיה!"
     },
     {
       "id": "correct-8",
@@ -366,14 +366,14 @@
     {
       "id": "retry-7",
       "en": "Uncle Tom made room for trying again. You can take your time!",
-      "he": "דוד טום השאיר מקום לנסות שוב. את יכולה לקחת את הזמן!"
+      "he": "גם דוד טום מנסה שוב לפעמים. קחי את הזמן, מיה!"
     }
   ],
   "match": [
     {
       "id": "match",
       "en": "A matching pair! Well spotted, Mia.",
-      "he": "זוג תואם! מצאת יפה, מיה."
+      "he": "מצאת זוג! כל הכבוד, מיה."
     },
     {
       "id": "match-2",
@@ -400,7 +400,7 @@
     {
       "id": "memory-retry-3",
       "en": "Have another peek. Their matches are hiding nearby!",
-      "he": "הציצי שוב. בני הזוג שלהם מתחבאים קרוב!"
+      "he": "בואי נסתכל שוב. איפה מסתתרים הקלפים המתאימים?"
     }
   ],
   "sequence-turn": [
@@ -412,7 +412,7 @@
     {
       "id": "sequence-turn-2",
       "en": "Now copy the lights!",
-      "he": "עכשיו חזרי על האורות!"
+      "he": "עכשיו לחצי על הכוכבים באותו הסדר!"
     },
     {
       "id": "sequence-turn-3",
@@ -429,12 +429,12 @@
     {
       "id": "sequence-retry-2",
       "en": "Take another look. Then try the same order.",
-      "he": "הסתכלי שוב. ואז נסי את אותו הסדר."
+      "he": "הסתכלי שוב על האורות. אחר כך לחצי באותו הסדר."
     },
     {
       "id": "sequence-retry-3",
       "en": "No rush! Our planets will show you once more.",
-      "he": "בלי למהר! כוכבי הלכת יראו לך שוב."
+      "he": "אין מה למהר. בואי נראה שוב איך כוכבי הלכת נדלקים."
     }
   ],
   "number-1": [
@@ -578,12 +578,12 @@
     {
       "id": "market",
       "en": "Look at the picnic list. Add the right food to your basket, then check it!",
-      "he": "הסתכלי ברשימת הפיקניק. הוסיפי לסל את האוכל המתאים ואז בדקי אותו!"
+      "he": "הסתכלי ברשימת הפיקניק. הוסיפי לסל את האוכל בכמות המתאימה, ואז לחצי על כפתור הבדיקה!"
     },
     {
       "id": "market-2",
       "en": "Mia’s mini market is open! Count the food on the list and pack just that much.",
-      "he": "המכולת של מיה פתוחה! ספרי את האוכל ברשימה וארזי בדיוק את הכמות הזאת."
+      "he": "המכולת של מיה פתוחה! בדקי כמה צריך מכל מאכל, והוסיפי לסל בדיוק את הכמות הזאת."
     },
     {
       "id": "market-3",
@@ -595,7 +595,7 @@
     {
       "id": "robot",
       "en": "Help Uncle Tom build a robot! Choose a paint, then tap a part to match the little model.",
-      "he": "עזרי לדוד טום לבנות רובוט! בחרי צבע ואז לחצי על חלק כדי להתאים לדגם הקטן."
+      "he": "עזרי לדוד טום לבנות רובוט! בחרי צבע ולחצי על החלק שתרצי לצבוע. התאימי את הצבעים לרובוט הקטן."
     },
     {
       "id": "robot-2",
@@ -605,19 +605,19 @@
     {
       "id": "robot-3",
       "en": "A new robot friend needs your help! Pick a color, then paint each part to match the plan.",
-      "he": "חבר רובוט חדש צריך את עזרתך! בחרי צבע וצבעי כל חלק לפי הדגם."
+      "he": "רובוט חמוד צריך את עזרתך! בחרי צבע, וצבעי כל חלק כמו ברובוט הקטן."
     }
   ],
   "dedication": [
     {
       "id": "dedication",
       "en": "Made with love for Mia, by Uncle Tom. I hope this little arcade brings you big smiles and happy adventures!",
-      "he": "נבנה באהבה למיה, על ידי דוד טום. הארקייד הקטן הזה מלא בחיוכים גדולים ובהרפתקאות שמחות!"
+      "he": "דוד טום בנה את עולם המשחקים הזה באהבה, במיוחד בשבילך, מיה. שיהיו לך המון חיוכים והרפתקאות שמחות!"
     },
     {
       "id": "dedication-2",
       "en": "Uncle Tom is building this arcade especially for you, Mia. Your curiosity makes every game an adventure.",
-      "he": "דוד טום בונה את הארקייד הזה במיוחד בשבילך, מיה. הסקרנות שלך הופכת כל משחק להרפתקה."
+      "he": "דוד טום בנה את עולם המשחקים הזה במיוחד בשבילך, מיה. הסקרנות שלך הופכת כל משחק להרפתקה."
     },
     {
       "id": "dedication-3",
@@ -634,7 +634,7 @@
     {
       "id": "market-retry-2",
       "en": "Almost packed! Match each basket number to the picnic list.",
-      "he": "כמעט ארזנו! התאימי כל מספר בסל למספר ברשימה."
+      "he": "כמעט סיימנו לארוז! בדקי שהכמות של כל מאכל בסל מתאימה לרשימה."
     },
     {
       "id": "market-retry-3",

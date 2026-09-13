@@ -1,6 +1,6 @@
 # Mia’s Babylon Arcade
 
-Twelve learning games built with love by Uncle Tom for Mia, with baby brother Dean, dog Johnny, Mum Lee and Dad Gal: six gentle games for ages 4–6, three adventures for ages 5–6, and three trickier games for ages 6–7. English and Hebrew, touch and keyboard controls, three difficulty levels per game, spoken instructions, and 36 collectible stars saved in the browser.
+Thirteen learning games built with love by Uncle Tom for Mia, with baby brother Dean, dog Johnny, Mum Lee and Dad Gal: six gentle games for ages 4–6, three adventures for ages 5–6, three trickier games for ages 6–7, and an English speaking adventure for ages 4–7. English and Hebrew, touch and keyboard controls, spoken instructions, and 39 collectible stars saved in the browser. The original games have three difficulty levels each; the English game has 30 speaking levels.
 
 - **Star Catcher:** count stars, with spoken counting on each tap.
 - **Mia’s Color Studio:** match colors, with closer shades on later levels.
@@ -14,10 +14,11 @@ Twelve learning games built with love by Uncle Tom for Mia, with baby brother De
 - **Rocket Sums (6–7):** adding within 10, then taking away, then sums up to 20 without star pictures.
 - **Space Spelling (6–7):** find the missing letter of a picture word in English or Hebrew; the top level mixes in look-alike letters.
 - **Galaxy Sequence (6–7):** watch planets light up and repeat the order, from three planets up to seven.
+- **Mia’s English Adventure (4–7):** 150 speaking challenges, from words to sentences. Only a correctly recognized complete answer advances; progress is saved after every challenge.
 
 Every card and game screen shows its current difficulty—Easy, Medium, or Tricky—with a three-bar indicator and a separate level number. Labels update as stars unlock later levels. The three new adventures stay Medium throughout. Uncle Tom has a visible, playable dedication and appears in the intro and fresh voice lines.
 
-No timers or lives. Every completed game earns one star, up to three per game, and each star unlocks a harder level of that game. Getting every answer right on the first try earns a special cheer. Progress, language and sound preferences stay in the current browser.
+No countdown pressure or lives. The original games earn one star per completion, up to three per game, with each star unlocking a harder level. English awards its stars at levels 10, 20, and 30. Progress, language and sound preferences stay in the current browser.
 
 ## Local development
 
@@ -63,6 +64,7 @@ Copy `.env.example` to `.env` at the repository root. For the original workspace
 ELEVENLABS_API_KEY=your_key
 ELEVENLABS_VOICE_ID=your_voice_id
 ELEVENLABS_MODEL=eleven_turbo_v2_5
+ELEVENLABS_HEBREW_VOICE_ID=your_reviewed_hebrew_voice_id
 ELEVENLABS_HEBREW_MODEL=eleven_v3
 FAL_KEY=your_key
 ```
@@ -75,13 +77,29 @@ npm run generate:video
 npm run generate:video -- --intro
 ```
 
-Edit the bilingual event catalogue in `lib/voice-lines.json` to add or change lines. Give a changed line a new ID, or intentionally regenerate its recording so text and audio stay in sync. Voice generation saves MP3s in `public/audio/` and updates `lib/audio-manifest.json`. It skips existing files. Use `npm run generate:voices -- --force` only to intentionally regenerate paid clips.
+Edit the bilingual event catalogue in `lib/voice-lines.json` to add or change lines. Give a changed line a new ID, or intentionally regenerate its recording so text and audio stay in sync. Voice generation saves MP3s in `public/audio/` and updates `lib/audio-manifest.json`. Hebrew uses a separately configured adult Hebrew narration voice, `eleven_v3`, `language_code: he`, Natural stability (0.5), and targeted niqqud for names, feminine instructions and numbers. The generator refuses to reuse the English voice implicitly for Hebrew. No voice or model is automatically certified as suitable for children: review the actual delivery.
+
+Generate Hebrew only with `npm run generate:voices -- --lang he`. Preview the count without spending credits with `--dry-run`, or generate samples with `--only welcome,count,number-8`. Requests and audio hashes are recorded in `lib/audio-generation.json`; unchanged recordings are reused, and interrupted runs resume without regenerating completed clips. Legacy English files are retained. Use `--force` only to deliberately regenerate matching paid clips. Old files are backed up under ignored `work/voice-backups/` before replacement. `lib/audio-versions.json` adds a content version to playback URLs so browsers fetch replacement clips.
+
+ElevenLabs documents [Hebrew support in Eleven v3](https://elevenlabs.io/docs/overview/models), [native-language voice selection](https://help.elevenlabs.io/hc/en-us/articles/19450861739409-Which-voices-in-the-voice-library-are-native-to-a-specific-language), and [v3 prompting and stability](https://elevenlabs.io/docs/overview/capabilities/text-to-speech/best-practices). The v3 product guide does not offer the ordinary speed slider; this generator does not assume a speed parameter will slow v3 speech.
 
 The five-second video uses **fal.ai / Kling 2.5 Turbo Standard** to animate the generated family portrait. Its request is saved in ignored `work/fal-welcome.json`, so reruns resume that job without another charge. The final clip is `public/video/mia-welcome.mp4`. The delivered video is optimized to 960×640 H.264 and about 0.5 MB. Reduced-motion users see the still portrait until they choose to play it. Press “A little hello for Mia” to replay the video with the ElevenLabs greeting.
 
 The ten-second opening movie uses the same fal.ai model and illustrated family, with a slow pullback into the stars. Its separate resumable job is stored in `work/fal-intro.json`; its optimized output is `public/video/mia-intro.mp4`.
 
 Rebuild and redeploy after generating new media. Browser speech is a fallback when an audio file cannot load; available fallback voices depend on the device. The original family photographs are not distributed with the app. Artwork provenance is in [ARTWORK.md](ARTWORK.md).
+
+## English speaking adventure
+
+The thirteenth game adds 30 sequential levels and 150 speaking challenges: 10 word levels, 8 short-phrase levels, and 12 sentence levels. Each prompt includes an English example voice, a picture cue, and a Hebrew translation. The interface supports both languages; recognition and example speech always use English.
+
+Tap **Hear it**, then **My turn to speak**. Only a final recognition result matching the complete target advances the challenge. Partial phrases, extra words, wrong answers, silence, microphone errors, and canceled attempts do not advance. Formatting, number transcription, and selected equivalent contractions are normalized; there is no fuzzy spelling match, skip, or typed-answer fallback. The game uses the browser's top transcript, so this checks recognized speech, not phoneme-level pronunciation or speaker identity. Real children’s voices and background noise can be misrecognized.
+
+Use a browser with Web Speech recognition (such as supported Chrome or Safari versions), a microphone, and HTTPS or localhost. Availability is feature-detected, with help for unsupported browsers, blocked permissions, and network problems. The browser speech service may send audio to its provider and require internet. No recording or transcript is stored by the game. Example playback cannot run alongside recognition; attempts stop when canceled, when leaving the game, or when the page is hidden.
+
+Progress is saved after each successful challenge in `mia-speaking-english-v1`, independently of the other games. Reopening resumes the next uncompleted challenge. Completed levels can be replayed; future levels stay locked. Levels 10, 20, and 30 award the three arcade stars. Clearing browser data removes progress.
+
+The Node suite covers the lesson progression, strict matching, saved progress boundaries, final/interim results, duplicate and late events, cancellation, errors, and timeouts. Live microphone accuracy requires a real-device check. The existing optional WebMCP game-start tool includes this game but cannot submit speech answers; its runtime contract was not verified in a supported WebMCP context for this change.
 
 ## Inspiration
 

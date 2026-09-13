@@ -74,8 +74,8 @@ test('robot blueprints always use a small available palette across five parts', 
       }
 });
 test('each game has an age guide and a non-decreasing difficulty for every level', () => {
-  assert.equal(games.length, 12);
-  assert.equal(new Set(games.map((g) => g.id)).size, 12);
+  assert.equal(games.length, 13);
+  assert.equal(new Set(games.map((g) => g.id)).size, 13);
   for (const g of games) {
     assert.equal(g.difficulty.length, 3);
     assert.ok(g.ages.en && g.ages.he);

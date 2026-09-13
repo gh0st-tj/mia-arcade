@@ -11,7 +11,8 @@ export type GameId =
   | 'sequence'
   | 'trail'
   | 'market'
-  | 'robot';
+  | 'robot'
+  | 'english';
 type Words = Record<Lang, string>;
 export const games: {
   id: GameId;
@@ -24,6 +25,23 @@ export const games: {
   emoji: string;
   difficulty: readonly [1 | 2 | 3, 1 | 2 | 3, 1 | 2 | 3];
 }[] = [
+  {
+    id: 'english',
+    difficulty: [1, 2, 3],
+    title: { en: 'Mia’s English Adventure', he: 'הרפתקת האנגלית של מיה' },
+    description: {
+      en: 'Say it out loud! Words to sentences in 30 levels.',
+      he: 'אמרי בקול! ממילים למשפטים ב־30 שלבים.',
+    },
+    instruction: {
+      en: 'Listen, tap the microphone, and say it in English.',
+      he: 'הקשיבי, לחצי על המיקרופון ואמרי באנגלית.',
+    },
+    skill: { en: 'Speaking English', he: 'מדברים אנגלית' },
+    ages: { en: 'Ages 4–7 · Microphone', he: 'גילאי 4–7 · מיקרופון' },
+    color: '#83dfc7',
+    emoji: '🎙️',
+  },
   {
     id: 'count',
     difficulty: [1, 1, 2],

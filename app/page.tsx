@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import {
   ArrowLeft,
   Gamepad2,
@@ -29,17 +29,26 @@ import AdventureGame from './adventure-game';
 import Difficulty from './difficulty';
 import type { AdventureId } from '@/lib/adventure-engine';
 import SequenceGame from './sequence-game';
+import SpeakingGame from './speaking-game';
 import WelcomeScene from './welcome-scene';
 import IntroWelcome from './intro-welcome';
 import voiceLines from '@/lib/voice-lines.json';
 import { createVoicePicker } from '@/lib/voice-picker';
 import audioManifest from '@/lib/audio-manifest.json';
+import audioVersions from '@/lib/audio-versions.json';
 
 export default function Arcade() {
   const [lang, setLang] = useState<Lang>('en');
   const [sound, setSound] = useState(true);
   const [active, setActive] = useState<GameId | null>(null);
   const [stars, setStars] = useState<Record<string, number>>({});
+  const awardEnglishStars = useCallback((count: number) => {
+    setStars((current) =>
+      (current.english || 0) >= count
+        ? current
+        : { ...current, english: count },
+    );
+  }, []);
   const [ready, setReady] = useState(false);
   const [run, setRun] = useState(0);
   const [won, setWon] = useState(false);
@@ -130,7 +139,10 @@ export default function Arcade() {
       fallback();
       return;
     }
-    const a = new Audio(`/audio/${lang}/${key}.mp3`);
+    const version = (audioVersions as Record<string, string>)[`${lang}/${key}`];
+    const a = new Audio(
+      `/audio/${lang}/${key}.mp3${version ? `?v=${version}` : ''}`,
+    );
     audio.current = a;
     const onFailure = () => {
       if (audio.current === a) fallback();
@@ -145,7 +157,8 @@ export default function Arcade() {
     setPerfect(false);
     setRun((x) => x + 1);
     const level = levelFor(stars[id]);
-    speak(instructionKey(id, level), instructionFor(id, level, lang));
+    if (id !== 'english')
+      speak(instructionKey(id, level), instructionFor(id, level, lang));
   };
   const back = () => {
     stopAudio();
@@ -207,7 +220,7 @@ export default function Arcade() {
     register({
       name: 'start_arcade_game',
       description:
-        'Open one of the twelve games for Mia to play. Does not answer questions or award stars.',
+        'Open an arcade game for Mia to play. Does not answer questions or award stars.',
       inputSchema: {
         type: 'object',
         properties: { game: { type: 'string', enum: games.map((g) => g.id) } },
@@ -380,6 +393,13 @@ export default function Arcade() {
                   </button>
                 </div>
               </div>
+            ) : active === 'english' ? (
+              <SpeakingGame
+                key={`english-${run}`}
+                lang={lang}
+                sound={sound}
+                onStars={awardEnglishStars}
+              />
             ) : (
               <>
                 <div className="game-heading">
@@ -548,7 +568,12 @@ export default function Arcade() {
                           className={`preview preview-${g.id}`}
                           aria-hidden="true"
                         >
-                          {g.id === 'count' ? (
+                          {g.id === 'english' ? (
+                            <>
+                              <span>🎙️</span>
+                              <b>Hello, Mia!</b>
+                            </>
+                          ) : g.id === 'count' ? (
                             <>
                               <span>⭐</span>
                               <span>⭐</span>
@@ -649,8 +674,12 @@ export default function Arcade() {
                         />
                         <span>
                           {t(
-                            `Level ${levelFor(stars[g.id]) + 1}`,
-                            `שלב ${levelFor(stars[g.id]) + 1}`,
+                            g.id === 'english'
+                              ? '30 speaking levels'
+                              : `Level ${levelFor(stars[g.id]) + 1}`,
+                            g.id === 'english'
+                              ? '30 שלבי דיבור'
+                              : `שלב ${levelFor(stars[g.id]) + 1}`,
                           )}
                         </span>
                       </div>
