@@ -20,6 +20,26 @@
   color: #cfc3df;
   font-size: 1rem;
 }
+.speaking-coach {
+  max-width: 1020px;
+  margin: 16px auto;
+  text-align: center;
+}
+.speaking-coach > button {
+  margin: 4px 6px;
+  min-height: 44px;
+}
+.speaking-coach-caption {
+  max-width: 760px;
+  margin: 14px auto 0;
+  padding: 14px 20px;
+  border: 1px solid #83dfc744;
+  border-radius: 16px;
+  background: #203b3533;
+  color: #e0f1e9;
+  font-size: 1rem;
+  line-height: 1.65;
+}
 .speaking-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 290px;

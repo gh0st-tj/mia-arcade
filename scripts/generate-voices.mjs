@@ -1,6 +1,8 @@
 import { readFile, mkdir, writeFile, rename } from 'node:fs/promises';
 import { parseEnv, parseArgs } from 'node:util';
 import { speechRequest, fingerprint } from './voice-config.mjs';
+import { englishCourse } from '../lib/english-course.ts';
+import { englishExampleId } from '../lib/lesson-audio.ts';
 
 const root = new URL('../', import.meta.url);
 const { values } = parseArgs({
@@ -9,6 +11,7 @@ const { values } = parseArgs({
     only: { type: 'string' },
     force: { type: 'boolean', default: false },
     'dry-run': { type: 'boolean', default: false },
+    course: { type: 'boolean', default: false },
   },
 });
 const languages = values.lang ? [values.lang] : ['en', 'he'];
@@ -41,7 +44,20 @@ async function atomicWrite(path, data) {
   await rename(temp, dest);
 }
 const catalog = await readJson('lib/voice-lines.json');
-const allLines = Object.values(catalog).flat();
+const speakingCatalog = await readJson('lib/speaking-lines.json');
+const courseLines = [
+  ...Object.values(speakingCatalog).flat(),
+  ...englishCourse.flatMap((level, l) =>
+    level.prompts.map((prompt, p) => ({
+      id: englishExampleId(l, p),
+      en: prompt.en,
+      purpose: 'english-example',
+    })),
+  ),
+];
+const allLines = values.course
+  ? courseLines
+  : [...Object.values(catalog).flat(), ...courseLines];
 const only = values.only?.split(',');
 if (only?.some((id) => !allLines.some((line) => line.id === id)))
   throw Error('--only contains an unknown recording ID.');
@@ -53,6 +69,7 @@ const jobs = [];
 // Validate the entire selection before spending credits or replacing files.
 for (const lang of languages)
   for (const line of lines) {
+    if (line.purpose === 'english-example' && lang !== 'en') continue;
     const key = `${lang}/${line.id}`;
     const request = speechRequest(line, lang, env);
     const requestHash = fingerprint(request);
@@ -70,7 +87,11 @@ for (const lang of languages)
     if (
       !values.force &&
       existing?.length &&
-      (current || (lang === 'en' && !metadata[key]))
+      (current ||
+        (lang === 'en' &&
+          !metadata[key] &&
+          !line.id.startsWith('speaking-') &&
+          line.purpose !== 'english-example'))
     ) {
       manifest[key] = true;
       versions[key] = fileHash.slice(0, 12);

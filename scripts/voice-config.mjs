@@ -49,6 +49,11 @@ const pronunciation = {
   עקפי: 'עִקְפִי',
   עקבי: 'עִקְבִי',
   אמרי: 'אִמְרִי',
+  ואמרי: 'וְאִמְרִי',
+  הקשיבי: 'הַקְשִׁיבִי',
+  והקשיבי: 'וְהַקְשִׁיבִי',
+  בקשי: 'בַּקְּשִׁי',
+  חכי: 'חַכִּי',
   אחת: 'אַחַת',
   שתיים: 'שְׁתַּיִם',
   שלוש: 'שָׁלוֹשׁ',
@@ -62,6 +67,30 @@ const pronunciation = {
 };
 
 export function speechRequest(line, lang, env) {
+  if (line.purpose === 'english-example') {
+    if (lang !== 'en')
+      throw Error('English pronunciation examples must remain English.');
+    const voiceId =
+      env.ELEVENLABS_ENGLISH_LESSON_VOICE_ID || env.ELEVENLABS_VOICE_ID;
+    if (!voiceId)
+      throw Error(
+        'Set ELEVENLABS_ENGLISH_LESSON_VOICE_ID or ELEVENLABS_VOICE_ID.',
+      );
+    return {
+      voiceId,
+      body: {
+        text: /[.!?]$/.test(line.en) ? line.en : `${line.en}.`,
+        model_id: 'eleven_multilingual_v2',
+        voice_settings: {
+          stability: 0.75,
+          similarity_boost: 0.75,
+          style: 0,
+          use_speaker_boost: true,
+          speed: 0.85,
+        },
+      },
+    };
+  }
   if (lang === 'he') {
     const model = env.ELEVENLABS_HEBREW_MODEL || 'eleven_v3';
     if (model !== 'eleven_v3')
@@ -85,11 +114,20 @@ export function speechRequest(line, lang, env) {
   }
   if (!env.ELEVENLABS_VOICE_ID)
     throw Error('Set ELEVENLABS_VOICE_ID for English.');
+  const model = line.id?.startsWith('speaking-')
+    ? 'eleven_v3'
+    : env.ELEVENLABS_MODEL || 'eleven_multilingual_v2';
   return {
     voiceId: env.ELEVENLABS_VOICE_ID,
     body: {
       text: line.en,
-      model_id: env.ELEVENLABS_MODEL || 'eleven_turbo_v2_5',
+      model_id: model,
+      ...(model === 'eleven_v3'
+        ? {
+            language_code: 'en',
+            voice_settings: { stability: 0.5, similarity_boost: 0.75 },
+          }
+        : {}),
     },
   };
 }

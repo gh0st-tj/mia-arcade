@@ -1,0 +1,214 @@
+{
+  "intro": [
+    {
+      "id": "speaking-intro-1",
+      "en": "Hi Mia! Let’s speak English together. Tap Hear it and listen carefully. Then tap the microphone and say the same thing. When I hear all the words, we can move on!",
+      "he": "היי מיה! בואי נדבר אנגלית יחד. לחצי על הכפתור עם הרמקול והקשיבי היטב. אחר כך לחצי על המיקרופון ואמרי את מה ששמעת, באנגלית. כשאשמע את כל המילים, נוכל להתקדם!"
+    },
+    {
+      "id": "speaking-intro-2",
+      "en": "Ready for an English adventure, Mia? First, press Hear it. Next, press the microphone and repeat what you heard. Take your time. We can try together as many times as you need!",
+      "he": "מוכנה להרפתקה באנגלית, מיה? קודם לחצי על הרמקול. אחר כך לחצי על המיקרופון וחזרי באנגלית על מה ששמעת. לא צריך למהר. אפשר לנסות יחד כמה פעמים שתרצי!"
+    },
+    {
+      "id": "speaking-intro-3",
+      "en": "Mia, your voice is the star of this game! Listen to the example with the speaker button. Then press the microphone and say it in English. Say the whole word or sentence to unlock the next challenge.",
+      "he": "מיה, הקול שלך הוא הכוכב של המשחק! הקשיבי לדוגמה בעזרת כפתור הרמקול. אחר כך לחצי על המיקרופון ואמרי אותה באנגלית. אמרי את כל המילה או המשפט כדי לפתוח את האתגר הבא."
+    }
+  ],
+  "words": [
+    {
+      "id": "speaking-words-1",
+      "en": "Let’s learn one little word at a time. Look at the picture, listen to the word, then say it into the microphone.",
+      "he": "נלמד מילה קטנה בכל פעם. הסתכלי בתמונה, הקשיבי למילה ואז אמרי אותה באנגלית למיקרופון."
+    },
+    {
+      "id": "speaking-words-2",
+      "en": "Each picture has an English word. Tap the speaker to hear it. When you’re ready, tap the microphone and try it yourself!",
+      "he": "לכל תמונה יש מילה באנגלית. לחצי על הרמקול כדי לשמוע אותה. כשתהיי מוכנה, לחצי על המיקרופון ונסי בעצמך!"
+    },
+    {
+      "id": "speaking-words-3",
+      "en": "Here comes a new word, Mia! Listen first, and then it’s your turn to say it. You can hear the example again whenever you need.",
+      "he": "הנה מילה חדשה, מיה! קודם הקשיבי, ואז תורך לומר אותה. תמיד אפשר לשמוע שוב את הדוגמה."
+    }
+  ],
+  "phrases": [
+    {
+      "id": "speaking-phrases-1",
+      "en": "Now we’re putting words together! Listen to the little phrase, then press the microphone and say all its words in order.",
+      "he": "עכשיו נחבר מילים יחד! הקשיבי לצירוף הקצר, אחר כך לחצי על המיקרופון ואמרי את כל המילים לפי הסדר."
+    },
+    {
+      "id": "speaking-phrases-2",
+      "en": "You’re ready for short phrases, Mia! Hear the example, then repeat the whole phrase. Little words like a and the count too!",
+      "he": "את מוכנה לצירופים קצרים, מיה! הקשיבי לדוגמה ואז חזרי על כל מה ששמעת. גם המילים הקטנות חשובות!"
+    },
+    {
+      "id": "speaking-phrases-3",
+      "en": "Let’s say a few words together. Listen closely, tap the microphone, and repeat the whole thing at your own pace.",
+      "he": "בואי נאמר כמה מילים יחד. הקשיבי היטב, לחצי על המיקרופון וחזרי על הכול בקצב שלך."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "speaking-sentences-1",
+      "en": "Look how far you’ve come! Now let’s say a whole sentence. Hear it first, then press the microphone and say every word from beginning to end.",
+      "he": "תראי כמה התקדמת! עכשיו נאמר משפט שלם. קודם הקשיבי, ואז לחצי על המיקרופון ואמרי את כל המילים, מההתחלה ועד הסוף."
+    },
+    {
+      "id": "speaking-sentences-2",
+      "en": "It’s sentence time, Mia! Listen to how the words fit together. Then tap the microphone and say the whole sentence. There’s no hurry.",
+      "he": "הגיע הזמן למשפטים, מיה! הקשיבי איך המילים מתחברות. אחר כך לחצי על המיקרופון ואמרי את כל המשפט. אין צורך למהר."
+    },
+    {
+      "id": "speaking-sentences-3",
+      "en": "You can tell me a whole sentence in English! Listen as many times as you like. When you’re ready, use the microphone and repeat it all.",
+      "he": "את יכולה לומר לי משפט שלם באנגלית! הקשיבי כמה פעמים שתרצי. כשתהיי מוכנה, לחצי על המיקרופון וחזרי על הכול."
+    }
+  ],
+  "turn": [
+    {
+      "id": "speaking-turn-1",
+      "en": "Your turn, Mia! Tap the microphone and say what you heard.",
+      "he": "תורך, מיה! לחצי על המיקרופון ואמרי באנגלית את מה ששמעת."
+    },
+    {
+      "id": "speaking-turn-2",
+      "en": "Ready to try? Press the microphone and say it in English.",
+      "he": "מוכנה לנסות? לחצי על המיקרופון ואמרי את זה באנגלית."
+    },
+    {
+      "id": "speaking-turn-3",
+      "en": "Now you can try it! Tap the microphone when you’re ready.",
+      "he": "עכשיו את יכולה לנסות! לחצי על המיקרופון כשתהיי מוכנה."
+    },
+    {
+      "id": "speaking-turn-4",
+      "en": "Let’s hear your voice! Press the microphone, then repeat the example.",
+      "he": "בואי נשמע את הקול שלך! לחצי על המיקרופון ואז חזרי על הדוגמה באנגלית."
+    }
+  ],
+  "correct": [
+    {
+      "id": "speaking-correct-1",
+      "en": "Yes, Mia! I heard it. You did it!",
+      "he": "כן, מיה! שמעתי אותך. הצלחת!"
+    },
+    {
+      "id": "speaking-correct-2",
+      "en": "That’s it! Another little English victory!",
+      "he": "בדיוק כך! עוד הצלחה קטנה באנגלית!"
+    },
+    {
+      "id": "speaking-correct-3",
+      "en": "Wonderful! Your English is growing, one word at a time.",
+      "he": "נהדר! האנגלית שלך גדלה, מילה אחרי מילה."
+    },
+    {
+      "id": "speaking-correct-4",
+      "en": "You got it, superstar! Let’s keep going.",
+      "he": "הצלחת, כוכבת! בואי נמשיך."
+    },
+    {
+      "id": "speaking-correct-5",
+      "en": "Well done, Mia! I love hearing you try.",
+      "he": "כל הכבוד, מיה! כיף לשמוע אותך מנסה."
+    },
+    {
+      "id": "speaking-correct-6",
+      "en": "Yes! Give yourself a little clap!",
+      "he": "כן! מגיעות לך מחיאות כפיים קטנות!"
+    }
+  ],
+  "retry": [
+    {
+      "id": "speaking-retry-1",
+      "en": "Let’s listen once more, Mia. Tap Hear it, then try saying the whole thing again.",
+      "he": "נקשיב עוד פעם, מיה. לחצי על הרמקול ואז נסי לומר שוב את הכול באנגלית."
+    },
+    {
+      "id": "speaking-retry-2",
+      "en": "We can try again! Listen carefully to the example, then say all the words into the microphone.",
+      "he": "אפשר לנסות שוב! הקשיבי היטב לדוגמה ואז אמרי למיקרופון את כל המילים באנגלית."
+    },
+    {
+      "id": "speaking-retry-3",
+      "en": "Keep going, Mia. Learning takes practice! Hear the example again and give it another try.",
+      "he": "המשיכי לנסות, מיה. ככה לומדים! הקשיבי שוב לדוגמה ונסי עוד פעם."
+    },
+    {
+      "id": "speaking-retry-4",
+      "en": "I heard something a little different. Let’s hear the example again, then you can try once more.",
+      "he": "שמעתי משהו קצת שונה. נקשיב שוב לדוגמה ואז תוכלי לנסות עוד פעם."
+    }
+  ],
+  "no-speech": [
+    {
+      "id": "speaking-no-speech-1",
+      "en": "I didn’t catch your voice that time. Tap the microphone and try again. I’m ready when you are!",
+      "he": "לא הצלחתי לשמוע אותך הפעם. לחצי על המיקרופון ונסי שוב. אני מוכנה כשתרצי!"
+    },
+    {
+      "id": "speaking-no-speech-2",
+      "en": "Let’s try listening again. Press the microphone, wait for it to be ready, then say the example.",
+      "he": "ננסה להקשיב שוב. לחצי על המיקרופון, חכי שיהיה מוכן ואז אמרי את הדוגמה באנגלית."
+    },
+    {
+      "id": "speaking-no-speech-3",
+      "en": "I couldn’t hear the words, Mia. Find a quiet spot and give the microphone another try.",
+      "he": "לא הצלחתי לשמוע את המילים, מיה. מצאי פינה שקטה ונסי שוב עם המיקרופון."
+    }
+  ],
+  "mic-help": [
+    {
+      "id": "speaking-mic-help-1",
+      "en": "The microphone needs a little help. Ask a grown-up to check it with you. Your challenge will be right here.",
+      "he": "המיקרופון צריך קצת עזרה. בקשי ממבוגר לבדוק אותו איתך. האתגר שלך מחכה כאן."
+    },
+    {
+      "id": "speaking-mic-help-2",
+      "en": "Let’s ask a grown-up to help us with the sound and microphone. Then we can keep playing!",
+      "he": "בואי נבקש ממבוגר לעזור לנו עם הצליל והמיקרופון. אחר כך נוכל להמשיך לשחק!"
+    },
+    {
+      "id": "speaking-mic-help-3",
+      "en": "Something stopped me from listening. A grown-up can help us get ready to try again.",
+      "he": "משהו הפריע לי להקשיב. מבוגר יוכל לעזור לנו להתכונן לניסיון נוסף."
+    }
+  ],
+  "level-done": [
+    {
+      "id": "speaking-level-done-1",
+      "en": "You finished the level, Mia! Five challenges with your own voice. Tap Next level when you’re ready for more.",
+      "he": "סיימת את השלב, מיה! חמישה אתגרים בקול שלך. לחצי על השלב הבא כשתהיי מוכנה להמשיך."
+    },
+    {
+      "id": "speaking-level-done-2",
+      "en": "Look at you go! You said everything in this level. Choose the next level, or practice this one again.",
+      "he": "איזה יופי! אמרת את הכול בשלב הזה. בחרי בשלב הבא, או תרגלי שוב את השלב הזה."
+    },
+    {
+      "id": "speaking-level-done-3",
+      "en": "Another level complete! Your family would love to hear what you learned. Ready? Tap Next level.",
+      "he": "עוד שלב הושלם! המשפחה שלך תשמח לשמוע מה למדת. מוכנה? לחצי על השלב הבא."
+    }
+  ],
+  "course-done": [
+    {
+      "id": "speaking-course-done-1",
+      "en": "Mia, you finished all thirty levels! From little words to whole sentences. What an amazing English adventure!",
+      "he": "מיה, סיימת את כל שלושים השלבים! ממילים קטנות ועד משפטים שלמים. איזו הרפתקה נפלאה באנגלית!"
+    },
+    {
+      "id": "speaking-course-done-2",
+      "en": "You’re our English superstar, Mia! You can go back to any level and show your family what you can say.",
+      "he": "את כוכבת האנגלית שלנו, מיה! תוכלי לחזור לכל שלב ולהראות למשפחה מה את יודעת לומר."
+    },
+    {
+      "id": "speaking-course-done-3",
+      "en": "One hundred and fifty speaking challenges! You kept trying and learning. We’re so proud of you, Mia!",
+      "he": "מאה וחמישים אתגרי דיבור! המשכת לנסות וללמוד. אנחנו כל כך גאים בך, מיה!"
+    }
+  ]
+}

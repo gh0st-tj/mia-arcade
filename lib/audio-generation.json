@@ -1,0 +1,3692 @@
+{
+  "en/speaking-intro-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Hi Mia! Let’s speak English together. Tap Hear it and listen carefully. Then tap the microphone and say the same thing. When I hear all the words, we can move on!",
+      "model_id": "eleven_v3",
+      "language_code": "en",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "0a2c3ce458dd9d4942242acaddafad6f8e2ae43ff266908df44f7f952a628759",
+    "audioHash": "465f98541e7665b733a37153255e7f063f5c2f104a1f79962455f5298c6c3022",
+    "generatedAt": "2026-09-14T03:49:49.654Z"
+  },
+  "en/speaking-intro-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Ready for an English adventure, Mia? First, press Hear it. Next, press the microphone and repeat what you heard. Take your time. We can try together as many times as you need!",
+      "model_id": "eleven_v3",
+      "language_code": "en",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "b60550cfd03684bc8c9d7ab74ac0ffada8699c11da565f341ff54900fa2bb533",
+    "audioHash": "8a2ba94e0ed49d8b091f12a861c899fbb608dd72ef8c1474f324b0a8b5059cb8",
+    "generatedAt": "2026-09-14T03:49:55.403Z"
+  },
+  "en/speaking-intro-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Mia, your voice is the star of this game! Listen to the example with the speaker button. Then press the microphone and say it in English. Say the whole word or sentence to unlock the next challenge.",
+      "model_id": "eleven_v3",
+      "language_code": "en",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "12b73ee77f7a3948f5b09adb25d76127b26717013cd6c595109f08bd376dc355",
+    "audioHash": "a4b7cae8c1cc273adbaa4f25f79facf5a178ef78bef4e905f0d43559c3461934",
+    "generatedAt": "2026-09-14T03:50:01.314Z"
+  },
+  "en/speaking-words-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Let’s learn one little word at a time. Look at the picture, listen to the word, then say it into the microphone.",
+      "model_id": "eleven_v3",
+      "language_code": "en",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "779fabe5380a31879d485ef4777e455af531e1f60bbea73d59789032faddd09d",
+    "audioHash": "d6834f016ff42441e5bb710e810305768525665fc98c5c655824894c5bea5006",
+    "generatedAt": "2026-09-14T03:50:04.525Z"
+  },
+  "en/speaking-words-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Each picture has an English word. Tap the speaker to hear it. When you’re ready, tap the microphone and try it yourself!",
+      "model_id": "eleven_v3",
+      "language_code": "en",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "985a6c4d22d44c9139cb73c5f96f19c80d3efcd986d2b8a91a51f7f1c7d04c2d",
+    "audioHash": "0d35e515f4db3308382b14668a16d7aff35417186cf1114e293459bc166d8fb6",
+    "generatedAt": "2026-09-14T03:50:08.622Z"
+  },
+  "en/speaking-words-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Here comes a new word, Mia! Listen first, and then it’s your turn to say it. You can hear the example again whenever you need.",
+      "model_id": "eleven_v3",
+      "language_code": "en",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "219c901de7713cf4e8f4abacd7aa587de6d78f49ccb00ed161222eeeb34e6763",
+    "audioHash": "9261f343a27b64dea685b0848cf2251144b46e5acec670845d91cd657646014c",
+    "generatedAt": "2026-09-14T03:50:12.013Z"
+  },
+  "en/speaking-phrases-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Now we’re putting words together! Listen to the little phrase, then press the microphone and say all its words in order.",
+      "model_id": "eleven_v3",
+      "language_code": "en",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "31879b192382599772c9af6b8a8bc27821941d382f5db5b09ab9c9d07ddf02da",
+    "audioHash": "45cb1da6138ed1ceeabcd46ea6c8142f72c6c0fefdb8555cf595cd88825ff537",
+    "generatedAt": "2026-09-14T03:50:16.632Z"
+  },
+  "en/speaking-phrases-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "You’re ready for short phrases, Mia! Hear the example, then repeat the whole phrase. Little words like a and the count too!",
+      "model_id": "eleven_v3",
+      "language_code": "en",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "40fa92835b940e3e67b4822f786e94344252770bf84cad2591825ab1d94b8943",
+    "audioHash": "28df36afe632f8b96d7338efdc7948df5af77f23367e746a70b198ec6e0809cc",
+    "generatedAt": "2026-09-14T03:50:21.084Z"
+  },
+  "en/speaking-phrases-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Let’s say a few words together. Listen closely, tap the microphone, and repeat the whole thing at your own pace.",
+      "model_id": "eleven_v3",
+      "language_code": "en",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "1e0339b999d11dfcf6b15adc6363ae403e42741fcffe3b53e5d9396059376dbe",
+    "audioHash": "77541101569e86d37e81e765a9bd2dd4e7bfb4ef2a86ad28340661cba09877ff",
+    "generatedAt": "2026-09-14T03:50:24.620Z"
+  },
+  "en/speaking-sentences-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Look how far you’ve come! Now let’s say a whole sentence. Hear it first, then press the microphone and say every word from beginning to end.",
+      "model_id": "eleven_v3",
+      "language_code": "en",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "70876b38687491bd003bb48ac4df8d477e3c7f1f6bb2ae44c7db536e0699ab98",
+    "audioHash": "197e1dba767a06860e46d10c216135ba1401c6f53aac98188e5ec6675dc7af54",
+    "generatedAt": "2026-09-14T03:50:29.784Z"
+  },
+  "en/speaking-sentences-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "It’s sentence time, Mia! Listen to how the words fit together. Then tap the microphone and say the whole sentence. There’s no hurry.",
+      "model_id": "eleven_v3",
+      "language_code": "en",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "bb67d6289ac3dbf695eb95e7ff2d4500dfdfe2c495f13865e9664294901b7b0b",
+    "audioHash": "1b5e0583af966948d868ecd5834b574d05ca9408dd9b30bac40b363931c6cc81",
+    "generatedAt": "2026-09-14T03:50:34.193Z"
+  },
+  "en/speaking-sentences-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "You can tell me a whole sentence in English! Listen as many times as you like. When you’re ready, use the microphone and repeat it all.",
+      "model_id": "eleven_v3",
+      "language_code": "en",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "691117854fda5a19b566d123ebd947781691bac3e253020fb620636e06b3cc37",
+    "audioHash": "39ff2c903a46b7cd87df232b05bf68a94e826315c080fcb7191019b33bb62983",
+    "generatedAt": "2026-09-14T03:50:37.913Z"
+  },
+  "en/speaking-turn-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Your turn, Mia! Tap the microphone and say what you heard.",
+      "model_id": "eleven_v3",
+      "language_code": "en",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "1529d41b4d8be1057f966a2c7136039ea04db0f4e7bdbda7ff4bb3a5e7c2d957",
+    "audioHash": "52058ffb62388e735a79e0732a03a11936b97c11db3ad4638ce1095d19891826",
+    "generatedAt": "2026-09-14T03:50:39.958Z"
+  },
+  "en/speaking-turn-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Ready to try? Press the microphone and say it in English.",
+      "model_id": "eleven_v3",
+      "language_code": "en",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "b47c852bb6c4bea3836b92285a63b21e5300da4c6c5dba20d0c74fd5595d69fa",
+    "audioHash": "8213d3a183b1ecd93aaa4bcefb09d158b59656ef7b74f38a05e8693821144356",
+    "generatedAt": "2026-09-14T03:50:41.922Z"
+  },
+  "en/speaking-turn-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Now you can try it! Tap the microphone when you’re ready.",
+      "model_id": "eleven_v3",
+      "language_code": "en",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "93d48e71ca3a8d884f47fc0bac8d90304206050bafe167b13ef163c51825c3e5",
+    "audioHash": "4fe0ec728c72ae9d3b5a70d2f21b9bb2a4b64c6334c38c7db319267689bbd988",
+    "generatedAt": "2026-09-14T03:50:43.630Z"
+  },
+  "en/speaking-turn-4": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Let’s hear your voice! Press the microphone, then repeat the example.",
+      "model_id": "eleven_v3",
+      "language_code": "en",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "73823bc03a0b2f9f422741aac0650f4373820c22468d253e87f21c269cdcab8e",
+    "audioHash": "1673071ad293e3c154d519c380abf605bff5a2b692a27db89c2293ce6b5a01e8",
+    "generatedAt": "2026-09-14T03:50:45.853Z"
+  },
+  "en/speaking-correct-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Yes, Mia! I heard it. You did it!",
+      "model_id": "eleven_v3",
+      "language_code": "en",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "ce119ff5da0f802ecd02d9a60a49813d6e7eded891eb557bc2bb060d47a626e9",
+    "audioHash": "0e392de1a83a03caa69f215a87e5baa8c72b18f18d39314b6573338f2855e900",
+    "generatedAt": "2026-09-14T03:50:47.300Z"
+  },
+  "en/speaking-correct-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "That’s it! Another little English victory!",
+      "model_id": "eleven_v3",
+      "language_code": "en",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "351c2017b37d48d50c31c169d6ca88b17516ac77177073a28767401cc84e563f",
+    "audioHash": "475c5b2c6b4683b963d8cd3dabd8be45d85fa2c6c277f8e64e7834d8801a0d55",
+    "generatedAt": "2026-09-14T03:50:49.007Z"
+  },
+  "en/speaking-correct-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Wonderful! Your English is growing, one word at a time.",
+      "model_id": "eleven_v3",
+      "language_code": "en",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "1ac07aefcac2e18ba7a10a71338b5194a49f588158bd0c51d8f4cc978497bb18",
+    "audioHash": "57b1745d633c18ab8f99950d72ddf88be21a8c30dbed7fa023bce793510aafab",
+    "generatedAt": "2026-09-14T03:50:51.232Z"
+  },
+  "en/speaking-correct-4": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "You got it, superstar! Let’s keep going.",
+      "model_id": "eleven_v3",
+      "language_code": "en",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "91f1efd222b546479301a173890a02bee33714abcf98780aa5d947b3ad5dffd5",
+    "audioHash": "82db697b37bcbbf2f93171961d0aee5969326cdc5cd579cdd82a6d950714b041",
+    "generatedAt": "2026-09-14T03:50:52.931Z"
+  },
+  "en/speaking-correct-5": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Well done, Mia! I love hearing you try.",
+      "model_id": "eleven_v3",
+      "language_code": "en",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "f4c464d204838376c5854023ee8ba943fe71342e736d4af3e6e1e3f212f7eab1",
+    "audioHash": "c7616e580c04a9554dce93f0e3ae289cdbea28de4530ff6ff8e369975df19684",
+    "generatedAt": "2026-09-14T03:50:54.538Z"
+  },
+  "en/speaking-correct-6": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Yes! Give yourself a little clap!",
+      "model_id": "eleven_v3",
+      "language_code": "en",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "d54f6aee286f8c471b09c98b902fec4977d93d1f5d7f945f7d3e373d9054e158",
+    "audioHash": "5e722d2e69b5dff3ca891aea65cc5aa810b0440518b2f6b0c25d96fc63d34d32",
+    "generatedAt": "2026-09-14T03:50:55.879Z"
+  },
+  "en/speaking-retry-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Let’s listen once more, Mia. Tap Hear it, then try saying the whole thing again.",
+      "model_id": "eleven_v3",
+      "language_code": "en",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "b8ece844748e908203c5cc26f25fb08d144e463efdb7ff07886fd5e8fb4fdcfb",
+    "audioHash": "ea32548d02c47861bb6772863a97c4a66140bb0622f4605653033a8b73002658",
+    "generatedAt": "2026-09-14T03:50:58.590Z"
+  },
+  "en/speaking-retry-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "We can try again! Listen carefully to the example, then say all the words into the microphone.",
+      "model_id": "eleven_v3",
+      "language_code": "en",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "167f217db83ecdade6e36b4d70e6ecfb7bdc08652c12c4ca8462fed23f971ea6",
+    "audioHash": "911c02c4215c4896aec5b727a9877d74fdd277651d9b1f8bcbccebcd7b1a6071",
+    "generatedAt": "2026-09-14T03:51:01.330Z"
+  },
+  "en/speaking-retry-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Keep going, Mia. Learning takes practice! Hear the example again and give it another try.",
+      "model_id": "eleven_v3",
+      "language_code": "en",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "e10178648b7af23ab7f4cc2bab25dc7278afe7e4e0f189974ba712ec27f799fd",
+    "audioHash": "8fbe22774eba40607203e24f867a368eae89cf7b5c49c8604c4e9b2255fccbab",
+    "generatedAt": "2026-09-14T03:51:04.638Z"
+  },
+  "en/speaking-retry-4": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "I heard something a little different. Let’s hear the example again, then you can try once more.",
+      "model_id": "eleven_v3",
+      "language_code": "en",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "a2b94711ff8859a652087a8b3b84138faf64d5f435292375ce325601ffbce4c3",
+    "audioHash": "f028f55119cc57e228da0b46197ef7215f4dd37c52b4f6364453cc7c1249d8cd",
+    "generatedAt": "2026-09-14T03:51:07.538Z"
+  },
+  "en/speaking-no-speech-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "I didn’t catch your voice that time. Tap the microphone and try again. I’m ready when you are!",
+      "model_id": "eleven_v3",
+      "language_code": "en",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "f1c3ed2c63462c7401a1fa30c946fff69c822f1448a4d51c9594a6d62b9adea1",
+    "audioHash": "a1965c90741df4242440a36bab86698a0a838f920f5d6766428110d33e8439db",
+    "generatedAt": "2026-09-14T03:51:10.612Z"
+  },
+  "en/speaking-no-speech-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Let’s try listening again. Press the microphone, wait for it to be ready, then say the example.",
+      "model_id": "eleven_v3",
+      "language_code": "en",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "494c1aadd0e83e0273026a8bb5745638471d9b349028124e745427a9a52bbe0a",
+    "audioHash": "8def86f37ef46552e0d47f271fa5bb068ab64adfbf646e01932ff47eebf7f5b5",
+    "generatedAt": "2026-09-14T03:51:13.516Z"
+  },
+  "en/speaking-no-speech-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "I couldn’t hear the words, Mia. Find a quiet spot and give the microphone another try.",
+      "model_id": "eleven_v3",
+      "language_code": "en",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "e684f380e906e9b8fa3e302d402d181626fcd42b3dfc294629b2d54e6717c7e6",
+    "audioHash": "476f64d4e8c77355c1b361e5c3e5388a21f5bf2ff892de466db51aa8d5036156",
+    "generatedAt": "2026-09-14T03:51:16.133Z"
+  },
+  "en/speaking-mic-help-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "The microphone needs a little help. Ask a grown-up to check it with you. Your challenge will be right here.",
+      "model_id": "eleven_v3",
+      "language_code": "en",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "1ea0bf13be6a72aec291a2c5919f63d6a5d087cbabd25ec5708438aed73ea286",
+    "audioHash": "20706dc3eca11286db9df5eec0f2171f239b05aac0228aa2491b944f9ab3b57e",
+    "generatedAt": "2026-09-14T03:51:19.290Z"
+  },
+  "en/speaking-mic-help-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Let’s ask a grown-up to help us with the sound and microphone. Then we can keep playing!",
+      "model_id": "eleven_v3",
+      "language_code": "en",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "a7f21cdafa4c78204278c7311d4769a080a3b36208e5c856bc3bcd9cb8187a34",
+    "audioHash": "26b64766fe83809c7335fee8e2d9c20c6a8ce2948cdeba435758d39308259a9a",
+    "generatedAt": "2026-09-14T03:51:21.806Z"
+  },
+  "en/speaking-mic-help-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Something stopped me from listening. A grown-up can help us get ready to try again.",
+      "model_id": "eleven_v3",
+      "language_code": "en",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "e145bb702e15787a24fb603112a5b752ea4d45841accd6b9a69f95056080d2e5",
+    "audioHash": "72627ec8120277d13acc699038fe93b656eeb3047ef79c52df24a293dc8a428a",
+    "generatedAt": "2026-09-14T03:51:24.525Z"
+  },
+  "en/speaking-level-done-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "You finished the level, Mia! Five challenges with your own voice. Tap Next level when you’re ready for more.",
+      "model_id": "eleven_v3",
+      "language_code": "en",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "2306dc384d62c81230eb1cf75b611a839009b861c525414ad12b0d510704adb5",
+    "audioHash": "bb39eb4634147be106089fc53d5e68f873a73b8cdafad4d36fddbea48cce2b0d",
+    "generatedAt": "2026-09-14T03:51:27.829Z"
+  },
+  "en/speaking-level-done-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Look at you go! You said everything in this level. Choose the next level, or practice this one again.",
+      "model_id": "eleven_v3",
+      "language_code": "en",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "d6ed8533efca22af5194ffb1d2f4fd0948d9e1773fdb25e5ea27ed39693ef151",
+    "audioHash": "bbad5cba89a9076f5198eb23521441b28e5cbb63f33975cb1ef7d10be4543cdc",
+    "generatedAt": "2026-09-14T03:51:30.857Z"
+  },
+  "en/speaking-level-done-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Another level complete! Your family would love to hear what you learned. Ready? Tap Next level.",
+      "model_id": "eleven_v3",
+      "language_code": "en",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "efe01b6eb9605a978dee5915a8f3a3bc7c52423d158e28a571c381aed6f6a5a5",
+    "audioHash": "c027f1cfd350570790c8ae3732cae9e555ac71cce7d3be78390004777bc13f5b",
+    "generatedAt": "2026-09-14T03:51:33.681Z"
+  },
+  "en/speaking-course-done-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Mia, you finished all thirty levels! From little words to whole sentences. What an amazing English adventure!",
+      "model_id": "eleven_v3",
+      "language_code": "en",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "f12cf4160e4f2b37cbbe6b07998059925ed24b298e2174e41c8a16fe3f0a8d6a",
+    "audioHash": "3c6bc47752c8de6c6989f3a6085eb7440b915f7f373aaabe677dd28a0d4d6672",
+    "generatedAt": "2026-09-14T03:51:36.717Z"
+  },
+  "en/speaking-course-done-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "You’re our English superstar, Mia! You can go back to any level and show your family what you can say.",
+      "model_id": "eleven_v3",
+      "language_code": "en",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "e65c0c317fabb1c00281592bce718ac4acdeca729116b7bda0219b543b80695b",
+    "audioHash": "39602ce532c0971dd24197ab5e77de87952107f2d93d1d05087ab4f5a296e466",
+    "generatedAt": "2026-09-14T03:51:39.727Z"
+  },
+  "en/speaking-course-done-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "One hundred and fifty speaking challenges! You kept trying and learning. We’re so proud of you, Mia!",
+      "model_id": "eleven_v3",
+      "language_code": "en",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "b22d97938247de3afb3f5c23584eddb2e6e04eb6aa3730805570a9d6312cb2e5",
+    "audioHash": "d04a17f8f2ac92dbb8925deb3e4f5d8cd55f5b191011190e2ef98abffd83936c",
+    "generatedAt": "2026-09-14T03:51:42.484Z"
+  },
+  "en/english-example-01-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "cat.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "48e17f97df7d158f40f10e905ce590509bec3f96e0236be8491c679044e01507",
+    "audioHash": "d0bb04f31cb62274152e8f886b49aaaf23986c63f2f184239f61e88a38703ba7",
+    "generatedAt": "2026-09-14T03:51:43.398Z"
+  },
+  "en/english-example-01-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "dog.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "e8cc7061d1b8b3db5efdcf98a9de4ed686972d4b07b0f4a79625eb44d3efe79a",
+    "audioHash": "087331e3ef87e9a94a3914e3c98dfc75d049081adafe14391fca175b182cd8e2",
+    "generatedAt": "2026-09-14T03:51:44.280Z"
+  },
+  "en/english-example-01-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "fish.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "2b7281e16ed6068f3bc62c3bf63ea675e9f9918520104a89782c0eabf10bc4db",
+    "audioHash": "5aeeed08028348a0a2c417f15d664cb2164badf52cc2067d45fdc5c9a4f1f4ef",
+    "generatedAt": "2026-09-14T03:51:45.121Z"
+  },
+  "en/english-example-01-4": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "bird.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "b1e3814354b7b19d8295b3d3e116e53689958f45392223d949e592bddad07486",
+    "audioHash": "8b30e860904825589804465e9ce24bdb65b2134d4c903cf4ee8864990af5c80b",
+    "generatedAt": "2026-09-14T03:51:46.019Z"
+  },
+  "en/english-example-01-5": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "duck.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "6b89aa056c001940b821fb205a2845412477058fbfd3f7614ae14a03e445471d",
+    "audioHash": "fb4c2b39faf487540949ea6928463218db7b0a1a89069a68c341012a5db174fe",
+    "generatedAt": "2026-09-14T03:51:46.898Z"
+  },
+  "en/english-example-02-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "apple.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "6fe867e7a44779f79b89019ecfcb1d0c163329718c4902e3cf39cb2087fa0a74",
+    "audioHash": "6f887cc6edb6a2a80ae85623dd89414a17e21a06d502d08dd0324570633fb455",
+    "generatedAt": "2026-09-14T03:51:47.755Z"
+  },
+  "en/english-example-02-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "banana.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "38d801fbc887d5e4d88aa2a0690fb4f94a557aea9f807c657ca2ed93a3237478",
+    "audioHash": "0a9f6ba08d059a2e7d52000849efca85f6689bd412e0074a1a58e63c61c16375",
+    "generatedAt": "2026-09-14T03:51:48.641Z"
+  },
+  "en/english-example-02-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "pear.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "551057e8be3b03538b6222d091e90f7e1de35be4d913f054f60222e25cc07edd",
+    "audioHash": "188e2034f761734bdd5094d1dc13da8e827b8cbf0111c26dd6d64b0a9af2df1b",
+    "generatedAt": "2026-09-14T03:51:49.522Z"
+  },
+  "en/english-example-02-4": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "lemon.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "7e32306e766df89bd905f59d811a5aac142c4bcfb2b37615653b1aa6d80874d5",
+    "audioHash": "ac50c3b16b43c78beacead83aa246d64c25f259c6be695bed3f45fa62995906c",
+    "generatedAt": "2026-09-14T03:51:50.399Z"
+  },
+  "en/english-example-02-5": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "grape.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "8f025466affc52f584acc6bb3f2a8cd4f08ec5efae0fb4cda807ab3b0366ef82",
+    "audioHash": "84bc27a96c97fa1017f2d5f385eddca33e69802069cab1303433eaae5aa92421",
+    "generatedAt": "2026-09-14T03:51:51.262Z"
+  },
+  "en/english-example-03-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "red.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "91a94f7dfbcebd3715241f2467b199af5a3c67fd98382da9f45a1e74226d8ed0",
+    "audioHash": "e2728ac64612c6ecd7fdcbb8ba8b0165c50ed2d4ecd48fc1f8008977c7133a63",
+    "generatedAt": "2026-09-14T03:51:52.134Z"
+  },
+  "en/english-example-03-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "blue.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "5297604f018eb9101bcd3cfef450a37169c588adcc85605aee933be9c14c0b40",
+    "audioHash": "4d00369ac128d95a66a50d225022b4f41883728c42b17d30b1142f5643313b5f",
+    "generatedAt": "2026-09-14T03:51:53.023Z"
+  },
+  "en/english-example-03-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "green.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "0d8c162ef82706e864c9e692f76f9a8389e857cb494570da29b535ea4cc72ddf",
+    "audioHash": "988a863352d68f688b3ff8a1599d5822e505a8c754241bb8d3587120dc2ac8c9",
+    "generatedAt": "2026-09-14T03:51:53.884Z"
+  },
+  "en/english-example-03-4": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "yellow.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "ca1f184d99e0ec48a02c4c31ce2544fb18b37ac867c81dc730605d944ed16f20",
+    "audioHash": "8763f938a21af2e8f4bd624a84e5768f59251d11c596b880b14c000a9532f1d8",
+    "generatedAt": "2026-09-14T03:51:54.742Z"
+  },
+  "en/english-example-03-5": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "pink.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "8c211e43638c9605ec7b4f046c1e7bd83cc993ed9aa825441b5b23944df5ec8f",
+    "audioHash": "ec5c5a498fa4362c1f3f334f6a99aeb9a7fdaad2cc0e4e5e08cfffe28a6c0dfc",
+    "generatedAt": "2026-09-14T03:51:55.628Z"
+  },
+  "en/english-example-04-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "one.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "7e37d8f7a849b4c39c33197fa2c615de476c6e6d0c01b6e21f80ac669e55ee8a",
+    "audioHash": "5e6b5c8ff608967108a42021ee2fc6807fa2811b4b45fdce813f00b3e8358632",
+    "generatedAt": "2026-09-14T03:51:56.505Z"
+  },
+  "en/english-example-04-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "two.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "2f2da003c1af249d87ebbb46ed867c4744c2b2ec40c73e9b1ed642157d3fa241",
+    "audioHash": "0ba2889376c04c6fff3909fa7326c8e47aec677c37c360757564aab27ae146ff",
+    "generatedAt": "2026-09-14T03:51:57.373Z"
+  },
+  "en/english-example-04-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "three.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "c5f529944aaa74eda4b1b7fbe1e31e1dec163fa969c1d08a7c324b04aeb12723",
+    "audioHash": "980cbd0acdb28bf2724cd1532512a3b0318e02ff0432ffa1092c33c0a8abb4d8",
+    "generatedAt": "2026-09-14T03:51:58.224Z"
+  },
+  "en/english-example-04-4": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "four.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "77775a93cfd7bc674c62e1947319080014a8a7a455aaefed3b2327caad2b7571",
+    "audioHash": "b84cafb8554a714d1acc198448d382bf8f6fa1ac055242230bbe8cfb4218ff83",
+    "generatedAt": "2026-09-14T03:51:59.126Z"
+  },
+  "en/english-example-04-5": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "five.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "7d72d25c1465bf8dc652626fca38a218edf0bae6a868c7338303e1b2d8bab9e0",
+    "audioHash": "39ef8cc05b640d210e655636d2e283d6f1dc8bba042e6875bef998e10a0778c9",
+    "generatedAt": "2026-09-14T03:52:00.003Z"
+  },
+  "en/english-example-05-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "mom.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "97bf82c4a8521351a0a8d46633dd5275532c71e958015f7e495899ca8b68cfde",
+    "audioHash": "9750067f973140b456946de3c57e17dccbc6dfc9a768e0bdee8e2ae531bee513",
+    "generatedAt": "2026-09-14T03:52:00.860Z"
+  },
+  "en/english-example-05-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "dad.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "c854fbc67e5b400f8e12634f3fbca031a702931b4d4191b58d430760c9f9b9b6",
+    "audioHash": "f46d8996dcba898a347cc6becc7c5af8188c9129bb51de0a37b5a6da6982acd9",
+    "generatedAt": "2026-09-14T03:52:01.748Z"
+  },
+  "en/english-example-05-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "baby.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "382dd5d14252fa1faff9de471289a507b59c376403b01d8b1a321384ccfc7b12",
+    "audioHash": "3f554fadaa805d2e05eba02c6ba8d5405af50678e1449c7bf6e9271331eaf1b8",
+    "generatedAt": "2026-09-14T03:52:02.629Z"
+  },
+  "en/english-example-05-4": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "sister.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "24d02bcb3b7b5d2ff6e456f9096cba91a90bb1b90d5ee4eddcd1cf19644c3a5f",
+    "audioHash": "fe8af76c53763b18a3542e14564411d655e377a32e1ddd44996ed0c0dae7bd21",
+    "generatedAt": "2026-09-14T03:52:03.526Z"
+  },
+  "en/english-example-05-5": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "brother.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "9bd8a593585b30097159eafafb81eef44d230f7e057181ec94d4c39763f5d5ed",
+    "audioHash": "604ce63103ebaf9c065346f7bf65448ec7c493ac2623ec9c58e8e40070e32dc0",
+    "generatedAt": "2026-09-14T03:52:04.432Z"
+  },
+  "en/english-example-06-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "ball.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "f7b34d546578d37faa2200d4a1554298edd102cf2b3e3c11911a6aa64f5c7bab",
+    "audioHash": "268b38c2ef82b9228d974b0b28453547fe4e6530a436317aa67973b5ad13f2ef",
+    "generatedAt": "2026-09-14T03:52:05.308Z"
+  },
+  "en/english-example-06-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "car.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "c2c9a50cebd985dd99c76c0449fc29d0b728b559391bebaf0306ec7541f4dc3d",
+    "audioHash": "cd71af74184fe05105bac1891e2e92e0c595e5473b5e4d508defb6c0e423ae72",
+    "generatedAt": "2026-09-14T03:52:06.184Z"
+  },
+  "en/english-example-06-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "book.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "a65015881907fe157392d15870cb9bc1a5dc18405267997e3a064816709f5979",
+    "audioHash": "eceaeb2dc6ed3a4b8be6264134833c339bc32821734bec785bab55f53fe0b87a",
+    "generatedAt": "2026-09-14T03:52:07.057Z"
+  },
+  "en/english-example-06-4": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "doll.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "b8c452a51644e926f283a478449797a8db040d8027026a7b35f0ae1ede7a6d6e",
+    "audioHash": "7f87a3be21e106b6afa0897fb5dee18bccbd8ae6fd5855643cae0934d5e1012e",
+    "generatedAt": "2026-09-14T03:52:07.896Z"
+  },
+  "en/english-example-06-5": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "kite.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "0bba849c5db30f0ca01cdef9416a79eb527529401ae592b782906ab1c6b24b42",
+    "audioHash": "527200e878caa6f58d3917bfa38ac2e4e729363b734e157f02c4d027f5fb6f9b",
+    "generatedAt": "2026-09-14T03:52:08.772Z"
+  },
+  "en/english-example-07-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "hand.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "fa40cd79ca18b9e2fedbc5aadad4d4e2a26b177134aeb4c851abf30de5de21f8",
+    "audioHash": "b627eb45ec1ba4fffd88d8097cd68f06392db22d4f2724a6a954bf62f3dc0dbe",
+    "generatedAt": "2026-09-14T03:52:09.643Z"
+  },
+  "en/english-example-07-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "foot.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "f9ef7fd6094b8ea1c669dd2b6db1adf0ab2f2035c50041e740290d1526eed249",
+    "audioHash": "cfd1b344b54a9d530b93fabfe24c7621b9000c1f0c1653dc44ce9df3f67a43fd",
+    "generatedAt": "2026-09-14T03:52:10.538Z"
+  },
+  "en/english-example-07-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "eye.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "a88f228ae15f5859ab5e34da68e762aee584c3e5475b1a8370e6081b4be757fa",
+    "audioHash": "5ac27d721890a96fa3c021f576860b7a7ae2646561a84fe1a6caccea1af97d64",
+    "generatedAt": "2026-09-14T03:52:11.414Z"
+  },
+  "en/english-example-07-4": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "ear.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "8b6f7ba4d7b4f23ad210bd0463a9b0dad42ea2046a99b01f72ae0d8e5f0f8208",
+    "audioHash": "7ee91238491a54f881de1382492a49f54f53363eb9413469c3cac3396ffa7094",
+    "generatedAt": "2026-09-14T03:52:12.274Z"
+  },
+  "en/english-example-07-5": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "nose.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "7d3cfc7334d7f3b9e450585cf79309f09942f74c4e22ff5867641324fdd67139",
+    "audioHash": "300f4760843e62ec9d3f137c33c9ad8a74519debb38481ffe04b7a631a4e3bcf",
+    "generatedAt": "2026-09-14T03:52:13.155Z"
+  },
+  "en/english-example-08-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "sun.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "0df350005e6bd129ded2d880731f5c653a4eb75eb0dc0cc573eb09777b70ab6e",
+    "audioHash": "f3509339763e1695d7adfbfd4b2af2e1e2f5190b4581bc554205b8d5249e0aac",
+    "generatedAt": "2026-09-14T03:52:14.028Z"
+  },
+  "en/english-example-08-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "moon.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "51bee087c20f24f1b68d8b64efde1c97c68fc380bca1df57c97c3b18516263c3",
+    "audioHash": "70e3c13fdcc933da8f2a8c1fe8b325c980e41fe38d8a6106babc0d4da8f6e1c7",
+    "generatedAt": "2026-09-14T03:52:14.999Z"
+  },
+  "en/english-example-08-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "star.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "1f9dd840e534a4b3063a6d4acece7941e2ab267e9f08622a594d75352eb77275",
+    "audioHash": "befb05c787cc9e38bd215fbaa44f54510fc5e6ec98f67b11ff7dfbbf72c15335",
+    "generatedAt": "2026-09-14T03:52:15.905Z"
+  },
+  "en/english-example-08-4": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "tree.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "f76f62909f87feb6645b3e8c7f0d17d577ff1f0e58877de2ccc6214c05b53592",
+    "audioHash": "eda7b12b926c0a74044a20347dac0afda669cc0d1f719b9ec04692b1f0664dd9",
+    "generatedAt": "2026-09-14T03:52:16.792Z"
+  },
+  "en/english-example-08-5": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "flower.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "aae4ded58170b24b6287b87f24f53b6303f57b81366668c2aaa11b5768864b3a",
+    "audioHash": "21438189720df04a6377f25b750bd132ef20a6dc7ff46e00d1a6376871211756",
+    "generatedAt": "2026-09-14T03:52:17.675Z"
+  },
+  "en/english-example-09-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "water.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "d4d586748fe3bf01c61cebc19bf61874606fb51cddd29f395825708ec754f281",
+    "audioHash": "37ba708bce2f0f74e85c62e4bd59c4af9ff15b7c5580d8fc1e1f670608d08d4a",
+    "generatedAt": "2026-09-14T03:52:18.535Z"
+  },
+  "en/english-example-09-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "milk.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "a3e8d0359dd1c88192f16c7f2a732ffc151845b9b0fadbe40b1cc75bf8d28812",
+    "audioHash": "05b00c2bccf7f1579aa5b1084eef34000c8b1863a2bd526e1d7d8d239bc8c8af",
+    "generatedAt": "2026-09-14T03:52:19.408Z"
+  },
+  "en/english-example-09-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "bread.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "0537fae303e48fb225fa7a9335ae9d50e655edd02cf8b7a7e48b5086aa3dc478",
+    "audioHash": "4ac3eac14531477b139ba7f31762b6cb2709a08d287ae84e6222886585326404",
+    "generatedAt": "2026-09-14T03:52:20.257Z"
+  },
+  "en/english-example-09-4": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "cheese.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "a6447b6d91e09188fad226005c8dddbef723bfffd321cca91f9d5b563adc6790",
+    "audioHash": "ab0af51a840ce5500a5688b00105a83d02046a837bfb1c4a20eaf1f4d609dd06",
+    "generatedAt": "2026-09-14T03:52:21.149Z"
+  },
+  "en/english-example-09-5": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "egg.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "72558f066f211f0885dd770775b106950213f823a3dd3161a1a432ef0cfe0ac6",
+    "audioHash": "67ecd76ee0864278ef40eed802fdd86ece1cc9d010661369f17240a728da4e99",
+    "generatedAt": "2026-09-14T03:52:22.004Z"
+  },
+  "en/english-example-10-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "jump.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "2cc2762ba69a68cb0959889c8f37eefb006d146766e5fe3aaf6eba424b535e32",
+    "audioHash": "d96820cd624e0a1264ffd202df5b0e33600bd587d7ab286609ec9f8b6bed24a4",
+    "generatedAt": "2026-09-14T03:52:22.841Z"
+  },
+  "en/english-example-10-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "run.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "ea158cb78f8a7aacbf0907ebe64ec7ae84d1012e4b406bfd78f9cb6abe3e164a",
+    "audioHash": "f3b28107aa369b0cbe785117f9ab7b0990c96c0cdc8ab2120a583386c7908e0f",
+    "generatedAt": "2026-09-14T03:52:23.768Z"
+  },
+  "en/english-example-10-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "clap.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "1e2449859cbfd6db9b79362a0031561af84df704d4d74a43812f235c82c6da6f",
+    "audioHash": "fed75cbddf6a32c1b5b4fd978e1dae38d3f634b84bfde41694b46fb3970f203e",
+    "generatedAt": "2026-09-14T03:52:24.619Z"
+  },
+  "en/english-example-10-4": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "dance.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "25f33dcf138f64128da5d0e547f278397d8e94894ed441d6a3e004d1c978919c",
+    "audioHash": "d382b27d47b06d359c8bd6cfd3333ea2e0df0e02e8eaa5e39c41ee5d9c094a4e",
+    "generatedAt": "2026-09-14T03:52:25.499Z"
+  },
+  "en/english-example-10-5": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "swim.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "788176521876a3826d7f4b26bb119bd9fa4c8ea972748aa53a874e5b43bb4b49",
+    "audioHash": "952c933fa287ed9b0c288851ae12cd2202585203db223372e1bbb9230b266347",
+    "generatedAt": "2026-09-14T03:52:26.392Z"
+  },
+  "en/english-example-11-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "hello.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "14dac7de6d109631ad7047476b10a1c677c1b265183d9ee0248eb57816d37e93",
+    "audioHash": "91c51512c2810e678429b067ab317621a6f83f063f365dbd40a07ed3b7e3729c",
+    "generatedAt": "2026-09-14T03:52:27.239Z"
+  },
+  "en/english-example-11-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "good morning.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "da718c729f4c981ebbb17c8d407678fc024270934a258adde69353af3ae97fff",
+    "audioHash": "4c7343e38a179bc96b32ee7db90c4bf9c749d6b733312aeec37caf88c037b9ea",
+    "generatedAt": "2026-09-14T03:52:28.114Z"
+  },
+  "en/english-example-11-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "good night.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "c4c578bcf3092d44e5cdd545a5a6f99bd7261539f4f02ef33d03634e79077cba",
+    "audioHash": "8af5de673e531327f12695bcad3ecdb62a24f559954c523cfc8906b125a6d97f",
+    "generatedAt": "2026-09-14T03:52:29.011Z"
+  },
+  "en/english-example-11-4": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "thank you.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "7265bc3dfde7f5b49b95a15269a2970978bcd088ba58be7c2bde267fe9cc1e28",
+    "audioHash": "b4d3558b3e9c0db25f1750c02484593073cf09d49e058bdb393b9486e77758cb",
+    "generatedAt": "2026-09-14T03:52:29.891Z"
+  },
+  "en/english-example-11-5": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "see you.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "3c10d1beb76a65025807e8c30f8489562495ffc95b0bc6fd725e5ec6f1ccc505",
+    "audioHash": "9a0fa9913a8198c33dc00003d825c3d07ba35a6e28c52b76112c9025b8ea93ae",
+    "generatedAt": "2026-09-14T03:52:30.778Z"
+  },
+  "en/english-example-12-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "a red apple.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "d5211b96309f32247b5f4a821e29fa1678d636ae34a2ab13309ffe1f6c550a14",
+    "audioHash": "6527e0df711c0f7cf60fca9d0f7f22306373640e7f696e939e01312e19d77445",
+    "generatedAt": "2026-09-14T03:52:31.689Z"
+  },
+  "en/english-example-12-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "a yellow banana.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "86e54e7b54b073afea4874a304442aed589d9566b37013f76b15a98442d01c9b",
+    "audioHash": "5db8d14dfd05777ae004353e95606c3b407eeb642c5fdde9818eb457d6b6a6ff",
+    "generatedAt": "2026-09-14T03:52:32.573Z"
+  },
+  "en/english-example-12-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "a green tree.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "1fab296da12e247741d0bb23627cb9c1d46d6865b14e26a1f64b55516c8eedfa",
+    "audioHash": "417f1c44e45423ac8403dd1580f305b4eece9bd7abe6519013b695794b6f1a54",
+    "generatedAt": "2026-09-14T03:52:33.481Z"
+  },
+  "en/english-example-12-4": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "a pink flower.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "b99cca2151b90d78af59dce94154986cea07893f01e7d5e863865ca8d2087848",
+    "audioHash": "613e0fed97557f5ff7b0b757d81ff966015ff96ba8b7ba33bd153bb20f04e794",
+    "generatedAt": "2026-09-14T03:52:34.391Z"
+  },
+  "en/english-example-12-5": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "a blue car.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "28c125e42a74a6cdcfabda6a5258867015b3dc0cd216a95b816ade2437529e03",
+    "audioHash": "95e33efaf26001df505c924b54f136874c9225a3088a5ba3aacc15491b01a8ca",
+    "generatedAt": "2026-09-14T03:52:35.303Z"
+  },
+  "en/english-example-13-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "a big dog.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "bd459676fd5a660b3f502f31ff1dfc39e37d6a61f7abfb6af09a444429508573",
+    "audioHash": "352349c94ffca4128e4fc25daa22967160ba9365c7fc896b447cd61b012f8612",
+    "generatedAt": "2026-09-14T03:52:36.201Z"
+  },
+  "en/english-example-13-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "a small cat.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "c2b2122b78ff8ad2f83329195d952a2fc071c89d18a83f86edaac42d8c694d07",
+    "audioHash": "bac8a152ddc194d1547f4e7ac676f89ae9f5246db4b87a284e9e888272973e24",
+    "generatedAt": "2026-09-14T03:52:37.095Z"
+  },
+  "en/english-example-13-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "a big tree.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "e42ba5106c83969d946479a002e523810a07c00a92e90946ba6210fa47d0d4dd",
+    "audioHash": "d49fcd6f1372b33fb9f729ea5efe06036b8652275226811950db27115e97fd9c",
+    "generatedAt": "2026-09-14T03:52:37.998Z"
+  },
+  "en/english-example-13-4": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "a small fish.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "f9dc78c23d4ea7fd1abd047bdae2543ffe417843294dee4b7d7850f85e1d67cc",
+    "audioHash": "13fc503f4d77ac35f8945f071f39279bdaaccb1be5cff8fc8f0a0a745c1800c5",
+    "generatedAt": "2026-09-14T03:52:38.973Z"
+  },
+  "en/english-example-13-5": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "a big ball.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "59c1ee4a7c56eb4ad0a73bfe2b19325a094c750573185a30111db1f58ff8aab0",
+    "audioHash": "fc90d53aa289e689466aaba68b7dc310992e34fc850a65acf827e435ce87c58f",
+    "generatedAt": "2026-09-14T03:52:39.870Z"
+  },
+  "en/english-example-14-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "one star.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "f6fa3a5f9718b786e493e8dd7c848d5833d46b733534693f1c2515ec4e2cf01f",
+    "audioHash": "c19951263a96667bc1c8e3994760e8cf87f8f8af18f2bc008f8778473de5c5e5",
+    "generatedAt": "2026-09-14T03:52:40.748Z"
+  },
+  "en/english-example-14-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "two cats.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "72693d79a0e53468ef7c6f37ff603bb18f6cfaebca359ec08d2b2867fd7c19a9",
+    "audioHash": "4f257fec4dae0306b9c58c1ccb646a33aa172fd6572383f3ca6183919153af43",
+    "generatedAt": "2026-09-14T03:52:41.627Z"
+  },
+  "en/english-example-14-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "three apples.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "806216ef4b1fd51283b5cc6e9f38d3e55c40396928888bfcb05862886c90fbc1",
+    "audioHash": "9c4be0cc3a2e6ab8fa6e0b04a6b387a24393c4ca618dfd5ee47101ffa42157a9",
+    "generatedAt": "2026-09-14T03:52:42.498Z"
+  },
+  "en/english-example-14-4": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "four birds.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "a3f6c24c9bb8b3a3270a2b9679b3d20bef9f523afdadd4ead276fb0b918d4d93",
+    "audioHash": "83407334e8c9fe06fbc364e0a36e4ac758cddb39e1ac20f5f818247db64b85d7",
+    "generatedAt": "2026-09-14T03:52:43.394Z"
+  },
+  "en/english-example-14-5": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "five flowers.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "a0f9b054e65b13b211713b2da99f32b1bc61bbc371552e2ba63eaa26a53d341f",
+    "audioHash": "5d721c7495199df54bb31b349e351c740dd708f1f9e4b26878c6625361a4fbb1",
+    "generatedAt": "2026-09-14T03:52:44.304Z"
+  },
+  "en/english-example-15-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "my mom.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "d4cb93404a53e33c17285bd6cfb42dadb8a82fa2261c1af036f7355e69bfa20c",
+    "audioHash": "61b9b5186bc00c4ced36314e008085f93ed03fcb16c0215aafd5796316622300",
+    "generatedAt": "2026-09-14T03:52:45.265Z"
+  },
+  "en/english-example-15-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "my dad.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "2b52bba498db1171249f6feb6b9ba3f77c532c5b4e44e64a2ff479dc3e580e0a",
+    "audioHash": "4e30c22550a7e9b8589b7b412d43f96f4df946e5dbf905c2f762a6eb7f193cc6",
+    "generatedAt": "2026-09-14T03:52:46.138Z"
+  },
+  "en/english-example-15-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "my brother.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "6ff9064658518a3a1aa5fc453cbded015017a80a9a035481509b5dc7e02bfe37",
+    "audioHash": "351878e27209e2e4941cb4c9ec7faa09cbd897de102e8c1e6cc9c4bb4435c5e4",
+    "generatedAt": "2026-09-14T03:52:47.055Z"
+  },
+  "en/english-example-15-4": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "my book.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "e66c4c972bfc8c379c64c6c7ecbb84c6cd819a5a8ca9ffe1a9cd01178ea8a98d",
+    "audioHash": "70e207420380847acb5d97890b7d4cab57b47c428fcea35f8c27a265d902480e",
+    "generatedAt": "2026-09-14T03:52:47.924Z"
+  },
+  "en/english-example-15-5": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "my dog.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "34813b062d64ce09e198fe9c35f81bbedfd71c3cf0ca659c5be5827c1f964f56",
+    "audioHash": "1ed968cb2e8768a496c1e652d92b295349b2a01649848ae2f411464f54f6d406",
+    "generatedAt": "2026-09-14T03:52:48.807Z"
+  },
+  "en/english-example-16-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "yes please.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "dfb5684019dde3feea2efa51947cfa510228f618b7eacf43b381c5ca28581525",
+    "audioHash": "374701f99f8e501dad73f0e9954c700582897cb76facd4cfb21f4d0e0d2479f7",
+    "generatedAt": "2026-09-14T03:52:49.690Z"
+  },
+  "en/english-example-16-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "no thank you.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "074ff58f1399c1e216c729b23b30103166f550c0f46707d78696f2f0606d43c1",
+    "audioHash": "8037686e24f77e2f54725ca7800e15ffa0e39fcb659eb3953b3da69484381a5c",
+    "generatedAt": "2026-09-14T03:52:50.569Z"
+  },
+  "en/english-example-16-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "excuse me.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "750ddb796942374d5c380f093caa92ba2dd192631203271a2e4b447b1cc493ff",
+    "audioHash": "0eebe01c10604c61469dc880518449c78767486d0b14911fb2459b481bab598c",
+    "generatedAt": "2026-09-14T03:52:51.443Z"
+  },
+  "en/english-example-16-4": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "your turn.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "5e90abbb69bf54e1986a68a4d4f69f578b116121fb19d5865e10e15627bc5680",
+    "audioHash": "74414ecd16ff510980df06ca8901e47a8a2c6021934a70e7051c156ddc91e924",
+    "generatedAt": "2026-09-14T03:52:52.330Z"
+  },
+  "en/english-example-16-5": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "well done.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "b767f486cb983618bf9f29e050f4aeff661e91f9ab33174a258caef0d2952ae8",
+    "audioHash": "bbf97436e292093e2452805143fc8d1fd46b1018acc06925bcced53afcc488a1",
+    "generatedAt": "2026-09-14T03:52:53.232Z"
+  },
+  "en/english-example-17-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "clap your hands.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "77df09938cf2d8eebf0662cb74c60f01cf81d414c2c2ecc2d621a3b235ec6be0",
+    "audioHash": "e5574b2570b5a98d31926ef506b1acb8700c59d404a0360c52615ecb773995b6",
+    "generatedAt": "2026-09-14T03:52:54.181Z"
+  },
+  "en/english-example-17-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "touch your nose.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "ec8a55e463be08be49caaed21d9bad6f33a1f4658dadb8d6a686a9957654a6f2",
+    "audioHash": "4d83b7d0bcbe5e0bfd8101da612286ea2ee24f54f4e006930dbf276f53e3a353",
+    "generatedAt": "2026-09-14T03:52:55.099Z"
+  },
+  "en/english-example-17-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "wave your hand.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "f8bf4e562a1d47d9223c394244f83b3d6386d68825c9706b349cdfa0f380d5f0",
+    "audioHash": "bf710837dfcae1866fe0be63240e16184031073b2cf99aa9d9f0d3d31bad48ef",
+    "generatedAt": "2026-09-14T03:52:56.013Z"
+  },
+  "en/english-example-17-4": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "stand up.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "94310e22064f22acfe201aa1ff8e5fe0fd0ba3e123326c9b05a20119a691db03",
+    "audioHash": "8c6f33926101d5c0a6b7dd2a38ea25d6c1c095c8f8990a75532776cf5d41d116",
+    "generatedAt": "2026-09-14T03:52:56.888Z"
+  },
+  "en/english-example-17-5": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "sit down.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "aeead7ec774391187ee2610d3565109a55f75c013c0c407a23285879f23120a8",
+    "audioHash": "c7e20c838a348ede91a317240bb6344b43fbc0cc539d5ee098c61d8d69a0c7c0",
+    "generatedAt": "2026-09-14T03:52:57.849Z"
+  },
+  "en/english-example-18-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "in the box.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "f1d56a9a425b0bc4d7947bb661330588e8798f16ef879db15e75d8f2f66e746f",
+    "audioHash": "b28fa79fb23c16b252dd0d3cc2dfd27466871341153ecdde7e471e06b4824503",
+    "generatedAt": "2026-09-14T03:52:58.755Z"
+  },
+  "en/english-example-18-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "on the table.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "e5f24656dc6fddc475a4b699879b35abe5ebc5fa32e07b8f66c9052d77dff2a3",
+    "audioHash": "d11c03ce3e713c6a90d56a111d3557b8e1c4514400da94a319e20e3e7909d7a3",
+    "generatedAt": "2026-09-14T03:52:59.632Z"
+  },
+  "en/english-example-18-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "under the tree.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "c51f57969fd149db4808f8a893430fe1637b78a23bb9f04a8ab8db316cf453ba",
+    "audioHash": "c693823d849a36b455e79caa40449831e8702145ddce02540f84a31a23e4f749",
+    "generatedAt": "2026-09-14T03:53:00.533Z"
+  },
+  "en/english-example-18-4": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "at the park.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "5c249913346301965f5da4ed844a25edc43d36ab2f94883e5ec7c9119f1d93be",
+    "audioHash": "1f399d721f187208ee875c86207a1fcf8729c7b19577f0044fdf0aabe5ebcba6",
+    "generatedAt": "2026-09-14T03:53:01.409Z"
+  },
+  "en/english-example-18-5": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "with my family.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "515070ea96f3e2d4a581c1d29ecff6c1e73889132478dbd0d25584507f3d92ae",
+    "audioHash": "e5a66382d7c85b9e61173c69714fb4b34be560c9511767bf6fb3487ad6908b7a",
+    "generatedAt": "2026-09-14T03:53:02.302Z"
+  },
+  "en/english-example-19-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "I am Mia.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "d1c2a50fff3d28617a2a8eb2ab0d575a7740806fcad61c780e0cdd440822f7cb",
+    "audioHash": "75b319b691954744a0399d185f0eabef5de2eb58c901596366078092ca71d322",
+    "generatedAt": "2026-09-14T03:53:03.186Z"
+  },
+  "en/english-example-19-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "I am happy.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "782bb4ce47d1ec7ac156b4004401cc2cde4adf409fb9c8a2c62abaad698d89fd",
+    "audioHash": "60e71689a4fadc8d6277516eb7c1c2b2769fc4c04ce31f4194bcc89fbc8ad9de",
+    "generatedAt": "2026-09-14T03:53:04.046Z"
+  },
+  "en/english-example-19-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "I am a girl.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "7df621462002c6a4bcd3c9fc743fde4faf5a3186ddd201949264cd6157faec02",
+    "audioHash": "5c307bfd7232034496f5e6e95a075dfbb868651274a47f86199246bc3042835b",
+    "generatedAt": "2026-09-14T03:53:05.040Z"
+  },
+  "en/english-example-19-4": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "I am kind.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "85e619fa0a8084e0e7ec65e3adbd974fd167d514dfc1e4fe02d2d108d5c5bbba",
+    "audioHash": "446a4ac76193f8789f63faa097d445683430414616dcfd6e2f66c6d300de46b4",
+    "generatedAt": "2026-09-14T03:53:05.929Z"
+  },
+  "en/english-example-19-5": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "I am ready.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "d1f2d8f3af4d30dc06081f74ba8a8145f16af5a4298242312047a46da4e451d5",
+    "audioHash": "005877b428582958d3390367e80d5173d4d05dd744126a60026bc9cfcb93b6fe",
+    "generatedAt": "2026-09-14T03:53:06.846Z"
+  },
+  "en/english-example-20-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "I can jump.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "f597478274886494296b49dbab8e06561024a785b4aafe0e2652aa0f5617bb40",
+    "audioHash": "a2426ceb4b576f9e8c6e77052e2261a29ce071172af670c3cb7deb74c68aeb82",
+    "generatedAt": "2026-09-14T03:53:07.809Z"
+  },
+  "en/english-example-20-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "I can run.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "78c4798776f01e84d4fb271176e555eb49413595e689fa2ea0a46349bac571c1",
+    "audioHash": "070a8bf82c4de0f808f1db88a4cf4a29fbcad7041ca8923fa7d25e21f167c631",
+    "generatedAt": "2026-09-14T03:53:08.688Z"
+  },
+  "en/english-example-20-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "I can dance.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "0c13ee63295cacdeac52395ecfbc77009cd15ad7465f5f19886a50a3ba2fed93",
+    "audioHash": "fb431d13626d52c0af30b56dcbbf9a42b2545d6f2e9d8e2d406a249359f16d9e",
+    "generatedAt": "2026-09-14T03:53:09.597Z"
+  },
+  "en/english-example-20-4": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "I can swim.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "d29c9a3c373911d35af925ba844723c0e99ae5957075be2c571c2a0ad04f8d51",
+    "audioHash": "5ad80af64398f43a839a8154d43fcc042b446166c7fdc1dc137523fc925262bd",
+    "generatedAt": "2026-09-14T03:53:10.476Z"
+  },
+  "en/english-example-20-5": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "I can clap.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "b355e56e236cb8ceac14cdf67ba5538175f46616420f5372e7d261a92733de18",
+    "audioHash": "cd353d37d3f82b4ae2865b2b2d5ac066240f1adb30ce11ebce38e8580f64859f",
+    "generatedAt": "2026-09-14T03:53:11.379Z"
+  },
+  "en/english-example-21-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "I like apples.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "cd2600bac0fd54c919eecdac4d48bb35dfb6088e6089b05bad628b2eccdeb0f3",
+    "audioHash": "b31e4d44b3e6dd72b6b33319ab6bc95cb878664723bc3b9713e209ef569690bd",
+    "generatedAt": "2026-09-14T03:53:12.285Z"
+  },
+  "en/english-example-21-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "I like cats.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "20e0e1aa27241290e0439260e33e6c99877c457a5eaa59fca41b60610ac46a0d",
+    "audioHash": "08b55402f8b94ff372a42b66d417ff2bb14254395f97fb6c00a6eef4dde9ab7f",
+    "generatedAt": "2026-09-14T03:53:13.181Z"
+  },
+  "en/english-example-21-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "I like milk.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "52964f45f272bc1ba70633924e606b8bc57069c8b813573d6c15a6316ca10c50",
+    "audioHash": "7b881ae841aafb126b2a7c28ead7af05d2c2f22e09d2e5f5a0b80c9caf7c8986",
+    "generatedAt": "2026-09-14T03:53:14.108Z"
+  },
+  "en/english-example-21-4": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "I like books.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "487edabc3319ede56529e0998cd82d483590918dd15a7d1adcb6c01eba6e828d",
+    "audioHash": "46650f06428e803ed1ed901958364ca8ee012d20abc11eb6c31eacb5a0cc50e2",
+    "generatedAt": "2026-09-14T03:53:15.008Z"
+  },
+  "en/english-example-21-5": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "I like flowers.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "e2892d428bce5666bca37ebc70721a2cca89ba0b619c57445cfc8b4683df3105",
+    "audioHash": "a158b617ef9bcf04c0bdaea90479d8635e4ea3fcc559e36b9904244967cfab97",
+    "generatedAt": "2026-09-14T03:53:15.905Z"
+  },
+  "en/english-example-22-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "I see a dog.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "a764f18f0626e4978ae2339503b9150b93d5e36e1cb4a7ec1a893ca0cdc9df4e",
+    "audioHash": "6d8660f6983fc60e15190960b75852fc39e167bf340a2bb75dbbd62bb62c5d4c",
+    "generatedAt": "2026-09-14T03:53:16.796Z"
+  },
+  "en/english-example-22-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "I see a bird.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "f6b5585d117d3ff713c1014052635e81d91dd44ac01fc9ebb9ed40bc4de3b71f",
+    "audioHash": "d98ecf69ef9cee954e936b3b353967ae3e3e22aa6a7ba855ceac34babc392045",
+    "generatedAt": "2026-09-14T03:53:17.670Z"
+  },
+  "en/english-example-22-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "I see a star.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "f1c12b83274d9666dfd80387f6019c35da17ba52ca2c9da0b7e98432b735082e",
+    "audioHash": "f168a5dc93f8a33b619602855d0e341b8e4cb654fcd6e58429f9c36ce6e905c2",
+    "generatedAt": "2026-09-14T03:53:18.573Z"
+  },
+  "en/english-example-22-4": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "I see a tree.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "74dd0839f920fd6291b28ed278093a14b226cdccefa2f7e9b86a1d37a0ae6bb4",
+    "audioHash": "42012e7658e1b427abe6a531b33e4127ef2b174754f038ce508bb5a40797ff05",
+    "generatedAt": "2026-09-14T03:53:19.454Z"
+  },
+  "en/english-example-22-5": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "I see a flower.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "776969c0524048052dbd5f7653a0ffc993bc7ed235266e690d4cf0c3fa6e2e99",
+    "audioHash": "ad179538e09130d0829f5e1bfa5e5e12455390719d0705eb99531d9a420f6797",
+    "generatedAt": "2026-09-14T03:53:20.391Z"
+  },
+  "en/english-example-23-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "I have a ball.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "99f465c06e50f8369960c39d288c41ebf81b16093e037f932c1929c8a2ff61b8",
+    "audioHash": "ef1377289dd2bda76d08a1f1cd077ad94949d2c6edc96c7a0cffe8840bc7ba30",
+    "generatedAt": "2026-09-14T03:53:21.277Z"
+  },
+  "en/english-example-23-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "I have a book.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "1157c8a2347c90052666a7ac615120db87995afe58fad694a653558833d8a7b4",
+    "audioHash": "820f3f0813f88ea6b24a9fb19ba7b84fdde9b83cdb3e7eba78d57a85b05c6962",
+    "generatedAt": "2026-09-14T03:53:22.172Z"
+  },
+  "en/english-example-23-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "I have a kite.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "d7f6b7ca18e273dc7bc51aed90cf8173b257aa3a0ffb29ff58b6aa216967025d",
+    "audioHash": "824b96a4d9554e97011b9287639f861c6730f70bbe0abc682a66e14c9d8845be",
+    "generatedAt": "2026-09-14T03:53:23.063Z"
+  },
+  "en/english-example-23-4": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "I have a doll.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "9909479ad9cfba0f171877d0a748ef05dfc0c10095523a774c8d1ed4496e5717",
+    "audioHash": "3f86c10b5a45dde64b96dcee57611893d56ed2878b75f84fa5b3e406832c708d",
+    "generatedAt": "2026-09-14T03:53:23.949Z"
+  },
+  "en/english-example-23-5": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "I have a dog.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "c87c0113c0e3e2d93bec0770a0e5e967eff9a7dd46a896116ecc4ca20f950a9c",
+    "audioHash": "d5540aec9daa7e7882f4c4f48ee207e6e371bcdaf0a4fd2307f85c17adacb36a",
+    "generatedAt": "2026-09-14T03:53:24.830Z"
+  },
+  "en/english-example-24-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "The apple is red.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "e11c63508f12dd90f3d64af6ad7664f36294896943cb23a2988a2b5da4b297b4",
+    "audioHash": "1bc4942f089a9193fb4ded7490822e2ecdb979593c4a7f3fa8c0133ec89527a5",
+    "generatedAt": "2026-09-14T03:53:25.766Z"
+  },
+  "en/english-example-24-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "The tree is green.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "eb772ff391cfc2a088fa3305a9857b06641edcda4b9d9b86f914aa2aefae32f0",
+    "audioHash": "e92cc3b105e117e5bf693321f1e17bfff108a0afeddeee116fa743684315b049",
+    "generatedAt": "2026-09-14T03:53:26.684Z"
+  },
+  "en/english-example-24-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "The banana is yellow.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "67e4e195bf60ed0235bd96d7aa56182a4396c5bdfb4cfdd8503ebfb1314d4b7d",
+    "audioHash": "befd99d6150a8b1bcda3ce75646c9fdf710baad3aded5bc1f51fe66f9deb6781",
+    "generatedAt": "2026-09-14T03:53:27.583Z"
+  },
+  "en/english-example-24-4": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "The dog is big.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "3d6170004c2142b96559952f1b88473b0c132f9822d20c20ed9b83553b89bc90",
+    "audioHash": "cbca0018430a38edcb0a3d0ce0ba592db3f9dc3da6ecb4323d08546fe9a01875",
+    "generatedAt": "2026-09-14T03:53:28.489Z"
+  },
+  "en/english-example-24-5": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "The cat is small.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "5c43362159ce1af705c7e0bf4081f9ecc75c89ffe702bfb86fe24853603a8cd2",
+    "audioHash": "c8cde4d9fd6e3db7329824b0a7274a107507678e8e99332f7889e0e5ee5c2398",
+    "generatedAt": "2026-09-14T03:53:29.392Z"
+  },
+  "en/english-example-25-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "This is my mom.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "ffbdd5b1185794fd1bbfe3c48ad543454fa689d80154c9b8f5bafb31e9c4509f",
+    "audioHash": "bba9c894ce101c2968d444283ebe5c5bed14381317680a7f49c890a5c415f7ae",
+    "generatedAt": "2026-09-14T03:53:30.355Z"
+  },
+  "en/english-example-25-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "This is my dad.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "74566d2c60cb3d4e9a8b27e3a17f6da3b2b08e1ef1bb9bfe540812f69d9e13af",
+    "audioHash": "caf1fa71580ff855720b3c42584ca0de81d7e768a488993a904a8d0a3f36e6d8",
+    "generatedAt": "2026-09-14T03:53:31.245Z"
+  },
+  "en/english-example-25-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "This is my brother.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "05d17e20b3d903f318e42757cd1e35946df8e8007f682165341d07bc4f03f609",
+    "audioHash": "a8a4eb1bd9bd902c227a7cf278dd671b30790d928e510fcf47837dca8a595767",
+    "generatedAt": "2026-09-14T03:53:32.138Z"
+  },
+  "en/english-example-25-4": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "I love my family.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "899b637b10b86b17a0021f0de153f828de71ea7698413ef791c45ce8a6b341e2",
+    "audioHash": "dd1a506d8aa9e082cfe7344be525e5b1dba014168f24187406a6da685d7590ec",
+    "generatedAt": "2026-09-14T03:53:33.031Z"
+  },
+  "en/english-example-25-5": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "My dog is happy.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "04342b9d8683f8eab1a6d12da1e835a45060cea9b005c4efa9940815fa097ab7",
+    "audioHash": "bc2b215a7ab84e47215e28b59717fd0ba23c16e0413338fa4bd845ac8d6afc0a",
+    "generatedAt": "2026-09-14T03:53:33.924Z"
+  },
+  "en/english-example-26-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Can I have water, please?",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "5ec5488a190064af56f84f2a8f48e18572c3396b6e1e6276cf85430fa5ae458d",
+    "audioHash": "4009341b11a89c49325ab132b0705cb46bf6d2ac6c2fe79feb89f9b16e1824c6",
+    "generatedAt": "2026-09-14T03:53:34.980Z"
+  },
+  "en/english-example-26-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Can I have an apple, please?",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "508cb09941a216190b5e25e6e8f94ea4318514993a609614248ba3357aa27cc2",
+    "audioHash": "c4672e4c6487b7befee9acea1a12922068651d4f52780a0c81742ad651d97010",
+    "generatedAt": "2026-09-14T03:53:36.002Z"
+  },
+  "en/english-example-26-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Can you help me, please?",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "4343c6b667b44871fa01bb64dc244fc68945a337e4dc8e675d6fe5d747760fb7",
+    "audioHash": "a339efdb19d2414c7f01b5fdc8b0e84a388b0cd89aa47c196cfd8ecb64c38664",
+    "generatedAt": "2026-09-14T03:53:36.902Z"
+  },
+  "en/english-example-26-4": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "May I play with you?",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "a95fad08376f75d4b535b3cd00ff1dfdcdc6ccf4a4040ec6d74e19daf908f2f0",
+    "audioHash": "4f8f81b7c1a46e8b1968827a42f2da1c27d8ccc87f9c40d3b7d8af0dca3bbf41",
+    "generatedAt": "2026-09-14T03:53:37.796Z"
+  },
+  "en/english-example-26-5": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Thank you for helping me.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "a416c3d03657f3aac369f6083509a555c3825d69ca71e2b358203f22a08fedb3",
+    "audioHash": "9ac5cd5e107c4d4150c41c27ba16ed21739df912076a7f000b166e73f6a255c3",
+    "generatedAt": "2026-09-14T03:53:38.744Z"
+  },
+  "en/english-example-27-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "The cat is in the box.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "34366cdd82bf0eb44c43c8c049a9dc602b81c6666a51c8d94f758b26d0560a34",
+    "audioHash": "7e4a0ff0a293a7c451e8531175e6058b96814109f01ab08dcf65a077ba26dfab",
+    "generatedAt": "2026-09-14T03:53:39.655Z"
+  },
+  "en/english-example-27-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "The book is on the table.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "2d9860a97b5ecb1950298cb16f8de2a466743382ecaf942b34c3c4b2dcbffb79",
+    "audioHash": "a0a2188d3df0c71904b33b0e34ea6b11200bb2e23d4ec6808be73bf0463f0fe6",
+    "generatedAt": "2026-09-14T03:53:40.580Z"
+  },
+  "en/english-example-27-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "The dog is under the tree.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "a05e1394f9608c8a630544ea874d3f5b4372ed17aeed3709ff8366a23d87d2bd",
+    "audioHash": "af4e4b40fe82d977a21556be28c5981219091f089fa89c08a02ce2def189e16d",
+    "generatedAt": "2026-09-14T03:53:41.492Z"
+  },
+  "en/english-example-27-4": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "The bird is in the tree.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "1c052bab53e5bf09b496a49dd87da46858854a472af194a7cf616aafa4696a9f",
+    "audioHash": "bd12eb6c2c854cedb8f9e463f4e155691ff11ffdd283bc2ad39151fd6b09864f",
+    "generatedAt": "2026-09-14T03:53:42.411Z"
+  },
+  "en/english-example-27-5": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "My ball is in the box.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "c8e00b28a2491bd5c7e14c503d6a9afac1f7538715147c87ad44d9f9f68de3f5",
+    "audioHash": "058cde7c6cff6c1802e16b135f8a21f10c6eb5ebd0d730f2a2d3a93fd29841e7",
+    "generatedAt": "2026-09-14T03:53:43.329Z"
+  },
+  "en/english-example-28-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "I brush my teeth.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "89ef42d3a2308b37734a1cb207782f826ea3e8e889ef5798bc224a470b3a9b66",
+    "audioHash": "d48b7ba4d00792b62348689a86f13ea59ead201da3cf88658fd4bcf0c40404cd",
+    "generatedAt": "2026-09-14T03:53:44.232Z"
+  },
+  "en/english-example-28-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "I eat my breakfast.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "c640fe171515782bf8bb621c3401017f8c7b1a49e523d50a3e6326683396a996",
+    "audioHash": "f2b524a9a61554fba2b84af113620860e88b64bb1e0eb7e04982b891bd642e3e",
+    "generatedAt": "2026-09-14T03:53:45.142Z"
+  },
+  "en/english-example-28-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "I play with my friends.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "e7d395ada7c1225f261b5f4fd6dcaf4feca7faa54fc716fbfbcce1483265432a",
+    "audioHash": "b93f661d2c9e7425caa7d169b7725eba3db92542dabf6a2442c8a67f79b3238b",
+    "generatedAt": "2026-09-14T03:53:46.084Z"
+  },
+  "en/english-example-28-4": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "I read a book.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "6e927249dcb2d1cb8f25210b32900d21d86bd165112db89dd32601a550bf1a3a",
+    "audioHash": "6dccbe586c3bc901a1e848ae256e879c72de39e3b9df7aefa0e2d804d674b14c",
+    "generatedAt": "2026-09-14T03:53:46.967Z"
+  },
+  "en/english-example-28-5": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "I go to bed.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "9e58d6b2590abad0a191f2f9f8e6490e9553eb9803cb955a3cfa4d1650beab7e",
+    "audioHash": "445fbed6f6cd21029eb64c66f1595d84f13d4762010ea3e4156adf1d87ddc7bc",
+    "generatedAt": "2026-09-14T03:53:47.856Z"
+  },
+  "en/english-example-29-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "How are you today?",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "953ff1e6337f2ca1c3650e1897596bb7099f0d649353c9e7cbc57a46667b91c7",
+    "audioHash": "161dd021ca930a751bd85200110574a7daad51b40de09ff4c801428e2f5af823",
+    "generatedAt": "2026-09-14T03:53:48.740Z"
+  },
+  "en/english-example-29-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "I am very happy today.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "8b599a38ec182d48882015d1c5cdc1a969bf79a8734f705498850d0a44bdf54e",
+    "audioHash": "ec5d796746c42c2d524e3c3a7c8134931f4ac53de36f8a99ae20a3b933897608",
+    "generatedAt": "2026-09-14T03:53:50.129Z"
+  },
+  "en/english-example-29-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "What is your name?",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "a2370300e9f0570fb340aba8d182a94cebf19c4759b32f906aed4c5a51b8c385",
+    "audioHash": "512e21545457831eeb8cae2468caf600d2b128bc8ec3e7e51c46b85af3a5b2c9",
+    "generatedAt": "2026-09-14T03:53:51.010Z"
+  },
+  "en/english-example-29-4": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "My name is Mia.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "aad3afc074b332a1703a44b1f1c4f7a183eb4c49fd517899bc486068d76908e0",
+    "audioHash": "7b9e7e90c582c372c251c3ca67202caf03afc35d451dd9a6234bf248a1736682",
+    "generatedAt": "2026-09-14T03:53:51.909Z"
+  },
+  "en/english-example-29-5": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "It is nice to meet you.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "f89d0a11c9e907ff13dd296a2dcc341803bb045e28d54fc41feea674cef43f2b",
+    "audioHash": "5d843128708205978f62b24eee246f5fcc3d6fc0578c72629354ad6d4a438738",
+    "generatedAt": "2026-09-14T03:53:52.898Z"
+  },
+  "en/english-example-30-1": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "I can see a little bird.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "a048cde97533db8893de6e33dfd8fe4f011c40d9f989911aa93c57226a011b1b",
+    "audioHash": "bf57fcfa1eea50b25025210dfa94def48053324a42295cb1a869ac5edd089745",
+    "generatedAt": "2026-09-14T03:53:53.960Z"
+  },
+  "en/english-example-30-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "I like to play with my dog.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "d2b2f6985d0325b696c68764cf205a39f7c732a3e1d7dcd6f1ac3317a486a7c3",
+    "audioHash": "46e1e61c0e89e90370ec244a3ec22e67d0c38d1b0db8e83e8b2c13131174ebb7",
+    "generatedAt": "2026-09-14T03:53:55.043Z"
+  },
+  "en/english-example-30-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "The little cat is in the box.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "1b6ab7848f381bd5e5415130f08343fdc93878a0aa1a1f9f0d0d2e7d034c0bf1",
+    "audioHash": "c80b498c98f464d5fb5719fb65bf5bdc9cb7e64a4312f22311e688844a5b67d3",
+    "generatedAt": "2026-09-14T03:53:56.045Z"
+  },
+  "en/english-example-30-4": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Can I have a red apple, please?",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "31f156fae16fced4f429f54fcb61cecaf866bbd75b68e048b0fc610bfa3599d7",
+    "audioHash": "479b5a311975e1b13938190079a063889862dc7b0ea1ea0b58349ce0fe41edc9",
+    "generatedAt": "2026-09-14T03:53:56.988Z"
+  },
+  "en/english-example-30-5": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "I love learning English with my family.",
+      "model_id": "eleven_multilingual_v2",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 0.85
+      }
+    },
+    "requestHash": "b80d23e86ce9f9811476f6921292246868936654f77181a224eaf2dc9cb7f4ba",
+    "audioHash": "7ac27a8578a40687d9d6c1cae7ca3fe25f47b4abffdf4a61323309e4fb252985",
+    "generatedAt": "2026-09-14T03:53:58.048Z"
+  },
+  "he/speaking-intro-1": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "היי מִיָה! בּוֹאִי נדבר אנגלית יחד. לַחֲצִי על הכפתור עם הרמקול וְהַקְשִׁיבִי היטב. אחר כך לַחֲצִי על המיקרופון וְאִמְרִי את מה ששמעת, באנגלית. כשאשמע את כל המילים, נוכל להתקדם!",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "40d99e71e50fc3c8e434f1e5915d96bb70af0352ee083dbf7ac53ff07be4ccb8",
+    "audioHash": "4b0f7e713a5f10774b0156e0cd9ec6be2fc0efa8a4fddf02ef350524b9845580",
+    "generatedAt": "2026-09-14T03:56:48.424Z"
+  },
+  "he/speaking-correct-1": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "כן, מִיָה! שמעתי אותך. הצלחת!",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "6230fc30b5a5e99bcab3209dc5871f7f737b1d4bbbcf198b7eb4ba851593dd22",
+    "audioHash": "64a15f262dafec8b2f8bd662f061d8f5d83b651add7d86ff761a020041479ee4",
+    "generatedAt": "2026-09-14T03:56:50.213Z"
+  },
+  "he/speaking-intro-2": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "מוכנה להרפתקה באנגלית, מִיָה? קודם לַחֲצִי על הרמקול. אחר כך לַחֲצִי על המיקרופון וחזרי באנגלית על מה ששמעת. לא צריך למהר. אפשר לנסות יחד כמה פעמים שתרצי!",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "b093af6140274e94a6b275a7411d2b5c81120f2a08e163f18babb84c72cb40fb",
+    "audioHash": "b47371ea8353423a7b50e256384cb9f52f1dc504f94ec537fc65c4725d9f3234",
+    "generatedAt": "2026-09-14T03:57:57.891Z"
+  },
+  "he/speaking-intro-3": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "מִיָה, הקול שלך הוא הכוכב של המשחק! הַקְשִׁיבִי לדוגמה בעזרת כפתור הרמקול. אחר כך לַחֲצִי על המיקרופון וְאִמְרִי אותה באנגלית. אִמְרִי את כל המילה או המשפט כדי לפתוח את האתגר הבא.",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "aaba990b5a5394c8ab87a578cf3980e9f0a03dc67be037b3e23fd5d9e45c9e0d",
+    "audioHash": "6702a7a985cfb1a51a3aaa144da7f08e4fa145b7794a20384a8c359bea5f99b0",
+    "generatedAt": "2026-09-14T03:58:06.281Z"
+  },
+  "he/speaking-words-1": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "נלמד מילה קטנה בכל פעם. הסתכלי בתמונה, הַקְשִׁיבִי למילה ואז אִמְרִי אותה באנגלית למיקרופון.",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "29143e24c20fde8bc153a8bb671637356b9a3676e3cb3e283017d9dc8b12c586",
+    "audioHash": "d5aea913345238c92f0dadf7f1b3ae3b9603e8336404cfd093b4e66b8d8b88eb",
+    "generatedAt": "2026-09-14T03:58:12.081Z"
+  },
+  "he/speaking-words-2": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "לכל תמונה יש מילה באנגלית. לַחֲצִי על הרמקול כדי לשמוע אותה. כשתהיי מוכנה, לַחֲצִי על המיקרופון וְנַסִּי בעצמך!",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "7c3d4d5ac6d0254237de43c13a281b0803e4df7410480e24b50997877b0a269e",
+    "audioHash": "ddd9db4edbfdcf43f8e0e6d064ddde9d3fd07f89d467b2ff252d7f69c368b0ff",
+    "generatedAt": "2026-09-14T03:58:18.234Z"
+  },
+  "he/speaking-words-3": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "הנה מילה חדשה, מִיָה! קודם הַקְשִׁיבִי, ואז תּוֹרֵךְ לומר אותה. תמיד אפשר לשמוע שוב את הדוגמה.",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "26e5d99909f6c58fcc35b25153aa07534fa29d1d7c003f98573f4585ebf53d34",
+    "audioHash": "fdc1dc79c725899d5686cd8de6471d6375815b2fa54a79e669bc6e287603246b",
+    "generatedAt": "2026-09-14T03:58:25.894Z"
+  },
+  "he/speaking-phrases-1": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "עכשיו נחבר מילים יחד! הַקְשִׁיבִי לצירוף הקצר, אחר כך לַחֲצִי על המיקרופון וְאִמְרִי את כל המילים לפי הסדר.",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "71fe9e46ce011988bc0e8feb5983bed8918d35dcac40b614b34041d21243da3b",
+    "audioHash": "bc16089aeabac72d30609aa20cb9af6d714df35e0ebffd561ad4275f7eb30b5b",
+    "generatedAt": "2026-09-14T03:58:32.239Z"
+  },
+  "he/speaking-phrases-2": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "את מוכנה לצירופים קצרים, מִיָה! הַקְשִׁיבִי לדוגמה ואז חִזְרִי על כל מה ששמעת. גם המילים הקטנות חשובות!",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "a0d54a83c3fb19559f555195e1c24a5fc1edfe3fdeb02978fd39419465178992",
+    "audioHash": "d4069d88b29af13d256f8bc9f940f1ea25beb4d7b832856b642070ba8708f893",
+    "generatedAt": "2026-09-14T03:58:38.741Z"
+  },
+  "he/speaking-phrases-3": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "בּוֹאִי נאמר כמה מילים יחד. הַקְשִׁיבִי היטב, לַחֲצִי על המיקרופון וחזרי על הכול בקצב שלך.",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "1cbc00ed358dfb85ce139e433d2d6f37db9373aa13694c2bc39a5ef13392fc9a",
+    "audioHash": "27ab648e26e4e6ae50f2171fe8bd3f5e85a6f39b4586f03e4678fa6c96bca447",
+    "generatedAt": "2026-09-14T03:58:46.010Z"
+  },
+  "he/speaking-sentences-1": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "תראי כמה התקדמת! עכשיו נאמר משפט שלם. קודם הַקְשִׁיבִי, ואז לַחֲצִי על המיקרופון וְאִמְרִי את כל המילים, מההתחלה ועד הסוף.",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "2522838cbb22bf16b95272c574f594c4d55be022ddb1a4a41d80a53737f8747b",
+    "audioHash": "7ffbdbb3884929cbea2adacbd730b751fc372bf699c9874446108b8a86db31c5",
+    "generatedAt": "2026-09-14T03:58:52.855Z"
+  },
+  "he/speaking-sentences-2": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "הגיע הזמן למשפטים, מִיָה! הַקְשִׁיבִי איך המילים מתחברות. אחר כך לַחֲצִי על המיקרופון וְאִמְרִי את כל המשפט. אין צורך למהר.",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "41269a2c39bbd5d823eea9a826daa3cc8852dc192c586b18d576e4d25465b4a3",
+    "audioHash": "6cf9d66629480629d8436797bc7128691a6d4cb1a529fe1a705778099f8bc43a",
+    "generatedAt": "2026-09-14T03:58:59.430Z"
+  },
+  "he/speaking-sentences-3": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "את יכולה לומר לִי משפט שלם באנגלית! הַקְשִׁיבִי כמה פעמים שתרצי. כשתהיי מוכנה, לַחֲצִי על המיקרופון וחזרי על הכול.",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "07eced06f3cfd8cdc79eb00e46421dc168a6aca88b6f33994cd14b364e5844cf",
+    "audioHash": "9e3a95df41cc269e6b58f973c7f5ba9c508be71efc297cfb74a3640e676fa0d4",
+    "generatedAt": "2026-09-14T03:59:05.567Z"
+  },
+  "he/speaking-turn-1": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "תּוֹרֵךְ, מִיָה! לַחֲצִי על המיקרופון וְאִמְרִי באנגלית את מה ששמעת.",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "29035b3453c47b153986c17570807bc99b1ff6bc129e0665948edb12b162cf15",
+    "audioHash": "a17acded3676e6dfa2c330290383daf1ffe3995650d8316416d8929e79b99577",
+    "generatedAt": "2026-09-14T03:59:09.079Z"
+  },
+  "he/speaking-turn-2": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "מוכנה לנסות? לַחֲצִי על המיקרופון וְאִמְרִי את זה באנגלית.",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "7f7eca14fd0727fbfe13131da5fc5357e3bfa2fe9891b46274939cd23176a93f",
+    "audioHash": "4648d38306d67d9bcecfdef580473c04380ca57acd58909648e5a98e372b9a39",
+    "generatedAt": "2026-09-14T03:59:11.906Z"
+  },
+  "he/speaking-turn-3": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "עכשיו את יכולה לנסות! לַחֲצִי על המיקרופון כשתהיי מוכנה.",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "c97eec928cb2409069da570f08c9c185de24552dfbf076d6dfd7e1877c95b734",
+    "audioHash": "4964effb96e3195a352058524a08dea02e434871d1b280bbfd2b8d5ad3db4d41",
+    "generatedAt": "2026-09-14T03:59:15.180Z"
+  },
+  "he/speaking-turn-4": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "בּוֹאִי נשמע את הקול שלך! לַחֲצִי על המיקרופון ואז חִזְרִי על הדוגמה באנגלית.",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "4468bd66af234edabc4f286114e2deb3eb4f217a2f29d94b1c3ef1a6917f9975",
+    "audioHash": "b2baa0a68b48d0a7742189f4e31c4eaab45876bb26bba6dc040e78b231ddd1c6",
+    "generatedAt": "2026-09-14T03:59:19.104Z"
+  },
+  "he/speaking-correct-2": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "בדיוק כך! עוד הצלחה קטנה באנגלית!",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "afde823deb753db30b2855000e84ba456a050d5ca47d8061dcc8bb7f57fac005",
+    "audioHash": "f4cdc82e2439cb87520a4415986e9c9c7beff03bfe8244e936224c92c178f5cf",
+    "generatedAt": "2026-09-14T03:59:21.868Z"
+  },
+  "he/speaking-correct-3": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "נהדר! האנגלית שלך גדלה, מילה אחרי מילה.",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "fc141796090af25f48980c83c42fb9b4a78e0e68f12bbf4376d94e23ae4bdc31",
+    "audioHash": "777645d5ba0f965eaf4b99e1636c32c7ba9b005b9614fa99c01f62c717d7269a",
+    "generatedAt": "2026-09-14T03:59:24.804Z"
+  },
+  "he/speaking-correct-4": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "הצלחת, כוכבת! בּוֹאִי נמשיך.",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "cf04510d34824608195d7a56f1cd294fd9815fdddfea26ed1207cbe7fd5cdd91",
+    "audioHash": "ca6ce850ab1ef1a4cd1fbbad0d9467c8883c827c8167c0673aea7b0568595622",
+    "generatedAt": "2026-09-14T03:59:26.728Z"
+  },
+  "he/speaking-correct-5": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "כל הכבוד, מִיָה! כיף לשמוע אותך מנסה.",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "762084ed452c13cc403262e05e3b7e04664296a9588c12323d386a046ef489df",
+    "audioHash": "6eea8cc2a2e4c0d650dad4ea96d0b050db870b58da04465445dedc2c8add6d61",
+    "generatedAt": "2026-09-14T03:59:29.065Z"
+  },
+  "he/speaking-correct-6": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "כן! מגיעות לך מחיאות כפיים קטנות!",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "34ca3eb34503f560d8b64e6971fdead5521d39136f9b2410b2f1104976e0e6e0",
+    "audioHash": "d49d6ba64708f111e6681cfc09ae934a713add702cf725dcc8be4beac99eaa07",
+    "generatedAt": "2026-09-14T03:59:31.213Z"
+  },
+  "he/speaking-retry-1": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "נקשיב עוד פעם, מִיָה. לַחֲצִי על הרמקול ואז נַסִּי לומר שוב את הכול באנגלית.",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "6d39af5850e7b8300bb70d4afd2b17b31fcd042105b356e707c459a169b227ee",
+    "audioHash": "875870635ad9c247dfee002e6691c450055a71cb1d43dfb45f3b957aa455292a",
+    "generatedAt": "2026-09-14T03:59:35.195Z"
+  },
+  "he/speaking-retry-2": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "אפשר לנסות שוב! הַקְשִׁיבִי היטב לדוגמה ואז אִמְרִי למיקרופון את כל המילים באנגלית.",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "2f7e012b9f6b0f268199b4ce1c58c4710d440c5eed8c5fce45929c13cb829bad",
+    "audioHash": "b77d23300c389d8d965a93cde60b1fcd5dea66507779b4305a7610394752560f",
+    "generatedAt": "2026-09-14T03:59:39.806Z"
+  },
+  "he/speaking-retry-3": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "המשיכי לנסות, מִיָה. ככה לומדים! הַקְשִׁיבִי שוב לדוגמה וְנַסִּי עוד פעם.",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "1476a9f9648b34d00c4a1bed12479e2c3e62444c9ad8095dab03e72499163d6c",
+    "audioHash": "4a0b23330543507c4f28890f67ebab645da45e955c96f32e353976c915bcd36f",
+    "generatedAt": "2026-09-14T03:59:44.040Z"
+  },
+  "he/speaking-retry-4": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "שמעתי משהו קצת שונה. נקשיב שוב לדוגמה ואז תוכלי לנסות עוד פעם.",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "6d8de4788fcd097e11c7931f113ee2c0625aa69cfaeda406fcd19152680f2de5",
+    "audioHash": "6ca8bf1b6ec8ee488d74a3679580654a8b7e32daa207c5785a6175d0ce69be2b",
+    "generatedAt": "2026-09-14T03:59:47.204Z"
+  },
+  "he/speaking-no-speech-1": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "לא הצלחתי לשמוע אותך הפעם. לַחֲצִי על המיקרופון וְנַסִּי שוב. אני מוכנה כשתרצי!",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "5f6704efe73edc42117bcac91cd4ae4f0ad7effa7bbdb4ff01c7e5384ffe468b",
+    "audioHash": "be432927cf9a8b98dcd00a6b7d1ddac8baff8b4a277031f74f69484ee30ea0b1",
+    "generatedAt": "2026-09-14T03:59:51.942Z"
+  },
+  "he/speaking-no-speech-2": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "ננסה להקשיב שוב. לַחֲצִי על המיקרופון, חַכִּי שיהיה מוכן ואז אִמְרִי את הדוגמה באנגלית.",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "f471c83d0bce88f23bd727032a8db5ea07fda4b3f978d2ff8743ce6af71200ee",
+    "audioHash": "8f7881becd75db6d07904919914b886e68fa64a5625c0e06bd25b75522a53922",
+    "generatedAt": "2026-09-14T03:59:57.704Z"
+  },
+  "he/speaking-no-speech-3": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "לא הצלחתי לשמוע את המילים, מִיָה. מִצְאִי פינה שקטה וְנַסִּי שוב עם המיקרופון.",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "166c09760f2ee4a8b2cc4ac13644ad75d67d099279c03e2745abdc8a3b097848",
+    "audioHash": "0b483f59c8ebd8fd107ce64e6dc0b7917456810d4e6cb59ab2f687b4b99a93c7",
+    "generatedAt": "2026-09-14T04:00:02.171Z"
+  },
+  "he/speaking-mic-help-1": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "המיקרופון צריך קצת עזרה. בַּקְּשִׁי ממבוגר לבדוק אותו איתך. האתגר שלך מחכה כאן.",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "a2ae31f479f6f00742ee178e905132379b7b7a10f30eae100b5c84611c97a6de",
+    "audioHash": "50539010ae0885c556ee55d4ece981b7fac7c7c6f7e459844fd5ef4db4000178",
+    "generatedAt": "2026-09-14T04:00:06.539Z"
+  },
+  "he/speaking-mic-help-2": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "בּוֹאִי נבקש ממבוגר לעזור לנו עם הצליל והמיקרופון. אחר כך נוכל להמשיך לשחק!",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "d5ab05949b3854c07ebc43959203436c28311ecddc98dced4715c1c28cdd3ca0",
+    "audioHash": "23366097972bf4eaf2d573cc7046978f95e8b5211f6ee9af36ac3dfe286da612",
+    "generatedAt": "2026-09-14T04:00:10.769Z"
+  },
+  "he/speaking-mic-help-3": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "משהו הפריע לִי להקשיב. מבוגר יוכל לעזור לנו להתכונן לניסיון נוסף.",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "3aa5a5f3d520a9c5cf10b01f253e360cd2dd51911eb0422a56a76f48b1039537",
+    "audioHash": "6856b7ae72f0f0624d2453ad4acf2d8a2a53f0bb89debae13eab4f6237b28e53",
+    "generatedAt": "2026-09-14T04:00:14.246Z"
+  },
+  "he/speaking-level-done-1": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "סיימת את השלב, מִיָה! חמישה אתגרים בקול שלך. לַחֲצִי על השלב הבא כשתהיי מוכנה להמשיך.",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "2e35f113ca57cdb651fbb1223ce33b51e62bc8651270de0444a16cba4d49b842",
+    "audioHash": "d101fab4e4871a11933a2910dcfae918501208435e4ce4ccc7d3b6ab3eee2798",
+    "generatedAt": "2026-09-14T04:00:18.971Z"
+  },
+  "he/speaking-level-done-2": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "איזה יופי! אמרת את הכול בשלב הזה. בַּחֲרִי בשלב הבא, או תרגלי שוב את השלב הזה.",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "07def8070995b8ff8ca5b84bdea1916e66f10bf534fafcb3407f24d8d7d11f94",
+    "audioHash": "60ee56412e784d28056d42587686d649291a34f348b7215feded7f628408183b",
+    "generatedAt": "2026-09-14T04:00:23.525Z"
+  },
+  "he/speaking-level-done-3": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "עוד שלב הושלם! המשפחה שלך תשמח לשמוע מה למדת. מוכנה? לַחֲצִי על השלב הבא.",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "a6b751a55660f4b11b602e775a313beb775bf3487d031c83daa0b0bc6661184d",
+    "audioHash": "080e9be1e7ea43645f04b224f892eba09b6eafe9cbfb5f5e4fa95efd4f8ed71d",
+    "generatedAt": "2026-09-14T04:00:28.401Z"
+  },
+  "he/speaking-course-done-1": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "מִיָה, סיימת את כל שלושים השלבים! ממילים קטנות ועד משפטים שלמים. איזו הרפתקה נפלאה באנגלית!",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "ecd4dc37d8a7d17a19beeb84b02a5a1f0cba5f8edfc8039d8be3d1b311332ccd",
+    "audioHash": "010ac1a0fc5591842aacb2fc384eeb1bc80a68d8ea96510d33539213591757fb",
+    "generatedAt": "2026-09-14T04:00:33.710Z"
+  },
+  "he/speaking-course-done-2": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "את כוכבת האנגלית שלנו, מִיָה! תוכלי לחזור לכל שלב ולהראות למשפחה מה את יודעת לומר.",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "1eb4b73596f4ad1c6044521855da9afa7dca1594d8a71334bbbabe5efb0cd957",
+    "audioHash": "cf39875870ab57088c1881c0448d33de2956e0e943fe14bb50d4d6fc264d2c66",
+    "generatedAt": "2026-09-14T04:00:38.731Z"
+  },
+  "he/speaking-course-done-3": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "מאה וחמישים אתגרי דיבור! המשכת לנסות וללמוד. אנחנו כל כך גאים בך, מִיָה!",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "ddf671ffa539deed2157e7903b850dc6465c6fbe9a375caaec021910a93dcde0",
+    "audioHash": "8dad95892462315ef2767b0a011069d2138f2787db59b87c088b9e3b2d6511d0",
+    "generatedAt": "2026-09-14T04:00:46.449Z"
+  }
+}

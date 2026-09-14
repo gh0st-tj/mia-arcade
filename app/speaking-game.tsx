@@ -4,6 +4,11 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { Check, LockKeyhole, Mic, Square, Star, Volume2 } from 'lucide-react';
 import { Progress } from '@/components/ui/progress';
 import type { Lang } from '@/lib/game-data';
+import speakingLines from '@/lib/speaking-lines.json';
+import audioManifest from '@/lib/audio-manifest.json';
+import audioVersions from '@/lib/audio-versions.json';
+import { createLessonPlayer, englishExampleId } from '@/lib/lesson-audio';
+type SpeakingEvent = keyof typeof speakingLines;
 import {
   englishCourse,
   englishPosition,
@@ -32,10 +37,12 @@ export default function SpeakingGame({
   lang,
   sound,
   onStars,
+  pickVoice,
 }: {
   lang: Lang;
   sound: boolean;
   onStars: (stars: number) => void;
+  pickVoice: (event: string, ids: string[]) => string | undefined;
 }) {
   const t = (en: string, he: string) => (lang === 'en' ? en : he);
   const [loaded, setLoaded] = useState(false);
@@ -48,23 +55,66 @@ export default function SpeakingGame({
   const [error, setError] = useState('');
   const [levelDone, setLevelDone] = useState(false);
   const [saveFailed, setSaveFailed] = useState(false);
+  const [narrating, setNarrating] = useState(false);
+  const [caption, setCaption] = useState('');
+  const [audioProblem, setAudioProblem] = useState(false);
+  const player = useRef(createLessonPlayer((url) => new Audio(url)));
+  const voiceEpoch = useRef(0);
+  const screenEpoch = useRef({ value: 0 });
   const session = useRef<ReturnType<typeof createSpeakingSession> | null>(null);
   const advanceTimer = useRef<ReturnType<typeof setTimeout> | undefined>(
     undefined,
   );
-  const voiceTimer = useRef<ReturnType<typeof setTimeout> | undefined>(
-    undefined,
-  );
-  const utterance = useRef<SpeechSynthesisUtterance | null>(null);
   const frontier = useRef(0);
   const lesson = englishCourse[level];
   const item = lesson.prompts[prompt];
 
   const stopVoice = useCallback(() => {
-    clearTimeout(voiceTimer.current);
-    utterance.current = null;
-    if (typeof speechSynthesis !== 'undefined') speechSynthesis.cancel();
+    voiceEpoch.current++;
+    player.current.stop();
+    setNarrating(false);
+    setCaption('');
   }, []);
+  const playRecording = useCallback(
+    async (id: string, language: Lang, text: string) => {
+      stopVoice();
+      const epoch = voiceEpoch.current;
+      setCaption(text);
+      setAudioProblem(false);
+      if (!sound || document.hidden) return 'ended' as const;
+      const key = `${language}/${id}`;
+      if (!(audioManifest as Record<string, boolean>)[key]) {
+        setAudioProblem(true);
+        return 'failed' as const;
+      }
+      setNarrating(true);
+      const version = (audioVersions as Record<string, string>)[key];
+      const result = await player.current.play(
+        `/audio/${key}.mp3${version ? `?v=${version}` : ''}`,
+      );
+      if (voiceEpoch.current !== epoch) return 'canceled' as const;
+      setNarrating(false);
+      if (result === 'failed') setAudioProblem(true);
+      return result;
+    },
+    [sound, stopVoice],
+  );
+  const narrate = useCallback(
+    (event: SpeakingEvent) => {
+      const lines = speakingLines[event];
+      const id = pickVoice(
+        `${lang}/speaking-${event}`,
+        lines.map((line) => line.id),
+      );
+      const line = lines.find((line) => line.id === id)!;
+      return playRecording(line.id, lang, line[lang]);
+    },
+    [lang, playRecording, pickVoice],
+  );
+  const currentNarrate = useRef(narrate);
+  useEffect(() => {
+    currentNarrate.current = narrate;
+  }, [narrate]);
   const stopAttempt = useCallback(() => {
     session.current?.cancel();
     session.current = null;
@@ -74,6 +124,7 @@ export default function SpeakingGame({
   // Match the arcade's hydration flow: browser storage must be read after SSR.
   /* eslint-disable react/react-compiler */
   useEffect(() => {
+    const lifecycle = screenEpoch.current;
     let saved = 0;
     try {
       saved = restoreEnglishProgress(
@@ -92,6 +143,7 @@ export default function SpeakingGame({
     setSupported(Boolean(recognitionConstructor()));
     setLoaded(true);
     return () => {
+      lifecycle.value++;
       stopAttempt();
       clearTimeout(advanceTimer.current);
     };
@@ -120,8 +172,18 @@ export default function SpeakingGame({
     };
   }, [sound, lang, stopAttempt]);
 
+  useEffect(() => {
+    if (!loaded || !sound) return;
+    // Wait until restoration and the language/mute cleanup have completed.
+    const timer = setTimeout(() => {
+      void narrate('intro');
+    }, 0);
+    return () => clearTimeout(timer);
+  }, [loaded, sound, narrate]);
+
   function chooseLevel(index: number) {
-    if (levelStart(index) > frontier.current) return;
+    if (levelStart(index) > frontier.current || status === 'correct') return;
+    screenEpoch.current.value++;
     stopAttempt();
     clearTimeout(advanceTimer.current);
     setLevel(index);
@@ -136,44 +198,39 @@ export default function SpeakingGame({
     setHeard('');
     setError('');
     setStatus('ready');
+    void narrate(englishCourse[index].stage);
   }
 
-  function playExample() {
-    if (!sound || status === 'correct') return;
+  async function playExample() {
+    if (!sound || status === 'correct' || narrating || session.current) return;
     stopAttempt();
-    if (typeof speechSynthesis === 'undefined') {
+    const screen = screenEpoch.current.value;
+    setStatus('example');
+    setHeard('');
+    const result = await playRecording(
+      englishExampleId(level, prompt),
+      'en',
+      item.en,
+    );
+    if (screenEpoch.current.value !== screen || result === 'canceled') return;
+    if (result === 'failed') {
       setError('voice-unavailable');
       setStatus('error');
       return;
     }
-    const voice = new SpeechSynthesisUtterance(item.en);
-    voice.lang = 'en-US';
-    voice.rate = 0.75;
-    const englishVoice =
-      speechSynthesis
-        .getVoices()
-        .find((candidate) => candidate.lang === 'en-US') ??
-      speechSynthesis
-        .getVoices()
-        .find((candidate) => candidate.lang.startsWith('en'));
-    if (englishVoice) voice.voice = englishVoice;
-    utterance.current = voice;
-    setStatus('example');
-    setHeard('');
-    const finish = (failed: boolean) => {
-      if (utterance.current !== voice) return;
-      stopVoice();
-      setError(failed ? 'voice-unavailable' : '');
-      setStatus(failed ? 'error' : 'ready');
-    };
-    voice.onend = () => finish(false);
-    voice.onerror = () => finish(true);
-    voiceTimer.current = setTimeout(() => finish(true), 15000);
-    speechSynthesis.speak(voice);
+    const turn = await narrate('turn');
+    if (screenEpoch.current.value === screen && turn !== 'canceled')
+      setStatus('ready');
   }
 
   function listen() {
-    if (session.current || status === 'correct' || status === 'example') return;
+    if (
+      session.current ||
+      narrating ||
+      status === 'correct' ||
+      status === 'example'
+    )
+      return;
     const Constructor = recognitionConstructor();
     if (!Constructor) {
       setSupported(false);
@@ -190,12 +247,14 @@ export default function SpeakingGame({
           session.current = null;
           setError(reason);
           setStatus('error');
+          void narrate(reason === 'no-speech' ? 'no-speech' : 'mic-help');
         },
         result: (transcript) => {
           session.current = null;
           setHeard(transcript);
           if (!matchesSpeech(transcript, item.en)) {
             setStatus('retry');
+            void narrate('retry');
             return;
           }
           setStatus('correct');
@@ -209,12 +268,26 @@ export default function SpeakingGame({
             setSaveFailed(true);
           }
           onStars(Math.floor(next / 50));
-          advanceTimer.current = setTimeout(() => {
-            setHeard('');
-            setStatus('ready');
-            if (prompt + 1 === lesson.prompts.length) setLevelDone(true);
-            else setPrompt(prompt + 1);
-          }, 1400);
+          const screen = screenEpoch.current.value;
+          // Only a recognized answer reaches this path. Even muted/failed audio
+          // can finish the celebration; navigation/unmount invalidate the result.
+          void narrate('correct').then(() => {
+            if (screenEpoch.current.value !== screen) return;
+            advanceTimer.current = setTimeout(() => {
+              if (screenEpoch.current.value !== screen) return;
+              setHeard('');
+              setStatus('ready');
+              setCaption('');
+              if (prompt + 1 === lesson.prompts.length) {
+                setLevelDone(true);
+                void currentNarrate.current(
+                  level === englishCourse.length - 1
+                    ? 'course-done'
+                    : 'level-done',
+                );
+              } else setPrompt(prompt + 1);
+            }, 450);
+          });
         },
       });
       session.current = attempt;
@@ -252,8 +325,8 @@ export default function SpeakingGame({
       'זיהוי דיבור באנגלית לא זמין כאן. נסו כרום או ספארי עם דיבור באנגלית.',
     ),
     'voice-unavailable': t(
-      'The example voice isn’t available. A grown-up can read it with you, or try another browser.',
-      'קול הדוגמה לא זמין. אפשר לקרוא עם מבוגר או לנסות דפדפן אחר.',
+      'The recording couldn’t play. Check your connection and tap Hear it to try again.',
+      'ההקלטה לא התנגנה. בדקו את החיבור ולחצי שוב על הרמקול.',
     ),
   };
   const busy = status === 'starting' || status === 'listening';
@@ -282,6 +355,53 @@ export default function SpeakingGame({
             'הקשיבי, לחצי על המיקרופון ואמרי באנגלית.',
           )}
         </p>
+      </div>
+      <div className="speaking-coach">
+        <button
+          className="secondary-button"
+          disabled={!sound || busy || status === 'correct'}
+          onClick={() => {
+            stopAttempt();
+            setStatus('ready');
+            void narrate(
+              levelDone
+                ? level === 29
+                  ? 'course-done'
+                  : 'level-done'
+                : 'intro',
+            );
+          }}
+        >
+          <Volume2 size={20} />
+          {t('Explain it to me', 'הסבירי לי איך משחקים')}
+        </button>
+        {narrating && (
+          <button
+            className="quiet-button"
+            onClick={() => {
+              stopVoice();
+              setStatus((current) =>
+                current === 'example' ? 'ready' : current,
+              );
+            }}
+          >
+            <Square size={16} />
+            {t('Stop voice', 'עצרי את ההסבר')}
+          </button>
+        )}
+        {caption && (
+          <p className="speaking-coach-caption" aria-live="polite">
+            {caption}
+          </p>
+        )}
+        {audioProblem && (
+          <p className="speaking-hint">
+            {t(
+              'The recording couldn’t play. Check your connection and try again.',
+              'ההקלטה לא התנגנה. בדקו את החיבור ונסו שוב.',
+            )}
+          </p>
+        )}
       </div>
       <div className="speaking-layout">
         <section
@@ -365,6 +485,7 @@ export default function SpeakingGame({
                     !sound ||
                     status === 'correct' ||
                     status === 'example' ||
+                    narrating ||
                     busy
                   }
                 >
@@ -376,7 +497,10 @@ export default function SpeakingGame({
                 <button
                   className={`primary-button speaking-mic ${busy ? 'is-listening' : ''}`}
                   disabled={
-                    !supported || status === 'correct' || status === 'example'
+                    !supported ||
+                    narrating ||
+                    status === 'correct' ||
+                    status === 'example'
                   }
                   onClick={() => {
                     if (busy) {
@@ -494,7 +618,7 @@ export default function SpeakingGame({
                   return (
                     <button
                       key={index}
-                      disabled={locked}
+                      disabled={locked || status === 'correct'}
                       className={completed ? 'completed' : ''}
                       aria-current={index === level ? 'step' : undefined}
                       aria-label={`${t('Level', 'שלב')} ${index + 1}: ${courseLevel.title[lang]}${locked ? t(', locked', ', נעול') : completed ? t(', completed', ', הושלם') : ''}`}

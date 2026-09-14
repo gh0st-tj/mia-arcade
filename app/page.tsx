@@ -399,6 +399,7 @@ export default function Arcade() {
                 lang={lang}
                 sound={sound}
                 onStars={awardEnglishStars}
+                pickVoice={voicePicker.current}
               />
             ) : (
               <>
