@@ -218,9 +218,7 @@ export default function SpeakingGame({
       setStatus('error');
       return;
     }
-    const turn = await narrate('turn');
-    if (screenEpoch.current.value === screen && turn !== 'canceled')
-      setStatus('ready');
+    setStatus('ready');
   }
 
   function listen() {
