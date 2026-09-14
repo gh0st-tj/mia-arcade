@@ -247,10 +247,13 @@ export default function SpeakingGame({
           setStatus('error');
           void narrate(reason === 'no-speech' ? 'no-speech' : 'mic-help');
         },
-        result: (transcript) => {
+        result: (transcript, alternatives) => {
           session.current = null;
-          setHeard(transcript);
-          if (!matchesSpeech(transcript, item.en)) {
+          const matched = alternatives.find((candidate) =>
+            matchesSpeech(candidate, item.en),
+          );
+          setHeard(matched ?? transcript);
+          if (!matched) {
             setStatus('retry');
             void narrate('retry');
             return;
@@ -538,8 +541,8 @@ export default function SpeakingGame({
                   ? t('Yes! You said it! ✨', 'כן! אמרת את זה! ✨')
                   : status === 'retry'
                     ? t(
-                        'Let’s try once more. Listen, then say the whole thing.',
-                        'ננסה עוד פעם. הקשיבי ואז אמרי את הכול.',
+                        'I didn’t catch that clearly. Tap the microphone and try again.',
+                        'לא הצלחתי לשמוע בבירור. לחצי על המיקרופון ונסי שוב.',
                       )
                     : status === 'starting'
                       ? t(

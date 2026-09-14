@@ -46,6 +46,8 @@ test('matching requires the entire utterance; harmless transcription formatting 
     ['2 cats', 'two cats'],
     ['I’m happy.', 'I am happy.'],
     ['My name’s Mia.', 'My name is Mia.'],
+    ['Phish.', 'fish'],
+    ['a small phish', 'a small fish'],
   ])
     assert.equal(matchesSpeech(heard, target), true, heard);
   for (const [heard, target] of [
@@ -57,6 +59,9 @@ test('matching requires the entire utterance; harmless transcription formatting 
     ['I see a dog and a cat', 'I see a dog.'],
     ['I like apple', 'I like apples.'],
     ['hat', 'cat'],
+    ['fist', 'fish'],
+    ['wish', 'fish'],
+    ['fish dog', 'fish'],
     ['the cat', 'cat'],
     ['I cannot jump', 'I can jump.'],
     ['אני שמחה', 'I am happy.'],
@@ -125,7 +130,7 @@ test('only final speech yields a result, exactly once, with English recognition'
   const { recognition, events, session } = harness();
   try {
     assert.equal(recognition.lang, 'en-US');
-    assert.equal(recognition.maxAlternatives, 1);
+    assert.equal(recognition.maxAlternatives, 5);
     assert.equal(recognition.continuous, false);
     recognition.result('cat', false);
     assert.deepEqual(events, ['listening']);
@@ -153,6 +158,49 @@ test('stop, unmount, or example playback cancellation prevents late recognition 
   lateError({ error: 'aborted' });
   assert.deepEqual(events, ['listening']);
   assert.equal(recognition.onresult, null);
+});
+
+test('final alternative fish is retained when the first guess is wrong', () => {
+  const recognition = new FakeRecognition();
+  const answers = [];
+  const session = createSpeakingSession(recognition, {
+    listening() {},
+    result: (transcript, alternatives) => answers.push({ transcript, alternatives }),
+    error: (error) => assert.fail(error),
+  });
+  session.start();
+  const result = {
+    isFinal: false, length: 3,
+    0: { transcript: 'Fist.' },
+    1: { transcript: 'Fish.' },
+    2: { transcript: 'Phish.' },
+  };
+  recognition.onresult({ resultIndex: 0, results: [result] });
+  assert.equal(answers.length, 0);
+  recognition.onresult({ resultIndex: 0, results: [{ ...result, isFinal: true }] });
+  assert.deepEqual(answers, [{ transcript: 'Fist.', alternatives: ['Fist.', 'Fish.', 'Phish.'] }]);
+  assert.ok(answers[0].alternatives.some((text) => matchesSpeech(text, 'fish')));
+  assert.equal(answers[0].alternatives.some((text) => matchesSpeech(text, 'dog')), false);
+  session.cancel();
+});
+
+test('alternatives retain all final sentence segments and cannot pass a partial answer', () => {
+  const recognition = new FakeRecognition();
+  let candidates;
+  const session = createSpeakingSession(recognition, {
+    listening() {},
+    result: (_transcript, alternatives) => { candidates = alternatives; },
+    error: (error) => assert.fail(error),
+  });
+  session.start();
+  recognition.onresult({ resultIndex: 0, results: [
+    { isFinal: true, length: 1, 0: { transcript: 'a small' } },
+    { isFinal: true, length: 2, 0: { transcript: 'fist' }, 1: { transcript: 'fish' } },
+  ] });
+  assert.deepEqual(candidates, ['a small fist', 'a small fish']);
+  assert.ok(candidates.some((text) => matchesSpeech(text, 'a small fish')));
+  assert.equal(candidates.some((text) => matchesSpeech(text, 'fish')), false);
+  session.cancel();
 });
 
 test('permission denial, network failure, silence and empty transcripts never yield answers', () => {

@@ -1,7 +1,7 @@
 // Minimal Web Speech interfaces; this API is not in TypeScript's DOM library.
 export type RecognitionResult = {
   isFinal: boolean;
-  0?: { transcript: string };
+  [index: number]: { transcript: string } | undefined;
   length: number;
 };
 export type RecognitionEvent = {
@@ -36,7 +36,7 @@ export function createSpeakingSession(
   recognition: Recognition,
   callbacks: {
     listening: () => void;
-    result: (transcript: string) => void;
+    result: (transcript: string, alternatives: string[]) => void;
     error: (error: string) => void;
   },
 ) {
@@ -64,7 +64,7 @@ export function createSpeakingSession(
   recognition.lang = 'en-US';
   recognition.continuous = false;
   recognition.interimResults = false;
-  recognition.maxAlternatives = 1;
+  recognition.maxAlternatives = 5;
   recognition.onstart = () => {
     if (active) callbacks.listening();
   };
@@ -72,13 +72,23 @@ export function createSpeakingSession(
     if (!active) return;
     const results = Array.from(event.results);
     if (!results.length || results.some((result) => !result.isFinal)) return;
-    const transcript = results
-      .map((result) => result[0]?.transcript ?? '')
-      .join(' ')
-      .trim();
-    if (!transcript) return fail('no-speech');
+    // Keep alternative transcriptions: a short word can be correct even when
+    // the recognizer ranks a different spelling or word first. Join segments
+    // without dropping any part of the utterance; bound the combinations.
+    let alternatives = [''];
+    for (const result of results) {
+      const choices = Array.from(result)
+        .slice(0, 5)
+        .map((choice) => choice?.transcript.trim() ?? '')
+        .filter(Boolean);
+      if (!choices.length) return fail('no-speech');
+      alternatives = [...new Set(alternatives.flatMap((prefix) =>
+        choices.map((choice) => `${prefix} ${choice}`.trim()),
+      ))].slice(0, 64);
+    }
+    const transcript = alternatives[0];
     cancel();
-    callbacks.result(transcript);
+    callbacks.result(transcript, alternatives);
   };
   recognition.onerror = (event) => fail(event.error);
   recognition.onend = () => fail('no-speech');

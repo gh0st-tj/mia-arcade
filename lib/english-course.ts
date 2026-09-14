@@ -283,6 +283,8 @@ export function normalizeSpeech(text: string): string {
     .replace(/\bwhat's\b/g, 'what is')
     .replace(/\bname's\b/g, 'name is')
     .replace(/\b([1-5])\b/g, (number) => numbers[number])
+    // Speech cannot distinguish these spellings of the same sound.
+    .replace(/\bphish\b/g, 'fish')
     .replace(/[^a-z0-9\s']/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
