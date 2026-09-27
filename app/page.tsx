@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { Fragment, useCallback, useEffect, useRef, useState } from 'react';
 import {
   ArrowLeft,
   Gamepad2,
@@ -20,6 +20,7 @@ import {
   games,
   instructionFor,
   instructionKey,
+  lobbySections,
   type Lang,
   type GameId,
 } from '@/lib/game-data';
@@ -32,6 +33,9 @@ import SequenceGame from './sequence-game';
 import SpeakingGame from './speaking-game';
 import WelcomeScene from './welcome-scene';
 import IntroWelcome from './intro-welcome';
+import TreatDrop from './bluey/treat-drop';
+import KeepyUppy from './bluey/keepy-uppy';
+import { BlueyCardArt } from './bluey/shell';
 import voiceLines from '@/lib/voice-lines.json';
 import { createVoicePicker } from '@/lib/voice-picker';
 import audioManifest from '@/lib/audio-manifest.json';
@@ -42,13 +46,24 @@ export default function Arcade() {
   const [sound, setSound] = useState(true);
   const [active, setActive] = useState<GameId | null>(null);
   const [stars, setStars] = useState<Record<string, number>>({});
-  const awardEnglishStars = useCallback((count: number) => {
+  // Games with their own level maps report stars as they are earned.
+  const awardStars = useCallback((id: GameId, count: number) => {
     setStars((current) =>
-      (current.english || 0) >= count
-        ? current
-        : { ...current, english: count },
+      (current[id] || 0) >= count ? current : { ...current, [id]: count },
     );
   }, []);
+  const awardEnglishStars = useCallback(
+    (count: number) => awardStars('english', count),
+    [awardStars],
+  );
+  const awardTreatStars = useCallback(
+    (count: number) => awardStars('treats', count),
+    [awardStars],
+  );
+  const awardKeepyStars = useCallback(
+    (count: number) => awardStars('keepy', count),
+    [awardStars],
+  );
   const [ready, setReady] = useState(false);
   const [run, setRun] = useState(0);
   const [won, setWon] = useState(false);
@@ -317,7 +332,25 @@ export default function Arcade() {
         </div>
       </header>
       <main>
-        {active && selected ? (
+        {active === 'treats' ? (
+          <TreatDrop
+            key={`treats-${run}`}
+            lang={lang}
+            sound={sound}
+            speak={speak}
+            onStars={awardTreatStars}
+            onExit={back}
+          />
+        ) : active === 'keepy' ? (
+          <KeepyUppy
+            key={`keepy-${run}`}
+            lang={lang}
+            sound={sound}
+            speak={speak}
+            onStars={awardKeepyStars}
+            onExit={back}
+          />
+        ) : active && selected ? (
           <section
             className="game-view"
             style={{ '--game-color': selected.color } as React.CSSProperties}
@@ -552,158 +585,180 @@ export default function Arcade() {
               </div>
               <TabsContent value="play">
                 <div className="game-grid">
-                  {games.map((g, i) => (
-                    <button
-                      key={g.id}
-                      className={`game-card card-${g.id}`}
-                      style={{ '--game-color': g.color } as React.CSSProperties}
-                      onClick={() => enter(g.id)}
-                      aria-label={`${t('Play', 'שחקי')} ${g.title[lang]}`}
-                    >
-                      <div className="card-art">
-                        <span className="game-number">
-                          {String(i + 1).padStart(2, '0')}
-                        </span>
-                        <span className="skill-badge">{g.skill[lang]}</span>
-                        <div
-                          className={`preview preview-${g.id}`}
-                          aria-hidden="true"
+                  {games.map((g, i) => {
+                    const section = lobbySections.find((s) => s.first === g.id);
+                    return (
+                      <Fragment key={g.id}>
+                        {section && (
+                          <h2 className="lobby-section">
+                            {section.title[lang]}
+                            <span>{section.note[lang]}</span>
+                          </h2>
+                        )}
+                        <button
+                          className={`game-card card-${g.id}`}
+                          style={
+                            { '--game-color': g.color } as React.CSSProperties
+                          }
+                          onClick={() => enter(g.id)}
+                          aria-label={`${t('Play', 'שחקי')} ${g.title[lang]}`}
                         >
-                          {g.id === 'english' ? (
-                            <>
-                              <span>🎙️</span>
-                              <b>Hello, Mia!</b>
-                            </>
-                          ) : g.id === 'count' ? (
-                            <>
-                              <span>⭐</span>
-                              <span>⭐</span>
-                              <span>⭐</span>
-                              <b>1 2 3</b>
-                            </>
-                          ) : g.id === 'colors' ? (
-                            <>
-                              <i style={{ background: '#f987b7' }} />
-                              <i style={{ background: '#ffcf60' }} />
-                              <i style={{ background: '#74e2c8' }} />
-                              <span>🎨</span>
-                            </>
-                          ) : g.id === 'memory' ? (
-                            <>
-                              <span>🐶</span>
-                              <span>✦</span>
-                              <span>✦</span>
-                              <span>🐶</span>
-                            </>
-                          ) : g.id === 'shapes' ? (
-                            <>
-                              <span>●</span>
-                              <span>▲</span>
-                              <span>■</span>
-                            </>
-                          ) : g.id === 'patterns' ? (
-                            <>
-                              <span>🍓</span>
-                              <span>🍋</span>
-                              <span>🍓</span>
-                              <b>?</b>
-                            </>
-                          ) : ['trail', 'market', 'robot'].includes(g.id) ? (
-                            <>
-                              <span>{g.emoji}</span>
-                              <b>
-                                {g.id === 'trail'
-                                  ? '🐶'
-                                  : g.id === 'market'
-                                    ? '🍎 🥕'
-                                    : '♥ ★ ●'}
-                              </b>
-                            </>
-                          ) : g.id === 'sums' ? (
-                            <>
-                              <span>3</span>
-                              <i>+</i>
-                              <span>4</span>
-                              <b>🚀</b>
-                            </>
-                          ) : g.id === 'letters' ? (
-                            <>
-                              <b>{lang === 'en' ? '⭐' : '⭐'}</b>
-                              {(lang === 'en' ? 'ST?R' : 'כו?ב')
-                                .split('')
-                                .map((ch, i) => (
-                                  <span
-                                    key={i}
-                                    className={ch === '?' ? 'gap' : ''}
-                                  >
-                                    {ch}
-                                  </span>
-                                ))}
-                            </>
-                          ) : g.id === 'sequence' ? (
-                            <>
-                              <span>🪐</span>
-                              <span>🌍</span>
-                              <span>🌕</span>
-                              <span>☀️</span>
-                            </>
-                          ) : (
-                            <>
-                              <span>1</span>
-                              <span>2</span>
-                              <span>3</span>
-                            </>
-                          )}
-                        </div>
-                        <div className="card-art-stars">
-                          ✧<span>✦</span>✧
-                        </div>
-                      </div>
-                      <div className="card-body">
-                        <div>
-                          <h2>{g.title[lang]}</h2>
-                          <p>{g.description[lang]}</p>
-                        </div>
-                        <span className="card-play">
-                          <Play size={20} fill="currentColor" />
-                        </span>
-                      </div>
-                      <div className="card-difficulty">
-                        <Difficulty
-                          value={g.difficulty[levelFor(stars[g.id])]}
-                          lang={lang}
-                        />
-                        <span>
-                          {t(
-                            g.id === 'english'
-                              ? '30 speaking levels'
-                              : `Level ${levelFor(stars[g.id]) + 1}`,
-                            g.id === 'english'
-                              ? '30 שלבי דיבור'
-                              : `שלב ${levelFor(stars[g.id]) + 1}`,
-                          )}
-                        </span>
-                      </div>
-                      <div className="card-bottom">
-                        <span>{g.ages[lang]}</span>
-                        <span
-                          className="mini-stars"
-                          aria-label={`${stars[g.id] || 0} / 3`}
-                        >
-                          {[0, 1, 2].map((n) => (
-                            <Star
-                              key={n}
-                              size={13}
-                              fill={
-                                (stars[g.id] || 0) > n ? 'currentColor' : 'none'
-                              }
-                              className={(stars[g.id] || 0) > n ? 'earned' : ''}
+                          <div className="card-art">
+                            <span className="game-number">
+                              {String(i + 1).padStart(2, '0')}
+                            </span>
+                            <span className="skill-badge">{g.skill[lang]}</span>
+                            <div
+                              className={`preview preview-${g.id}`}
+                              aria-hidden="true"
+                            >
+                              {g.id === 'treats' || g.id === 'keepy' ? (
+                                <BlueyCardArt game={g.id} />
+                              ) : g.id === 'english' ? (
+                                <>
+                                  <span>🎙️</span>
+                                  <b>Hello, Mia!</b>
+                                </>
+                              ) : g.id === 'count' ? (
+                                <>
+                                  <span>⭐</span>
+                                  <span>⭐</span>
+                                  <span>⭐</span>
+                                  <b>1 2 3</b>
+                                </>
+                              ) : g.id === 'colors' ? (
+                                <>
+                                  <i style={{ background: '#f987b7' }} />
+                                  <i style={{ background: '#ffcf60' }} />
+                                  <i style={{ background: '#74e2c8' }} />
+                                  <span>🎨</span>
+                                </>
+                              ) : g.id === 'memory' ? (
+                                <>
+                                  <span>🐶</span>
+                                  <span>✦</span>
+                                  <span>✦</span>
+                                  <span>🐶</span>
+                                </>
+                              ) : g.id === 'shapes' ? (
+                                <>
+                                  <span>●</span>
+                                  <span>▲</span>
+                                  <span>■</span>
+                                </>
+                              ) : g.id === 'patterns' ? (
+                                <>
+                                  <span>🍓</span>
+                                  <span>🍋</span>
+                                  <span>🍓</span>
+                                  <b>?</b>
+                                </>
+                              ) : ['trail', 'market', 'robot'].includes(
+                                  g.id,
+                                ) ? (
+                                <>
+                                  <span>{g.emoji}</span>
+                                  <b>
+                                    {g.id === 'trail'
+                                      ? '🐶'
+                                      : g.id === 'market'
+                                        ? '🍎 🥕'
+                                        : '♥ ★ ●'}
+                                  </b>
+                                </>
+                              ) : g.id === 'sums' ? (
+                                <>
+                                  <span>3</span>
+                                  <i>+</i>
+                                  <span>4</span>
+                                  <b>🚀</b>
+                                </>
+                              ) : g.id === 'letters' ? (
+                                <>
+                                  <b>{lang === 'en' ? '⭐' : '⭐'}</b>
+                                  {(lang === 'en' ? 'ST?R' : 'כו?ב')
+                                    .split('')
+                                    .map((ch, i) => (
+                                      <span
+                                        key={i}
+                                        className={ch === '?' ? 'gap' : ''}
+                                      >
+                                        {ch}
+                                      </span>
+                                    ))}
+                                </>
+                              ) : g.id === 'sequence' ? (
+                                <>
+                                  <span>🪐</span>
+                                  <span>🌍</span>
+                                  <span>🌕</span>
+                                  <span>☀️</span>
+                                </>
+                              ) : (
+                                <>
+                                  <span>1</span>
+                                  <span>2</span>
+                                  <span>3</span>
+                                </>
+                              )}
+                            </div>
+                            <div className="card-art-stars">
+                              ✧<span>✦</span>✧
+                            </div>
+                          </div>
+                          <div className="card-body">
+                            <div>
+                              <h2>{g.title[lang]}</h2>
+                              <p>{g.description[lang]}</p>
+                            </div>
+                            <span className="card-play">
+                              <Play size={20} fill="currentColor" />
+                            </span>
+                          </div>
+                          <div className="card-difficulty">
+                            <Difficulty
+                              value={g.difficulty[levelFor(stars[g.id])]}
+                              lang={lang}
                             />
-                          ))}
-                        </span>
-                      </div>
-                    </button>
-                  ))}
+                            <span>
+                              {g.id === 'english'
+                                ? t('30 speaking levels', '30 שלבי דיבור')
+                                : g.id === 'treats'
+                                  ? t('15 levels', '15 שלבים')
+                                  : g.id === 'keepy'
+                                    ? t('9 levels', '9 שלבים')
+                                    : t(
+                                        `Level ${levelFor(stars[g.id]) + 1}`,
+                                        `שלב ${levelFor(stars[g.id]) + 1}`,
+                                      )}
+                            </span>
+                          </div>
+                          <div className="card-bottom">
+                            <span>{g.ages[lang]}</span>
+                            <span
+                              className="mini-stars"
+                              aria-label={`${stars[g.id] || 0} / 3`}
+                            >
+                              {[0, 1, 2].map((n) => (
+                                <Star
+                                  key={n}
+                                  size={13}
+                                  fill={
+                                    (stars[g.id] || 0) > n
+                                      ? 'currentColor'
+                                      : 'none'
+                                  }
+                                  className={
+                                    (stars[g.id] || 0) > n ? 'earned' : ''
+                                  }
+                                />
+                              ))}
+                            </span>
+                          </div>
+                        </button>
+                      </Fragment>
+                    );
+                  })}
                 </div>
               </TabsContent>
               <TabsContent value="stars">

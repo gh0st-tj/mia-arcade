@@ -1,6 +1,15 @@
 # Mia’s Babylon Arcade
 
-Thirteen learning games built with love by Uncle Tom for Mia, with baby brother Dean, dog Johnny, Mum Lee and Dad Gal: six gentle games for ages 4–6, three adventures for ages 5–6, three trickier games for ages 6–7, and an English speaking adventure for ages 4–7. English and Hebrew, touch and keyboard controls, spoken instructions, and 39 collectible stars saved in the browser. The original games have three difficulty levels each; the English game has 30 speaking levels.
+Fifteen learning games built with love by Uncle Tom for Mia, with baby brother Dean, dog Johnny, Mum Lee and Dad Gal: two full-screen Bluey games, six gentle games for ages 4–6, three adventures for ages 5–6, three trickier games for ages 6–7, and an English speaking adventure for ages 4–7. English and Hebrew, touch and keyboard controls, spoken instructions, and 45 collectible arcade stars saved in the browser. The original games have three difficulty levels each; the English game has 30 speaking levels and the Bluey games have 24 levels between them.
+
+The lobby is grouped into sections: Bluey’s backyard, Speak English, Little learners (4–6), Adventures (5–6) and Big-kid challenges (6–7). On a phone, “Add to Home Screen” installs the arcade with its own icon, and it opens full-screen like an app.
+
+**Bluey’s backyard** (ages 4–6, phone-first, full-screen, hand-drawn canvas art of Bluey and Bingo):
+
+- **Bingo’s Biscuit Drop:** a cut-the-rope physics puzzle. Swipe across a rope, or simply tap it, to snip it and drop the biscuit into Bingo’s mouth, collecting up to three stars on the way. Fifteen levels in three worlds: Backyard Morning (snipping, swinging, choosing which rope goes first), Bouncy Afternoon (garden trampolines, bubbles that float the biscuit up, hooks that grab it) and Sunset Adventure (fans, hook swings, bank shots and a finale that combines them). Bingo reaches further for the biscuit on early levels, so timing starts forgiving and tightens toward a five-year-old challenge. A lightbulb hint points at the next rope, bubble or fan. Dropping the biscuit just restarts the level.
+- **Keepy Uppy:** tap the balloon so it never touches the floor. Tapping its side steers it, Bluey and Bingo run underneath, and bops are counted aloud up to ten. Nine levels: one floaty balloon, stars to bump it into, two balloons at once, and a breezy verandah. A floor touch bounces the balloon back up and only costs a star.
+
+Each Bluey level is replayable and saves its best 1–3 stars. Finishing a whole world (a row of levels) earns one arcade star, up to three per game. Tests replay a stored solution for every Biscuit Drop level and a robot player for every Keepy Uppy level, so every level is proven winnable with three stars.
 
 - **Star Catcher:** count stars, with spoken counting on each tap.
 - **Mia’s Color Studio:** match colors, with closer shades on later levels.
@@ -18,7 +27,7 @@ Thirteen learning games built with love by Uncle Tom for Mia, with baby brother 
 
 Every card and game screen shows its current difficulty—Easy, Medium, or Tricky—with a three-bar indicator and a separate level number. Labels update as stars unlock later levels. The three new adventures stay Medium throughout. Uncle Tom has a visible, playable dedication and appears in the intro and fresh voice lines.
 
-No countdown pressure or lives. The original games earn one star per completion, up to three per game, with each star unlocking a harder level. English awards its stars at levels 10, 20, and 30. Progress, language and sound preferences stay in the current browser.
+No countdown pressure or lives. The original games earn one star per completion, up to three per game, with each star unlocking a harder level. English awards its stars at levels 10, 20, and 30; the Bluey games award one per finished world. Progress, language and sound preferences stay in the current browser.
 
 ## Local development
 
@@ -50,7 +59,7 @@ npx playwright install chromium webkit
 npm run test:mobile
 ```
 
-The mobile suite needs Python 3 for its local static file server. It tests Chromium and WebKit with touch-enabled Android/iPhone emulation: 320–430px phones, tablets, landscape, English and Hebrew, 44px touch targets, all twelve complete games, later levels, saved stars, voice playback, video, mute and reduced motion. These are automated browser tests, not physical-device certification. To run against a deployment, set `ARCADE_TEST_URL` to its origin.
+The mobile suite needs Python 3 for its local static file server. It tests Chromium and WebKit with touch-enabled Android/iPhone emulation: 320–430px phones, tablets, landscape, English and Hebrew, 44px touch targets, all twelve complete games, touch play and saved levels in both Bluey games, later levels, saved stars, voice playback, video, mute and reduced motion. These are automated browser tests, not physical-device certification. To run against a deployment, set `ARCADE_TEST_URL` to its origin.
 
 ## Optional media-generation keys
 
@@ -77,7 +86,7 @@ npm run generate:video
 npm run generate:video -- --intro
 ```
 
-Edit the bilingual event catalogue in `lib/voice-lines.json` to add or change lines. Give a changed line a new ID, or intentionally regenerate its recording so text and audio stay in sync. Voice generation saves MP3s in `public/audio/` and updates `lib/audio-manifest.json`. Hebrew uses a separately configured adult Hebrew narration voice, `eleven_v3`, `language_code: he`, Natural stability (0.5), and targeted niqqud for names, feminine instructions and numbers. The generator refuses to reuse the English voice implicitly for Hebrew. No voice or model is automatically certified as suitable for children: review the actual delivery.
+Edit the bilingual event catalogue in `lib/voice-lines.json` to add or change lines. The Bluey games’ level tips are not recorded yet and use the device’s text-to-speech; add them to the catalogue (for example as `treats-tip-cut` or `keepy-tip-wind`, the keys the games already request) and run the generator to replace it with recorded narration. Give a changed line a new ID, or intentionally regenerate its recording so text and audio stay in sync. Voice generation saves MP3s in `public/audio/` and updates `lib/audio-manifest.json`. Hebrew uses a separately configured adult Hebrew narration voice, `eleven_v3`, `language_code: he`, Natural stability (0.5), and targeted niqqud for names, feminine instructions and numbers. The generator refuses to reuse the English voice implicitly for Hebrew. No voice or model is automatically certified as suitable for children: review the actual delivery.
 
 Generate Hebrew only with `npm run generate:voices -- --lang he`. Preview the count without spending credits with `--dry-run`, or generate samples with `--only welcome,count,number-8`. Requests and audio hashes are recorded in `lib/audio-generation.json`; unchanged recordings are reused, and interrupted runs resume without regenerating completed clips. Legacy English files are retained. Use `--force` only to deliberately regenerate matching paid clips. Old files are backed up under ignored `work/voice-backups/` before replacement. `lib/audio-versions.json` adds a content version to playback URLs so browsers fetch replacement clips.
 

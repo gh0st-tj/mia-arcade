@@ -3177,3 +3177,470 @@ footer {
 .star-games button {
   min-width: 0;
 }
+
+/* ───────────── Bluey games: full-screen, bright backyard look ───────────── */
+.bluey-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  height: 100dvh;
+  overflow: hidden;
+  background: linear-gradient(#7cc8f7, #dff4ff 70%, #9fd98b);
+  color: #1f2a4d;
+  font-family: var(--font-nunito), Arial, sans-serif;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+.bluey-keepy {
+  background: linear-gradient(#f7dca6, #f3c98a);
+}
+.bluey-stage {
+  position: absolute;
+  inset: 0;
+}
+.bluey-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+}
+.bluey-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: max(10px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) 8px
+    max(12px, env(safe-area-inset-left));
+}
+.bluey-hud {
+  position: absolute;
+  inset: 0 0 auto;
+  pointer-events: none;
+}
+.bluey-hud > * {
+  pointer-events: auto;
+}
+.bluey-bar-end {
+  margin-inline-start: auto;
+  display: flex;
+  gap: 10px;
+}
+.bluey-round {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 0;
+  display: grid;
+  place-items: center;
+  background: #fffdf5;
+  color: #2a4b8d;
+  box-shadow:
+    0 4px 0 #2a4b8d33,
+    0 6px 16px #1f2a4d22;
+}
+.bluey-round.on {
+  background: #ffd23f;
+  color: #5b3b00;
+}
+[dir='rtl'] .bluey-round svg.lucide-arrow-left {
+  transform: scaleX(-1);
+}
+.bluey-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 6px 16px;
+  border-radius: 99px;
+  background: #fffdf5;
+  color: #2a4b8d;
+  font-weight: 900;
+  font-size: 17px;
+  box-shadow: 0 4px 0 #2a4b8d33;
+}
+.bluey-pill > svg,
+.bluey-hud-stars {
+  color: #f2a91f;
+}
+.bluey-hud-stars {
+  display: inline-flex;
+  gap: 2px;
+}
+.bluey-tip {
+  position: absolute;
+  left: 50%;
+  top: calc(max(10px, env(safe-area-inset-top)) + 60px);
+  transform: translateX(-50%);
+  width: min(92vw, 420px);
+  min-height: 56px;
+  padding: 14px 20px;
+  border: 0;
+  border-radius: 22px;
+  background: #fffdf5f2;
+  color: #1f2a4d;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.35;
+  box-shadow: 0 8px 24px #1f2a4d33;
+  animation: bluey-rise 0.4s ease-out;
+}
+.bluey-tip:active:not(:disabled) {
+  transform: translateX(-50%) scale(0.97);
+}
+.bluey-oops {
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 16px 28px;
+  border-radius: 24px;
+  background: #fffdf5;
+  color: #c64f45;
+  font-size: 26px;
+  font-weight: 900;
+  white-space: nowrap;
+  box-shadow: 0 10px 30px #1f2a4d33;
+  animation: bluey-wobble 0.5s ease-out;
+  pointer-events: none;
+}
+.bluey-result {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: #1f2a4d55;
+  animation: bluey-fade 0.3s ease-out;
+}
+.bluey-result-card {
+  width: min(100%, 380px);
+  padding: 22px 20px 20px;
+  border-radius: 32px;
+  background: #fffdf5;
+  text-align: center;
+  box-shadow: 0 20px 60px #1f2a4d55;
+  animation: bluey-rise 0.45s cubic-bezier(0.2, 1.4, 0.4, 1);
+}
+.bluey-result-card canvas {
+  margin: -70px auto 0;
+  display: block;
+}
+.bluey-result-stars {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  gap: 8px;
+  color: #d9d2c0;
+  margin: 2px 0 6px;
+}
+.bluey-result-stars .got {
+  color: #f2a91f;
+  animation: bluey-star-pop 0.5s cubic-bezier(0.2, 1.6, 0.4, 1) both;
+}
+.bluey-result-card h2 {
+  margin: 6px 0 4px;
+  font-size: 26px;
+  font-weight: 900;
+  color: #2a4b8d;
+}
+.bluey-result-card p {
+  margin: 0 0 18px;
+  font-size: 17px;
+  color: #4a5578;
+}
+.bluey-result-actions {
+  display: grid;
+  gap: 10px;
+}
+.bluey-result-actions > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.bluey-big,
+.bluey-soft,
+.bluey-play-next {
+  min-height: 56px;
+  border: 0;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 900;
+  font-size: 19px;
+}
+.bluey-big,
+.bluey-play-next {
+  background: #5e9fe3;
+  color: #fff;
+  box-shadow: 0 5px 0 #2a4b8d;
+}
+.bluey-soft {
+  min-height: 50px;
+  font-size: 16px;
+  background: #eef3fb;
+  color: #2a4b8d;
+  box-shadow: 0 4px 0 #c9d6ec;
+}
+.bluey-map {
+  height: 100%;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  touch-action: pan-y;
+  padding-bottom: max(24px, env(safe-area-inset-bottom));
+  background:
+    radial-gradient(circle at 96% 2%, #fff6c9 0 44px, transparent 46px),
+    radial-gradient(ellipse at 20% 110%, #9fd98b 0 45%, transparent 46%),
+    linear-gradient(#7cc8f7, #dff4ff 60%, #eaf8ea);
+}
+.bluey-keepy .bluey-map {
+  background:
+    radial-gradient(circle at 85% 8%, #fff 0 50px, transparent 52px),
+    linear-gradient(#ffe7b8, #f8d49a 60%, #e9b77c);
+}
+.bluey-map > :not(.bluey-bar) {
+  width: min(100% - 32px, 520px);
+  margin-inline: auto;
+}
+.bluey-map-hero {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+.bluey-map-hero h1 {
+  margin: 0;
+  font-size: clamp(26px, 7vw, 34px);
+  line-height: 1.05;
+  font-weight: 900;
+  color: #1f3a78;
+}
+.bluey-map-hero p {
+  margin: 6px 0 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #34497d;
+}
+.bluey-play-next {
+  display: flex;
+  width: min(100% - 32px, 520px);
+  margin: 14px auto 18px;
+  font-size: 21px;
+  min-height: 62px;
+  animation: bluey-breathe 2.4s ease-in-out infinite;
+}
+.bluey-world {
+  padding: 14px;
+  margin-bottom: 14px;
+  border-radius: 26px;
+  background: #fffdf5d9;
+  box-shadow: 0 6px 20px #1f2a4d1a;
+}
+.bluey-world h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 12px;
+  font-size: 18px;
+  font-weight: 900;
+  color: #2a4b8d;
+}
+.bluey-world h2 span {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #5e9fe3;
+  color: #fff;
+  font-size: 15px;
+}
+.world-1 h2 span {
+  background: #ec8c55;
+}
+.world-2 h2 span {
+  background: #8a74d6;
+}
+.bluey-levels {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+}
+.bluey-levels:has(> :nth-child(3):last-child) {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.bluey-level {
+  aspect-ratio: 1;
+  min-height: 56px;
+  border: 0;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 3px;
+  background: #e3eefc;
+  color: #2a4b8d;
+  box-shadow: 0 4px 0 #c3d4ee;
+  font-size: 22px;
+}
+.bluey-level b {
+  font-weight: 900;
+  line-height: 1;
+}
+.bluey-level.done {
+  background: #d7f2d4;
+  box-shadow: 0 4px 0 #a8d8a3;
+}
+.bluey-level.current {
+  background: #ffd23f;
+  color: #5b3b00;
+  box-shadow: 0 4px 0 #d19a0f;
+  animation: bluey-breathe 2s ease-in-out infinite;
+}
+.bluey-level:disabled {
+  opacity: 0.55;
+  color: #7b88a8;
+}
+.bluey-level-stars {
+  display: flex;
+  gap: 1px;
+  color: #f2a91f;
+}
+.bluey-map-note {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #34497d;
+}
+@keyframes bluey-rise {
+  from {
+    opacity: 0;
+    translate: 0 24px;
+  }
+}
+@keyframes bluey-fade {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes bluey-wobble {
+  0% {
+    scale: 0.6;
+  }
+  60% {
+    scale: 1.08;
+  }
+}
+@keyframes bluey-star-pop {
+  from {
+    scale: 0;
+    rotate: -40deg;
+  }
+}
+@keyframes bluey-breathe {
+  50% {
+    scale: 1.03;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bluey-play-next,
+  .bluey-level.current {
+    animation: none;
+  }
+}
+.preview-treats,
+.preview-keepy {
+  padding-top: 0;
+}
+.bluey-card-art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.card-treats .skill-badge,
+.card-keepy .skill-badge,
+.card-treats .game-number,
+.card-keepy .game-number {
+  z-index: 1;
+  background: #fffdf5e6;
+  color: #2a4b8d;
+  opacity: 1;
+}
+.card-treats .game-number,
+.card-keepy .game-number {
+  padding: 2px 8px;
+  border-radius: 20px;
+  top: 13px;
+  left: 13px;
+}
+.card-treats .card-art-stars,
+.card-keepy .card-art-stars {
+  display: none;
+}
+.keepy-count {
+  font-variant-numeric: tabular-nums;
+}
+.keepy-progress {
+  position: absolute;
+  top: calc(max(10px, env(safe-area-inset-top)) + 54px);
+  left: 50%;
+  translate: -50% 0;
+  width: min(60vw, 260px);
+  height: 8px;
+  border-radius: 99px;
+  background: #ffffff99;
+  overflow: hidden;
+  pointer-events: none;
+}
+.keepy-progress i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: #ff6f91;
+  transition: width 0.3s;
+}
+/* Lobby section headings span the whole grid. */
+.lobby-section {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  margin: 18px 0 -6px;
+  font-size: 22px;
+  font-weight: 900;
+  color: #f6ecff;
+}
+.lobby-section:first-child {
+  margin-top: 0;
+}
+.lobby-section span {
+  font-size: 13px;
+  font-weight: 800;
+  color: #a898bd;
+  letter-spacing: 0.3px;
+}
+.lobby-section:first-child span {
+  color: #8fd0ff;
+}
+/* Buttons centre their content vertically; keep every card's art at the top
+   and its footer at the bottom, whatever the length of the description. */
+.game-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.game-card > .card-art {
+  flex-shrink: 0;
+}
+.game-card > .card-body {
+  flex-grow: 1;
+}
+/* Installed on a phone’s home screen, keep the header clear of the notch. */
+.arcade-shell {
+  padding-top: env(safe-area-inset-top);
+  padding-inline: env(safe-area-inset-left) env(safe-area-inset-right);
+}

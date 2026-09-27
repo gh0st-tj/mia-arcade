@@ -12,7 +12,11 @@ export type GameId =
   | 'trail'
   | 'market'
   | 'robot'
-  | 'english';
+  | 'english'
+  | 'treats'
+  | 'keepy';
+/** Full-screen Bluey games with their own level maps. */
+export const blueyGames: readonly GameId[] = ['treats', 'keepy'];
 type Words = Record<Lang, string>;
 export const games: {
   id: GameId;
@@ -25,6 +29,40 @@ export const games: {
   emoji: string;
   difficulty: readonly [1 | 2 | 3, 1 | 2 | 3, 1 | 2 | 3];
 }[] = [
+  {
+    id: 'treats',
+    difficulty: [1, 2, 3],
+    title: { en: 'Bingo’s Biscuit Drop', he: 'העוגייה של בינגו' },
+    description: {
+      en: 'Snip the ropes and feed Bingo. 15 levels!',
+      he: 'גוזרים חבלים ומאכילים את בינגו. 15 שלבים!',
+    },
+    instruction: {
+      en: 'Snip the ropes so the biscuit drops to Bingo!',
+      he: 'גזרי את החבלים כדי שהעוגייה תיפול לבינגו!',
+    },
+    skill: { en: 'Bluey · Physics', he: 'בלואי · פיזיקה' },
+    ages: { en: 'Ages 4–6 · New!', he: 'גילאי 4–6 · חדש!' },
+    color: '#5e9fe3',
+    emoji: '🍪',
+  },
+  {
+    id: 'keepy',
+    difficulty: [1, 2, 3],
+    title: { en: 'Keepy Uppy', he: 'קיפי אפי' },
+    description: {
+      en: 'Don’t let the balloon touch the floor!',
+      he: 'אסור לבלון לגעת ברצפה!',
+    },
+    instruction: {
+      en: 'Tap the balloon to keep it up. Don’t let it touch the floor!',
+      he: 'לחצי על הבלון כדי שיישאר באוויר. אסור לו לגעת ברצפה!',
+    },
+    skill: { en: 'Bluey · Timing', he: 'בלואי · תזמון' },
+    ages: { en: 'Ages 4–6 · New!', he: 'גילאי 4–6 · חדש!' },
+    color: '#ec8c55',
+    emoji: '🎈',
+  },
   {
     id: 'english',
     difficulty: [1, 2, 3],
@@ -260,3 +298,31 @@ export const instructionFor = (id: GameId, level: number, lang: Lang) =>
 /** Audio-manifest key for a game’s spoken instruction at a given level. */
 export const instructionKey = (id: GameId, level: number) =>
   id === 'bubbles' && level === 2 ? 'countdown' : id;
+/** Lobby sections, in order; each starts at its first game. */
+export const lobbySections: { first: GameId; title: Words; note: Words }[] = [
+  {
+    first: 'treats',
+    title: { en: 'Bluey’s backyard', he: 'החצר של בלואי' },
+    note: { en: 'New! Full-screen games', he: 'חדש! משחקים במסך מלא' },
+  },
+  {
+    first: 'english',
+    title: { en: 'Speak English', he: 'מדברים אנגלית' },
+    note: { en: 'Ages 4–7 · Microphone', he: 'גילאי 4–7 · מיקרופון' },
+  },
+  {
+    first: 'count',
+    title: { en: 'Little learners', he: 'לומדים בקטנה' },
+    note: { en: 'Ages 4–6', he: 'גילאי 4–6' },
+  },
+  {
+    first: 'trail',
+    title: { en: 'Adventures', he: 'הרפתקאות' },
+    note: { en: 'Ages 5–6', he: 'גילאי 5–6' },
+  },
+  {
+    first: 'sums',
+    title: { en: 'Big-kid challenges', he: 'אתגרים לגדולים' },
+    note: { en: 'Ages 6–7', he: 'גילאי 6–7' },
+  },
+];

@@ -14,6 +14,8 @@ const ids = [
   'market',
   'robot',
 ];
+/** Games with their own level map: English plus the two Bluey games. */
+const cardCount = ids.length + 3;
 // Safari may request the same MP3 in multiple byte ranges. Count play calls,
 // not network requests, when checking which narration was selected.
 async function recordVoicePlayback(page: Page) {
@@ -45,10 +47,8 @@ async function prepare(page: Page, lang = 'en', level = 0, sound = false) {
   );
   await page.evaluate(() => localStorage.setItem('mia-intro-seen-v1', '1'));
   await page.reload();
-  await expect(page.locator('.game-card')).toHaveCount(ids.length + 1);
-  await expect(page.locator('.game-card .difficulty')).toHaveCount(
-    ids.length + 1,
-  );
+  await expect(page.locator('.game-card')).toHaveCount(cardCount);
+  await expect(page.locator('.game-card .difficulty')).toHaveCount(cardCount);
 }
 async function checkLayout(page: Page) {
   const result = await page.evaluate(() => ({
@@ -93,11 +93,16 @@ for (const lang of ['en', 'he']) {
         await checkLayout(page);
         await page.locator('.quiet-button').tap();
       }
+      for (const id of ['treats', 'keepy']) {
+        await page.locator(`.card-${id}`).tap();
+        await expect(page.locator('.bluey-map')).toBeVisible();
+        await checkLayout(page);
+        await page.locator('.bluey-map .bluey-round').tap();
+        await expect(page.locator('.bluey-screen')).toHaveCount(0);
+      }
     }
     await page.getByRole('tab').nth(1).tap();
-    await expect(page.locator('.star-games button')).toHaveCount(
-      ids.length + 1,
-    );
+    await expect(page.locator('.star-games button')).toHaveCount(cardCount);
     for (const width of [320, 390, 768, 844]) {
       await page.setViewportSize({ width, height: 844 });
       await checkLayout(page);
@@ -601,4 +606,66 @@ for (const lang of ['en', 'he'])
     await expect(page.locator('.card-memory .difficulty')).toHaveText(
       lang === 'en' ? 'Tricky' : 'מאתגר',
     );
+  });
+
+/** Screen position of a point in a Bluey game's 400×720 world. */
+async function worldPoint(page: Page, x: number, y: number) {
+  const box = (await page.locator('.bluey-canvas').boundingBox())!;
+  const s = Math.min(box.width / 400, (box.height - 64) / 720);
+  return {
+    x: box.x + (box.width - 400 * s) / 2 + x * s,
+    y: box.y + 64 + (box.height - 64 - 720 * s) / 2 + y * s,
+  };
+}
+for (const lang of ['en', 'he'])
+  test(`${lang}: Bluey games play with touch and save their levels`, async ({
+    page,
+  }) => {
+    const errors: string[] = [];
+    page.on('pageerror', (e) => errors.push(e.message));
+    await prepare(page, lang, 0);
+    await page.setViewportSize({ width: 390, height: 780 });
+    // Biscuit Drop: a tap on the rope snips it and Bingo gets her biscuit.
+    await page.locator('.card-treats').tap();
+    await page.locator('.bluey-play-next').tap();
+    await expect(page.locator('.bluey-stage')).toHaveAttribute('data-level', '1');
+    await checkLayout(page);
+    const rope = await worldPoint(page, 200, 180);
+    await page.waitForTimeout(700);
+    await page.touchscreen.tap(rope.x, rope.y);
+    await expect(page.locator('.bluey-result')).toBeVisible({ timeout: 8000 });
+    await checkLayout(page);
+    expect(
+      await page.evaluate(
+        () => JSON.parse(localStorage.getItem('mia-bluey-v1')!).treats[0],
+      ),
+    ).toBe(3);
+    await page.locator('.bluey-result .bluey-big').tap();
+    await expect(page.locator('.bluey-stage')).toHaveAttribute('data-level', '2');
+    await page.locator('.bluey-hud .bluey-round').first().tap();
+    await expect(page.locator('.bluey-level.done')).toHaveCount(1);
+    await page.locator('.bluey-map .bluey-round').tap();
+    // Keepy Uppy: tapping the waiting balloon counts a bop.
+    await page.locator('.card-keepy').tap();
+    await page.locator('.bluey-play-next').tap();
+    const balloon = await worldPoint(page, 200, 200);
+    await page.touchscreen.tap(balloon.x, balloon.y);
+    await expect(page.locator('.keepy-count')).toContainText('1 / 5');
+    await page.locator('.bluey-hud .bluey-round').first().tap();
+    await page.locator('.bluey-map .bluey-round').tap();
+    // Finishing a whole world earns an arcade star.
+    await page.evaluate(() =>
+      localStorage.setItem(
+        'mia-bluey-v1',
+        JSON.stringify({ treats: [3, 3, 2, 1, 3], keepy: [3, 3, 3, 3, 3, 3] }),
+      ),
+    );
+    for (const id of ['treats', 'keepy']) {
+      await page.locator(`.card-${id}`).tap();
+      await expect(page.locator('.bluey-map')).toBeVisible();
+      await page.locator('.bluey-map .bluey-round').tap();
+    }
+    await expect(page.locator('.card-treats .mini-stars .earned')).toHaveCount(1);
+    await expect(page.locator('.card-keepy .mini-stars .earned')).toHaveCount(2);
+    expect(errors).toEqual([]);
   });
