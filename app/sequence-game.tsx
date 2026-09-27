@@ -94,7 +94,9 @@ export default function SequenceGame({
   useEffect(() => {
     const timers: ReturnType<typeof setTimeout>[] = [];
     // Leave room for the opening instruction before showing the first path.
-    const lead = round === 0 && showing === 0 ? 4800 : LEAD_MS;
+    // The Hebrew recordings run up to 7.3 s, so wait longer when they play.
+    const opening = soundOn.current && lang === 'he' ? 7600 : 4800;
+    const lead = round === 0 && showing === 0 ? opening : LEAD_MS;
     const at = (ms: number, fn: () => void) => timers.push(setTimeout(fn, ms));
     at(0, () => {
       setPhase('watch');
@@ -138,10 +140,14 @@ export default function SequenceGame({
         'sequence-retry',
         t('Let’s watch it again. You can do it!', 'בואי נראה שוב. את יכולה!'),
       );
-      later(() => {
-        setFeedback(null);
-        setShowing((n) => n + 1);
-      }, 1100);
+      // Replay once the encouragement has been spoken (up to 4.5 s in Hebrew).
+      later(
+        () => {
+          setFeedback(null);
+          setShowing((n) => n + 1);
+        },
+        !sound ? 1100 : lang === 'he' ? 4400 : 2400,
+      );
       return;
     }
     const done = progress + 1;

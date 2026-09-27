@@ -16,7 +16,7 @@ export type GameId =
   | 'treats'
   | 'keepy';
 /** Full-screen Bluey games with their own level maps. */
-export const blueyGames: readonly GameId[] = ['treats', 'keepy'];
+export const blueyGames: readonly GameId[] = ['keepy', 'treats'];
 type Words = Record<Lang, string>;
 export const games: {
   id: GameId;
@@ -29,23 +29,6 @@ export const games: {
   emoji: string;
   difficulty: readonly [1 | 2 | 3, 1 | 2 | 3, 1 | 2 | 3];
 }[] = [
-  {
-    id: 'treats',
-    difficulty: [1, 2, 3],
-    title: { en: 'Bingo’s Biscuit Drop', he: 'העוגייה של בינגו' },
-    description: {
-      en: 'Snip the ropes and feed Bingo. 15 levels!',
-      he: 'גוזרים חבלים ומאכילים את בינגו. 15 שלבים!',
-    },
-    instruction: {
-      en: 'Snip the ropes so the biscuit drops to Bingo!',
-      he: 'גזרי את החבלים כדי שהעוגייה תיפול לבינגו!',
-    },
-    skill: { en: 'Bluey · Physics', he: 'בלואי · פיזיקה' },
-    ages: { en: 'Ages 4–6 · New!', he: 'גילאי 4–6 · חדש!' },
-    color: '#5e9fe3',
-    emoji: '🍪',
-  },
   {
     id: 'keepy',
     difficulty: [1, 2, 3],
@@ -64,21 +47,21 @@ export const games: {
     emoji: '🎈',
   },
   {
-    id: 'english',
+    id: 'treats',
     difficulty: [1, 2, 3],
-    title: { en: 'Mia’s English Adventure', he: 'הרפתקת האנגלית של מיה' },
+    title: { en: 'Bingo’s Biscuit Drop', he: 'העוגייה של בינגו' },
     description: {
-      en: 'Say it out loud! Words to sentences in 30 levels.',
-      he: 'אמרי בקול! ממילים למשפטים ב־30 שלבים.',
+      en: 'Snip the ropes and feed Bingo her biscuit!',
+      he: 'גוזרים חבלים ומאכילים את בינגו בעוגייה!',
     },
     instruction: {
-      en: 'Listen, tap the microphone, and say it in English.',
-      he: 'הקשיבי, לחצי על המיקרופון ואמרי באנגלית.',
+      en: 'Snip the ropes so the biscuit drops to Bingo!',
+      he: 'גזרי את החבלים כדי שהעוגייה תיפול לבינגו!',
     },
-    skill: { en: 'Speaking English', he: 'מדברים אנגלית' },
-    ages: { en: 'Ages 4–7 · Microphone', he: 'גילאי 4–7 · מיקרופון' },
-    color: '#83dfc7',
-    emoji: '🎙️',
+    skill: { en: 'Bluey · Physics', he: 'בלואי · פיזיקה' },
+    ages: { en: 'Ages 4–6 · New!', he: 'גילאי 4–6 · חדש!' },
+    color: '#5e9fe3',
+    emoji: '🍪',
   },
   {
     id: 'count',
@@ -98,6 +81,23 @@ export const games: {
     emoji: '⭐',
   },
   {
+    id: 'bubbles',
+    difficulty: [1, 1, 2],
+    title: { en: 'Bubble Pop!', he: 'פופ! בועות' },
+    description: {
+      en: 'Pop, pop, pop your way to ten.',
+      he: 'מפוצצים בועות בדרך לעשר.',
+    },
+    instruction: {
+      en: 'Pop the bubbles in order. Start with one!',
+      he: 'פוצצי את הבועות לפי הסדר. התחילי באחת!',
+    },
+    skill: { en: 'Number play', he: 'מספרים' },
+    ages: { en: 'Ages 4–6', he: 'גילאי 4–6' },
+    color: '#e2a6f8',
+    emoji: '🫧',
+  },
+  {
     id: 'colors',
     difficulty: [1, 2, 2],
     title: { en: 'Mia’s Color Studio', he: 'הצבעים של מיה' },
@@ -113,23 +113,6 @@ export const games: {
     ages: { en: 'Ages 4–6', he: 'גילאי 4–6' },
     color: '#ffa2c4',
     emoji: '🎨',
-  },
-  {
-    id: 'memory',
-    difficulty: [1, 2, 3],
-    title: { en: 'Johnny & Friends', he: 'ג׳וני וחברים' },
-    description: {
-      en: 'Little friends, lovely matches.',
-      he: 'חברים קטנים, זוגות מתוקים.',
-    },
-    instruction: {
-      en: 'Turn over two cards. Find all the matching friends!',
-      he: 'הפכי שני קלפים ומצאי את כל הזוגות!',
-    },
-    skill: { en: 'Memory', he: 'זיכרון' },
-    ages: { en: 'Ages 4–6', he: 'גילאי 4–6' },
-    color: '#83dfc7',
-    emoji: '🐶',
   },
   {
     id: 'shapes',
@@ -149,6 +132,23 @@ export const games: {
     emoji: '🧸',
   },
   {
+    id: 'memory',
+    difficulty: [1, 2, 3],
+    title: { en: 'Johnny & Friends', he: 'ג׳וני וחברים' },
+    description: {
+      en: 'Little friends, lovely matches.',
+      he: 'חברים קטנים, זוגות מתוקים.',
+    },
+    instruction: {
+      en: 'Turn over two cards. Find all the matching friends!',
+      he: 'הפכי שני קלפים ומצאי את כל הזוגות!',
+    },
+    skill: { en: 'Memory', he: 'זיכרון' },
+    ages: { en: 'Ages 4–6', he: 'גילאי 4–6' },
+    color: '#83dfc7',
+    emoji: '🐶',
+  },
+  {
     id: 'patterns',
     difficulty: [1, 2, 3],
     title: { en: 'Picnic Patterns', he: 'פיקניק משפחתי' },
@@ -166,21 +166,21 @@ export const games: {
     emoji: '🍓',
   },
   {
-    id: 'bubbles',
-    difficulty: [1, 1, 2],
-    title: { en: 'Bubble Pop!', he: 'פופ! בועות' },
+    id: 'english',
+    difficulty: [1, 2, 3],
+    title: { en: 'Mia’s English Adventure', he: 'הרפתקת האנגלית של מיה' },
     description: {
-      en: 'Pop, pop, pop your way to ten.',
-      he: 'מפוצצים בועות בדרך לעשר.',
+      en: 'Say it out loud! Words to sentences in 30 levels.',
+      he: 'אמרי בקול! ממילים למשפטים ב־30 שלבים.',
     },
     instruction: {
-      en: 'Pop the bubbles in order. Start with one!',
-      he: 'פוצצי את הבועות לפי הסדר. התחילי באחת!',
+      en: 'Listen, tap the microphone, and say it in English.',
+      he: 'הקשיבי, לחצי על המיקרופון ואמרי באנגלית.',
     },
-    skill: { en: 'Number play', he: 'מספרים' },
-    ages: { en: 'Ages 4–6', he: 'גילאי 4–6' },
-    color: '#e2a6f8',
-    emoji: '🫧',
+    skill: { en: 'Speaking English', he: 'מדברים אנגלית' },
+    ages: { en: 'Ages 4–7 · Microphone', he: 'גילאי 4–7 · מיקרופון' },
+    color: '#83dfc7',
+    emoji: '🎙️',
   },
   {
     id: 'trail',
@@ -301,19 +301,19 @@ export const instructionKey = (id: GameId, level: number) =>
 /** Lobby sections, in order; each starts at its first game. */
 export const lobbySections: { first: GameId; title: Words; note: Words }[] = [
   {
-    first: 'treats',
+    first: 'keepy',
     title: { en: 'Bluey’s backyard', he: 'החצר של בלואי' },
-    note: { en: 'New! Full-screen games', he: 'חדש! משחקים במסך מלא' },
+    note: { en: 'New! Full-screen · Ages 4–6', he: 'חדש! מסך מלא · גילאי 4–6' },
+  },
+  {
+    first: 'count',
+    title: { en: 'Little learners', he: 'לומדים בקטנה' },
+    note: { en: 'Ages 4–6 · Easiest first', he: 'גילאי 4–6 · מהקל לקשה' },
   },
   {
     first: 'english',
     title: { en: 'Speak English', he: 'מדברים אנגלית' },
     note: { en: 'Ages 4–7 · Microphone', he: 'גילאי 4–7 · מיקרופון' },
-  },
-  {
-    first: 'count',
-    title: { en: 'Little learners', he: 'לומדים בקטנה' },
-    note: { en: 'Ages 4–6', he: 'גילאי 4–6' },
   },
   {
     first: 'trail',

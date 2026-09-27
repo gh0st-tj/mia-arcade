@@ -57,10 +57,11 @@ async function checkLayout(page: Page) {
     scroll: document.documentElement.scrollWidth,
     buttons: [...document.querySelectorAll('button')]
       .filter((b) => !b.disabled && b.getBoundingClientRect().width > 0)
+      // Layout size, so a button caught mid press-animation (scale 0.97) still counts fully.
       .map((b) => ({
         name: b.getAttribute('aria-label') || b.textContent,
-        width: b.getBoundingClientRect().width,
-        height: b.getBoundingClientRect().height,
+        width: b.offsetWidth,
+        height: b.offsetHeight,
       })),
   }));
   expect(result.width).toBeLessThanOrEqual(page.viewportSize()!.width + 1);

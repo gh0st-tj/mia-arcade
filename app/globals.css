@@ -2232,10 +2232,11 @@ footer {
   [dir='rtl'] .welcome-scene {
     direction: ltr;
   }
-  [dir='rtl'] .quiet-button > svg,
-  [dir='rtl'] .next-button > svg {
-    transform: rotate(180deg);
-  }
+}
+/* Hebrew reads right to left at every screen size, so arrows flip too. */
+[dir='rtl'] .quiet-button > svg,
+[dir='rtl'] .next-button > svg {
+  transform: rotate(180deg);
 }
 @media (max-width: 480px) {
   .bubbles-grid {

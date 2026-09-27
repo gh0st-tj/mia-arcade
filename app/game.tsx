@@ -55,9 +55,13 @@ export default function Game({ id, lang, level, onWin, speak, sound }: Props) {
   const lock = useRef(false);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const audioContext = useRef<AudioContext | null>(null);
+  /** True just after bubbles move, when a quick second tap lands on a different bubble. */
+  const drifting = useRef(false);
+  const driftTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   useEffect(
     () => () => {
       if (timer.current) clearTimeout(timer.current);
+      if (driftTimer.current) clearTimeout(driftTimer.current);
       void audioContext.current?.close();
     },
     [],
@@ -175,6 +179,8 @@ export default function Game({ id, lang, level, onWin, speak, sound }: Props) {
   const pop = (n: number) => {
     if (lock.current || popped.includes(n)) return;
     if (n !== nextBubble) {
+      // Ignore a double tap right after the bubbles drift, instead of calling it a mistake.
+      if (drifting.current) return;
       retry(n);
       return;
     }
@@ -184,8 +190,12 @@ export default function Game({ id, lang, level, onWin, speak, sound }: Props) {
     const nowPopped = [...popped, n];
     setPopped(nowPopped);
     // From the second star on, the bubbles drift to new spots after each pop.
-    if (level > 0 && nowPopped.length < order.length)
+    if (level > 0 && nowPopped.length < order.length) {
       setBubbles(shuffle(order));
+      drifting.current = true;
+      if (driftTimer.current) clearTimeout(driftTimer.current);
+      driftTimer.current = setTimeout(() => (drifting.current = false), 450);
+    }
     if (nowPopped.length === order.length) {
       lock.current = true;
       chime();

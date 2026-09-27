@@ -159,7 +159,7 @@ function Trail({ lang, level, round, solved, onSolved, speak }: RoundProps) {
         <span className={collected.length ? 'found' : ''}>
           🦴 {collected.length}/1
         </span>
-        <span>→</span>
+        <span aria-hidden="true">{lang === 'he' ? '←' : '→'}</span>
         <span>🏠 {t('Home', 'הביתה')}</span>
       </div>
       <div

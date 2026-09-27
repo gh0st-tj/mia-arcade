@@ -2,7 +2,7 @@
 
 Fifteen learning games built with love by Uncle Tom for Mia, with baby brother Dean, dog Johnny, Mum Lee and Dad Gal: two full-screen Bluey games, six gentle games for ages 4–6, three adventures for ages 5–6, three trickier games for ages 6–7, and an English speaking adventure for ages 4–7. English and Hebrew, touch and keyboard controls, spoken instructions, and 45 collectible arcade stars saved in the browser. The original games have three difficulty levels each; the English game has 30 speaking levels and the Bluey games have 24 levels between them.
 
-The lobby is grouped into sections: Bluey’s backyard, Speak English, Little learners (4–6), Adventures (5–6) and Big-kid challenges (6–7). On a phone, “Add to Home Screen” installs the arcade with its own icon, and it opens full-screen like an app.
+The lobby is grouped into sections in rising age order: Bluey’s backyard (new, 4–6), Little learners (4–6), Speak English (4–7), Adventures (5–6) and Big-kid challenges (6–7). Within each section the easiest game comes first, so Mia can work down the page as she grows. On a phone, “Add to Home Screen” installs the arcade with its own icon, and it opens full-screen like an app.
 
 **Bluey’s backyard** (ages 4–6, phone-first, full-screen, hand-drawn canvas art of Bluey and Bingo):
 

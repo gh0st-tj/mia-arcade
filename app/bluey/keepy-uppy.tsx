@@ -222,7 +222,7 @@ function Stage({
 
     const resize = () => {
       const rect = canvas.getBoundingClientRect();
-      const dpr = Math.min(2.5, window.devicePixelRatio || 1);
+      const dpr = Math.min(2, window.devicePixelRatio || 1);
       const w = Math.max(1, rect.width),
         h = Math.max(1, rect.height);
       canvas.width = Math.round(w * dpr);
