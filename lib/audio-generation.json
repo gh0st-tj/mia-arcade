@@ -3688,5 +3688,455 @@
     "requestHash": "ddf671ffa539deed2157e7903b850dc6465c6fbe9a375caaec021910a93dcde0",
     "audioHash": "8dad95892462315ef2767b0a011069d2138f2787db59b87c088b9e3b2d6511d0",
     "generatedAt": "2026-09-14T04:00:46.449Z"
+  },
+  "en/keepy": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Tap the balloon to keep it up. Don’t let it touch the floor!",
+      "model_id": "eleven_multilingual_v2"
+    },
+    "requestHash": "b00d7f5d5a57cc4fa4b28a0ff41125dfec1c99b454e1b81d3ce5a823c40255fb",
+    "audioHash": "c727fd9c382dfccf46a450e4f19b74c4d9b088fd943e6b5dd5a8c4886ec1f1c9",
+    "generatedAt": "2026-09-27T02:04:25.240Z"
+  },
+  "en/keepy-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Keepy uppy! Bop the balloon so it never touches the floor.",
+      "model_id": "eleven_multilingual_v2"
+    },
+    "requestHash": "7c01c0636c6d1ec05238aa7200f10137dccbee8fb2e43632dceb8d504d299d27",
+    "audioHash": "e109712634b514048ff3094a83f464338e10b46563f5444015c7fe5066061087",
+    "generatedAt": "2026-09-27T02:04:26.695Z"
+  },
+  "en/keepy-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Bluey and Bingo need your help, Mia! Keep the balloon up in the air.",
+      "model_id": "eleven_multilingual_v2"
+    },
+    "requestHash": "33f9c180f313abdf583f5684d4cddf31c37fdbaf51792203c74c2148ee0acb73",
+    "audioHash": "7cfb9dc56c58d67a6726e69f3cebfdd0874224b7d1421fb7bdb962616c7b2673",
+    "generatedAt": "2026-09-27T02:04:28.041Z"
+  },
+  "en/treats": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Snip the ropes so the biscuit drops to Bingo!",
+      "model_id": "eleven_multilingual_v2"
+    },
+    "requestHash": "6631bf5ff759ce2008a71b89fd7482402c6ea0d3cd71900843d82ca7fe121ede",
+    "audioHash": "6980b03e7b762a3371dbb869d758d2d7b870b0a11fe3cfb23d5ac61da9f37331",
+    "generatedAt": "2026-09-27T02:04:29.438Z"
+  },
+  "en/treats-2": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Bingo is hungry! Cut the ropes and feed her the biscuit.",
+      "model_id": "eleven_multilingual_v2"
+    },
+    "requestHash": "07e6b514cdf64a750496d982af69cff237db708eb2c5ae900295113eca8b8c8b",
+    "audioHash": "9f4a70c5211a21df7038078c50cb8424fac2a1e2e9a6d11f2349492583d2872e",
+    "generatedAt": "2026-09-27T02:04:30.706Z"
+  },
+  "en/treats-3": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Let’s feed Bingo, Mia! Snip a rope and watch the biscuit fall.",
+      "model_id": "eleven_multilingual_v2"
+    },
+    "requestHash": "3902635f8ba996079e7687eb6a3a1e30167516c39455afa8b62958ce64141ced",
+    "audioHash": "ff4ade6f2f71a8c80292f4eb1ca9f160d505eb7a20a732f40bce26dce13bba1a",
+    "generatedAt": "2026-09-27T02:04:32.190Z"
+  },
+  "en/treats-tip-cut": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Swipe across the rope to snip it. Feed Bingo the biscuit!",
+      "model_id": "eleven_multilingual_v2"
+    },
+    "requestHash": "ebf82b76fc4045f70f6ffc887df7c85cf5871b7a21cf1916c42c07ae64704c0d",
+    "audioHash": "7ca07024fa3a6608100561b80ad632346f8fbd3af81a0f4aa6ca9dd2f3a0a93d",
+    "generatedAt": "2026-09-27T02:04:33.635Z"
+  },
+  "en/treats-tip-swing": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Wait until the biscuit swings over Bingo, then snip!",
+      "model_id": "eleven_multilingual_v2"
+    },
+    "requestHash": "aead2e075270dd48f2f0ddd79f467454452298e957d1169388785ddf44c515b8",
+    "audioHash": "7ac7b920bfde98bb538c116763bc2d4ad401a2675c122ce5ffbcf8ecd24bd2a1",
+    "generatedAt": "2026-09-27T02:04:34.956Z"
+  },
+  "en/treats-tip-two": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Two ropes! Which one should you snip first?",
+      "model_id": "eleven_multilingual_v2"
+    },
+    "requestHash": "fabd91691d496b73bbe29205b1cacab38bebc6e0a65d466a7efc051d29121722",
+    "audioHash": "887c03e6029a8a77a1bfbfe9001611545ba533f585cf46e2e7a8890b1db5869c",
+    "generatedAt": "2026-09-27T02:04:36.216Z"
+  },
+  "en/treats-tip-bounce": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Boing! The trampoline bounces the biscuit.",
+      "model_id": "eleven_multilingual_v2"
+    },
+    "requestHash": "006410a69feb03b782a68eadc1c41ca8355441b32734b87e6f18128b312c764a",
+    "audioHash": "385a2831289fa58e0e610fdffe01e94455529c9f2bb59d31ad1ab228169d0cd0",
+    "generatedAt": "2026-09-27T02:04:37.518Z"
+  },
+  "en/treats-tip-bubble": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Bubbles float the biscuit up high!",
+      "model_id": "eleven_multilingual_v2"
+    },
+    "requestHash": "173087e0ff004743ab2ee1fe8d449fa2f09491e5ec4fe02babc975933af923e7",
+    "audioHash": "4878b82dc865fbb3b08849f5bf64d40c29dd71d97e867a7827462fb84e640891",
+    "generatedAt": "2026-09-27T02:04:38.746Z"
+  },
+  "en/treats-tip-pop": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Tap the bubble to pop it, then snip the rope.",
+      "model_id": "eleven_multilingual_v2"
+    },
+    "requestHash": "aae52cc1a302600f8b51eb37b0730a72d57bc9ddd980252a3a00b8ddb0b430f3",
+    "audioHash": "7c4eec49d5bc2a6016cd521e72017a76dd04d20f4aa5d1565bdb6b40296899ec",
+    "generatedAt": "2026-09-27T02:04:40.049Z"
+  },
+  "en/treats-tip-hook": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Swing the biscuit into the dotted circle. A new rope will grab it!",
+      "model_id": "eleven_multilingual_v2"
+    },
+    "requestHash": "4d0cfa27b811c0f92de17153eae8abb131b7137b8218f3c46954059449bb7280",
+    "audioHash": "7cc141c8843797ed8ef5178ea012af8b730a8158f8aa5791aca7b4782d02e5e1",
+    "generatedAt": "2026-09-27T02:04:41.438Z"
+  },
+  "en/treats-tip-fan": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Tap the fan to blow the bubble toward Bingo!",
+      "model_id": "eleven_multilingual_v2"
+    },
+    "requestHash": "3d7066d7fb348286b4fba243444e532f54aa26a4c6c71b953903e8c3bad39696",
+    "audioHash": "a3e632fc388e5768c9e2529aee4f151f916d5f880d91bb647ec497a7e9f53b48",
+    "generatedAt": "2026-09-27T02:04:42.757Z"
+  },
+  "en/keepy-tip-tap": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Tap the balloon to bop it up. Don’t let it touch the floor!",
+      "model_id": "eleven_multilingual_v2"
+    },
+    "requestHash": "e646bb60adf1d6bad82ae0b060b7cf8bf5921cc787f6a9be0c6784eb36ccd47b",
+    "audioHash": "1b76756cf6fa5e1e6fc39b3a324dd1b8fe04b1dcbb2f9141de602ffe39f2bd5e",
+    "generatedAt": "2026-09-27T02:04:44.097Z"
+  },
+  "en/keepy-tip-stars": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Bop the balloon into the star! Tap its side to steer it.",
+      "model_id": "eleven_multilingual_v2"
+    },
+    "requestHash": "c169182ad824ef095d1358f691a72d1dad7c45ce9e5db982a0def0da5dfd6fa8",
+    "audioHash": "453d8da2bdc0633f7053f4ef865649cfda8a4fec8f3d540a1168eafa77e24a7c",
+    "generatedAt": "2026-09-27T02:04:45.448Z"
+  },
+  "en/keepy-tip-two": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "Two balloons! Keep them both up in the air.",
+      "model_id": "eleven_multilingual_v2"
+    },
+    "requestHash": "2188cf920f830313262c1b7d3b4367d35333a9b563b204f11d93e3c0d1ba3c91",
+    "audioHash": "81c045e559f34a6d343003a76b8e13f7645251a7ddc23a555c2625e603d124d2",
+    "generatedAt": "2026-09-27T02:04:46.718Z"
+  },
+  "en/keepy-tip-wind": {
+    "voiceId": "EST9Ui6982FZPSi7gCHi",
+    "body": {
+      "text": "It’s windy! The breeze pushes the balloon around.",
+      "model_id": "eleven_multilingual_v2"
+    },
+    "requestHash": "4a5ac0e3614e11bee56132a5385fd53667f795f24ae42b466e38ad96d3f675ff",
+    "audioHash": "b614914d71b610d4ac200dbf04c8b238392cd0496c8cb10aed7d7b3e4d90a7fa",
+    "generatedAt": "2026-09-27T02:04:48.030Z"
+  },
+  "he/keepy": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "לַחֲצִי על הבלון כדי שיישאר באוויר. אסור לו לגעת ברצפה!",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "e66c75f60c7ae7dfbd355c578c0ba09e7db776bb246272c59ac2a5972be04d3f",
+    "audioHash": "37b8e8b54e3bcab6eb6d1c7be8664e67f513b5059597e90bd490fd591f52f461",
+    "generatedAt": "2026-09-27T02:04:50.336Z"
+  },
+  "he/keepy-2": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "קיפי אפי! הַקְפִּיצִי את הבלון כדי שלא ייגע ברצפה.",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "c0ef565747fe1b50de2f0ed837a84c3ddb9a25df1942f9c235186695173be960",
+    "audioHash": "3f5942254b3045ac60f7bcbb152d3b57a3e3a700786a81b01c15af2568e06a46",
+    "generatedAt": "2026-09-27T02:04:52.981Z"
+  },
+  "he/keepy-3": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "בְּלוּאִי ובינגו צריכות את העזרה שלך, מִיָה! שִׁמְרִי על הבלון באוויר.",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "d7bff93f63bc9aa2abb2d3d0e7bd56467d3d9a8bce0d9a7af51b5e68371425af",
+    "audioHash": "8a2bf2fa76dad43f04780589bf5107bfcff9fc784b8261a190a195a52b3b85e8",
+    "generatedAt": "2026-09-27T02:04:55.862Z"
+  },
+  "he/treats": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "גִּזְרִי את החבלים כדי שהעוגייה תיפול לְבִינְגוֹ!",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "28a69508b6c1f4fb9e910e5b0f78771cef88a849ef871d24d4c443e64ab82c0e",
+    "audioHash": "1a49fff813e98b187dc9b667b2e75024ad5a8ee9ca2c7cd3a40acb2b21b96d04",
+    "generatedAt": "2026-09-27T02:04:57.960Z"
+  },
+  "he/treats-2": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "בִּינְגוֹ רעבה! גִּזְרִי את החבלים וְהַאֲכִילִי אותה בעוגייה.",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "653364665e12d11db0ee901dd72e5f77b3e454f7bd21c753e7f79817502b36d3",
+    "audioHash": "dd176a90ea0fb62fe274b2300294e05bf478721d4348f542ccc19253a4ab52c4",
+    "generatedAt": "2026-09-27T02:05:01.024Z"
+  },
+  "he/treats-3": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "בּוֹאִי נאכיל את בִּינְגוֹ, מִיָה! גִּזְרִי חבל ותראי את העוגייה נופלת.",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "e0b697083f69bae2cbbb414eb666fc3d3a3c12f8259ca6b9f2f1cf324ca85f9f",
+    "audioHash": "a57f53331361e3d227e9141a31835b579045790612bd26ed651d5aed81329fb8",
+    "generatedAt": "2026-09-27T02:05:04.163Z"
+  },
+  "he/treats-tip-cut": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "הַחֲלִיקִי את האצבע על החבל כדי לגזור אותו. הַאֲכִילִי את בִּינְגוֹ בעוגייה!",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "5ab29b1d54dc24ef964330d445ea1f91923d0c988e3cb2aeaecdcafeede7661f",
+    "audioHash": "f6d680f82ff49ddb15c2f8b496739d81850c1e10cc6571895108aea2df7b05ee",
+    "generatedAt": "2026-09-27T02:05:07.206Z"
+  },
+  "he/treats-tip-swing": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "חַכִּי שהעוגייה תתנדנד מעל בִּינְגוֹ, ואז גִּזְרִי!",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "081120b18eb61b736d02c82e89c97dd51e39b17138a9ef61d05aa618e098b868",
+    "audioHash": "3c1ff4908215b4bb1ec34bb0efaa03048d291f8fb811932f8765360b70bd334f",
+    "generatedAt": "2026-09-27T02:05:09.478Z"
+  },
+  "he/treats-tip-two": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "שני חבלים! איזה חבל לגזור קודם?",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "b87eca7bf87d325f8a3911fb196bbc10cb1f73cf62aa9d374aaae4cb03fd8a14",
+    "audioHash": "31e6fa3646ae717158135fc9805eb0f1860bcbd6fdc306dfd095751858fcfaa0",
+    "generatedAt": "2026-09-27T02:05:11.275Z"
+  },
+  "he/treats-tip-bounce": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "בוינג! הטרמפולינה מקפיצה את העוגייה.",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "cf2f71528299ff87a00c55f1b46863afb58d4b05e2be04ae48be416581f4514d",
+    "audioHash": "bfdb81a74d5de2a116b47724d72b29ba17270d688898df85714e2bef4797e426",
+    "generatedAt": "2026-09-27T02:05:13.432Z"
+  },
+  "he/treats-tip-bubble": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "בועות מרימות את העוגייה גבוה למעלה!",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "95177483765ce462875e473077f9bb4e0bf3e882ef181b8191e3c19b158962a4",
+    "audioHash": "665b138d5db970a01f16e50c1a246e6bf36c0cc950575cb3206b3b097504e743",
+    "generatedAt": "2026-09-27T02:05:15.376Z"
+  },
+  "he/treats-tip-pop": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "לַחֲצִי על הבועה כדי לפוצץ אותה, ואז גִּזְרִי את החבל.",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "0060629ad75567a0df46ba7cf438d0eda4b190ddbe3ca38f9f4d51454f1e4dcc",
+    "audioHash": "797bdb736ae893535b9063c246c59e35d1554b2be8ff9a193b61521523d139a7",
+    "generatedAt": "2026-09-27T02:05:17.795Z"
+  },
+  "he/treats-tip-hook": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "נַדְנְדִי את העוגייה אל העיגול המנוקד. חבל חדש יתפוס אותה!",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "e8cf7faaad0b5b4389a47d9907db7577a614d8a068c3f9a9a951bf37b56bf955",
+    "audioHash": "dabcda43433c0f2420ed7071708262fe176d305dada846694fecd9f0f10cbc21",
+    "generatedAt": "2026-09-27T02:05:20.181Z"
+  },
+  "he/treats-tip-fan": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "לַחֲצִי על המאוורר כדי לנשוף את הבועה אל בִּינְגוֹ!",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "344f1337023eaa9a05b24381694eb1832f08c45c7b33ad662e836e0f9bbe4465",
+    "audioHash": "00d2573834cba854c5543f56b760076fc66adaea457ecadc7a4263932dfc8d1c",
+    "generatedAt": "2026-09-27T02:05:22.409Z"
+  },
+  "he/keepy-tip-tap": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "לַחֲצִי על הבלון כדי להקפיץ אותו. אסור לו לגעת ברצפה!",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "e59355b38e94e1f8b7abda60f9007d666bebeef552a33938cdd805353b3dbd77",
+    "audioHash": "dd7cc9c55169454591e8d3e69d3dcc723f9bfe40328a337f5d4cb5d7b622c765",
+    "generatedAt": "2026-09-27T02:05:24.615Z"
+  },
+  "he/keepy-tip-stars": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "הַקְפִּיצִי את הבלון אל הכוכב! לַחֲצִי על הצד שלו כדי לכוון.",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "1c55ef0e9023e96d81b0fed538dec851968aa622b2385122057c092dbe4cc27c",
+    "audioHash": "3ce61c7dd0d62fff1bf46a7ce2fbece2716ca60a3f155ebf19284991c6b8d2a8",
+    "generatedAt": "2026-09-27T02:05:27.235Z"
+  },
+  "he/keepy-tip-two": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "שני בלונים! שִׁמְרִי על שניהם באוויר.",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "103ade0078d8dd9286055c35a3a7ad221a7ff571f5b4f9d167d4a3bdcc8c3e50",
+    "audioHash": "a6b29c394496416afd7ecf7f79179ab951684e3128d2bf039821d3f8bc515347",
+    "generatedAt": "2026-09-27T02:05:29.068Z"
+  },
+  "he/keepy-tip-wind": {
+    "voiceId": "hpp4J3VqNfWAUOO0d1Us",
+    "body": {
+      "text": "יש רוח! הבריזה מזיזה את הבלון.",
+      "model_id": "eleven_v3",
+      "language_code": "he",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "requestHash": "0f4d770915021fe208197226b9cf2f9b3ff7d5c01546552364041a6a4ff51ef3",
+    "audioHash": "b2953cbd954948fa8f3a24c72b163c3eb6b129d4142bd8c3753b286f3a1b8440",
+    "generatedAt": "2026-09-27T02:05:31.187Z"
   }
 }

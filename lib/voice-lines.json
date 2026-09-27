@@ -658,5 +658,123 @@
       "en": "Look beside Johnny, Mia. Which path can he step onto next?",
       "he": "הסתכלי ליד ג׳וני, מיה. על איזו משבצת שביל הוא יכול לצעוד עכשיו?"
     }
+  ],
+  "keepy": [
+    {
+      "id": "keepy",
+      "en": "Tap the balloon to keep it up. Don’t let it touch the floor!",
+      "he": "לחצי על הבלון כדי שיישאר באוויר. אסור לו לגעת ברצפה!"
+    },
+    {
+      "id": "keepy-2",
+      "en": "Keepy uppy! Bop the balloon so it never touches the floor.",
+      "he": "קיפי אפי! הקפיצי את הבלון כדי שלא ייגע ברצפה."
+    },
+    {
+      "id": "keepy-3",
+      "en": "Bluey and Bingo need your help, Mia! Keep the balloon up in the air.",
+      "he": "בלואי ובינגו צריכות את העזרה שלך, מיה! שמרי על הבלון באוויר."
+    }
+  ],
+  "treats": [
+    {
+      "id": "treats",
+      "en": "Snip the ropes so the biscuit drops to Bingo!",
+      "he": "גזרי את החבלים כדי שהעוגייה תיפול לבינגו!"
+    },
+    {
+      "id": "treats-2",
+      "en": "Bingo is hungry! Cut the ropes and feed her the biscuit.",
+      "he": "בינגו רעבה! גזרי את החבלים והאכילי אותה בעוגייה."
+    },
+    {
+      "id": "treats-3",
+      "en": "Let’s feed Bingo, Mia! Snip a rope and watch the biscuit fall.",
+      "he": "בואי נאכיל את בינגו, מיה! גזרי חבל ותראי את העוגייה נופלת."
+    }
+  ],
+  "treats-tip-cut": [
+    {
+      "id": "treats-tip-cut",
+      "en": "Swipe across the rope to snip it. Feed Bingo the biscuit!",
+      "he": "החליקי את האצבע על החבל כדי לגזור אותו. האכילי את בינגו בעוגייה!"
+    }
+  ],
+  "treats-tip-swing": [
+    {
+      "id": "treats-tip-swing",
+      "en": "Wait until the biscuit swings over Bingo, then snip!",
+      "he": "חכי שהעוגייה תתנדנד מעל בינגו, ואז גזרי!"
+    }
+  ],
+  "treats-tip-two": [
+    {
+      "id": "treats-tip-two",
+      "en": "Two ropes! Which one should you snip first?",
+      "he": "שני חבלים! איזה חבל לגזור קודם?"
+    }
+  ],
+  "treats-tip-bounce": [
+    {
+      "id": "treats-tip-bounce",
+      "en": "Boing! The trampoline bounces the biscuit.",
+      "he": "בוינג! הטרמפולינה מקפיצה את העוגייה."
+    }
+  ],
+  "treats-tip-bubble": [
+    {
+      "id": "treats-tip-bubble",
+      "en": "Bubbles float the biscuit up high!",
+      "he": "בועות מרימות את העוגייה גבוה למעלה!"
+    }
+  ],
+  "treats-tip-pop": [
+    {
+      "id": "treats-tip-pop",
+      "en": "Tap the bubble to pop it, then snip the rope.",
+      "he": "לחצי על הבועה כדי לפוצץ אותה, ואז גזרי את החבל."
+    }
+  ],
+  "treats-tip-hook": [
+    {
+      "id": "treats-tip-hook",
+      "en": "Swing the biscuit into the dotted circle. A new rope will grab it!",
+      "he": "נדנדי את העוגייה אל העיגול המנוקד. חבל חדש יתפוס אותה!"
+    }
+  ],
+  "treats-tip-fan": [
+    {
+      "id": "treats-tip-fan",
+      "en": "Tap the fan to blow the bubble toward Bingo!",
+      "he": "לחצי על המאוורר כדי לנשוף את הבועה אל בינגו!"
+    }
+  ],
+  "keepy-tip-tap": [
+    {
+      "id": "keepy-tip-tap",
+      "en": "Tap the balloon to bop it up. Don’t let it touch the floor!",
+      "he": "לחצי על הבלון כדי להקפיץ אותו. אסור לו לגעת ברצפה!"
+    }
+  ],
+  "keepy-tip-stars": [
+    {
+      "id": "keepy-tip-stars",
+      "en": "Bop the balloon into the star! Tap its side to steer it.",
+      "he": "הקפיצי את הבלון אל הכוכב! לחצי על הצד שלו כדי לכוון."
+    }
+  ],
+  "keepy-tip-two": [
+    {
+      "id": "keepy-tip-two",
+      "en": "Two balloons! Keep them both up in the air.",
+      "he": "שני בלונים! שמרי על שניהם באוויר."
+    }
+  ],
+  "keepy-tip-wind": [
+    {
+      "id": "keepy-tip-wind",
+      "en": "It’s windy! The breeze pushes the balloon around.",
+      "he": "יש רוח! הבריזה מזיזה את הבלון."
+    }
   ]
 }

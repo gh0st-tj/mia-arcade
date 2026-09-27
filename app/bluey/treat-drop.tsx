@@ -2,6 +2,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { ArrowLeft, Lightbulb, RotateCcw, Star } from 'lucide-react';
 import type { Lang } from '@/lib/game-data';
+import voiceLines from '@/lib/voice-lines.json';
 import {
   BUBBLE_R,
   COOKIE_R,
@@ -61,40 +62,11 @@ type Props = {
   onExit: () => void;
 };
 const HUD = 64;
-const tips: Record<Tip, { en: string; he: string }> = {
-  cut: {
-    en: 'Swipe across the rope to snip it. Feed Bingo the biscuit!',
-    he: 'החליקי את האצבע על החבל כדי לגזור אותו. האכילי את בינגו בעוגייה!',
-  },
-  swing: {
-    en: 'Wait until the biscuit swings over Bingo, then snip!',
-    he: 'חכי שהעוגייה תתנדנד מעל בינגו, ואז גזרי!',
-  },
-  two: {
-    en: 'Two ropes! Which one should you snip first?',
-    he: 'שני חבלים! איזה חבל לגזור קודם?',
-  },
-  bounce: {
-    en: 'Boing! The trampoline bounces the biscuit.',
-    he: 'בוינג! הטרמפולינה מקפיצה את העוגייה.',
-  },
-  bubble: {
-    en: 'Bubbles float the biscuit up high!',
-    he: 'בועות מרימות את העוגייה גבוה למעלה!',
-  },
-  pop: {
-    en: 'Tap the bubble to pop it, then snip the rope.',
-    he: 'לחצי על הבועה כדי לפוצץ אותה, ואז גזרי את החבל.',
-  },
-  hook: {
-    en: 'Swing the biscuit into the dotted circle. A new rope will grab it!',
-    he: 'נדנדי את העוגייה אל העיגול המנוקד. חבל חדש יתפוס אותה!',
-  },
-  fan: {
-    en: 'Tap the fan to blow the bubble toward Bingo!',
-    he: 'לחצי על המאוורר כדי לנשוף את הבועה אל בינגו!',
-  },
-};
+// Tip text comes from the voice catalogue so the screen matches the recording.
+const tipText = (tip: Tip, lang: Lang) =>
+  (voiceLines as Record<string, { en: string; he: string }[]>)[
+    `treats-tip-${tip}`
+  ][0][lang];
 
 export default function TreatDrop({
   lang,
@@ -217,7 +189,7 @@ function Stage({
   const [oops, setOops] = useState(false);
   const [hint, setHint] = useState(false);
   const [tip, setTip] = useState<string | null>(
-    def.tip ? tips[def.tip][lang] : null,
+    def.tip ? tipText(def.tip, lang) : null,
   );
   // The animation loop reads the latest props through refs.
   const live = useRef({ sound, hint, onWon, speak, lang });
@@ -229,7 +201,7 @@ function Stage({
   // Speak the new idea once, when the level opens.
   useEffect(() => {
     const { speak, lang } = live.current;
-    if (def.tip) speak(`treats-tip-${def.tip}`, tips[def.tip][lang]);
+    if (def.tip) speak(`treats-tip-${def.tip}`, tipText(def.tip, lang));
     const timer = setTimeout(() => setTip(null), 6500);
     return () => clearTimeout(timer);
   }, [def]);

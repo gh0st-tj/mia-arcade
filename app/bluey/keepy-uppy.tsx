@@ -2,6 +2,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { ArrowLeft, RotateCcw, Star } from 'lucide-react';
 import type { Lang } from '@/lib/game-data';
+import voiceLines from '@/lib/voice-lines.json';
 import {
   BALLOON_R,
   FLOOR,
@@ -48,24 +49,11 @@ type Props = {
   onExit: () => void;
 };
 const HUD = 64;
-const tips: Record<KeepyTip, { en: string; he: string }> = {
-  tap: {
-    en: 'Tap the balloon to bop it up. Don’t let it touch the floor!',
-    he: 'לחצי על הבלון כדי להקפיץ אותו. אסור לו לגעת ברצפה!',
-  },
-  stars: {
-    en: 'Bop the balloon into the star! Tap its side to steer it.',
-    he: 'הקפיצי את הבלון אל הכוכב! לחצי על הצד שלו כדי לכוון.',
-  },
-  two: {
-    en: 'Two balloons! Keep them both up in the air.',
-    he: 'שני בלונים! שמרי על שניהם באוויר.',
-  },
-  wind: {
-    en: 'It’s windy! The breeze pushes the balloon around.',
-    he: 'יש רוח! הבריזה מזיזה את הבלון.',
-  },
-};
+// Tip text comes from the voice catalogue so the screen matches the recording.
+const tipText = (tip: KeepyTip, lang: Lang) =>
+  (voiceLines as Record<string, { en: string; he: string }[]>)[
+    `keepy-tip-${tip}`
+  ][0][lang];
 
 export default function KeepyUppy({
   lang,
@@ -181,7 +169,7 @@ function Stage({
   const [hud, setHud] = useState({ bops: 0, drops: 0, stars: 0 });
   const [result, setResult] = useState<number | null>(null);
   const [tip, setTip] = useState<string | null>(
-    level.tip ? tips[level.tip][lang] : null,
+    level.tip ? tipText(level.tip, lang) : null,
   );
   const live = useRef({ sound, onWon, speak, lang });
   useEffect(() => {
@@ -191,7 +179,7 @@ function Stage({
 
   useEffect(() => {
     const { speak, lang } = live.current;
-    if (level.tip) speak(`keepy-tip-${level.tip}`, tips[level.tip][lang]);
+    if (level.tip) speak(`keepy-tip-${level.tip}`, tipText(level.tip, lang));
     const timer = setTimeout(() => setTip(null), 6500);
     return () => clearTimeout(timer);
   }, [level]);
@@ -491,7 +479,10 @@ function Stage({
           <ArrowLeft size={22} />
         </button>
         <span className="bluey-pill keepy-count">
-          🎈 <bdi dir="ltr">{Math.min(hud.bops, level.goal)} / {level.goal}</bdi>
+          🎈{' '}
+          <bdi dir="ltr">
+            {Math.min(hud.bops, level.goal)} / {level.goal}
+          </bdi>
           <span className="bluey-hud-stars" aria-label={`${hud.stars} / 3`}>
             {[0, 1, 2].map((n) => (
               <Star

@@ -5,10 +5,12 @@ import { createVoicePicker } from '../lib/voice-picker.ts';
 const catalog = JSON.parse(
   readFileSync(new URL('../lib/voice-lines.json', import.meta.url)),
 );
+// Level tips are a single line so the spoken tip matches the text on screen.
+const isTip = (event) => event.includes('-tip-');
 test('every spoken event has variations and Mia has fourteen different celebrations', () => {
   const ids = [];
-  for (const lines of Object.values(catalog)) {
-    assert.ok(lines.length >= 2);
+  for (const [event, lines] of Object.entries(catalog)) {
+    assert.ok(lines.length >= (isTip(event) ? 1 : 2), event);
     for (const line of lines) {
       assert.ok(line.en);
       assert.ok(line.he);
@@ -25,6 +27,7 @@ test('shuffle bags play all variations and never immediately repeat, even across
     const pick = createVoicePicker(random);
     for (const [event, lines] of Object.entries(catalog)) {
       const ids = lines.map((l) => l.id);
+      if (ids.length < 2) continue;
       let last;
       for (let cycle = 0; cycle < 20; cycle++) {
         const seen = [];
